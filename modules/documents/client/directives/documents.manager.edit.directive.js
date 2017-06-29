@@ -57,6 +57,16 @@ angular.module('documents')
 							$scope.dateUploadedOpen = function() {
 								$scope.dateUploadedPicker.opened = true;
 							};
+							// add non-required inspection report date. Need to convert string date to date for form validation, even though the field is not required
+							if ($scope.doc.inspectionReport) {
+								$scope.doc.inspectionReport.dateReportIssued = _.isEmpty(obj.inspectionReport.dateReportIssued) ? null : moment(obj.inspectionReport.dateReportIssued).toDate();
+							}
+							$scope.dateReportIssuedPicker = {
+								opened: false
+							};
+							$scope.dateReportIssuedOpen = function() {
+								$scope.dateReportIssuedPicker.opened = true;
+							};
 
 							$scope.validate = function() {
 								$scope.$broadcast('show-errors-check-validity', 'editFileForm');

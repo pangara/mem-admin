@@ -21,7 +21,8 @@ var ApplicationConfiguration = (function () {
     'ngFileUpload',
     'duScroll',
     'ngPDFViewer',
-    'ngCookies'
+    'ngCookies',
+    'ngclipboard'
   ];
 
 

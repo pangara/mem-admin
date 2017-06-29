@@ -290,7 +290,7 @@ function CategoriesFactory(TreeModel, _) {
 					}]
 				}, {
 					id: createId(),
-					name: 'Authorizations'
+					name: 'Authorization'
 				}, {
 					id: createId(),
 					name: 'Management Plan'

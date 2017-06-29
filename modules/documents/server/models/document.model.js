@@ -103,8 +103,9 @@ module.exports = genSchema ('Document', {
 	displayName             : { type: String, default: ''},
 	description             : { type:String, default:'' },
 
-	// TODO MEM documentDate is empty for all by two documents
+	// For MEM documentDate is the date the document was produced.
 	documentDate            : { type: Date, default: null },
+	documentDateDisplayMnYr : { type:Boolean, default:false },
 
 	dateAdded               : { type: Date, default: Date.now },
 	dateUpdated             : { type: Date, default: Date.now },
@@ -161,6 +162,7 @@ module.exports = genSchema ('Document', {
 		inspectionNumber				: { type:'String', default: null}, // mandatory
 		inspectorName						: { type:'String', default: null}, // mandatory
 		mineManager							: { type:'String', default: null}, // free text
+		dateReportIssued				: { type: Date, default: null },
 		personsContacted				: { type:'String', default: null} // free text multi line
 	} , default: null },
 

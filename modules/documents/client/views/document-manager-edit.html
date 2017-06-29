@@ -36,8 +36,8 @@
 		</div>
 
 		<div ng-if="doc._schemaName === 'Document'" class="form-group">
-			<label class="control-label" for="documentCategories">Document Categories</label>
-			<button class="btn btn-default btn-sm" id="documentCategories" x-categories-modal x-doc="doc" ng-blur="validate()">Set Categories</button>
+			<label class="control-label" for="documentCategories">Document Category/ies</label>
+			<button class="btn btn-default btn-sm" id="documentCategories" x-categories-modal x-doc="doc" ng-blur="validate()">Set Category/ies</button>
 			<span class="value document-categories-list">
 				<ul>
 					<li data-ng-repeat="category in doc.documentCategories">{{category}}</li>
@@ -45,14 +45,16 @@
 			</span>
 		</div>
 
+		<!--
 		<div ng-if="doc._schemaName === 'Document'" class="form-group file-type" x-show-errors>
 			<label for="documentFileName" class="control-label">File Name</label>
 			<input class="form-control" id="documentFileName" name="documentFileName" type="text" ng-model="doc.documentFileName" ng-blur="validate()">
 		</div>
+		-->
 
 		<div class="row form-group">
 			<div class="col-sm-12">
-				<label for="subComponents" class="control-label">Keywords</label>
+				<label for="subComponents" class="control-label">Keyword(s)</label>
 				<div class="tag-list-container form-control clearfix">
 					<ul class="tag-list">
 						<li class="tag" ng-repeat="keyword in doc.keywords">
@@ -72,7 +74,7 @@
 			</div>
 		</div>
 
-		<div ng-show="doc.hasInspectionMeta">
+		<div ng-if="doc.hasInspectionMeta">
 			<div class="form-group" x-show-errors>
 				<label for="inspectionNumber" class="control-label">Inspection Number</label>
 				<input class="form-control" id="inspectionNumber" name="inspectionNumber" type="text" ng-required="doc.hasInspectionMeta" ng-model="doc.inspectionReport.inspectionNumber" ng-blur="validate()">
@@ -103,6 +105,21 @@
 				<input class="form-control" id="associateAuthorization" name="associateAuthorization" type="text" ng-model="doc.inspectionReport.associateAuthorization" ng-blur="validate()">
 			</div>
 
+			<div class="row">
+				<div class="form-group datepicker col-md-3" x-show-errors>
+					<label class="control-label" for="dateReportIssued">Report Issued<em class="required">(Required)</em></label>
+					<div class="datepicker-input">
+						<input class="form-control" placeholder="YYYY-MM-DD"  id="dateReportIssued" name="dateReportIssued"
+									 ng-model="doc.inspectionReport.dateReportIssued" type="text"
+									 uib-datepicker-popup
+									 is-open="dateReportIssuedPicker.opened"
+									 datepicker-options="dateOptions"
+									 close-text="Close"
+									 disabled/>
+						<button class="btn btn-default calendar-btn" ng-click="dateReportIssuedOpen()"><span class="glyphicon glyphicon-calendar"/></button>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<div class="row">
@@ -111,16 +128,24 @@
 				<label ng-if="doc._schemaName === 'Document'" class="control-label" for="documentDate">Document Date<em class="required">(Required)</em></label>
 				<div class="datepicker-input">
 					<input class="form-control" placeholder="YYYY-MM-DD"  id="documentDate" name="documentDate"
-						   ng-model="doc.documentDate" type="text"
-						   uib-datepicker-popup
-						   is-open="datePicker.opened"
-						   datepicker-options="dateOptions"
-						   close-text="Close"
-						   disabled
-						   ng-change="validate()"/>
+						ng-model="doc.documentDate" type="text"
+						uib-datepicker-popup='{{ doc.documentDateDisplayMnYr ? "MMMM yyyy" : "yyyy-MM-dd" }}'
+						is-open="datePicker.opened"
+						datepicker-options="dateOptions"
+						close-text="Close"
+						disabled
+						required
+						ng-change="validate()"/>
 					<button class="btn btn-default calendar-btn" ng-click="dateOpen()"><span class="glyphicon glyphicon-calendar"/></button>
 				</div>
 			</div>
+			<div class="day-display-input">
+				<input class="" id="day" name="day" type="checkbox" ng-model="doc.documentDateDisplayMnYr" ng-blur="validate()">
+				<label for="day" class="">Display Month Year Only</label>
+			</div>
+
+		</div>
+		<div class="row">
 			<div ng-if="doc._schemaName === 'Document'" class="form-group datepicker col-md-3" x-show-errors>
 				<label class="control-label" for="dateUploaded">Uploaded Date<em class="required">(Required)</em></label>
 				<div class="datepicker-input">
