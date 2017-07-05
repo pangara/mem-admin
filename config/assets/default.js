@@ -48,7 +48,9 @@ module.exports = {
         'public/lib/ng-pdfviewer/pdf.js',
         'public/lib/ng-pdfviewer/compatibility.js',
 	'public/readable-range.js',
-        'public/lib/tree-model-bower/dist/TreeModel-min.js'
+        'public/lib/tree-model-bower/dist/TreeModel-min.js',
+        'public/lib/clipboard/dist/clipboard.min.js',
+        'public/lib/ngclipboard/dist/ngclipboard.min.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },

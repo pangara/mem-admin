@@ -48,7 +48,7 @@ angular.module('documents')
 					}
 					self.confirmText =
 						self.publishableFiles.length > 1 ?
-							'Are you sure you want to publish the selected items?' :
+							'Are you sure you want to publish the selected files?' :
 							'Are you sure you want to publish the selected file?';
 
 					function cancel() {

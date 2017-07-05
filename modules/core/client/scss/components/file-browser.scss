@@ -1027,6 +1027,9 @@ $fb-upload-target-border: 2px dashed #BBB;
 
 /* Edit File Metadata Form */
 .fb-edit-form {
+    .day-display-input {
+        padding-top: 2.2rem; /* to align with date picker */
+    }
     .document-categories-list ul {
         margin-top: 1rem;
     }

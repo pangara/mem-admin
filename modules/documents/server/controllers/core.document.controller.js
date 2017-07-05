@@ -4,13 +4,14 @@
 // Controller for Documents
 //
 // =========================================================================
-var path     = require('path');
-var DBModel   = require (path.resolve('./modules/core/server/controllers/core.dbmodel.controller'));
-var _         = require ('lodash');
-var CSVParse 	= require ('csv-parse');
-var Project    = require (path.resolve('./modules/projects/server/controllers/project.controller'));
-var mongoose 	= require ('mongoose');
-var DocumentModel 	= mongoose.model ('Document');
+var path		= require('path');
+var DBModel		= require (path.resolve('./modules/core/server/controllers/core.dbmodel.controller'));
+var _			= require ('lodash');
+var moment		= require ('moment');
+var CSVParse		= require ('csv-parse');
+var Project		= require (path.resolve('./modules/projects/server/controllers/project.controller'));
+var mongoose		= require ('mongoose');
+var DocumentModel	= mongoose.model ('Document');
 
 module.exports = DBModel.extend ({
 	name : 'Document',
@@ -36,8 +37,8 @@ module.exports = DBModel.extend ({
 		//
 		
 		return this.findOne ({
-			project 				: doc.project,
-			documentIsLatestVersion: true,
+			project 		: doc.project,
+			documentIsLatestVersion	: true,
 			projectFolderType       : doc.projectFolderType,
 			projectFolderSubType    : doc.projectFolderSubType,
 			projectFolderName       : doc.projectFolderName,
@@ -76,7 +77,7 @@ module.exports = DBModel.extend ({
 		},
 		null,
 		{
-			internalOriginalName : 1
+			internalOriginalName: 1
 		});
 	},
 	// -------------------------------------------------------------------------
@@ -242,12 +243,12 @@ module.exports = DBModel.extend ({
 	// -------------------------------------------------------------------------
 	getDocumentVersions : function (doc) {
 		return this.list ({
-			project 			 : doc.project,
-			_id                  : { $ne: doc._id },
-			projectFolderType    : doc.projectFolderType,
-			projectFolderSubType : doc.projectFolderSubType,
-			projectFolderName    : doc.projectFolderName,
-			internalOriginalName : doc.internalOriginalName
+			project			: doc.project,
+			_id			: { $ne: doc._id },
+			projectFolderType	: doc.projectFolderType,
+			projectFolderSubType	: doc.projectFolderSubType,
+			projectFolderName	: doc.projectFolderName,
+			internalOriginalName	: doc.internalOriginalName
 		});
 	},
 	getEpicProjectFolderURL: function (data) {
@@ -311,10 +312,10 @@ module.exports = DBModel.extend ({
 		return new Promise(function (resolve, reject) {
 			doc.unpublish();
 			doc.save()
-				.then(function() {
-					return doc;
-				})
-				.then(resolve, reject);
+			.then(function() {
+				return doc;
+			})
+			.then(resolve, reject);
 		});
 	},
 	makeLatest: function (doc) {
@@ -355,28 +356,28 @@ module.exports = DBModel.extend ({
 								// console.log("row:",row);
 
 								var newObj = {
-									documentEPICProjectId 	: parseInt(row.PROJECT_ID),
-									documentEPICId 			: parseInt(row.DOCUMENT_ID),
-									projectFolderType 		: row.PST_DESCRIPTION,
-									projectFolderSubType 	: row.DTP_DESCRIPTION,
-									projectFolderName       : row.FOLDER,
+									documentEPICProjectId	: parseInt(row.PROJECT_ID),
+									documentEPICId		: parseInt(row.DOCUMENT_ID),
+									projectFolderType	: row.PST_DESCRIPTION,
+									projectFolderSubType	: row.DTP_DESCRIPTION,
+									projectFolderName	: row.FOLDER,
 									read: ["public"],
 									// This could be auto-generated based on what we know now.
-									projectFolderURL 		: row.FOLDER,
-									projectFolderDatePosted : Date(row.DATE_POSTED),
+									projectFolderURL	: row.FOLDER,
+									projectFolderDatePosted	: Date(row.DATE_POSTED),
 									// // Do this on 2nd pass
 									// model.projectFolderAuthor       : row.WHO_CREATED;
-									documentFileName 		: row.FILE_NAME,
-									documentFileURL 		: URLPrefix + row.DOCUMENT_POINTER.replace(/\\/g,"/"),
-									documentFileSize 	: row.FILE_SIZE,
-									documentFileFormat 	: row.FILE_TYPE,
-									documentAuthor 		: row.WHO_CREATED,
-									oldData 			: JSON.stringify({DATE_RECEIVED: row.DATE_RECEIVED,
-																			  ARCS_ORCS_FILE_NUMBER: row.ARCS_ORCS_FILE_NUMBER,
-																			  WHEN_CREATED: row.WHEN_CREATED,
-																			  WHO_UPDATED: row.WHO_UPDATED,
-																			  WHEN_UPDATED: row.WHEN_UPDATED}),
-									displayName : row.FILE_NAME
+									documentFileName	: row.FILE_NAME,
+									documentFileURL		: URLPrefix + row.DOCUMENT_POINTER.replace(/\\/g,"/"),
+									documentFileSize	: row.FILE_SIZE,
+									documentFileFormat	: row.FILE_TYPE,
+									documentAuthor		: row.WHO_CREATED,
+									oldData			: JSON.stringify({DATE_RECEIVED: row.DATE_RECEIVED,
+													ARCS_ORCS_FILE_NUMBER: row.ARCS_ORCS_FILE_NUMBER,
+													WHEN_CREATED: row.WHEN_CREATED,
+													WHO_UPDATED: row.WHO_UPDATED,
+													WHEN_UPDATED: row.WHEN_UPDATED}),
+									displayName		: row.FILE_NAME
 								};
 								// console.log("pushing:", newObj);
 								promises.push(newObj);

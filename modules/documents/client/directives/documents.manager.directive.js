@@ -1,6 +1,6 @@
 'use strict';
 angular.module('documents')
-
+	.filter('documentDateFilter', filterDocumentDate)
 	.directive('documentMgr', ['_', 'moment', 'Authentication', 'DocumentMgrService', 'AlertService', 'ConfirmService', 'TreeModel', 'ProjectModel', 'Document', 'FolderModel', function (_, moment, Authentication, DocumentMgrService, AlertService, ConfirmService, TreeModel, ProjectModel, Document, FolderModel) {
 		return {
 			restrict: 'E',
@@ -13,6 +13,16 @@ angular.module('documents')
 				var tree = new TreeModel();
 				var self = this;
 				self.busy = true;
+
+				$scope.copyClipboardSuccess = function(e) {
+					var txt = e.trigger.getAttribute('data-doc-name');
+					AlertService.success('Link copied for ' + txt);
+					e.clearSelection();
+				};
+
+				$scope.copyClipboardError = function(e) {
+					AlertService.error('Copy link failed.');
+				};
 
 				if ($scope.opendir) {
 					try {
@@ -64,9 +74,6 @@ angular.module('documents')
 				self.checkedDirs = [];
 				self.checkedFiles = [];
 				self.lastChecked = {fileId: undefined, directoryID: undefined};
-
-				self.unsortedFiles = [];
-				self.unsortedDirs = [];
 
 				self.currentFiles = [];
 				self.currentDirs = [];
@@ -132,54 +139,29 @@ angular.module('documents')
 				};
 
 				self.applySort = function() {
-					// sort ascending first...
-					self.currentFiles = _(self.unsortedFiles).chain().sortBy(function (f) {
-						// more making sure that the displayName is set...
-						if (_.isEmpty(f.displayName)) {
-							f.displayName = f.documentFileName || f.internalOriginalName;
-						}
-						f.order = f.order || 0;
-
-						if (self.sorting.column === 'name') {
-							return _.isEmpty(f.displayName) ? null : f.displayName.toLowerCase();
-						} else if (self.sorting.column === 'author') {
-							return _.isEmpty(f.documentAuthor) ? null : f.documentAuthor.toLowerCase();
-						} else if (self.sorting.column === 'type') {
-							return _.isEmpty(f.internalExt) ? null : f.internalExt.toLowerCase();
-						} else if (self.sorting.column === 'size') {
-							return _.isEmpty(f.internalExt) ? 0 : f.internalSize;
-						} else if (self.sorting.column === 'date') {
-							//date uploaded
-							return _.isEmpty(f.dateUploaded) ? 0 : f.dateUploaded;
-						} else if (self.sorting.column === 'pub') {
-							//is published...
-							return !f.isPublished;
-						}
-						// by name if none specified... or we incorrectly identified...
-						return _.isEmpty(f.displayName) ? null : f.displayName.toLowerCase();
-					}).sortBy(function (f) {
-						return f.order;
-					}).value();
-
-					// directories always/only sorted by name
-					self.currentDirs = _(self.unsortedDirs).chain().sortBy(function (d) {
-						if (_.isEmpty(d.model.name)) {
-							return null;
-						}
-						d.model.order = d.model.order || 0;
-						return d.model.name.toLowerCase();
-					}).sortBy(function (d) {
-						return d.model.order;
-					}).value();
-
-					if (!self.sorting.ascending) {
-						// and if we are not supposed to be ascending... then reverse it!
-						self.currentFiles = _(self.currentFiles).reverse().value();
-						if (self.sorting.column === 'name') {
-							// name is the only sort that applies to Directories.
-							// so if descending on name, then we need to reverse it.
-							self.currentDirs = _(self.currentDirs).reverse().value();
-						}
+					var direction = self.sorting.ascending ? 1 : -1;
+					var collator = new Intl.Collator(undefined, {numeric: true, sensitivity: 'base'});
+					if (self.sorting.column === 'name') {
+						self.currentFiles.sort(function (d1, d2) {
+							var v = collator.compare(d1.displayName, d2.displayName);
+							return v * direction;
+						});
+						self.currentDirs.sort(function (d1, d2) {
+							var v = collator.compare(d1.model.name, d2.model.name);
+							return v * direction;
+						});
+					} else if (self.sorting.column === 'date') {
+						self.currentFiles.sort(function(doc1, doc2){
+							var d1 = doc1.dateUploaded || 0;
+							var d2 = doc2.dateUploaded || 0;
+							return (new Date(d1) - new Date(d2)) * direction;
+						});
+					} else if (self.sorting.column === 'pub') {
+						self.currentFiles.sort(function(doc1, doc2){
+							var d1 = doc1.isPublished ? 1 : 0;
+							var d2 = doc2.isPublished ? 1 : 0;
+							return (d1 - d2) * direction;
+						});
 					}
 				};
 
@@ -293,8 +275,6 @@ angular.module('documents')
 					self.currentNode = theNode; // this is the current Directory in the bread crumb basically...
 					self.folderURL = window.location.protocol + "//" + window.location.host + "/p/" + $scope.project.code + "/docs?folder=" + self.currentNode.model.id;
 					//self.currentPath = theNode.getPath() || [];
-					self.unsortedFiles = [];
-					self.unsortedDirs = [];
 					self.currentFiles = [];
 					self.currentDirs = [];
 
@@ -311,6 +291,10 @@ angular.module('documents')
 					});
 					self.currentPath = pathArray || [];
 
+					// path is published IFF all nodes are not unpublished.  This find returns first unpublished element.
+					self.currentPathIsPublished = (undefined === _.find(self.currentPath, function(p) { return ! p.model.published; }));
+					var warning = "Warning. You will need to publish all parent folders to fully publish these document(s).";
+					self.currentPathIsPublishedWarning = self.currentPathIsPublished ? null : warning;
 
 					//$log.debug('currentNode (' + self.currentNode.model.name + ') get documents...');
 					DocumentMgrService.getDirectoryDocuments($scope.project, self.currentNode.model.id)
@@ -318,11 +302,12 @@ angular.module('documents')
 						function (result) {
 							//$log.debug('...currentNode (' + self.currentNode.model.name + ') got '+ _.size(result.data ) + '.');
 
-							self.unsortedFiles = _.map(result.data, function(f) {
+							self.currentFiles = _.map(result.data, function(f) {
 								// making sure that the displayName is set...
 								if (_.isEmpty(f.displayName)) {
 									f.displayName = f.documentFileName || f.internalOriginalName;
 								}
+								f.link =  window.location.protocol + '//' + window.location.host + '/api/document/'+ f._id+'/fetch';
 								if (_.isEmpty(f.dateUploaded) && !_.isEmpty(f.oldData)) {
 									var od = JSON.parse(f.oldData);
 									//console.log(od);
@@ -335,7 +320,7 @@ angular.module('documents')
 								return _.extend(f,{selected:  (_.find(self.checkedFiles, function(d) { return d._id.toString() === f._id.toString(); }) !== undefined), type: 'File'});
 							});
 
-							self.unsortedDirs = _.map(self.currentNode.children, function (n) {
+							self.currentDirs = _.map(self.currentNode.children, function (n) {
 								return _.extend(n,{selected: (_.find(self.checkedDirs, function(d) { return d.model.id === n.model.id; }) !== undefined), type: 'Directory'});
 							});
 
@@ -630,7 +615,7 @@ angular.module('documents')
 								});
 								msg = 'This action cannot be completed as the following documents are published: ' + theDocs + '.  Please unpublish each document and attempt your action again.';
 							} else {
-								msg = "Could complete operation.";
+								msg = "Couldn't complete operation.";
 							}
 							self.busy = false;
 							AlertService.error(msg);
@@ -805,3 +790,15 @@ angular.module('documents')
 		};
 	}])
 ;
+
+
+filterDocumentDate.$inject = ['moment'];
+/* @ngInject */
+function filterDocumentDate(moment) {
+	return function(input, displayFormat) {
+		var format = displayFormat  ? "MMMM YYYY" : "YYYY-MM-DD";
+		var m = moment(input);
+		var dstr = m.isValid() ? m.format(format) : "";
+		return dstr;
+	};
+}
