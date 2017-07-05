@@ -40,6 +40,7 @@ module.exports = function () {
 				'listProjectComplaints' : ['sysadmin'],
 				'listProjectInvitations' : ['sysadmin', 'team', 'project-lead'],
 				'listDocuments' : ['public', 'sysadmin'],
+				'listCollections' : ['sysadmin'],
 				'listCommentPeriods' : ['public', 'sysadmin'],
 				'listEnforcements' : ['sysadmin'],
 				'listProjectUpdates' : ['sysadmin'],
@@ -53,6 +54,7 @@ module.exports = function () {
 				'createProjectComplaint' : ['sysadmin'],
 				'createProjectInvitation' : ['sysadmin', 'team', 'project-lead'],
 				'createDocument' : ['sysadmin', 'team', 'proponent-lead', 'project-lead'],
+				'createCollection' : ['sysadmin'],
 				'createCommentPeriod' : ['sysadmin'],
 				'createProjectUpdate' : ['sysadmin'],
 				'createProjectGroup' : ['sysadmin'],
@@ -104,6 +106,40 @@ module.exports = function () {
 	defaultsArray.push(new Defaults({
 		context: 'project',
 		resource: 'artifact',
+		level: 'global',
+		type: 'default-permissions',
+		defaults: {
+			roles: defaultRoles,
+			permissions: {
+				'read' : ['sysadmin'],
+				'write' : ['sysadmin'],
+				'delete' : ['sysadmin'],
+				'publish' : ['sysadmin'],
+				'unPublish' : ['sysadmin']
+			}
+		}
+	}));
+
+	defaultsArray.push(new Defaults({
+		context: 'project',
+		resource: 'collection',
+		level: 'global',
+		type: 'default-permissions',
+		defaults: {
+			roles: defaultRoles,
+			permissions: {
+				'read' : ['sysadmin'],
+				'write' : ['sysadmin'],
+				'delete' : ['sysadmin'],
+				'publish' : ['sysadmin'],
+				'unPublish' : ['sysadmin']
+			}
+		}
+	}));
+
+	defaultsArray.push(new Defaults({
+		context: 'project',
+		resource: 'collectiondocument',
 		level: 'global',
 		type: 'default-permissions',
 		defaults: {
@@ -264,7 +300,7 @@ module.exports = function () {
 			}
 		}
 	}));
-	
+
 	defaultsArray.push(new Defaults({
 		context: 'project',
 		resource: 'projectcondition',
