@@ -156,15 +156,18 @@ module.exports = genSchema ('Document', {
 
 	// supporting data for inspection document Types
 	// replacing { type: { inspectorInitials: { type:'String', default: null}, followup: { type:'String', default: null} }
-	inspectionReport        : { type: {
-		accompanyingInspectors	: { type:'String', default: null},
-		associatedAuthorization	: { type:'String', default: null}, // free text
-		inspectionNumber				: { type:'String', default: null}, // mandatory
-		inspectorName						: { type:'String', default: null}, // mandatory
-		mineManager							: { type:'String', default: null}, // free text
-		dateReportIssued				: { type: Date, default: null },
-		personsContacted				: { type:'String', default: null} // free text multi line
-	} , default: null },
+	inspectionReport        : {
+		type: {
+			accompanyingInspectors	: { type:'String', default: null},
+			associatedAuthorization	: { type:'String', default: null}, // free text
+			inspectionNumber	: { type:'String', default: null}, // mandatory
+			inspectorName		: { type:'String', default: null}, // mandatory
+			mineManager		: { type:'String', default: null}, // free text
+			dateReportIssued	: { type: Date, default: null },
+			personsContacted	: { type:'String', default: null} // free text multi line
+		},
+		default: null
+	},
 
 	virtuals__ : [
 		{name:'hasInspectionMeta', get: isInspection}
