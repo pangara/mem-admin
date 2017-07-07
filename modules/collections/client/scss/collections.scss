@@ -1,0 +1,16 @@
+
+.collections-view {
+    section {
+        margin-bottom: 3rem;
+
+        h2 {
+            font-size: 2rem;
+        }
+    }
+
+    .main-doc-section {
+        .ng-table-pager {
+            display: none;
+        }
+    }
+}

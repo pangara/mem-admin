@@ -3679,17 +3679,9 @@ tmpl-template-render {
 @import "modules/core/client/scss/components/ng-table-overrides.scss";
 
 // MODULES
-//@import "modules/project-comments/client/scss/project-comments.scss";
+@import "modules/collections/client/scss/collections.scss";
 @import "modules/project-conditions/client/scss/project-conditions.scss";
 @import "modules/projects/client/scss/project-timeline.scss";
 @import "modules/projects/client/scss/projects-abstract.scss";
 @import "modules/recent-activity/client/scss/recent-activity.scss";
-
 @import "modules/documents/client/components/doc-categories/doc-categories";
-
-//@import "modules/codelists/client/scss/codelist.scss";
-//@import "modules/communications/client/scss/communications.scss";
-//@import "modules/invitations/client/scss/invitations.scss";
-//@import "modules/users/client/scss/user-entry.scss";
-//@import "modules/users/client/scss/user-search-chooser.scss";
-//@import "modules/vcs/client/scss/vc-list.scss";

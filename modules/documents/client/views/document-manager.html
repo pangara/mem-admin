@@ -42,7 +42,7 @@
 					<li>
 						<a title="Rename Folder"
 							ng-if="project.userCan.manageFolders"
-						    ng-show="documentMgr.checkedDirs.length === 1 && documentMgr.checkedFiles.length === 0"
+							ng-show="documentMgr.checkedDirs.length === 1 && documentMgr.checkedFiles.length === 0"
 							x-document-mgr-rename-folder
 							x-project="project"
 							x-root="documentMgr.rootNode"
@@ -50,14 +50,14 @@
 					</li>
 					<li>
 						<a title="Delete"
-						   ng-hide="documentMgr.deleteSelected.confirmItems.length === 0"
-						   x-confirm-dialog
-						   x-title-text="documentMgr.deleteSelected.titleText"
-						   x-ok-text="documentMgr.deleteSelected.okText"
-						   x-cancel-text="documentMgr.deleteSelected.cancelText"
-						   x-confirm-text="documentMgr.deleteSelected.confirmText"
-						   x-confirm-items="documentMgr.deleteSelected.confirmItems"
-						   x-on-ok="documentMgr.deleteSelected.ok"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+							ng-hide="documentMgr.deleteSelected.confirmItems.length === 0"
+							x-confirm-dialog
+							x-title-text="documentMgr.deleteSelected.titleText"
+							x-ok-text="documentMgr.deleteSelected.okText"
+							x-cancel-text="documentMgr.deleteSelected.cancelText"
+							x-confirm-text="documentMgr.deleteSelected.confirmText"
+							x-confirm-items="documentMgr.deleteSelected.confirmItems"
+							x-on-ok="documentMgr.deleteSelected.ok"><span class="glyphicon glyphicon-trash"></span> Delete</a>
 					</li>
 					<li>
 						<a title="Publish"
@@ -70,8 +70,8 @@
 					</li>
 					<li>
 						<a title="Unpublish"
-						    ng-hide="documentMgr.publishSelected.unpublishableFiles.length === 0"
-						    x-confirm-dialog
+							ng-hide="documentMgr.publishSelected.unpublishableFiles.length === 0"
+							x-confirm-dialog
 							x-title-text="'Unpublish File(s)'"
 							x-ok-text="documentMgr.publishSelected.okText"
 							x-cancel-text="documentMgr.publishSelected.cancelText"
@@ -80,14 +80,21 @@
 							x-on-ok="documentMgr.publishSelected.unpublish"><span class="glyphicon glyphicon-ban-circle"></span> Unpublish</a>
 					</li>
 					<li>
+						<a title="Collections"
+							x-collection-chooser
+							x-project="project"
+							x-docs="documentMgr.checkedFiles"
+							x-on-ok="documentMgr.updateCollections"><span class="glyphicon glyphicon-list-alt"></span> Collections</a>
+					</li>
+					<li>
 						<a title="Move Folders & Files"
-						   ng-hide="documentMgr.moveSelected.moveableFiles.length === 0 && documentMgr.moveSelected.moveableFolders.length === 0"
-						   x-document-mgr-move
-						   x-title-text="documentMgr.moveSelected.titleText"
-						   x-project="project"
-						   x-root="documentMgr.rootNode"
-						   x-node="documentMgr.rootNode"
-						   x-move-selected="documentMgr.moveSelected"><span class="glyphicon glyphicon-transfer"></span> Move to...</a>
+							ng-hide="documentMgr.moveSelected.moveableFiles.length === 0 && documentMgr.moveSelected.moveableFolders.length === 0"
+							x-document-mgr-move
+							x-title-text="documentMgr.moveSelected.titleText"
+							x-project="project"
+							x-root="documentMgr.rootNode"
+							x-node="documentMgr.rootNode"
+							x-move-selected="documentMgr.moveSelected"><span class="glyphicon glyphicon-transfer"></span> Move to...</a>
 					</li>
 				</ul>
 			</div>
@@ -210,7 +217,7 @@
 														x-confirm-text="'Are you sure you want to delete this folder? This action cannot be undone.'"
 														x-confirm-items="[doc.model.folderObj.displayName]"
 														x-on-ok="documentMgr.deleteDir"
-												        x-ok-args="doc">
+																x-ok-args="doc">
 													<span class="glyphicon glyphicon-trash"></span>
 												</button>
 											</li>
@@ -280,9 +287,9 @@
 											<li ng-if="doc.userCan.read && doc.internalMime === 'application/pdf'">
 												<button class="btn icon-btn"
 														ng-show="doc.internalMime === 'application/pdf'"
-													 	x-modal-pdf-viewer
-													 	x-pdfobject="doc"
-													 	title="View File">
+														x-modal-pdf-viewer
+														x-pdfobject="doc"
+														title="View File">
 													<span class="glyphicon glyphicon-eye-open"></span>
 												</button>
 											</li>
@@ -391,66 +398,74 @@
 							<span class="glyphicon glyphicon-copy"></span>
 						</button>
 						<a ng-if="documentMgr.infoPanel.data.userCan.read"
-						   class="btn btn-sm btn-default"
-						   href="/api/document/{{ documentMgr.infoPanel.data._id }}/fetch"
-						   target="_blank"
-						   title="Download File"><span class="glyphicon glyphicon-download-alt"></span></a>
+							class="btn btn-sm btn-default"
+							href="/api/document/{{ documentMgr.infoPanel.data._id }}/fetch"
+							target="_blank"
+							title="Download File"><span class="glyphicon glyphicon-download-alt"></span></a>
 						<button ng-if="documentMgr.infoPanel.data.userCan.read && documentMgr.infoPanel.data.internalMime === 'application/pdf'"
-								x-modal-pdf-viewer
-								x-pdfobject="documentMgr.infoPanel.data"
-								title="View File"
-								class="btn btn-sm btn-default">View</button>
+							x-modal-pdf-viewer
+							x-pdfobject="documentMgr.infoPanel.data"
+							title="View File"
+							class="btn btn-sm btn-default">View</button>
 						<button class="btn btn-sm btn-default" ng-if="documentMgr.infoPanel.data.userCan.write"
-								x-document-mgr-edit
-								x-project="project"
-								x-doc="documentMgr.infoPanel.data"
-								x-on-update="documentMgr.onDocumentUpdate">Edit</button>
+							x-document-mgr-edit
+							x-project="project"
+							x-doc="documentMgr.infoPanel.data"
+							x-on-update="documentMgr.onDocumentUpdate">Edit</button>
 						<div class="fb-menu btn-group">
 							<button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">More</button>
 							<ul class="dropdown-menu pull-right">
 								<li ng-if="documentMgr.infoPanel.data.userCan.delete">
 									<a title="Delete File"
-									   ng-click="$event.stopPropagation();"
-									   x-confirm-dialog
-									   x-title-text="'Delete File(s)'"
-									   x-ok-text="'Yes'"
-									   x-cancel-text="'No'"
-									   x-confirm-text="'Are you sure you want to delete this file? This action cannot be undone.'"
-									   x-confirm-items="[documentMgr.infoPanel.data.displayName]"
-									   x-on-ok="documentMgr.deleteFile"
-									   x-ok-args="documentMgr.infoPanel.data"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+										ng-click="$event.stopPropagation();"
+										x-confirm-dialog
+										x-title-text="'Delete File(s)'"
+										x-ok-text="'Yes'"
+										x-cancel-text="'No'"
+										x-confirm-text="'Are you sure you want to delete this file? This action cannot be undone.'"
+										x-confirm-items="[documentMgr.infoPanel.data.displayName]"
+										x-on-ok="documentMgr.deleteFile"
+										x-ok-args="documentMgr.infoPanel.data"><span class="glyphicon glyphicon-trash"></span> Delete</a>
 								</li>
 								<li ng-if="documentMgr.infoPanel.data.userCan.publish && !documentMgr.infoPanel.data.isPublished">
 									<a title="Publish File"
-									   ng-click="$event.stopPropagation();"
-									   x-confirm-dialog
-									   x-title-text="'Publish File'"
-									   x-ok-text="'Yes'"
-									   x-cancel-text="'No'"
-									   x-confirm-text="'Are you sure you want to publish the selected file?'"
-									   x-confirm-items="[documentMgr.infoPanel.data.displayName]"
-									   x-on-ok="documentMgr.publishFile"
-									   x-ok-args="documentMgr.infoPanel.data"><span class="glyphicon glyphicon-ok-circle"></span> Publish</a>
+										ng-click="$event.stopPropagation();"
+										x-confirm-dialog
+										x-title-text="'Publish File'"
+										x-ok-text="'Yes'"
+										x-cancel-text="'No'"
+										x-confirm-text="'Are you sure you want to publish the selected file?'"
+										x-confirm-items="[documentMgr.infoPanel.data.displayName]"
+										x-on-ok="documentMgr.publishFile"
+										x-ok-args="documentMgr.infoPanel.data"><span class="glyphicon glyphicon-ok-circle"></span> Publish</a>
 								</li>
 								<li ng-if="documentMgr.infoPanel.data.userCan.unPublish && documentMgr.infoPanel.data.isPublished">
 									<a title="Unpublish File"
-									   ng-click="$event.stopPropagation();"
-									   x-confirm-dialog
-									   x-title-text="'Unpublish File'"
-									   x-ok-text="'Yes'"
-									   x-cancel-text="'No'"
-									   x-confirm-text="'Are you sure you want to unpublish the selected file?'"
-									   x-confirm-items="[documentMgr.infoPanel.data.displayName]"
-									   x-on-ok="documentMgr.unpublishFile"
-									   x-ok-args="documentMgr.infoPanel.data"><span class="glyphicon glyphicon-ban-circle"></span> Unpublish</a>
+										ng-click="$event.stopPropagation();"
+										x-confirm-dialog
+										x-title-text="'Unpublish File'"
+										x-ok-text="'Yes'"
+										x-cancel-text="'No'"
+										x-confirm-text="'Are you sure you want to unpublish the selected file?'"
+										x-confirm-items="[documentMgr.infoPanel.data.displayName]"
+										x-on-ok="documentMgr.unpublishFile"
+										x-ok-args="documentMgr.infoPanel.data"><span class="glyphicon glyphicon-ban-circle"></span> Unpublish</a>
+								</li>
+								<li>
+									<a title="Collections"
+										x-collection-chooser
+										x-project="project"
+										x-docs="documentMgr.infoPanel.data"
+										x-current="documentMgr.infoPanel.data.collections"
+										x-on-ok="documentMgr.updateCollections"><span class="glyphicon glyphicon-list-alt"></span> Collections</a>
 								</li>
 								<li>
 									<a title="Edit Permissions" ng-if="project.userCan.manageDocumentPermissions"
 										x-role-permissions-modal
 										x-context="project"
 										x-object="documentMgr.infoPanel.data"
-									    x-reload="'false'"
-									    x-callback="documentMgr.onPermissionsUpdate"><span class="glyphicon glyphicon-cog"></span> Edit Permissions</a>
+										x-reload="'false'"
+										x-callback="documentMgr.onPermissionsUpdate"><span class="glyphicon glyphicon-cog"></span> Edit Permissions</a>
 								</li>
 							</ul>
 						</div>
@@ -478,34 +493,42 @@
 									<span class="name">Display Name:</span>
 									<span class="value">{{ documentMgr.infoPanel.data.displayName }}</span>
 								</li>
-                <li ng-if="documentMgr.infoPanel.data.documentAuthor">
-                  <span class="name">Authors:</span>
-                  <span class="value">{{ documentMgr.infoPanel.data.documentAuthor }}</span>
-                </li>
-                <li ng-if="documentMgr.infoPanel.data.documentId">
-                  <span class="name">Document ID:</span>
-                  <span class="value">{{ documentMgr.infoPanel.data.documentId }}</span>
-                </li>
-                <li>
-                  <span class="name">Document Category/ies:</span>
-                  <span class="value">
+								<li ng-if="documentMgr.infoPanel.data.documentAuthor">
+									<span class="name">Authors:</span>
+									<span class="value">{{ documentMgr.infoPanel.data.documentAuthor }}</span>
+								</li>
+								<li ng-if="documentMgr.infoPanel.data.documentId">
+									<span class="name">Document ID:</span>
+									<span class="value">{{ documentMgr.infoPanel.data.documentId }}</span>
+								</li>
+								<li>
+									<span class="name">Document Category/ies:</span>
+									<span class="value">
 										<ul>
 											<li data-ng-repeat="category in documentMgr.infoPanel.data.documentCategories">{{category}}</li>
 										</ul>
 									</span>
-                </li>
+								</li>
 								<!--
-                <li>
-                  <span class="name">File Name:</span>
-                  <span class="value">{{ documentMgr.infoPanel.data.documentFileName }}</span>
-                </li>
-                -->
-                <li class="doc-keywords-list" ng-if="documentMgr.infoPanel.data.keywords">
-                  <span class="name">Keyword(s):</span>
-                  <ul>
-                    <li data-ng-repeat="keyword in documentMgr.infoPanel.data.keywords">{{ keyword }}</li>
-                  </ul>
-                </li>
+								<li>
+									<span class="name">File Name:</span>
+									<span class="value">{{ documentMgr.infoPanel.data.documentFileName }}</span>
+								</li>
+								-->
+								<li class="doc-keywords-list" ng-if="documentMgr.infoPanel.data.keywords">
+									<span class="name">Keyword(s):</span>
+									<ul>
+										<li data-ng-repeat="keyword in documentMgr.infoPanel.data.keywords">{{ keyword }}</li>
+									</ul>
+								</li>
+								<li>
+									<span class="name">Collections:</span>
+									<span class="value">
+										<ul>
+											<li data-ng-repeat="collection in documentMgr.infoPanel.data.collections">{{ collection.displayName }}</li>
+										</ul>
+									</span>
+								</li>
 								<li ng-if="documentMgr.infoPanel.link">
 									<span class="name">Link:</span>
 									<span class="value break-all">

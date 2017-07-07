@@ -1,0 +1,74 @@
+<form class="view-form" name="collectionForm" ng-submit="save(collectionForm.$valid)" novalidate>
+
+  <div class="view-title-container flex-row">
+    <h1 ng-if="collection.addedBy">Edit Collection</h1>
+    <h1 ng-if="!collection.addedBy">Add Collection</h1>
+    <div class="actions">
+      <button class="btn btn-default btn-sm" ui-sref="p.collection.list">Cancel</button>
+      <button class="btn btn-success btn-sm" ng-if="collection.addedBy && !collection.isPublished" ng-click="publish()" type="button"><span class="glyphicon glyphicon-ok"></span><span>Publish</span></button>
+      <button class="btn btn-default btn-sm" ng-if="collection.addedBy && collection.isPublished" ng-click="unpublish()" type="button"><span class="glyphicon glyphicon-ban-circle"></span><span>Unpublish</span></button>
+      <button class="btn btn-danger btn-sm" ng-if="collection.addedBy" ng-click="delete()" type="button"><span class="glyphicon glyphicon-trash"></span><span>Delete</span></button>
+      <button class="btn btn-primary btn-sm" type="submit">Save</button>
+    </div>
+  </div>
+
+  <div class="view-body-container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group" x-show-errors>
+          <label for="displayName" class="control-label">Name</label>
+          <input id="displayName" name="displayName" ng-model='collection.displayName' class="form-control" required>
+          <div ng-messages="collectionForm.displayName.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Name is required.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="type" class="control-label">Type</label>
+          <select id="type" ng-model='collection.type' class="form-control" ng-options="t.id as t.title for t in types"></select>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group" x-show-errors>
+          <label for="date" class="control-label">Date</label>
+          <div class="form-control date-picker" name="date" title="{{ collection.date | amDateFormat:'HH:mm:ss' }}"
+            x-modal-date-picker x-selected-date="collection.date" x-header="'Choose a Date'">
+            <span ng-if="!collection.date">None</span>
+            {{ collection.date | amDateFormat:'ddd, MMM DD, YYYY' }}
+            <span class="glyphicon glyphicon-calendar"></span>
+          </div>
+          <div ng-messages="collectionForm.date.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Date is required.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 form-group">
+          <label class="control-label">Authorized By</label>
+          <div class="checkbox-row">
+            <div class="checkbox-inline">
+              <label class="control-label" for="isForMEM">
+                <input type="checkbox" ng-model="collection.isForMEM" id="isForMEM" name="isForMEM" />Ministry of Energy & Mines (MEM)</label>
+            </div>
+            <div class="checkbox-inline">
+              <label class="control-label" for="isForENV">
+                <input type="checkbox" ng-model="collection.isForENV" id="isForENV" name="isForENV" />Ministry of Environment (ENV)</label>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group" x-show-errors>
+          <label for="description" class="control-label">Description</label>
+          <textarea id="description" name="description" type="text" class="form-control" ng-model="collection.description" rows=3 required></textarea>
+            <div ng-messages="collectionForm.description.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Description is required.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

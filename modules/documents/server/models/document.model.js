@@ -151,6 +151,8 @@ module.exports = genSchema ('Document', {
 	// TODO for MEM related docs are empty
 	relatedDocuments        : [ { type: 'ObjectId', ref: 'Document' } ],
 
+	collections             : [ { type: 'ObjectId', ref: 'Collection' } ],
+
 	keywords                : [ { type:'String'} ],
 	documentId              : { type:'String', default: null }, // will be used as an id into other systems (ex MEM, MMTI, to be entered manually)
 

@@ -16,7 +16,16 @@ var DocumentModel	= mongoose.model ('Document');
 module.exports = DBModel.extend ({
 	name : 'Document',
 	plural : 'documents',
-	populate: [{ path: 'addedBy', select: '_id displayName username email orgName' }, { path: 'updatedBy', select: '_id displayName username email orgName' }],
+	populate: [{
+		path: 'addedBy',
+		select: '_id displayName username email orgName'
+	}, {
+		path: 'updatedBy',
+		select: '_id displayName username email orgName'
+	}, {
+		path: 'collections',
+		select: '_id displayName type'
+	}],
 	// -------------------------------------------------------------------------
 	//
 	// this is what happens before hte new document is saved, any last minute
@@ -35,7 +44,7 @@ module.exports = DBModel.extend ({
 		//
 		// check if there is an existing matching document
 		//
-		
+
 		return this.findOne ({
 			project 		: doc.project,
 			documentIsLatestVersion	: true,
@@ -295,7 +304,7 @@ module.exports = DBModel.extend ({
 	publish: function(doc) {
 		if (!doc)
 			return Promise.resolve();
-		
+
 		return new Promise(function (resolve, reject) {
 				doc.publish();
 				doc.save()
@@ -308,7 +317,7 @@ module.exports = DBModel.extend ({
 	unpublish: function(doc) {
 		if (!doc)
 			return Promise.resolve();
-		
+
 		return new Promise(function (resolve, reject) {
 			doc.unpublish();
 			doc.save()

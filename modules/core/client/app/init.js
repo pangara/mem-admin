@@ -83,6 +83,9 @@ angular.module(ApplicationConfiguration.applicationModuleName).run(function ($wi
 					case String(str.match(/^p.documents$/)):
 						enabled = 'true' === FEATURES.enableDocuments;
 						break;
+					case String(str.match(/^p.collection$/)):
+						enabled = 'true' === FEATURES.enableCollections;
+						break;
 					case String(str.match(/^p.invitation.*/)):
 						enabled = 'true' === FEATURES.enableInvitations;
 						break;

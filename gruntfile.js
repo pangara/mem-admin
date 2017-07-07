@@ -40,6 +40,7 @@ module.exports = function (grunt) {
 					'FEATURES': {
 						enableTimeline: 'true',
 						enableDocuments: 'true',
+						enableCollections: 'true',
 						enableInvitations: 'true',
 						enableGroups: 'true',
 						enableUpdates: 'true',
