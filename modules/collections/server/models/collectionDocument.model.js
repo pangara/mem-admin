@@ -7,14 +7,13 @@ var path = require('path');
 
 module.exports = require(path.resolve('./modules/core/server/controllers/core.schema.controller'))
 ('Collectiondocument', {
-	__audit     : true,
-	__access    : [],
+	__audit   : true,
+	__access  : [],
 
-	document    : { type: 'ObjectId', ref: 'Document' },
+	document  : { type: 'ObjectId', ref: 'Document' },
 
-	dateAdded   : { type: Date, default: Date.now },
-	updatedBy   : { type: 'ObjectId', ref:'User', default: null },
+	dateAdded : { type: Date, default: Date.now },
+	updatedBy : { type: 'ObjectId', ref:'User', default: null },
 
-	displayName : { type: String, default: '' },
-	sortOrder   : { type: 'Number', default: 0 },
+	sortOrder : { type: 'Number', default: 0 },
 });

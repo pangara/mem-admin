@@ -14,14 +14,14 @@ module.exports = function(app) {
 
 	// Get all collections
 	app.route('/api/collections/')
-		.all(policy('user'))
+		.all(policy('guest'))
 		.get(routes.setAndRun(CollectionClass, function(model, req) {
 			return model.getAll();
 		}));
 
 	// Get all collections for a project
 	app.route('/api/collections/project/:projectId')
-		.all(policy('user'))
+		.all(policy('guest'))
 		.get(routes.setAndRun(CollectionClass, function(model, req) {
 			return model.getForProject(req.params.projectId);
 		}));
