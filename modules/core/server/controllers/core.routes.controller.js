@@ -350,9 +350,11 @@ exports.setCRUDRoutes = function (app, basename, DBClass, policy, which, policym
 	// collection routes
 	//
 	if (r.query) app.route ('/api/query/'+basename)
-		.all (policy (policymap))
+		.all (policy (_.isObject(policymap) && policymap.query ? policymap.query : policymap))
 		.put (setAndRun (DBClass, function (model, req) {
-			return model.list (req.data);
+			var q = !_.isEmpty(req.body) ? req.body.q : {};
+			var fields = !_.isEmpty(req.body) ? req.body.fields : {};
+			return model.list (q, fields);
 		}))
 		.get (setAndRun (DBClass, function (model, req) {
 			var q = JSON.parse(JSON.stringify(req.query));
