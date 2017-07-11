@@ -64,6 +64,7 @@
 							ng-hide="documentMgr.publishSelected.publishableFiles.length === 0"
 							x-confirm-publish
 							x-publisher="documentMgr.publishFiles"
+						 	x-current-node="documentMgr.currentNode"
 							x-docs="documentMgr.checkedFiles">
 							<span class="glyphicon glyphicon-ok-circle"></span> Publish
 						</a>
@@ -317,6 +318,7 @@
 												<button class="btn icon-btn" title="Publish File" ng-click="$event.stopPropagation();"
 														x-confirm-publish
 														x-publisher="documentMgr.publishFiles"
+														x-current-node="documentMgr.currentNode"
 														x-docs="doc">
 													<span class="glyphicon glyphicon-ok-circle"></span>
 												</button>

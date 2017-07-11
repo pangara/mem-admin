@@ -7,7 +7,7 @@
 	</div>
 
 	<div class="modal-body" ng-if="confirmDlg.errMsg">
-		<div>{{confirmDlg.errMsg}}</div>
+		<div class="alert alert-danger" >{{confirmDlg.errMsg}}</div>
 	</div>
 
 	<div class="modal-body"  ng-if="!confirmDlg.errMsg">
@@ -24,9 +24,9 @@
 		</ul>
 	</div>
 
-
 	<div class="modal-footer">
-		<button class="btn btn-default" type="button" ng-click="confirmDlg.cancel()">No</button>
-		<button class="btn btn-primary" type="submit" ng-click="confirmDlg.submit()" ng-disabled="confirmDlg.errMsg">Yes</button>
+		<button class="btn btn-default" type="button" ng-click="confirmDlg.cancel()">{{confirmDlg.cancelText}}</button>
+		<button class="btn btn-primary" type="submit" ng-click="confirmDlg.submit()"
+						ng-show="confirmDlg.showSubmit" ng-disabled="confirmDlg.errMsg">Yes</button>
 	</div>
 </form>
