@@ -88,7 +88,7 @@ var update = function(collectionName, query, doc) {
 				if (err) {
 					reject(err);
 				} else {
-					console.log('updated ' + result.nModified + ' document(s) in ' + collectionName);
+					console.log('updated document in ' + collectionName);
 					resolve(result);
 				}
 			});
