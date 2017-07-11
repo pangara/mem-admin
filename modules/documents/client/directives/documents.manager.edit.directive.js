@@ -33,8 +33,9 @@ angular.module('documents')
 								showWeeks: false
 							};
 
-							$scope.originalName = obj.displayName || obj.documentFileName || obj.internalOriginalName;
+							$scope.originalName = obj.displayName;
 							$scope.doc = obj;
+							$scope.extension = $scope.doc.documentFileName.split('.').pop();
 							// any dates going to the datepicker need to be javascript Date objects...
 							function prepDate(model) { return _.isEmpty(model) ? null : moment(model).toDate();}
 							$scope.doc.documentDate = prepDate(obj.documentDate);

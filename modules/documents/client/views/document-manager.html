@@ -502,6 +502,10 @@
 									<span class="name">Display Name:</span>
 									<span class="value">{{ documentMgr.infoPanel.data.displayName }}</span>
 								</li>
+								<li ng-if="authentication.user">
+									<span class="name">File Name:</span>
+									<span class="value">{{ documentMgr.infoPanel.data.documentFileName }}</span>
+								</li>
 								<li ng-if="documentMgr.infoPanel.data.documentAuthor">
 									<span class="name">Authors:</span>
 									<span class="value">{{ documentMgr.infoPanel.data.documentAuthor }}</span>
@@ -510,17 +514,11 @@
 									<span class="name">ID:</span>
 									<span class="value">{{ documentMgr.infoPanel.data.documentId }}</span>
 								</li>
-								<!--
-								<li>
-									<span class="name">File Name:</span>
-									<span class="value">{{ documentMgr.infoPanel.data.documentFileName }}</span>
-								</li>
-								-->
-								<li class="doc-keywords-list" ng-if="documentMgr.infoPanel.data.keywords.length > 0">
-									<span class="name">Keyword(s):</span>
-									<ul class="value">
-										<li data-ng-repeat="keyword in documentMgr.infoPanel.data.keywords">{{ keyword }}</li>
-									</ul>
+                <li class="doc-keywords-list" ng-if="documentMgr.infoPanel.data.keywords.length > 0">
+                  <span class="name">Keyword(s):</span>
+                  <ul>
+                    <li data-ng-repeat="keyword in documentMgr.infoPanel.data.keywords">{{ keyword }}</li>
+                  </ul>
 								</li>
 								<li ng-if="authentication.user && documentMgr.infoPanel.data.collections.length > 0">
 									<span class="name">Collection(s):</span>
