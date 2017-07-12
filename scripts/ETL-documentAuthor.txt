@@ -1,0 +1,9 @@
+The document author was set on upload to match the user who did the upload. This behaviour changed July 2017.
+We need to now clear everything in the document author field.
+Run the following in mongo after PR#1 is migrated to production.
+
+db.documents.updateMany({documentAuthor :{ $ne : null }},{ $unset: { documentAuthor: ""}})
+db.documents.updateMany({documentAuthor :{ $eq : "" } },{ $unset: { documentAuthor: ""}})
+
+Run this to be sure everything is clear:
+db.documents.find({documentAuthor :{ $ne : null }},{documentAuthor:1})
