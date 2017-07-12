@@ -28,7 +28,6 @@
 	margin-top: 2rem !important;
 }
 
-
 // Flex Containers
 .flex-row {
 	@include display-flex;
@@ -61,4 +60,12 @@
 
 .break-all {
 	word-break: break-all;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.icon-default {
+    font-size: 2.4rem;
 }
