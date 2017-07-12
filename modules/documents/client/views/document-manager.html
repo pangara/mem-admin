@@ -142,6 +142,7 @@
 				<div class="scroll-container-inner">
 
 					<div class="empty-directory-msg" ng-if="documentMgr.currentDirs.length == 0 && documentMgr.currentFiles.length == 0">This folder is empty.</div>
+
 					<ul>
 						<li class="fb-list-item" ng-class="{'selected': doc.selected}" ng-repeat="doc in documentMgr.currentDirs">
 							<span class="col checkbox-col" ng-if="authentication.user">
@@ -390,32 +391,23 @@
 						</button>
 						<h2 title="{{documentMgr.infoPanel.data.displayName | removeExtension}}">{{documentMgr.infoPanel.data.displayName | removeExtension }}</h2>
 					</div>
+			
 					<div class="title-panel-btns">
-						<button class="btn btn-sm btn-default" title="Copy Link to Clipboard"
-							ngclipboard
-							data-doc-name="documentMgr.infoPanel.data.displayName"
-							data-clipboard-text="{{ documentMgr.infoPanel.data.link }}"
-							ngclipboard-success="copyClipboardSuccess(e);"
-							ngclipboard-error="copyClipboardError(e);">
-							<span class="glyphicon glyphicon-copy"></span>
-						</button>
-						<a ng-if="documentMgr.infoPanel.data.userCan.read"
-							class="btn btn-sm btn-default"
+						<a class="btn btn-default btn-sm" ng-if="documentMgr.infoPanel.data.userCan.read"
 							href="/api/document/{{ documentMgr.infoPanel.data._id }}/fetch"
 							target="_blank"
-							title="Download File"><span class="glyphicon glyphicon-download-alt"></span></a>
-						<button ng-if="documentMgr.infoPanel.data.userCan.read && documentMgr.infoPanel.data.internalMime === 'application/pdf'"
+							title="Download File">Download</a>
+						<button class="btn btn-default btn-sm" ng-if="documentMgr.infoPanel.data.userCan.read && documentMgr.infoPanel.data.internalMime === 'application/pdf'"
 							x-modal-pdf-viewer
 							x-pdfobject="documentMgr.infoPanel.data"
-							title="View File"
-							class="btn btn-sm btn-default">View</button>
-						<button class="btn btn-sm btn-default" ng-if="documentMgr.infoPanel.data.userCan.write"
+							title="View File">View</button>
+						<button class="btn btn-default btn-sm" ng-if="documentMgr.infoPanel.data.userCan.write"
 							x-document-mgr-edit
 							x-project="project"
 							x-doc="documentMgr.infoPanel.data"
 							x-on-update="documentMgr.onDocumentUpdate">Edit</button>
 						<div class="fb-menu btn-group">
-							<button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">More</button>
+							<button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">More</button>
 							<ul class="dropdown-menu pull-right">
 								<li ng-if="documentMgr.infoPanel.data.userCan.delete">
 									<a title="Delete File"
@@ -454,12 +446,22 @@
 										x-ok-args="documentMgr.infoPanel.data"><span class="glyphicon glyphicon-ban-circle"></span> Unpublish</a>
 								</li>
 								<li>
+									<a title="Copy Link to Clipboard"
+										ngclipboard
+										data-doc-name="documentMgr.infoPanel.data.displayName"
+										data-clipboard-text="{{ documentMgr.infoPanel.data.link }}"
+										ngclipboard-success="copyClipboardSuccess(e);"
+										ngclipboard-error="copyClipboardError(e);">
+										<span class="glyphicon glyphicon-copy"></span> Copy Link to Clipboard
+									</a>
+								</li>
+								<li ng-if="authentication.user">
 									<a title="Collections"
 										x-collection-chooser
 										x-project="project"
 										x-docs="documentMgr.infoPanel.data"
 										x-current="documentMgr.infoPanel.data.collections"
-										x-on-ok="documentMgr.updateCollections"><span class="glyphicon glyphicon-list-alt"></span> Collections</a>
+										x-on-ok="documentMgr.updateCollections"><span class="glyphicon glyphicon-list-alt"></span> Update Collections</a>
 								</li>
 								<li>
 									<a title="Edit Permissions" ng-if="project.userCan.manageDocumentPermissions"
@@ -472,16 +474,18 @@
 							</ul>
 						</div>
 					</div>
+					
 				</div>
 				<div class="scroll-container">
-					<section class="fb-details-section">
-						<h2>File Details</h2>
+					<div class="fb-details-section">
 						<section ng-if="documentMgr.infoPanel.data.description">
 							<h3>Description</h3>
 							<div class="value document-description">{{ documentMgr.infoPanel.data.description }}</div>
 						</section>
+
+						<!-- FILE DETAILS -->
 						<section>
-							<h3>Properties</h3>
+							<h3>File Details</h3>
 							<ul class="nv-pair">
 								<li ng-if="authentication.user">
 									<span class="name">Status:</span>
@@ -500,36 +504,36 @@
 									<span class="value">{{ documentMgr.infoPanel.data.documentAuthor }}</span>
 								</li>
 								<li ng-if="documentMgr.infoPanel.data.documentId">
-									<span class="name">Document ID:</span>
+									<span class="name">ID:</span>
 									<span class="value">{{ documentMgr.infoPanel.data.documentId }}</span>
 								</li>
-								<li>
-									<span class="name">Document Category/ies:</span>
-									<span class="value">
-										<ul>
-											<li data-ng-repeat="category in documentMgr.infoPanel.data.documentCategories">{{category}}</li>
-										</ul>
-									</span>
-								</li>
-								<!--
-								<li>
-									<span class="name">File Name:</span>
-									<span class="value">{{ documentMgr.infoPanel.data.documentFileName }}</span>
-								</li>
-								-->
-								<li class="doc-keywords-list" ng-if="documentMgr.infoPanel.data.keywords">
+								<li ng-if="documentMgr.infoPanel.data.keywords.length > 0">
 									<span class="name">Keyword(s):</span>
-									<ul>
+									<ul class="value">
 										<li data-ng-repeat="keyword in documentMgr.infoPanel.data.keywords">{{ keyword }}</li>
 									</ul>
 								</li>
+								<li ng-if="authentication.user && documentMgr.infoPanel.data.collections.length > 0">
+									<span class="name">Collection(s):</span>
+									<ul class="value">
+										<li data-ng-repeat="collection in documentMgr.infoPanel.data.collections">{{ collection.displayName }}</li>
+									</ul>
+								</li>
+								<li ng-if="documentMgr.infoPanel.data.documentDate">
+									<span class="name">Document Date:</span>
+									<span class="value">{{ documentMgr.infoPanel.data.documentDate | documentDateFilter: documentMgr.infoPanel.data.documentDateDisplayMnYr }}</span>
+								</li>
 								<li>
-									<span class="name">Collections:</span>
-									<span class="value">
-										<ul>
-											<li data-ng-repeat="collection in documentMgr.infoPanel.data.collections">{{ collection.displayName }}</li>
-										</ul>
-									</span>
+									<span class="name">Update Date:</span>
+									<span class="value">{{ documentMgr.infoPanel.data.dateUpdated | date : format : timezone }} <span ng-if="authentication.user">by {{ documentMgr.infoPanel.data.updatedBy.displayName }}</span></span>
+								</li>
+								<li>
+									<span class="name">Uploaded Date:</span>
+									<span class="value">{{ documentMgr.infoPanel.data.dateAdded | date : format : timezone }} <span ng-if="authentication.user">by {{ documentMgr.infoPanel.data.addedBy.displayName }}</span></span>
+								</li>
+								<li>
+									<span class="name">File Size:</span>
+									<span class="value">{{ documentMgr.infoPanel.data.internalSize | bytes:2 }}</span>
 								</li>
 								<li ng-if="documentMgr.infoPanel.link">
 									<span class="name">Link:</span>
@@ -537,80 +541,53 @@
 										<a href="{{documentMgr.infoPanel.data.link}}" target="_blank">{{ documentMgr.infoPanel.data.link }}</a>
 									</span>
 								</li>
-								<li>
-									<span class="name">Size:</span>
-									<span class="value">{{ documentMgr.infoPanel.data.internalSize | bytes:2 }}</span>
-								</li>
-								<hr ng-if="documentMgr.infoPanel.data.hasInspectionMeta "/>
-								<li ng-if="documentMgr.infoPanel.data.hasInspectionMeta && documentMgr.infoPanel.data.inspectionReport.inspectionNumber">
+							</ul>
+						</section>
+
+						<!-- INSPECTION DETAILS -->
+						<section ng-if="documentMgr.infoPanel.data.hasInspectionMeta">
+							<h3>Inspection Information</h3>
+							<ul class="nv-pair">
+								<li ng-if="documentMgr.infoPanel.data.inspectionReport.inspectionNumber">
 									<span class="name">Inspection Number:</span>
 									<span class="value">{{ documentMgr.infoPanel.data.inspectionReport.inspectionNumber }}</span>
 								</li>
-								<li ng-if="documentMgr.infoPanel.data.hasInspectionMeta && documentMgr.infoPanel.data.inspectionReport.inspectorName">
+								<li ng-if="documentMgr.infoPanel.data.inspectionReport.inspectorName">
 									<span class="name">Inspector Name:</span>
 									<span class="value">{{ documentMgr.infoPanel.data.inspectionReport.inspectorName }}</span>
 								</li>
-								<li ng-if="documentMgr.infoPanel.data.hasInspectionMeta && documentMgr.infoPanel.data.inspectionReport.accompanyingInspectors">
+								<li ng-if="documentMgr.infoPanel.data.inspectionReport.accompanyingInspectors">
 									<span class="name">Accompanying Inspectors:</span>
 									<span class="value">{{ documentMgr.infoPanel.data.inspectionReport.accompanyingInspectors }}</span>
 								</li>
-								<li ng-if="documentMgr.infoPanel.data.hasInspectionMeta && documentMgr.infoPanel.data.inspectionReport.mineManager">
+								<li ng-if="documentMgr.infoPanel.data.inspectionReport.mineManager">
 									<span class="name">Mine Manager:</span>
 									<span class="value">{{ documentMgr.infoPanel.data.inspectionReport.mineManager }}</span>
 								</li>
-								<li ng-if="documentMgr.infoPanel.data.hasInspectionMeta && documentMgr.infoPanel.data.inspectionReport.personsContacted">
+								<li ng-if="documentMgr.infoPanel.data.inspectionReport.personsContacted">
 									<span class="name">Persons Contacted:</span>
 									<span class="value">{{ documentMgr.infoPanel.data.inspectionReport.personsContacted }}</span>
 								</li>
-								<li ng-if="documentMgr.infoPanel.data.hasInspectionMeta && documentMgr.infoPanel.data.inspectionReport.associatedAuthorization">
+								<li ng-if="documentMgr.infoPanel.data.inspectionReport.associateAuthorization">
 									<span class="name">Associated Authorizations:</span>
-									<span class="value">{{ documentMgr.infoPanel.data.inspectionReport.associatedAuthorization }}</span>
+									<span class="value">{{ documentMgr.infoPanel.data.inspectionReport.associateAuthorization }}</span>
 								</li>
-								<li ng-if="documentMgr.infoPanel.data.hasInspectionMeta && documentMgr.infoPanel.data.inspectionReport.dateReportIssued">
+								<li ng-if="documentMgr.infoPanel.data.inspectionReport.dateReportIssued">
 									<span class="name">Report Issued:</span>
 									<span class="value">{{ documentMgr.infoPanel.data.inspectionReport.dateReportIssued | date : format : timezone}}</span>
 								</li>
-
-								<hr/>
-								<li>
-									<span class="name">Document Date:</span>
-									<span class="value">{{ documentMgr.infoPanel.data.documentDate  | documentDateFilter: documentMgr.infoPanel.data.documentDateDisplayMnYr  }}</span>
-								</li>
-								<li>
-									<span class="name">Update Date:</span>
-									<span class="value">{{ documentMgr.infoPanel.data.dateUpdated | date : format : timezone }}</span>
-								</li>
-								<li ng-if="authentication.user">
-									<span class="name">Update By:</span>
-									<span class="value">{{ documentMgr.infoPanel.data.updatedBy.displayName }}</span>
-								</li>
-
-								<li>
-									<span class="name">Uploaded Date:</span>
-									<span class="value">{{ documentMgr.infoPanel.data.dateAdded | date : format : timezone }}</span>
-								</li>
-								<li ng-if="authentication.user">
-									<span class="name">Uploaded By:</span>
-									<span class="value">{{ documentMgr.infoPanel.data.addedBy.displayName }}</span>
-								</li>
 							</ul>
 						</section>
 
-						<!-- FILE KEYWORDS -->
-						<!--
-						<section>
-							<h3>Keywords</h3>
-							<ul class="comma-separated-list">
-								<li>Keyword 1</li>
-								<li>Keyword 2</li>
-								<li>Keyword 3</li>
-								<li>Keyword 4</li>
+						<!-- CATEGORIES -->
+						<section ng-if="documentMgr.infoPanel.data.documentCategories.length > 0">
+							<h3>Category(ies)</h3>
+							<ul class="detail-list">
+								<li data-ng-repeat="category in documentMgr.infoPanel.data.documentCategories">{{category}}</li>
 							</ul>
 						</section>
-						-->
-						<!-- / FILE KEYWORDS -->
 
-					</section>
+					</div>
 				</div>
 			</div><!-- / FILE DETAILS -->
 
@@ -621,11 +598,16 @@
 						<button class="btn btn-default close" type="button" ng-click="documentMgr.infoPanel.close()">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<h2 title="{{documentMgr.infoPanel.data.name}}">{{documentMgr.infoPanel.data.folderObj.displayName}}</h2>
+						<h2 title="{{documentMgr.infoPanel.data.name}}">{{documentMgr.infoPanel.data.name}}</h2>
 					</div>
 				</div>
 				<div class="scroll-container">
+					<section ng-if="documentMgr.infoPanel.data.folderObj.description">
+						<h3>Description</h3>
+						<div class="value document-description">{{documentMgr.infoPanel.data.folderObj.description}}</div>
+					</section>
 					<section>
+						<h3>Folder Details</h3>
 						<ul class="nv-pair">
 							<li ng-if="authentication.user">
 								<span class="name">Status:</span>
@@ -636,10 +618,6 @@
 								</span>
 							</li>
 							<li>
-								<span class="name">Description:</span>
-								<span class="value">{{documentMgr.infoPanel.data.folderObj.description}}</span>
-							</li>
-							<li>
 								<span class="name">Date Created:</span>
 								<span class="value">{{documentMgr.infoPanel.data.folderObj.documentDate  | documentDateFilter: doc.documentDateDisplayMnYr }}</span>
 							</li>
@@ -648,7 +626,7 @@
 				</div>
 			</div><!-- / DIRECTORY DETAILS -->
 
-			<!-- NO DETAILS -->
+			<!-- MULTIPLE FILES/FOLDERS SELECTED -->
 			<div class="fb-details-content" ng-if="documentMgr.infoPanel.data && documentMgr.infoPanel.type === 'Multi'">
 				<div class="title-panel">
 					<div class="title-panel-info">
@@ -662,12 +640,16 @@
 					There are {{documentMgr.infoPanel.data.checkedFiles}} files and {{documentMgr.infoPanel.data.checkedDirs}} folders selected.<br>Select one file or folder to view details.
 				</div>
 			</div>
+
+			<!-- NO FILES/FOLDERS SELECTED -->
 			<div class="fb-details-content" ng-if="!documentMgr.infoPanel.data || documentMgr.infoPanel.type === 'None'">
 				<div class="title-panel">
-					<button class="btn btn-default close" type="button" ng-click="documentMgr.infoPanel.close()">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h2 title="{{project.name}}">{{project.name}}</h2>
+					<div class="title-panel-info">
+						<button class="btn btn-default close" type="button" ng-click="documentMgr.infoPanel.close()">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h2 title="{{project.name}}">{{project.name}}</h2>
+					</div>
 				</div>
 				<div class="scroll-container">
 					Select one file or folder to view details.
