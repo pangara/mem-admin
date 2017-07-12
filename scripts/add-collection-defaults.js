@@ -1,7 +1,7 @@
 'use strict';
 
 var MongoClient = require('mongodb').MongoClient;
-var Promise = require('Promise');
+var Promise = require('promise');
 var _ = require('lodash');
 var path = require('path');
 
