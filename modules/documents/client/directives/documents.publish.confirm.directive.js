@@ -37,7 +37,6 @@ angular.module('documents')
 					self.publishableFiles = [];
 					self.missingCategory = [];
 					self.showSubmit = true;
-					self.cancelText = 'No';
 					// collect unpublished folders on path.
 					var unpublishedFolders = _.filter(self.currentPath, function(p) { return ! p.model.published; });
 					if (unpublishedFolders.length > 0) {

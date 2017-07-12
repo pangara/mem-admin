@@ -10,7 +10,7 @@ Inspection Report > Reclamation > Environmental Geoscience
 
 See the original JIRA ticket [MEM-361](https://quartech.atlassian.net/browse/MEM-361) for more information
 
-This module is mainly self-contained but it depends on the 'hasInspectionMeta' defined as a vitual method on the Document model.
+This module is mainly self-contained but it depends on the 'inspectionType' property defined as a virtual method on the Document model.
 
 ## Usage
 
@@ -23,8 +23,8 @@ Pass in an instance of the Document model.
 
 On success the document will have it's `documentCategories` property set to the new list of categories.
 
-It is up to the caller to actually save the model.  The directive will also set the `hasInspectionMeta` property to be true if the categories include one of the inspection report categories. This property is used in the document edit dialog to determine if inspection meta data should be available for the user to modify.
+It is up to the caller to actually save the model.  The directive will also set the `inspectionType` property to be the inspection category. This property is used in the document edit dialog to determine if inspection meta data should be available for the user to modify.
 
-If the `hasInspectionMeta` is false then the directive will also set the document's `inspectionReport` property to null. 
+If the `inspectionType` is not empty then the directive will also set the document's `inspectionReport` property to null. 
 
 

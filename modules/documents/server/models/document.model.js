@@ -104,6 +104,7 @@ module.exports = genSchema ('Document', {
 	description             : { type:String, default:'' },
 
 	// For MEM documentDate is the date the document was produced.
+	// For MEM inspection category the document date is labelled "Inspection Date"
 	documentDate            : { type: Date, default: null },
 	documentDateDisplayMnYr : { type:Boolean, default:false },
 
@@ -165,26 +166,29 @@ module.exports = genSchema ('Document', {
 			inspectionNumber	: { type:'String', default: null}, // mandatory
 			inspectorName		: { type:'String', default: null}, // mandatory
 			mineManager		: { type:'String', default: null}, // free text
-			dateReportIssued	: { type: Date, default: null },
+			dateReportIssued	: { type: Date, default: null }, // Inspection Date
+			dateResponse	: { type: Date, default: null }, // Inspection Report Response Date
+			dateFollowUp	: { type: Date, default: null }, // Follow Up Date
 			personsContacted	: { type:'String', default: null} // free text multi line
 		},
 		default: null
 	},
 
 	virtuals__ : [
-		{name:'hasInspectionMeta', get: isInspection}
+		{name:'inspectionType', get: inspectionType}
 	]
 });
 
-function isInspection() {
+function inspectionType() {
 	var categories = this.documentCategories || [];
-	var result = false;
+	var result = null;
 	for(var i = 0; i < categories.length; i++) {
 		var cat = categories[i];
 		if (cat.indexOf("Inspection ") >= 0) {
-			result = true;
+			result = cat;
 			break;
 		}
 	}
 	return result;
 }
+

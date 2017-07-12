@@ -3,10 +3,12 @@
 		<button class="btn btn-default close" type="button" ng-click="confirmDlg.cancel()">
 			<span aria-hidden="true">&times;</span>
 		</button>
-		<h3 class="modal-title">Confirm Publish File(s)</h3>
+		<h3 ng-if="confirmDlg.publishableFiles.length === 0">No files can be published</h3>
+		<h3 ng-if="confirmDlg.publishableFiles.length === 1">Confirm Publish File</h3>
+		<h3 ng-if="confirmDlg.publishableFiles.length > 1">Confirm Publish Files</h3>
 	</div>
 
-	<div class="modal-body" ng-if="confirmDlg.errMsg">
+	<div class="modal-body" ng-if="confirmDlg.errMsg && confirmDlg.missingCategory.length === 0">
 		<div class="alert alert-danger" >{{confirmDlg.errMsg}}</div>
 	</div>
 
@@ -18,15 +20,21 @@
 	</div>
 
 	<div class="modal-body"  ng-if="confirmDlg.missingCategory.length > 0">
-		These documents require a document category before they can be published
+		<div class="alert alert-danger" >
+			<span ng-if="confirmDlg.missingCategory.length === 1">This file requires a document category before it can be published:</span>
+			<span ng-if="confirmDlg.missingCategory.length > 1">These files require a document category before they can be published:</span>
+		</div>
 		<ul class="confirm-list">
 			<li ng-repeat="t in confirmDlg.missingCategory">{{t.displayName}}</li>
 		</ul>
 	</div>
 
 	<div class="modal-footer">
-		<button class="btn btn-default" type="button" ng-click="confirmDlg.cancel()">{{confirmDlg.cancelText}}</button>
+		<button class="btn btn-default" type="button" ng-click="confirmDlg.cancel()">
+			<span ng-if="!confirmDlg.errMsg">No</span>
+			<span ng-if="confirmDlg.errMsg">OK</span>
+		</button>
 		<button class="btn btn-primary" type="submit" ng-click="confirmDlg.submit()"
-						ng-show="confirmDlg.showSubmit" ng-disabled="confirmDlg.errMsg">Yes</button>
+						ng-show="confirmDlg.showSubmit" ng-if="!confirmDlg.errMsg">Yes</button>
 	</div>
 </form>

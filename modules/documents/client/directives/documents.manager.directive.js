@@ -152,9 +152,24 @@ angular.module('documents')
 						});
 					} else if (self.sorting.column === 'date') {
 						self.currentFiles.sort(function(doc1, doc2){
-							var d1 = doc1.dateUploaded || 0;
-							var d2 = doc2.dateUploaded || 0;
-							return (new Date(d1) - new Date(d2)) * direction;
+							/*
+							 Sort by date but account for the case the display value is like June 2017.  We want to group all
+							 June 2017 docs before any like 2017-01-01.
+							 */
+							var d1 = doc1.documentDate ? {d: moment(doc1.documentDate), my: doc1.documentDateDisplayMnYr} : undefined;
+							var d2 = doc2.documentDate ? {d: moment(doc2.documentDate), my: doc2.documentDateDisplayMnYr} : undefined;
+							if (d1 && d2 && d1.d.isSame(d2.d,'month')) {
+								if (d1.my && d2.my) {
+									return (d1.d.valueOf() - d2.d.valueOf()) * direction;
+								} else if (d1.my) {
+									return -1 * direction;
+								}  else if (d2.my) {
+									return 1 * direction;
+								}
+							}
+							d1 = d1 ? d1.d.valueOf() : 0;
+							d2 = d2 ? d2.d.valueOf() : 0;
+							return (d1 - d2) * direction;
 						});
 					} else if (self.sorting.column === 'pub') {
 						self.currentFiles.sort(function(doc1, doc2){

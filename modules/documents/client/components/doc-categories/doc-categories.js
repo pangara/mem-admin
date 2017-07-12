@@ -47,11 +47,11 @@ function categorySelectModalControllerImpl($scope, $modalInstance) {
 	}
 	function submit() {
 		var categories = self.categories;
-		var hasInspectionMeta = false;
+		var inspectionType = null;
 		for(var i = 0; i < categories.length; i++) {
 			var cat = categories[i];
 			if (cat.indexOf("Inspection ") >= 0) {
-				hasInspectionMeta = true;
+				inspectionType = cat;
 				break;
 			}
 		}
@@ -60,9 +60,22 @@ function categorySelectModalControllerImpl($scope, $modalInstance) {
 		set the computed property here to alert the caller to show extra metadata
 		(note property will be reset by the server IFF this doc is saved.
 		 */
-		self.doc.hasInspectionMeta = hasInspectionMeta;
-		if (! hasInspectionMeta ) {
+		self.doc.inspectionType = inspectionType;
+		if (! inspectionType ) {
+			// clear sub-document if not needed
 			self.doc.inspectionReport = null;
+		} else if (!self.doc.inspectionReport) {
+			self.doc.inspectionReport = {
+				accompanyingInspectors	: null,
+				associatedAuthorization	: null,
+				dateReportIssued: null,
+				dateResponse: null,
+				dateFollowUp: null,
+				inspectionNumber: null,
+				inspectorName: null,
+				mineManager: null,
+				personsContacted: null
+			};
 		}
 		$modalInstance.close(self.doc);
 	}
@@ -276,7 +289,7 @@ function CategoriesFactory(TreeModel, _) {
 					children: level3()
 				}, {
 					id: createId(),
-					name: 'Inspection Follow Up',
+					name: 'Inspection Report Follow Up',
 					children: level3()
 				}, {
 					id: createId(),
