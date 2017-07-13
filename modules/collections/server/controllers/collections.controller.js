@@ -140,9 +140,8 @@ module.exports = DBModel.extend({
 						// Add to collection
 						var CollectionDocument = new CollectionDocClass(self.opts);
 						CollectionDocument.create({
-							document    : document,
-							displayName : document.displayName,
-							sortOrder   : 0
+							document  : document,
+							sortOrder : 0
 						}).then(function(collectionDocument) {
 							collection.otherDocuments.push(collectionDocument);
 							return collection.save();
@@ -220,9 +219,8 @@ module.exports = DBModel.extend({
 						// Add to collection
 						var CollectionDocument = new CollectionDocClass(self.opts);
 						CollectionDocument.create({
-							document    : document,
-							displayName : document.displayName,
-							sortOrder   : 0
+							document  : document,
+							sortOrder : 0
 						}).then(function(collectionDocument) {
 							if (collection.mainDocument) {
 								// Remove current main document
