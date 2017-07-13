@@ -53,19 +53,36 @@
 								name="projectdesc"
 								ng-model="project.description" required></textarea>
 				</div>
-
 			<!-- MEM ONLY INFORORMATION -->
 			<div class="row">
-				<div class="col-sm-3">
+				<div class="col-md-4">
+					<div class="form-group" x-show-errors>
+						<label class="control-label" for="type">Type<em class="required">(Required)</em></label>
+						<select class="form-control" title="Project Type" id="type" name="type"
+							ng-model="project.type"
+							ng-change="project.sector = undefined"
+							ng-options="type for type in types" required></select>
+					</div>
+				</div>
+				<div class="col-md-4 form-group" x-show-errors>
+					<label class="control-label" for="phase">Status<em class="required">(Required)</em></label>
+					<select class="form-control" if="phase" id="phase" name="phase"
+									ng-model='project.currentPhaseCode'
+									ng-change='onChangePhase()'
+									ng-options="key as value for (key, value) in allPhases" required></select>
+				</div>
+				<div class="col-md-4">
 					<div class="form-group" x-show-errors>
 						<label for="permitid" class="control-label">Permit Number</label>
 						<input id="permitid" name="permitid" type="text" class="form-control input-sm" ng-model="project.memPermitID">
-							<div ng-messages="projectForm.permitid.$error" role="alert">
-								<p class="help-block error-text" ng-message="required">Permit Number is required.</p>
-							</div>
+						<div ng-messages="projectForm.permitid.$error" role="alert">
+							<p class="help-block error-text" ng-message="required">Permit Number is required.</p>
+						</div>
 					</div>
 				</div>
-				<div class="col-sm-3">
+			</div>
+				<div class="row">
+				<div class="col-md-4">
 					<div class="form-group" x-show-errors>
 						<label for="commodity" class="control-label">Commodity/ies</label>
 						<input id="commodity" name="commodity" type="text" class="form-control input-sm" ng-model="project.commodity">
@@ -74,7 +91,7 @@
 							</div>
 					</div>
 				</div>
-				<div class="col-sm-3">
+				<div class="col-md-4">
 					<div class="form-group" x-show-errors>
 						<label for="ownership" class="control-label">Ownership</label>
 						<input id="ownership" name="ownership" type="text" class="form-control input-sm" ng-model="project.ownership">
@@ -83,7 +100,7 @@
 							</div>
 					</div>
 				</div>
-				<div class="col-sm-3">
+				<div class="col-md-4">
 					<div class="form-group" x-show-errors>
 						<label for="tailingsImpoundments" class="control-label">Tailings Impoundments</label>
 						<input id="tailingsImpoundments" name="tailingsImpoundments" type="text" class="form-control input-sm" ng-model="project.tailingsImpoundments">
@@ -95,13 +112,6 @@
 			</div>
 			<!-- / MEM ONLY INFORMATION -->
 				<div class="row">
-					<div class="col-md-4 form-group" x-show-errors>
-						<label class="control-label" for="phase">Status<em class="required">(Required)</em></label>
-						<select class="form-control" if="phase" id="phase" name="phase"
-						 	ng-model='project.currentPhaseCode'
-						 	ng-change='onChangePhase()'
-							ng-options="key as value for (key, value) in allPhases" required></select>
-					</div>
 					<div class="col-md-4 form-group" x-show-errors>
 						<label class="control-label" for="region">Region<em class="required">(Required)</em></label>
 						<select class="form-control" if="region" id="region" name="region"
