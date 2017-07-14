@@ -17,6 +17,8 @@ $fb-file-color: #999;
 $fb-img-color: #999;
 $fb-error-color: #494949;
 
+$list-hover-bg: #f7f8fa;
+
 $list-selected-color: #FFF;
 $list-selected-bg: #5091cd;
 $list-selected-hover-bg: #4187c9;
@@ -353,6 +355,10 @@ a.icon-btn {
         @include flex(1 1 auto);
         @include flexdirection(row);
         position: relative;
+
+        &:hover {
+            background-color: $list-hover-bg;
+        }
     }
 
     .column-header {
@@ -361,6 +367,7 @@ a.icon-btn {
         @include flex(0 0 auto);
         font-size: 1.2rem;
         font-weight: bold;
+        border-bottom: $file-browser-row-border;
         background: $file-browser-table-header-bg;
         z-index: 3;
 
@@ -590,7 +597,6 @@ span.avatar {
     }
 }
 
-
 .col.size-col{
     @include flex(0 0 18%)
 }
@@ -645,8 +651,6 @@ span.avatar {
         &:hover,
         &:focus {
             + label {
-                background: #EEE;
-
                 span {
                     opacity: 0.2rem;
                     visibility: visible;
@@ -666,12 +670,18 @@ span.avatar {
 }
 
 .selected {
+    .fb-col-group {
+        &:hover {
+            background: $list-selected-hover-bg;
+        }
+    }
+
     .col.checkbox-col {
         border-right: $list-selected-border;
 
         input[type='checkbox'] {
             &:hover,
-            &:focus {
+            &:active {
                 + label {
                     background: $list-selected-hover-bg;
                 }
@@ -679,6 +689,38 @@ span.avatar {
         }
     }
 }
+
+@media (min-width: 1200px) {
+    .fb-list {
+        .fb-list-item {
+            .row-actions {
+                display: none;
+            }
+
+            &:hover {
+                background: $list-hover-bg;
+
+                .row-actions {
+                    display: block;
+                }
+            }
+
+            &.selected {
+                &:hover {
+                    background: $list-selected-bg;
+                }
+
+                .checkbox-col,
+                .fb-col-group {
+                    &:hover {
+                        background: $list-selected-hover-bg;
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 /* DETAILS PANEL */
 .fb-details-panel {
