@@ -28,7 +28,7 @@
                 
                 <!-- Column Header -->
                 <div class="column-header">
-                    <span class="col checkbox-col" ng-if="authentication.user">
+                    <span class="col checkbox-col sortable" ng-if="authentication.user">
                         <input id="select-all" type="checkbox" title="Select All / None" ng-model="documentMgr.allChecked" ng-click="documentMgr.linkAll()"/>
                         <label for="select-all">
                             <span class="glyphicon glyphicon-ok"></span>
@@ -60,13 +60,14 @@
                     <div class="scroll-container-inner">
                         <div class="empty-directory-msg" ng-if="documentMgr.currentDirs.length == 0 && documentMgr.currentFiles.length == 0">This folder is empty.</div>
                         <ul>
-                            <li class="fb-list-item" ng-class="{'selected': doc.selected}" ng-repeat="doc in documentMgr.currentDirs">
+                            <li class="fb-list-item" ng-class="{'selected': doc.selected}" 
+                                ng-repeat="doc in documentMgr.currentDirs"
+                                ng-click="$event.originalEvent.dropdown || documentMgr.selectDir(doc)">
                                 <span class="col checkbox-col" ng-if="authentication.user">
 
                                 </span>
                                 <span class="fb-col-group"
-                                        ng-click="$event.originalEvent.dropdown || documentMgr.selectDir(doc)"
-                                        ng-dblclick="$event.originalEvent.dropdown || documentMgr.openDir(doc)" title="{{doc.model.name}}">
+                                    ng-dblclick="$event.originalEvent.dropdown || documentMgr.openDir(doc)" title="{{doc.model.name}}">
                                     <span class="col name-col first-col">
                                         <span class="avatar">
                                             <span class="fb-folder glyphicon glyphicon-folder-close"></span>
