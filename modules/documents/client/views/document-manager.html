@@ -526,8 +526,7 @@
 									</ul>
 								</li>
 								<li ng-if="documentMgr.infoPanel.data.documentDate">
-									<span class="name" ng-if="!documentMgr.infoPanel.data.inspectionType">Document Date:</span>
-									<span class="name" ng-if="documentMgr.infoPanel.data.inspectionType">Inspection Date:</span>
+									<span class="name">{{ (documentMgr.infoPanel.data.inspectionType == null) | filterPluralText : ['Document Date:', 'Inspection Date:'] }}</span>
 									<span class="value">{{ documentMgr.infoPanel.data.documentDate | documentDateFilter: documentMgr.infoPanel.data.documentDateDisplayMnYr }}</span>
 								</li>
 								<li>
@@ -555,9 +554,8 @@
 							</ul>
 						</section>
 						<!-- CATEGORIES -->
-						<section ng-if="documentMgr.infoPanel.data.documentCategories.length > 0">
-							<h3 ng-if="documentMgr.infoPanel.data.documentCategories.length > 1">Categories</h3>
-							<h3 ng-if="documentMgr.infoPanel.data.documentCategories.length === 1">Category</h3>
+						<section>
+							<h3>{{ documentMgr.infoPanel.data.documentCategories | filterPluralText : [ 'Category', 'Category', 'Categories' ] }}</h3>
 							<ul class="detail-list">
 								<li data-ng-repeat="category in documentMgr.infoPanel.data.documentCategories">{{category}}</li>
 							</ul>
