@@ -1,16 +1,18 @@
 <div class="file-browser">
 
 	<div class="fb-header">
-		<ul class="fb-breadcrumbs">
-			<li ng-repeat="node in documentMgr.currentPath">
+		<div class="fb-header-path">
+			<div class="fb-path"
+				ng-class="{'root': node.model.name == 'ROOT'}" 
+				ng-repeat="node in documentMgr.currentPath">
+				<span class="fb-path-arrow" ng-if="node.model.name != 'ROOT'">&rsaquo;</span>
 				<button class="btn icon-btn" ng-click="documentMgr.selectNode(node.model.id)">
-					<span class="root-icon glyphicon glyphicon-home" ng-if="node.model.name == 'ROOT'" title="Document Home"></span>
-					<span class="back-icon glyphicon glyphicon-menu-left"></span>
-					<span ng-show="node.model.name != 'ROOT'">{{ node.model.folderObj.displayName }}</span>
+					<i class="glyphicon glyphicon glyphicon-home" ng-if="node.model.name == 'ROOT'"></i>
+					<span class="btn-txt" ng-if="node.model.name != 'ROOT'">{{ node.model.folderObj.displayName }}</span>
 				</button>
-			</li>
-		</ul>
-		<div class="file-batch-actions">
+			</div>
+		</div>
+		<div class="fb-header-actions">
 			<button class="btn icon-btn" title="Add New Folder"
 					ng-if="project.userCan.manageFolders"
 					ng-disabled="!documentMgr.selectedNode"
@@ -385,6 +387,7 @@
 			<!-- FILE DETAILS -->
 			<div class="fb-details-content" ng-if="documentMgr.infoPanel.data && documentMgr.infoPanel.type === 'File'">
 				<div class="title-panel">
+					
 					<div class="title-panel-info">
 						<button class="btn btn-default close" type="button" ng-click="documentMgr.infoPanel.close()">
 							<span aria-hidden="true">&times;</span>
