@@ -1,4 +1,4 @@
-# esm-server (MEM MMT)
+# mem-admin (MEM MMT)
 ESM is a project of the Environmental Assessment Office in partnership with the OCIO DevOps Pathfinder.
 
 MEM MMT is an offshoot derivative of the ESM application to support the Major Mines Transparency project of the Ministry of Energy and Mines.
@@ -16,6 +16,7 @@ The features provided by the web-based ESM application include:
 ## Usage
 
 ## Requirements
+Install [yarn](https://yarnpkg.com/lang/en/docs/install/#alternatives-tab)
 
 ## Installation
 
