@@ -50,22 +50,6 @@ angular.module('documents')
 							$scope.dateReportIssuedPicker = {opened: false};
 							$scope.dateResponsePicker = {opened: false};
 							$scope.dateFollowUpPicker = {opened: false};
-							$scope.dateOpen = function() {
-								$scope.datePicker.opened = true;
-							};
-							$scope.dateUploadedOpen = function() {
-								$scope.dateUploadedPicker.opened = true;
-							};
-							$scope.dateReportIssuedOpen = function () {
-								$scope.dateReportIssuedPicker.opened = true;
-							};
-							$scope.dateResponseOpen = function () {
-								$scope.dateResponsePicker.opened = true;
-							};
-							$scope.dateFollowUpOpen = function () {
-								$scope.dateFollowUpPicker.opened = true;
-							};
-
 							$scope.validate = function() {
 								$scope.$broadcast('show-errors-check-validity', 'editFileForm');
 							};

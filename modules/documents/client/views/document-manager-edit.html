@@ -116,7 +116,7 @@
 									 datepicker-options="dateOptions"
 									 close-text="Close"
 									 disabled/>
-						<button class="btn btn-default calendar-btn" ng-click="dateReportIssuedOpen()"><span class="glyphicon glyphicon-calendar"/></button>
+						<button class="btn btn-default calendar-btn" ng-click="dateReportIssuedPicker.opened = true;"><span class="glyphicon glyphicon-calendar"/></button>
 					</div>
 				</div>
 			</div>
@@ -131,7 +131,7 @@
 									 datepicker-options="dateOptions"
 									 close-text="Close"
 									 disabled/>
-						<button class="btn btn-default calendar-btn" ng-click="dateResponseOpen()"><span class="glyphicon glyphicon-calendar"/></button>
+						<button class="btn btn-default calendar-btn" ng-click="dateResponsePicker.opened = true;"><span class="glyphicon glyphicon-calendar"/></button>
 					</div>
 				</div>
 			</div>
@@ -146,7 +146,7 @@
 									 datepicker-options="dateOptions"
 									 close-text="Close"
 									 disabled/>
-						<button class="btn btn-default calendar-btn" ng-click="dateFollowUpOpen()"><span class="glyphicon glyphicon-calendar"/></button>
+						<button class="btn btn-default calendar-btn" ng-click="dateFollowUpPicker.opened = true;"><span class="glyphicon glyphicon-calendar"/></button>
 					</div>
 				</div>
 			</div>
@@ -167,7 +167,7 @@
 						disabled
 						required
 						ng-change="validate()"/>
-					<button class="btn btn-default calendar-btn" ng-click="dateOpen()"><span class="glyphicon glyphicon-calendar"/></button>
+					<button class="btn btn-default calendar-btn" ng-click="datePicker.opened = true;"><span class="glyphicon glyphicon-calendar"/></button>
 				</div>
 			</div>
 			<div class="day-display-input">
@@ -188,7 +188,7 @@
 						   close-text="Close"
 						   disabled
 						   ng-change="validate()"/>
-					<button class="btn btn-default calendar-btn" ng-click="dateUploadedOpen()"><span class="glyphicon glyphicon-calendar"/></button>
+					<button class="btn btn-default calendar-btn" ng-click="dateUploadedPicker.opened = true;"><span class="glyphicon glyphicon-calendar"/></button>
 				</div>
 			</div>
 		</div>
