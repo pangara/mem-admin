@@ -510,7 +510,13 @@
 									<span class="name">ID:</span>
 									<span class="value">{{ documentMgr.infoPanel.data.documentId }}</span>
 								</li>
-								<li ng-if="documentMgr.infoPanel.data.keywords.length > 0">
+								<!--
+								<li>
+									<span class="name">File Name:</span>
+									<span class="value">{{ documentMgr.infoPanel.data.documentFileName }}</span>
+								</li>
+								-->
+								<li class="doc-keywords-list" ng-if="documentMgr.infoPanel.data.keywords.length > 0">
 									<span class="name">Keyword(s):</span>
 									<ul class="value">
 										<li data-ng-repeat="keyword in documentMgr.infoPanel.data.keywords">{{ keyword }}</li>
@@ -523,16 +529,20 @@
 									</ul>
 								</li>
 								<li ng-if="documentMgr.infoPanel.data.documentDate">
-									<span class="name">Document Date:</span>
+									<span class="name">{{ (documentMgr.infoPanel.data.inspectionType == null) | filterPluralText : ['Document Date:', 'Inspection Date:'] }}</span>
 									<span class="value">{{ documentMgr.infoPanel.data.documentDate | documentDateFilter: documentMgr.infoPanel.data.documentDateDisplayMnYr }}</span>
 								</li>
 								<li>
 									<span class="name">Update Date:</span>
-									<span class="value">{{ documentMgr.infoPanel.data.dateUpdated | date : format : timezone }} <span ng-if="authentication.user">by {{ documentMgr.infoPanel.data.updatedBy.displayName }}</span></span>
+									<span class="value">{{ documentMgr.infoPanel.data.dateUpdated | date : "yyyy-MM-dd"}}
+										<span ng-if="authentication.user">by {{ documentMgr.infoPanel.data.updatedBy.displayName }}</span>
+									</span>
 								</li>
 								<li>
 									<span class="name">Uploaded Date:</span>
-									<span class="value">{{ documentMgr.infoPanel.data.dateAdded | date : format : timezone }} <span ng-if="authentication.user">by {{ documentMgr.infoPanel.data.addedBy.displayName }}</span></span>
+									<span class="value">{{ documentMgr.infoPanel.data.dateUploaded ? documentMgr.infoPanel.data.dateUploaded : documentMgr.infoPanel.data.dateAdded | date : "yyyy-MM-dd" }}
+										<span ng-if="authentication.user">by {{ documentMgr.infoPanel.data.addedBy.displayName }}</span>
+									</span>
 								</li>
 								<li>
 									<span class="name">File Size:</span>
@@ -546,9 +556,15 @@
 								</li>
 							</ul>
 						</section>
-
+						<!-- CATEGORIES -->
+						<section>
+							<h3>{{ documentMgr.infoPanel.data.documentCategories | filterPluralText : [ 'Category', 'Category', 'Categories' ] }}</h3>
+							<ul class="detail-list">
+								<li data-ng-repeat="category in documentMgr.infoPanel.data.documentCategories">{{category}}</li>
+							</ul>
+						</section>
 						<!-- INSPECTION DETAILS -->
-						<section ng-if="documentMgr.infoPanel.data.hasInspectionMeta">
+						<section ng-if="documentMgr.infoPanel.data.inspectionType">
 							<h3>Inspection Information</h3>
 							<ul class="nv-pair">
 								<li ng-if="documentMgr.infoPanel.data.inspectionReport.inspectionNumber">
@@ -560,7 +576,7 @@
 									<span class="value">{{ documentMgr.infoPanel.data.inspectionReport.inspectorName }}</span>
 								</li>
 								<li ng-if="documentMgr.infoPanel.data.inspectionReport.accompanyingInspectors">
-									<span class="name">Accompanying Inspectors:</span>
+									<span class="name">Accompanying Inspector(s):</span>
 									<span class="value">{{ documentMgr.infoPanel.data.inspectionReport.accompanyingInspectors }}</span>
 								</li>
 								<li ng-if="documentMgr.infoPanel.data.inspectionReport.mineManager">
@@ -568,28 +584,27 @@
 									<span class="value">{{ documentMgr.infoPanel.data.inspectionReport.mineManager }}</span>
 								</li>
 								<li ng-if="documentMgr.infoPanel.data.inspectionReport.personsContacted">
-									<span class="name">Persons Contacted:</span>
+									<span class="name">Person(s) Contacted:</span>
 									<span class="value">{{ documentMgr.infoPanel.data.inspectionReport.personsContacted }}</span>
 								</li>
-								<li ng-if="documentMgr.infoPanel.data.inspectionReport.associateAuthorization">
-									<span class="name">Associated Authorizations:</span>
-									<span class="value">{{ documentMgr.infoPanel.data.inspectionReport.associateAuthorization }}</span>
+								<li ng-if="documentMgr.infoPanel.data.inspectionReport.associatedAuthorization">
+									<span class="name">Associated Authorization:</span>
+									<span class="value">{{ documentMgr.infoPanel.data.inspectionReport.associatedAuthorization }}</span>
 								</li>
 								<li ng-if="documentMgr.infoPanel.data.inspectionReport.dateReportIssued">
-									<span class="name">Report Issued:</span>
-									<span class="value">{{ documentMgr.infoPanel.data.inspectionReport.dateReportIssued | date : format : timezone}}</span>
+									<span class="name">Inspection Report Date:</span>
+									<span class="value">{{ documentMgr.infoPanel.data.inspectionReport.dateReportIssued | date : "yyyy-MM-dd"}}</span>
+								</li>
+								<li ng-if="documentMgr.infoPanel.data.inspectionType === 'Inspection Report Response' && documentMgr.infoPanel.data.inspectionReport.dateReportIssued">
+									<span class="name">Inspection Report Response Date:</span>
+									<span class="value">{{ documentMgr.infoPanel.data.inspectionReport.dateResponse | date : "yyyy-MM-dd"}}</span>
+								</li>
+								<li ng-if="documentMgr.infoPanel.data.inspectionType === 'Inspection Report Follow Up' && documentMgr.infoPanel.data.inspectionReport.dateFollowUp">
+									<span class="name">Follow Up Date:</span>
+									<span class="value">{{ documentMgr.infoPanel.data.inspectionReport.dateFollowUp | date : "yyyy-MM-dd"}}</span>
 								</li>
 							</ul>
 						</section>
-
-						<!-- CATEGORIES -->
-						<section ng-if="documentMgr.infoPanel.data.documentCategories.length > 0">
-							<h3>Category(ies)</h3>
-							<ul class="detail-list">
-								<li data-ng-repeat="category in documentMgr.infoPanel.data.documentCategories">{{category}}</li>
-							</ul>
-						</section>
-
 					</div>
 				</div>
 			</div><!-- / FILE DETAILS -->
@@ -662,4 +677,5 @@
 		</div>
 	</div>
 
+</div>
 </div>

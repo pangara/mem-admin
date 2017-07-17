@@ -3,30 +3,37 @@
 		<button class="btn btn-default close" type="button" ng-click="confirmDlg.cancel()">
 			<span aria-hidden="true">&times;</span>
 		</button>
-		<h3 class="modal-title">Confirm Publish File(s)</h3>
+		<h3>{{ confirmDlg.publishableFiles | filterPluralText : ['No files can be published', 'Confirm Publish File','Confirm Publish Files']}}</h3>
 	</div>
 
-	<div class="modal-body" ng-if="confirmDlg.errMsg">
+	<div class="modal-body" ng-show="confirmDlg.errMsg && confirmDlg.missingCategory.length === 0">
 		<div class="alert alert-danger" >{{confirmDlg.errMsg}}</div>
 	</div>
 
-	<div class="modal-body"  ng-if="!confirmDlg.errMsg">
+	<div class="modal-body"  ng-show="!confirmDlg.errMsg">
 		{{confirmDlg.confirmText}}
 		<ul class="confirm-list">
 			<li ng-repeat="t in confirmDlg.publishableFiles">{{t.displayName}}</li>
 		</ul>
 	</div>
 
-	<div class="modal-body"  ng-if="confirmDlg.missingCategory.length > 0">
-		These documents require a document category before they can be published
+	<div class="modal-body"  ng-show="confirmDlg.missingCategory.length > 0">
+		<div class="alert alert-danger" >
+			<span>{{ confirmDlg.missingCategory | filterPluralText : [''
+				, 'This file requires a document category before it can be published:'
+				, 'These files require a document category before they can be published:'] }}</span>
+		</div>
 		<ul class="confirm-list">
 			<li ng-repeat="t in confirmDlg.missingCategory">{{t.displayName}}</li>
 		</ul>
 	</div>
 
 	<div class="modal-footer">
-		<button class="btn btn-default" type="button" ng-click="confirmDlg.cancel()">{{confirmDlg.cancelText}}</button>
-		<button class="btn btn-primary" type="submit" ng-click="confirmDlg.submit()"
-						ng-show="confirmDlg.showSubmit" ng-disabled="confirmDlg.errMsg">Yes</button>
+		<button class="btn btn-default" type="button" ng-click="confirmDlg.cancel()">
+			<span>{{ !confirmDlg.errMsg | filterPluralText : ['No', 'OK'] }}</span>
+		</button>
+		<button class="btn btn-primary" type="submit"
+				ng-click="confirmDlg.submit()"
+				ng-show="!confirmDlg.errMsg">Yes</button>
 	</div>
 </form>
