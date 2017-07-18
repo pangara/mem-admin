@@ -41,10 +41,20 @@ module.exports = DBModel.extend ({
 			this.setForce(true);
 			return doc;
 		}
+
+		//
+		// Make sure there is a value for displayName and documentFileName based on the original.
+		//
+		if (_.isEmpty(doc.displayName)) {
+			doc.displayName = doc.internalOriginalName;
+		}
+		if (_.isEmpty(doc.documentFileName)) {
+			doc.documentFileName = doc.internalOriginalName;
+		}
+
 		//
 		// check if there is an existing matching document
 		//
-
 		return this.findOne ({
 			project 		: doc.project,
 			documentIsLatestVersion	: true,

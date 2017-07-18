@@ -119,7 +119,7 @@ module.exports = genSchema ('Document', {
 	projectFolderAuthor     : { type:String, default:'' },
 	documentEPICId          : { type:Number, default:0, index:true },
 	documentEPICProjectId   : { type:Number, default:0, index:true },
-	documentFileName        : { type:String, default:'' }, // A.K.A. Document File Name in EPIC
+	documentFileName        : { type:String, default:'' }, // the name of the file when downloaded
 	documentFileURL         : { type:String, default:'' },
 	documentFileSize        : { type:String, default:'' }, // Looks like everything is in KB
 	documentFileFormat      : { type:String, default:'' },

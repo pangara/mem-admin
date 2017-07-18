@@ -99,17 +99,8 @@ module.exports = function (app) {
 			if (req.Document.internalURL.match (/^(http|ftp)/)) {
 				res.redirect (req.Document.internalURL);
 			} else {
-				// ETL fixing - if the name was brought in without a filename, and we have their document
-				// file format, affix the type as an extension to the original name so they have a better
-				// chance and opening up the file on double-click.
-				String.prototype.endsWith = String.prototype.endsWith || function (str){
-					return new RegExp(str + "$").test(str);
-				};
-				console.log("fetching:",req.Document.internalOriginalName,":", req.Document.documentFileFormat);
-				var name = req.Document.internalOriginalName;
-				if (req.Document.documentFileFormat && !req.Document.internalOriginalName.endsWith(req.Document.documentFileFormat)) {
-					name = req.Document.internalOriginalName + "." + req.Document.documentFileFormat;
-				}
+				var name = req.Document.documentFileName;
+
 				routes.streamFile (res, {
 					file : req.Document.internalURL,
 					name : name,

@@ -318,10 +318,6 @@ angular.module('documents')
 							//$log.debug('...currentNode (' + self.currentNode.model.name + ') got '+ _.size(result.data ) + '.');
 
 							self.currentFiles = _.map(result.data, function(f) {
-								// making sure that the displayName is set...
-								if (_.isEmpty(f.displayName)) {
-									f.displayName = f.documentFileName || f.internalOriginalName;
-								}
 								f.link =  window.location.protocol + '//' + window.location.host + '/api/document/'+ f._id+'/fetch';
 								if (_.isEmpty(f.dateUploaded) && !_.isEmpty(f.oldData)) {
 									var od = JSON.parse(f.oldData);
@@ -434,9 +430,9 @@ angular.module('documents')
 						}, function(docs) {
 							var msg = "";
 							var theDocs = [];
-							if (docs.data.message && docs.data.message[0] && docs.data.message[0].documentFileName) {
+							if (docs.data.message && docs.data.message[0] && docs.data.message[0].displayName) {
 								_.each(docs.data.message, function (d) {
-									theDocs.push(d.documentFileName);
+									theDocs.push(d.displayName);
 								});
 								msg = 'This action cannot be completed as the following documents are in the folder: ' + theDocs + '.';
 							} else {
@@ -454,7 +450,7 @@ angular.module('documents')
 					return self.deleteDocument(doc._id)
 						.then(function(result) {
 							self.selectNode(self.currentNode.model.id); // will mark as not busy...
-							var name = doc.displayName || doc.documentFileName || doc.internalOriginalName;
+							var name = doc.displayName;
 							AlertService.success('Delete File', 'The selected file was deleted.');
 						}, function(error) {
 							$log.error('deleteFile error: ', JSON.stringify(error));
@@ -554,7 +550,7 @@ angular.module('documents')
 						});
 						_.each(self.checkedFiles, function(o) {
 							if (o.userCan.delete) {
-								var name = o.displayName || o.documentFileName || o.internalOriginalName;
+								var name = o.displayName;
 								self.deleteSelected.confirmItems.push(name);
 								self.deleteSelected.deleteableFiles.push(o);
 							}
@@ -572,8 +568,8 @@ angular.module('documents')
 						.then(function(result) {
 							//$log.debug('Publish File results ', JSON.stringify(result));
 							//$log.debug('Refreshing current directory...');
-							var published = _.map(result, function(o) { if (o.isPublished) return o.displayName || o.documentFileName || o.internalOriginalName; });
-							var unpublished = _.map(result, function(o) { if (!o.isPublished) return o.displayName || o.documentFileName || o.internalOriginalName; });
+							var published = _.map(result, function(o) { if (o.isPublished) return o.displayName; });
+							var unpublished = _.map(result, function(o) { if (!o.isPublished) return o.displayName; });
 							self.selectNode(self.currentNode.model.id);
 							AlertService.success(_.size(published) + ' of ' + _.size(files) + ' files successfully published.');
 						}, function(err) {
@@ -591,8 +587,8 @@ angular.module('documents')
 						.then(function(result) {
 							//$log.debug('Unpublish File results ', JSON.stringify(result));
 							//$log.debug('Refreshing current directory...');
-							var published = _.map(result, function(o) { if (o.isPublished) return o.displayName || o.documentFileName || o.internalOriginalName; });
-							var unpublished = _.map(result, function(o) { if (!o.isPublished) return o.displayName || o.documentFileName || o.internalOriginalName; });
+							var published = _.map(result, function(o) { if (o.isPublished) return o.displayName; });
+							var unpublished = _.map(result, function(o) { if (!o.isPublished) return o.displayName; });
 							self.selectNode(self.currentNode.model.id);
 							AlertService.success(_.size(unpublished) + ' of ' + _.size(files) + ' files successfully unpublished.');
 						}, function(err) {
@@ -624,9 +620,9 @@ angular.module('documents')
 						}, function (docs) {
 							var theDocs = [];
 							var msg = "";
-							if (docs.message && docs.message[0] && docs.message[0].documentFileName) {
+							if (docs.message && docs.message[0] && docs.message[0].displayName) {
 								_.each(docs.message, function (d) {
-									theDocs.push(d.documentFileName);
+									theDocs.push(d.displayName);
 								});
 								msg = 'This action cannot be completed as the following documents are published: ' + theDocs + '.  Please unpublish each document and attempt your action again.';
 							} else {
@@ -676,7 +672,7 @@ angular.module('documents')
 								self.publishSelected.unpublishableFiles.push(o);
 							}
 							if (canDoSomething) {
-								var name = o.displayName || o.documentFileName || o.internalOriginalName;
+								var name = o.displayName;
 								self.publishSelected.confirmItems.push(name);
 							}
 						});
@@ -770,7 +766,7 @@ angular.module('documents')
 						});
 						_.each(self.checkedFiles, function(o) {
 							if (o.userCan.write) {
-								var name = o.displayName || o.documentFileName || o.internalOriginalName;
+								var name = o.displayName;
 								self.moveSelected.confirmItems.push(name);
 								self.moveSelected.moveableFiles.push(o);
 							}

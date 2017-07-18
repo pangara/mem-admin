@@ -74,11 +74,6 @@ angular.module('documents')
 							self.applySort = function () {
 								// sort ascending first...
 								self.currentFiles = _(self.unsortedFiles).chain().sortBy(function (f) {
-									// more making sure that the displayName is set...
-									if (_.isEmpty(f.displayName)) {
-										f.displayName = f.documentFileName || f.internalOriginalName;
-									}
-
 									if (self.sorting.column === 'name') {
 										return _.isEmpty(f.displayName) ? null : f.displayName.toLowerCase();
 									} else if (self.sorting.column === 'author') {
@@ -168,10 +163,6 @@ angular.module('documents')
 											//$log.debug('...currentNode (' + self.currentNode.model.name + ') got '+ _.size(result.data ) + '.');
 
 											self.unsortedFiles = _.map(result.data, function (f) {
-												// making sure that the displayName is set...
-												if (_.isEmpty(f.displayName)) {
-													f.displayName = f.documentFileName || f.internalOriginalName;
-												}
 												if (_.isEmpty(f.dateUploaded) && !_.isEmpty(f.oldData)) {
 													var od = JSON.parse(f.oldData);
 													//console.log(od);
