@@ -9,10 +9,10 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 		template: '<ui-view></ui-view>',
 		resolve: {
 			collections: function($stateParams, CollectionModel, project) {
-				return CollectionModel.lookupProject(project._id);
+				return CollectionModel.lookupProject(project.code);
 			},
 			types: function() {
-				var types = ['Inspection Report', 'Permit', 'Permit Amendment', 'Management Plans', 'Dam Safety Inspections'];
+				var types = ['Inspection Report', 'Permit', 'Permit Amendment', 'Annual Report', 'Management Plan', 'Dam Safety Inspection'];
 				return types.map(function(t) {
 					return { id: t, title: t };
 				});
@@ -75,7 +75,7 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 			$scope.project = project;
 
 			$scope.mainTableParams = new NgTableParams({ count: 1   }, { dataset: collection.mainDocument ? [ collection.mainDocument ] : [], counts: [] });
-			$scope.otherTableParams = new NgTableParams({ count: 10 }, { dataset: collection.otherDocuments });
+			$scope.otherTableParams = new NgTableParams({ sorting: { sortOrder: 'asc' }, count: 10 }, { dataset: collection.otherDocuments });
 
 			$scope.linkedMainDocument = collection.mainDocument ? [ collection.mainDocument.document ] : [];
 			$scope.linkedOtherDocuments = _.map(collection.otherDocuments, function(cd) { return cd.document; });

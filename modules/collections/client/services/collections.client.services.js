@@ -4,8 +4,8 @@ angular.module('collections').factory('CollectionModel', function (ModelBase, _)
     var Class = ModelBase.extend ({
         urlName : 'collection',
 
-        lookupProject: function(projectId) {
-            return this.get('/api/collections/project/' + projectId);
+        lookupProject: function(projectCode) {
+            return this.get('/api/collections/project/' + projectCode);
         },
 
         removeCollection: function(collectionId) {

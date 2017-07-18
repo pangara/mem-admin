@@ -23,7 +23,7 @@ function directiveCollectionsChooser(CollectionModel, $modal, _) {
 					size: 'lg',
 					resolve: {
 						collections: function(CollectionModel) {
-							return CollectionModel.lookupProject(scope.project._id);
+							return CollectionModel.lookupProject(scope.project.code);
 						}
 					},
 					controller: function($scope, $modalInstance, collections) {

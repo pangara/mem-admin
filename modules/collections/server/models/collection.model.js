@@ -18,7 +18,9 @@ module.exports = require(path.resolve('./modules/core/server/controllers/core.sc
 
 	displayName    : { type: String, default: '' },
 	description    : { type: String, default: '' },
+	parentType     : { type: String, default: '' },
 	type           : { type: String, default: '' },
+	status         : { type: String, default: '' },
 	date           : { type: Date, default: Date.now },
 
 	mainDocument   : { type: 'ObjectId', ref: 'Collectiondocument', default: null },

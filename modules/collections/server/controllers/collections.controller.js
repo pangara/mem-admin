@@ -7,6 +7,7 @@
 var _                  = require('lodash');
 var path               = require('path');
 var DBModel            = require(path.resolve('./modules/core/server/controllers/core.dbmodel.controller'));
+var ProjectClass       = require(path.resolve('./modules/projects/server/controllers/project.controller.js'));
 var DocumentClass      = require(path.resolve('./modules/documents/server/controllers/core.document.controller'));
 var CollectionDocClass = require(path.resolve('./modules/collections/server/controllers/collectionDocuments.controller'));
 
@@ -47,8 +48,15 @@ module.exports = DBModel.extend({
 		return this.list();
 	},
 
-	getForProject: function(projectId) {
-		return this.list({ project: projectId });
+	getForProject: function(projectCode) {
+		var self = this;
+		var Project = new ProjectClass(self.opts);
+
+		return Project.findOne({ code: projectCode }).then(function(project) {
+			if (project) {
+				return self.list({ project: project._id });
+			}
+		});
 	},
 
 	publish: function(collectionId) {
@@ -67,6 +75,21 @@ module.exports = DBModel.extend({
 
 			collection.unpublish();
 			return collection.save();
+		});
+	},
+
+	addCollection: function(projectCode, collection) {
+		var self = this;
+
+		var Project = new ProjectClass(self.opts);
+
+		return Project.findOne({ code: projectCode }).then(function(project) {
+			if (project && collection && collection.type && collection.displayName) {
+				return self.create(collection).then(function(newCollection) {
+					newCollection.project = project;
+					return newCollection.save();
+				});
+			}
 		});
 	},
 
@@ -113,7 +136,7 @@ module.exports = DBModel.extend({
 		});
 	},
 
-	addOtherDocument: function(collectionId, documentId) {
+	addOtherDocument: function(collectionId, documentId, sortOrder) {
 		var self = this;
 
 		return this.findById(collectionId).then(function(collection) {
@@ -126,26 +149,32 @@ module.exports = DBModel.extend({
 				// Is it the main document?
 				if (collection.mainDocument && collection.mainDocument.document._id.equals(documentId)) {
 					// Add it to other documents and remove it as the main document
-					collection.otherDocuments.push(collection.mainDocument);
+					var document = collection.mainDocument;
+					collection.otherDocuments.push(document);
 					collection.mainDocument = null;
 					collection.save();
+					return document;
 				} else {
 					// Add it
 					var Document = new DocumentClass(self.opts);
-					Document.findById(documentId).then(function(document) {
-						// Add to document collection
-						document.collections.push(collection);
-						document.save();
+					return Document.findById(documentId).then(function(document) {
+						if (document) {
+							// Add to document collection
+							document.collections.push(collection);
+							document.save();
 
-						// Add to collection
-						var CollectionDocument = new CollectionDocClass(self.opts);
-						CollectionDocument.create({
-							document  : document,
-							sortOrder : 0
-						}).then(function(collectionDocument) {
-							collection.otherDocuments.push(collectionDocument);
-							return collection.save();
-						});
+							// Add to collection
+							var CollectionDocument = new CollectionDocClass(self.opts);
+							sortOrder = _.toNumber(sortOrder);
+							return CollectionDocument.create({
+								document  : document,
+								sortOrder : _.isNumber(sortOrder) ? sortOrder : 0,
+							}).then(function(collectionDocument) {
+								collection.otherDocuments.push(collectionDocument);
+								collection.save();
+								return collectionDocument.document;
+							});
+						}
 					});
 				}
 			}
@@ -184,7 +213,7 @@ module.exports = DBModel.extend({
 		});
 	},
 
-	addMainDocument: function(collectionId, documentId) {
+	addMainDocument: function(collectionId, documentId, sortOrder) {
 		var self = this;
 
 		return this.findById(collectionId).then(function(collection) {
@@ -208,26 +237,29 @@ module.exports = DBModel.extend({
 					collection.mainDocument = collectionDocument;
 					collection.date = collectionDocument.document.documentDate;
 					collection.save();
+					return collectionDocument.document;
 				} else {
 					// Add it
 					var Document = new DocumentClass(self.opts);
-					Document.findById(documentId).then(function(document) {
+					return Document.findById(documentId).then(function(document) {
 						// Add to document collection
 						document.collections.push(collection);
 						document.save();
 
 						// Add to collection
 						var CollectionDocument = new CollectionDocClass(self.opts);
-						CollectionDocument.create({
+						sortOrder = _.toNumber(sortOrder);
+						return CollectionDocument.create({
 							document  : document,
-							sortOrder : 0
+							sortOrder : _.isNumber(sortOrder) ? sortOrder : 0,
 						}).then(function(collectionDocument) {
 							if (collection.mainDocument) {
 								// Remove current main document
 								self.removeCollectionDocument(collectionId, documentId, collection.mainDocument);
 							}
 							collection.mainDocument = collectionDocument;
-							return collection.save();
+							collection.save();
+							return collectionDocument.document;
 						});
 					});
 				}
