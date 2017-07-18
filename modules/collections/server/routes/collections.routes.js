@@ -20,10 +20,17 @@ module.exports = function(app) {
 		}));
 
 	// Get all collections for a project
-	app.route('/api/collections/project/:projectId')
+	app.route('/api/collections/project/:projectCode')
 		.all(policy('guest'))
 		.get(routes.setAndRun(CollectionClass, function(model, req) {
-			return model.getForProject(req.params.projectId);
+			return model.getForProject(req.params.projectCode);
+		}));
+
+	// Add a collection to a project
+	app.route('/api/collections/project/:projectCode/add')
+		.all(policy('user'))
+		.post(routes.setAndRun(CollectionClass, function(model, req) {
+			return model.addCollection(req.params.projectCode, req.body);
 		}));
 
 	// Delete a collection

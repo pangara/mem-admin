@@ -9,10 +9,10 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 		template: '<ui-view></ui-view>',
 		resolve: {
 			collections: function($stateParams, CollectionModel, project) {
-				return CollectionModel.lookupProject(project._id);
+				return CollectionModel.lookupProject(project.code);
 			},
 			types: function() {
-				var types = ['Inspection Report', 'Permit', 'Permit Amendment', 'Management Plans', 'Dam Safety Inspections'];
+				var types = ['Inspection Report', 'Permit', 'Permit Amendment', 'Annual Report', 'Management Plan', 'Dam Safety Inspection'];
 				return types.map(function(t) {
 					return { id: t, title: t };
 				});
