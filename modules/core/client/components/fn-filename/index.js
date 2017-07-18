@@ -3,7 +3,7 @@
 (function() {
 	var NOT_ALLOWED = 'These characters are not allowed: /?<>:*|":';
 	var NO_CONTROL = 'Control characters are not allowed';
-	var NO_PERIOD = "Names shouldn't begin with a period";
+	var NO_PERIOD_OR_SPACE = "Names shouldn't begin with a period or spaces";
 	var RESERVED = 'Can not use reserved file names like COM0, PRN, etc';
 	var NO_ALL_PERIOD = 'Names can not be just periods';
 	var REQUIRED = 'Required';
@@ -39,7 +39,7 @@
 				ngModel.$validators.filename = function (modelValue, viewValue) {
 					var input = modelValue;
 					var errMsg = '';
-					if (input === '.'+ extension) {
+					if (extension && input === '.'+ extension) {
 						errMsg = REQUIRED;
 					} else if (input) {
 						errMsg = validateFilename(input, extension);
@@ -56,7 +56,7 @@
 			var illegalRe = /[\/\?<>\\:\*\|":]/g; // basic illegal filename characters
 			var controlRe = /[\x00-\x1f\x80-\x9f]/g; // no control characters
 			var windowsReservedRe = /^(con|prn|aux|nul|com[0-9]|lpt[0-9])(\..*)?$/i;
-			var leadingRe = /^\.+/; // no names beginning with .
+			var leadingRe = /^[\.\s]+/; // no names beginning with . or whitespace
 			var reservedRe = /^\.+$/; // no names like ".", ".."
 			var result = '';
 			if (input.match(illegalRe)) {
@@ -64,7 +64,7 @@
 			} else if (input.match(controlRe)) {
 				result = NO_CONTROL;
 			} else if (input.match(leadingRe)) {
-				result = NO_PERIOD;
+				result = NO_PERIOD_OR_SPACE;
 			} else if (!extension && input.match(windowsReservedRe)) {
 				result = RESERVED;
 			} else if (input.match(reservedRe)) {
