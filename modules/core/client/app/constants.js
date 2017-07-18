@@ -97,8 +97,7 @@ angular
 			'Metal',
 			'Coal',
 			'Industrial Mineral',
-			'Sand & Gravel',
-			'Mining'
+			'Sand & Gravel'
 		]
 	)
 	.constant('PROJECT_SUB_TYPES',
