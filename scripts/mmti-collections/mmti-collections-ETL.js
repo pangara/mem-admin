@@ -53,12 +53,12 @@ var addCollection = function(collection, projectCode) {
 	return api('collections/project/' + projectCode + '/add', 'collection', collection.displayName, collection);
 }
 
-var addMainDocument = function(documentId, collectionId) {
-	return api('collections/' + collectionId + '/document/' + documentId + '/main/add', 'document', documentId);
+var addMainDocument = function(documentId, collectionId, sortOrder) {
+	return api('collections/' + collectionId + '/document/' + documentId + '/main/add/' + sortOrder, 'document', documentId);
 }
 
-var addOtherDocument = function(documentId, collectionId) {
-	return api('collections/' + collectionId + '/document/' + documentId + '/add', 'document', documentId);
+var addOtherDocument = function(documentId, collectionId, sortOrder) {
+	return api('collections/' + collectionId + '/document/' + documentId + '/add/' + sortOrder, 'document', documentId);
 }
 
 var add = function(projectCode, collection, followUpDocuments) {
@@ -76,17 +76,17 @@ var add = function(projectCode, collection, followUpDocuments) {
 			var matches = mainDocument.ref.match('api/document/(.+)/fetch$');
 			if (matches) {
 				console.log('Adding main document "' + mainDocument.name + '" to collection "' + collection.displayName + '"');
-				return addMainDocument(matches[1], collectionId);
+				return addMainDocument(matches[1], collectionId, 1);
 			}
 		}
 	}).then(function() {
 		var others = [];
-		_.each(otherDocuments, function(otherDocument) {
+		_.each(otherDocuments, function(otherDocument, index) {
 			// find the actual document ID
 			var matches = otherDocument.ref.match('api/document/(.+)/fetch$');
 			if (matches) {
 				console.log('Adding other document "' + otherDocument.name + '" to collection "' + collection.displayName + '"');
-				others.push(addOtherDocument(matches[1], collectionId));
+				others.push(addOtherDocument(matches[1], collectionId, index + 1));
 			}
 		});
 		return Promise.all(others);

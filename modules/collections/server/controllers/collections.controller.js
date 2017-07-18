@@ -136,7 +136,7 @@ module.exports = DBModel.extend({
 		});
 	},
 
-	addOtherDocument: function(collectionId, documentId) {
+	addOtherDocument: function(collectionId, documentId, sortOrder) {
 		var self = this;
 
 		return this.findById(collectionId).then(function(collection) {
@@ -165,9 +165,10 @@ module.exports = DBModel.extend({
 
 							// Add to collection
 							var CollectionDocument = new CollectionDocClass(self.opts);
+							sortOrder = _.toNumber(sortOrder);
 							return CollectionDocument.create({
 								document  : document,
-								sortOrder : 0
+								sortOrder : _.isNumber(sortOrder) ? sortOrder : 0,
 							}).then(function(collectionDocument) {
 								collection.otherDocuments.push(collectionDocument);
 								collection.save();
@@ -212,7 +213,7 @@ module.exports = DBModel.extend({
 		});
 	},
 
-	addMainDocument: function(collectionId, documentId) {
+	addMainDocument: function(collectionId, documentId, sortOrder) {
 		var self = this;
 
 		return this.findById(collectionId).then(function(collection) {
@@ -247,9 +248,10 @@ module.exports = DBModel.extend({
 
 						// Add to collection
 						var CollectionDocument = new CollectionDocClass(self.opts);
+						sortOrder = _.toNumber(sortOrder);
 						return CollectionDocument.create({
 							document  : document,
-							sortOrder : 0
+							sortOrder : _.isNumber(sortOrder) ? sortOrder : 0,
 						}).then(function(collectionDocument) {
 							if (collection.mainDocument) {
 								// Remove current main document
