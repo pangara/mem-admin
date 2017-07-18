@@ -94,16 +94,10 @@ angular
 	)
 	.constant('PROJECT_TYPES',
 		[
-			'Mining',
-			'Energy-Electrical',
-			'Energy-Petroleum & Natural Gas',
-			'Transportation',
-			'Water Management',
-			'Industrial',
-			'Waste Disposal',
-			'Food Processing',
-			'Tourist Destination',
-			'Other'
+			'Metal',
+			'Coal',
+			'Industrial Mineral',
+			'Sand & Gravel'
 		]
 	)
 	.constant('PROJECT_SUB_TYPES',
