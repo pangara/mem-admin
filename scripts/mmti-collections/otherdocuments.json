@@ -1,0 +1,1148 @@
+[
+  {
+    "_id": {
+      "$oid": "58b5a1b2dd3567001dcdf039"
+    },
+    "date": {
+      "$date": "2016-03-31T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "2015 Annual Report – Comparing Monitoring Data to Flow and Water Quality Modelling Predictions in the Elk Valley",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/589a782c7b0780001d9ba762/fetch",
+        "fileName": "C-2_Elkview_2016-03-31_AnnualRpt_2015_WQ_Monitoring_Modelling_Comparison.pdf",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b2dd3567001dcdf03a"
+        }
+      }
+    ],
+    "projectCode": "elkview-operations",
+    "projectName": "Elkview Operations",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc6953"
+    },
+    "agencies": [],
+    "documentFileName": "C-2_Elkview_2016-03-31_AnnualRpt_2015_WQ_Monitoring_Modelling_Comparison.pdf",
+    "documentName": "2015 Annual Report – Comparing Monitoring Data to Flow and Water Quality Modelling Predictions in the Elk Valley",
+    "heading": "Annual Reports",
+    "filename": "",
+    "documentType": "Annual Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b2dd3567001dcdf03b"
+    },
+    "date": {
+      "$date": "2016-03-24T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "2015 Annual Reclamation Report",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5886b68521c6e7001b50d1cc/fetch",
+        "fileName": "C-137_Greenhills_2016-03-24_ARR_2015.pdf",
+        "date": {
+          "$date": "2016-03-24T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b2dd3567001dcdf03c"
+        }
+      }
+    ],
+    "projectCode": "greenhills-operations",
+    "projectName": "Greenhills Operations",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc6950"
+    },
+    "agencies": [],
+    "documentFileName": "C-137_Greenhills_2016-03-24_ARR_2015.pdf",
+    "documentName": "2015 Annual Reclamation Report",
+    "heading": "Annual Reports",
+    "filename": "",
+    "documentType": "Annual Reclamation Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b2dd3567001dcdf03d"
+    },
+    "date": {
+      "$date": "2016-03-31T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "Annual Environmental & Reclamation Report for 2015",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/589aaa8e87567d001d187dd7/fetch",
+        "fileName": "M-40_Gibraltar_2016-03-31_AnnualRpt_2015_Redacted",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b2dd3567001dcdf03e"
+        }
+      }
+    ],
+    "projectCode": "gibraltar",
+    "projectName": "Gibraltar",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc6954"
+    },
+    "agencies": [],
+    "documentFileName": "M-40_Gibraltar_2016-03-31_AnnualRpt_2015_Redacted",
+    "documentName": "Annual Environmental & Reclamation Report for 2015",
+    "heading": "Annual Reports",
+    "filename": "",
+    "documentType": "Annual Report; Annual Reclamation Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b2dd3567001dcdf03f"
+    },
+    "date": {
+      "$date": "2016-03-29T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "2015 Annual Dam Safety Inspection Report",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/588bed6287567d001d18775b/fetch",
+        "fileName": "M-236_Mount_Milligan_2016-03-29_DSI_Report_2015.pdf",
+        "date": {
+          "$date": "2016-03-29T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b2dd3567001dcdf040"
+        }
+      }
+    ],
+    "projectCode": "mount-milligan",
+    "projectName": "Mount Milligan",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc6956"
+    },
+    "agencies": [],
+    "documentFileName": "M-236_Mount_Milligan_2016-03-29_DSI_Report_2015.pdf",
+    "documentName": "2015 Annual Dam Safety Inspection Report",
+    "heading": "Annual Dam Safety Inspections (DSIs)",
+    "filename": "",
+    "documentType": "Annual Dam Safety Inspection (DSI) Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf041"
+    },
+    "date": {
+      "$date": "2016-06-08T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "2015 Annual Reclamation Report",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5886b40b21c6e7001b50d16b/fetch",
+        "fileName": "C-221_Brule_2016-06-10_ARR_2015_Redacted",
+        "date": {
+          "$date": "2016-06-08T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf042"
+        }
+      }
+    ],
+    "projectCode": "brule",
+    "projectName": "Brule",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc694f"
+    },
+    "agencies": [],
+    "documentFileName": "C-221_Brule_2016-06-10_ARR_2015_Redacted",
+    "documentName": "2015 Annual Reclamation Report",
+    "heading": "Annual Reports",
+    "filename": "",
+    "documentType": "Annual Reclamation Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf043"
+    },
+    "date": {
+      "$date": "2016-03-31T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "Annual Reclamation Report 2015",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5886b7c921c6e7001b50d213/fetch",
+        "fileName": "C-3_Fording_River_2016-03-31_ARR_2015",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf044"
+        }
+      }
+    ],
+    "projectCode": "fording-river-operations",
+    "projectName": "Fording River Operations",
+    "project": {
+      "$oid": "58a3666c7f16ee001ddc694b"
+    },
+    "agencies": [],
+    "documentFileName": "C-3_Fording_River_2016-03-31_ARR_2015",
+    "documentName": "Annual Reclamation Report 2015",
+    "heading": "Annual Reports",
+    "filename": "",
+    "documentType": "Annual Reclamation Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf045"
+    },
+    "date": {
+      "$date": "2013-03-05T08:00:00.000-0800"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "Five Year/Conceptual Reclamation Report for 2014–2018",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/583de532906f550019a4dbd3/fetch",
+        "fileName": "C-137_Greenhills_2013-03-05_Five_Year_Reclamation_Plan_2014-2018_Redacted",
+        "date": {
+          "$date": "2013-03-05T08:00:00.000-0800"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf046"
+        }
+      }
+    ],
+    "projectCode": "greenhills-operations",
+    "projectName": "Greenhills Operations",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc6950"
+    },
+    "agencies": [],
+    "documentFileName": "C-137_Greenhills_2013-03-05_Five_Year_Reclamation_Plan_2014-2018_Redacted",
+    "documentName": "Five Year/Conceptual Reclamation Report for 2014–2018",
+    "heading": "Management Plans",
+    "filename": "",
+    "documentType": "Management Plan",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf047"
+    },
+    "date": {
+      "$date": "2016-03-31T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "Gibraltar Mine Tailings Storage Facility 2015 Annual Dam Safety Inspection",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/588bd8c487567d001d18741d/fetch",
+        "fileName": "M-40_Gibraltar_2016-03-31_DSI_Report_2015.pdf",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf04a"
+        }
+      },
+      {
+        "name": "2015 Annual Waste Dump Review",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/588bd8bf87567d001d187403/fetch",
+        "date": {
+          "$date": "2016-03-23T08:00:00.000-0700"
+        },
+        "fileName": "M-40_Gibraltar_2016-03-23_Annual_Waste_Dump_Review_2015",
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf049"
+        }
+      },
+      {
+        "name": "2015 Cycloned Sand Dam Site Investigation Report",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/588bd8c087567d001d187410/fetch",
+        "date": {
+          "$date": "2015-12-15T08:00:00.000-0800"
+        },
+        "fileName": "M-40_Gibraltar_2015-12-15_CSD_Site_Investigation_Report_2015",
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf048"
+        }
+      }
+    ],
+    "projectCode": "gibraltar",
+    "projectName": "Gibraltar",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc6954"
+    },
+    "agencies": [],
+    "documentFileName": "M-40_Gibraltar_2016-03-31_DSI_Report_2015.pdf",
+    "documentName": "Gibraltar Mine Tailings Storage Facility 2015 Annual Dam Safety Inspection",
+    "heading": "Annual Dam Safety Inspections (DSIs)",
+    "filename": "",
+    "documentType": "Annual Dam Safety Inspection (DSI) Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf04b"
+    },
+    "date": {
+      "$date": "2016-03-31T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "2015 Annual Environmental and Reclamation Report",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/589abba187567d001d187dea/fetch",
+        "fileName": "M-200_Mount_Polley_2016-03-31_AnnualRpt_2015",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf04c"
+        }
+      }
+    ],
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc6952"
+    },
+    "agencies": [],
+    "documentFileName": "M-200_Mount_Polley_2016-03-31_AnnualRpt_2015",
+    "documentName": "2015 Annual Environmental and Reclamation Report",
+    "heading": "Annual Reports",
+    "filename": "",
+    "documentType": "Annual Report; Annual Reclamation Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf04d"
+    },
+    "date": {
+      "$date": "2016-03-31T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "Red Chris Tailings Facility 2015 Dam Safety Inspection Report",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/588bed9587567d001d18776e/fetch",
+        "fileName": "M-240_Red_Chris_2016-03-31_DSI_Report_2015.pdf",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf04e"
+        }
+      }
+    ],
+    "projectCode": "red-chris",
+    "projectName": "Red Chris",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc6955"
+    },
+    "agencies": [],
+    "documentFileName": "M-240_Red_Chris_2016-03-31_DSI_Report_2015.pdf",
+    "documentName": "Red Chris Tailings Facility 2015 Dam Safety Inspection Report",
+    "heading": "Annual Dam Safety Inspections (DSIs)",
+    "filename": "",
+    "documentType": "Annual Dam Safety Inspection (DSI) Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf04f"
+    },
+    "date": {
+      "$date": "2016-03-31T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "Annual Reclamation Report 2015",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5886b6f121c6e7001b50d1df/fetch",
+        "fileName": "C-84_Coal_Mountain_2016-03-31_ARR_2015_Redacted",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf050"
+        }
+      }
+    ],
+    "projectCode": "coal-mountain-operations",
+    "projectName": "Coal Mountain Operations",
+    "project": {
+      "$oid": "58a3666c7f16ee001ddc6949"
+    },
+    "agencies": [],
+    "documentFileName": "C-84_Coal_Mountain_2016-03-31_ARR_2015_Redacted",
+    "documentName": "Annual Reclamation Report 2015",
+    "heading": "Annual Reports",
+    "filename": "",
+    "documentType": "Annual Reclamation Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf051"
+    },
+    "date": {
+      "$date": "2016-09-30T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "Five Year Mine Plan and Reclamation Plan, 2017–2021",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/583de2fd906f550019a4dbbf/fetch",
+        "fileName": "C-3_Fording_River_2016-09-30_Five_Year_Mine_Reclamation_Plan_2017-2021",
+        "date": {
+          "$date": "2016-09-30T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf052"
+        }
+      }
+    ],
+    "projectCode": "fording-river-operations",
+    "projectName": "Fording River Operations",
+    "project": {
+      "$oid": "58a3666c7f16ee001ddc694b"
+    },
+    "agencies": [],
+    "documentFileName": "C-3_Fording_River_2016-09-30_Five_Year_Mine_Reclamation_Plan_2017-2021",
+    "documentName": "Five Year Mine Plan and Reclamation Plan, 2017–2021",
+    "heading": "Management Plans",
+    "filename": "",
+    "documentType": "Management Plan",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf053"
+    },
+    "date": {
+      "$date": "2016-03-31T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "Annual Reclamation Report for 2015",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5886b73921c6e7001b50d1f3/fetch",
+        "fileName": "C-129_Line_Creek_2016-03-31_ARR_2015",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf054"
+        }
+      }
+    ],
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc6951"
+    },
+    "agencies": [],
+    "documentFileName": "C-129_Line_Creek_2016-03-31_ARR_2015",
+    "documentName": "Annual Reclamation Report for 2015",
+    "heading": "Annual Reports",
+    "filename": "",
+    "documentType": "Annual Reclamation Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf055"
+    },
+    "date": {
+      "$date": "2016-03-31T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "Annual Reclamation Report for 2015 Volume I",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5886b94721c6e7001b50d30f/fetch",
+        "fileName": "M-11_HVC_2016-03-31_ARR_2015_Vol_I",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf056"
+        }
+      }
+    ],
+    "projectCode": "highland-valley-copper",
+    "projectName": "Highland Valley Copper",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc694d"
+    },
+    "agencies": [],
+    "documentFileName": "M-11_HVC_2016-03-31_ARR_2015_Vol_I",
+    "documentName": "Annual Reclamation Report for 2015 Volume I",
+    "heading": "Annual Reports",
+    "filename": "",
+    "documentType": "Annual Reclamation Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf057"
+    },
+    "date": {
+      "$date": "2016-01-05T08:00:00.000-0800"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "2015 Annual Dam Safety Inspection for Tailings Storage Facility Embankments",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/588bebfc87567d001d1876e9/fetch",
+        "fileName": "M-200_Mount_Polley_2016-01-05_DSI_Report_2015",
+        "date": {
+          "$date": "2016-01-05T08:00:00.000-0800"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf058"
+        }
+      }
+    ],
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc6952"
+    },
+    "agencies": [],
+    "documentFileName": "M-200_Mount_Polley_2016-01-05_DSI_Report_2015",
+    "documentName": "2015 Annual Dam Safety Inspection for Tailings Storage Facility Embankments",
+    "heading": "Annual Dam Safety Inspections (DSIs)",
+    "filename": "",
+    "documentType": "Annual Dam Safety Inspection (DSI) Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf059"
+    },
+    "date": {
+      "$date": "2016-03-31T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "2015 Annual Report for Mines Act Permit M-243, Effluent Permit 107835 & Air Permit 107025",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/589a5f667b0780001d9ba70e/fetch",
+        "fileName": "M-243_Brucejack_2016-03-31_AnnualRpt_2015",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf05b"
+        }
+      },
+      {
+        "name": "2015 Annual Report for Mines Act Permit M-243, Effluent Permit 107835 and Air Permit 107025 – Appendices",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/589a5faf7b0780001d9ba71b/fetch",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "fileName": "M-243_Brucejack_2016-03-31_AnnualRpt_2015_Appendices",
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf05a"
+        }
+      }
+    ],
+    "projectCode": "brucejack",
+    "projectName": "Brucejack",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc694e"
+    },
+    "agencies": [],
+    "documentFileName": "M-243_Brucejack_2016-03-31_AnnualRpt_2015",
+    "documentName": "2015 Annual Report for Mines Act Permit M-243, Effluent Permit 107835 & Air Permit 107025",
+    "heading": "Annual Reports",
+    "filename": "",
+    "documentType": "Annual Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf05c"
+    },
+    "date": {
+      "$date": "2016-03-11T08:00:00.000-0800"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "Corbin Pond, Main Ponds and 7 Pit Ponds - 2015 Annual Dam Safety Inspections",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/589a6f327b0780001d9ba748/fetch",
+        "fileName": "C-84_Coal_Mountain_2016-03-11_DSI_Report_CorbinPond_MainPonds_7PitPonds_2015.pdf",
+        "date": {
+          "$date": "2016-03-11T08:00:00.000-0800"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf05d"
+        }
+      }
+    ],
+    "projectCode": "coal-mountain-operations",
+    "projectName": "Coal Mountain Operations",
+    "project": {
+      "$oid": "58a3666c7f16ee001ddc6949"
+    },
+    "agencies": [],
+    "documentFileName": "C-84_Coal_Mountain_2016-03-11_DSI_Report_CorbinPond_MainPonds_7PitPonds_2015.pdf",
+    "documentName": "Corbin Pond, Main Ponds and 7 Pit Ponds - 2015 Annual Dam Safety Inspections",
+    "heading": "Annual Dam Safety Inspections (DSIs)",
+    "filename": "",
+    "documentType": "Annual Dam Safety Inspection (DSI) Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf05e"
+    },
+    "date": {
+      "$date": "2008-12-15T08:00:00.000-0800"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "Five Year/Conceptual Reclamation Report for 2008–2013",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/583ddea9906f550019a4db90/fetch",
+        "fileName": "C-3_Fording_River_2008-12-15_Five_Year_Mine_Reclamation_Plan_2008-2013",
+        "date": {
+          "$date": "2008-12-15T08:00:00.000-0800"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf05f"
+        }
+      }
+    ],
+    "projectCode": "fording-river-operations",
+    "projectName": "Fording River Operations",
+    "project": {
+      "$oid": "58a3666c7f16ee001ddc694b"
+    },
+    "agencies": [],
+    "documentFileName": "C-3_Fording_River_2008-12-15_Five_Year_Mine_Reclamation_Plan_2008-2013",
+    "documentName": "Five Year/Conceptual Reclamation Report for 2008–2013",
+    "heading": "Management Plans",
+    "filename": "",
+    "documentType": "Management Plan",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf060"
+    },
+    "date": {
+      "$date": "2016-03-03T08:00:00.000-0800"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "2015 Dam Safety Inspections",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/588bdbc387567d001d1874f4/fetch",
+        "fileName": "C-129_Line_Creek_2016-03-03_DSI_Report_2015",
+        "date": {
+          "$date": "2016-03-03T08:00:00.000-0800"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf064"
+        }
+      },
+      {
+        "name": "Contingency Ponds 2015 Dam Safety Inspections",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/588bdbc387567d001d1874e7/fetch",
+        "date": {
+          "$date": "2016-02-18T08:00:00.000-0800"
+        },
+        "fileName": "C-129_Line_Creek_2016-02-18_DSI_Report_Contingency_2015",
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf063"
+        }
+      },
+      {
+        "name": "Gravel Pit Ponds 2015 Dam Safety Inspections",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/588bdbc487567d001d187501/fetch",
+        "date": {
+          "$date": "2015-12-15T08:00:00.000-0800"
+        },
+        "fileName": "C-129_Line_Creek_2015-12-15_DSI_Report_Gravel_Pits_2015",
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf062"
+        }
+      },
+      {
+        "name": "Dry Creek Ponds 2015 Dam Safety Inspections",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/588bdbc687567d001d18750e/fetch",
+        "date": {
+          "$date": "2015-12-14T08:00:00.000-0800"
+        },
+        "fileName": "C-129_Line_Creek_2015-12-14_DSI_Report_Dry_Creek_2015",
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf061"
+        }
+      }
+    ],
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc6951"
+    },
+    "agencies": [],
+    "documentFileName": "C-129_Line_Creek_2016-03-03_DSI_Report_2015",
+    "documentName": "2015 Dam Safety Inspections",
+    "heading": "Annual Dam Safety Inspections (DSIs)",
+    "filename": "",
+    "documentType": "Annual Dam Safety Inspection (DSI) Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf065"
+    },
+    "date": {
+      "$date": "2016-03-31T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "Bethlehem No. 1 Tailings Storage Facility – 2015 Annual Dam Safety Inspection",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/588bdade87567d001d1874b5/fetch",
+        "fileName": "M-11_HVC_2016-03-31_DSI_Bethlehem_TSF_2015",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf069"
+        }
+      },
+      {
+        "name": "Highland Tailings Storage Facility – 2015 Annual Dam Safety Inspection",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/588bdb0587567d001d1874c2/fetch",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "fileName": "M-11_HVC_2016-03-31_DSI_Highland_TSF_2015",
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf068"
+        }
+      },
+      {
+        "name": "Highmont Tailings Storage Facility – 2015 Annual Dam Safety Inspection",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/588bdad487567d001d18749b/fetch",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "fileName": "M-11_HVC_2016-03-31_DSI_Report_Highmont_TSF_2015",
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf067"
+        }
+      },
+      {
+        "name": "Trojan Dam Tailings Storage Facility – 2015 Annual Dam Safety Inspection",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/588bdad987567d001d1874a8/fetch",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "fileName": "M-11_HVC_2016-03-31_DSI_TrojanDam_TSF_2015",
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf066"
+        }
+      }
+    ],
+    "projectCode": "highland-valley-copper",
+    "projectName": "Highland Valley Copper",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc694d"
+    },
+    "agencies": [],
+    "documentFileName": "M-11_HVC_2016-03-31_DSI_Bethlehem_TSF_2015",
+    "documentName": "Bethlehem No. 1 Tailings Storage Facility – 2015 Annual Dam Safety Inspection",
+    "heading": "Annual Dam Safety Inspections (DSIs)",
+    "filename": "",
+    "documentType": "Annual Dam Safety Inspection (DSI) Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf06a"
+    },
+    "date": {
+      "$date": "2016-03-30T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "Annual Reclamation Report for 2015",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5887a29c21c6e7001b50d3a9/fetch",
+        "fileName": "M-229_New_Afton_2016-03-30_ARR_2015.pdf",
+        "date": {
+          "$date": "2016-03-30T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf06b"
+        }
+      }
+    ],
+    "projectCode": "new-afton",
+    "projectName": "New Afton",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc694c"
+    },
+    "agencies": [],
+    "documentFileName": "M-229_New_Afton_2016-03-30_ARR_2015.pdf",
+    "documentName": "Annual Reclamation Report for 2015",
+    "heading": "Annual Reports",
+    "filename": "",
+    "documentType": "Annual Reclamation Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf06c"
+    },
+    "date": {
+      "$date": "2016-03-31T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "2015 Annual Report Prepared for Ministry of Energy and Mines and Ministry of Environment",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58992d5187567d001d187d99/fetch",
+        "fileName": "M-242_Silvertip_2016-03-31_AnnualRpt_2015",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf06d"
+        }
+      }
+    ],
+    "projectCode": "silvertip",
+    "projectName": "Silvertip",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc6957"
+    },
+    "agencies": [],
+    "documentFileName": "M-242_Silvertip_2016-03-31_AnnualRpt_2015",
+    "documentName": "2015 Annual Report Prepared for Ministry of Energy and Mines and Ministry of Environment",
+    "heading": "Annual Reports",
+    "filename": "",
+    "documentType": "Annual Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf06e"
+    },
+    "date": {
+      "$date": "2016-03-16T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "Annual Reclamation Report for 2015",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5886b61021c6e7001b50d1b3/fetch",
+        "fileName": "C-2_Elkview_2016-03-16_ARR_2015_Redacted.pdf",
+        "date": {
+          "$date": "2016-03-16T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf06f"
+        }
+      }
+    ],
+    "projectCode": "elkview-operations",
+    "projectName": "Elkview Operations",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc6953"
+    },
+    "agencies": [],
+    "documentFileName": "C-2_Elkview_2016-03-16_ARR_2015_Redacted.pdf",
+    "documentName": "Annual Reclamation Report for 2015",
+    "heading": "Annual Reports",
+    "filename": "",
+    "documentType": "Annual Reclamation Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf070"
+    },
+    "date": {
+      "$date": "2016-03-31T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "Erosion and Sediment Control Management Plan",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/589a81377b0780001d9ba76f/fetch",
+        "fileName": "C-3_Fording_River_2016-03-31_Erosion_Sediment_Ctrl_Mgmt_Plan",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf071"
+        }
+      }
+    ],
+    "projectCode": "fording-river-operations",
+    "projectName": "Fording River Operations",
+    "project": {
+      "$oid": "58a3666c7f16ee001ddc694b"
+    },
+    "agencies": [],
+    "documentFileName": "C-3_Fording_River_2016-03-31_Erosion_Sediment_Ctrl_Mgmt_Plan",
+    "documentName": "Erosion and Sediment Control Management Plan",
+    "heading": "Management Plans",
+    "filename": "",
+    "documentType": "Management Plan",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf072"
+    },
+    "date": {
+      "$date": "2016-03-31T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "2015 Annual Reclamation Report",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5887a3cd21c6e7001b50d3cf/fetch",
+        "fileName": "M-29_Copper_Mountain_2016-03-31_ARR_2015_Redacted",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf074"
+        }
+      },
+      {
+        "name": "2015 Annual Reclamation Report – Appendices2015 Annual Reclamation Report – Appendices",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/589a8cd37b0780001d9ba78e/fetch",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "fileName": "M-29_Copper_Mountain_2016-03-31_ARR_2015_Appendices.pdf",
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf073"
+        }
+      }
+    ],
+    "projectCode": "copper-mountain",
+    "projectName": "Copper Mountain",
+    "project": {
+      "$oid": "58a3666c7f16ee001ddc694a"
+    },
+    "agencies": [],
+    "documentFileName": "M-29_Copper_Mountain_2016-03-31_ARR_2015_Redacted",
+    "documentName": "2015 Annual Reclamation Report",
+    "heading": "Annual Reports",
+    "filename": "",
+    "documentType": "Annual Reclamation Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf075"
+    },
+    "date": {
+      "$date": "2016-03-29T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "Annual Reclamation Report for 2015",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5887a15321c6e7001b50d383/fetch",
+        "fileName": "M-236_Mount_Milligan_2016-03-29_ARR_2015.pdf",
+        "date": {
+          "$date": "2016-03-29T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf076"
+        }
+      }
+    ],
+    "projectCode": "mount-milligan",
+    "projectName": "Mount Milligan",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc6956"
+    },
+    "agencies": [],
+    "documentFileName": "M-236_Mount_Milligan_2016-03-29_ARR_2015.pdf",
+    "documentName": "Annual Reclamation Report for 2015",
+    "heading": "Annual Reports",
+    "filename": "",
+    "documentType": "Annual Reclamation Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf077"
+    },
+    "date": {
+      "$date": "2016-03-31T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "Annual Reclamation Report for 2015 Submitted to Ministry of Energy and Mines and Ministry of Environment",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/589a6a087b0780001d9ba72e/fetch",
+        "fileName": "M-240_Red_Chris_2016-03-31_AnnualRpt_2015",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf078"
+        }
+      }
+    ],
+    "projectCode": "red-chris",
+    "projectName": "Red Chris",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc6955"
+    },
+    "agencies": [],
+    "documentFileName": "M-240_Red_Chris_2016-03-31_AnnualRpt_2015",
+    "documentName": "Annual Reclamation Report for 2015 Submitted to Ministry of Energy and Mines and Ministry of Environment",
+    "heading": "Annual Reports",
+    "filename": "",
+    "documentType": "Annual Report; Annual Reclamation Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58b5a1b3dd3567001dcdf079"
+    },
+    "date": {
+      "$date": "2016-03-31T08:00:00.000-0700"
+    },
+    "_schemaName": "OtherDocument",
+    "documents": [
+      {
+        "name": "2015 Annual Dam Safety Inspection Report",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/588becff87567d001d187735/fetch",
+        "fileName": "M-229_New_Afton_2016-03-31_DSI_Report_2015.pdf",
+        "date": {
+          "$date": "2016-03-31T08:00:00.000-0700"
+        },
+        "_id": {
+          "$oid": "58b5a1b3dd3567001dcdf07a"
+        }
+      }
+    ],
+    "projectCode": "new-afton",
+    "projectName": "New Afton",
+    "project": {
+      "$oid": "58a3666d7f16ee001ddc694c"
+    },
+    "agencies": [],
+    "documentFileName": "M-229_New_Afton_2016-03-31_DSI_Report_2015.pdf",
+    "documentName": "2015 Annual Dam Safety Inspection Report",
+    "heading": "Annual Dam Safety Inspections (DSIs)",
+    "filename": "",
+    "documentType": "Annual Dam Safety Inspection (DSI) Report",
+    "link": "",
+    "title": "",
+    "source": "SEED",
+    "__v": 0
+  }
+]

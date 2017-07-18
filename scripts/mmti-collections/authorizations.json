@@ -1,0 +1,5162 @@
+[
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd738f0"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M06-02",
+    "followUpDocuments": [
+      {
+        "name": "Environmental Assessment Certificate",
+        "ref": "https://projects.eao.gov.bc.ca/api/document/5886f63da4acd4014b820c73/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd738f1"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2006-07-04T08:00:00.000-0700"
+    },
+    "documentStatus": "Issued",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/api/document/5886f63da4acd4014b820c73/fetch",
+    "documentName": "Environmental Assessment Certificate",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "brule",
+    "projectName": "Brule",
+    "projectId": "58a3666d7f16ee001ddc694f",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd738f2"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M97-03",
+    "followUpDocuments": [
+      {
+        "name": "Amendment #1 to Project Approval Certificate",
+        "ref": "https://projects.eao.gov.bc.ca/api/document/5886c24eeed3c0016f856a4b/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd738f3"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "1997-12-17T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/api/document/5886c24eeed3c0016f856a4b/fetch",
+    "documentName": "Amendment #1 to Project Approval Certificate",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd738f4"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M09-01",
+    "followUpDocuments": [
+      {
+        "name": "Environmental Assessment Certificate",
+        "ref": "https://projects.eao.gov.bc.ca/api/document/5887d23c3fa55712b70ab54e/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd738f5"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2009-03-16T08:00:00.000-0700"
+    },
+    "documentStatus": "Issued",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/api/document/5887d23c3fa55712b70ab54e/fetch",
+    "documentName": "Environmental Assessment Certificate",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "mount-milligan",
+    "projectName": "Mount Milligan",
+    "projectId": "58a3666d7f16ee001ddc6956",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd738f6"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M92-13",
+    "followUpDocuments": [
+      {
+        "name": "Mine Development Certificate for Mount Polley Copper/Gold Project",
+        "ref": "https://projects.eao.gov.bc.ca/api/document/5886b4e2eed3c0016f8563f6/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd738f7"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "1992-10-06T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/api/document/5886b4e2eed3c0016f8563f6/fetch",
+    "documentName": "Mine Development Certificate for Mount Polley Copper/Gold Project",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd738f8"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M05-02",
+    "followUpDocuments": [
+      {
+        "name": "Amendment #2 to Environmental Assessment Certificate",
+        "ref": "https://projects.eao.gov.bc.ca/api/document/5886b3d9a4acd4014b81ff37/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd738f9"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-08-19T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/api/document/5886b3d9a4acd4014b81ff37/fetch",
+    "documentName": "Amendment #2 to Environmental Assessment Certificate",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "red-chris",
+    "projectName": "Red Chris",
+    "projectId": "58a3666d7f16ee001ddc6955",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd738fa"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS416",
+    "followUpDocuments": [
+      {
+        "name": "Effluent Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899215b87567d001d187b39/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd738fb"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-08-11T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899215b87567d001d187b39/fetch",
+    "documentName": "Effluent Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "gibraltar",
+    "projectName": "Gibraltar",
+    "projectId": "58a3666d7f16ee001ddc6954",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd738fc"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS1557",
+    "followUpDocuments": [
+      {
+        "name": "Air Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899258787567d001d187bcb/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd738fd"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-06-22T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899258787567d001d187bcb/fetch",
+    "documentName": "Air Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "highland-valley-copper",
+    "projectName": "Highland Valley Copper",
+    "projectId": "58a3666d7f16ee001ddc694d",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd738fe"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS4469",
+    "followUpDocuments": [
+      {
+        "name": "Refuse Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58991f8587567d001d187a5c/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd738ff"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-05-14T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58991f8587567d001d187a5c/fetch",
+    "documentName": "Refuse Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "copper-mountain",
+    "projectName": "Copper Mountain",
+    "projectId": "58a3666c7f16ee001ddc694a",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73900"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS5352",
+    "followUpDocuments": [
+      {
+        "name": "Air Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899261187567d001d187c17/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73902"
+        }
+      },
+      {
+        "name": "2015-11-27 Letter Amendment",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899265887567d001d187c3e/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73901"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-10-01T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899261187567d001d187c17/fetch",
+    "documentName": "Air Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73903"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS6249",
+    "followUpDocuments": [
+      {
+        "name": "Air Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/589924c587567d001d187b7f/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73904"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-09-19T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/589924c587567d001d187b7f/fetch",
+    "documentName": "Air Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "greenhills-operations",
+    "projectName": "Greenhills Operations",
+    "projectId": "58a3666d7f16ee001ddc6950",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73905"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS13812",
+    "followUpDocuments": [
+      {
+        "name": "Refuse Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58991ef887567d001d187a23/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73906"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-08-29T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58991ef887567d001d187a23/fetch",
+    "documentName": "Refuse Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "coal-mountain-operations",
+    "projectName": "Coal Mountain Operations",
+    "projectId": "58a3666c7f16ee001ddc6949",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73907"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS15968",
+    "followUpDocuments": [
+      {
+        "name": "Effluent Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899289a87567d001d187cef/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73908"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-07-03T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899289a87567d001d187cef/fetch",
+    "documentName": "Effluent Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73909"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS104777",
+    "followUpDocuments": [
+      {
+        "name": "Effluent Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899280287567d001d187c8f/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7390a"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-06-22T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899280287567d001d187c8f/fetch",
+    "documentName": "Effluent Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "mount-milligan",
+    "projectName": "Mount Milligan",
+    "projectId": "58a3666d7f16ee001ddc6956",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7390b"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS106668",
+    "followUpDocuments": [
+      {
+        "name": "Air Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899296487567d001d187d5a/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7390c"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-12-17T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899296487567d001d187d5a/fetch",
+    "documentName": "Air Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "red-chris",
+    "projectName": "Red Chris",
+    "projectId": "58a3666d7f16ee001ddc6955",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7390d"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-221",
+    "followUpDocuments": [
+      {
+        "name": "Approving Permit Transfer",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58dada5bb6bfe2001cbcc592/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7390e"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-12-12T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58dada5bb6bfe2001cbcc592/fetch",
+    "documentName": "Approving Permit Transfer",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "brule",
+    "projectName": "Brule",
+    "projectId": "58a3666d7f16ee001ddc694f",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7390f"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-84",
+    "followUpDocuments": [
+      {
+        "name": "Approving Water Quality and Calcite Mitigation Strategy",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582254966d6ad30017cd6055/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73910"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-11-27T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582254966d6ad30017cd6055/fetch",
+    "documentName": "Approving Water Quality and Calcite Mitigation Strategy",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "coal-mountain-operations",
+    "projectName": "Coal Mountain Operations",
+    "projectId": "58a3666c7f16ee001ddc6949",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73911"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-2",
+    "followUpDocuments": [
+      {
+        "name": "Approving Erickson Wrap Spoils Reconfiguration",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58228df96d6ad30017cde332/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73912"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-06-06T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58228df96d6ad30017cde332/fetch",
+    "documentName": "Approving Erickson Wrap Spoils Reconfiguration",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "elkview-operations",
+    "projectName": "Elkview Operations",
+    "projectId": "58a3666d7f16ee001ddc6953",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73913"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-2",
+    "followUpDocuments": [
+      {
+        "name": "Rescinding Condition for Valley Wide Selenium Management Plan",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58228e126d6ad30017cde402/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73914"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-12-11T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58228e126d6ad30017cde402/fetch",
+    "documentName": "Rescinding Condition for Valley Wide Selenium Management Plan",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "elkview-operations",
+    "projectName": "Elkview Operations",
+    "projectId": "58a3666d7f16ee001ddc6953",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73915"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-137",
+    "followUpDocuments": [
+      {
+        "name": "Approving West Spoil Expansion - Phase 1",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582245306d6ad30017cd55ec/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73916"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-08-01T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582245306d6ad30017cd55ec/fetch",
+    "documentName": "Approving West Spoil Expansion - Phase 1",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "greenhills-operations",
+    "projectName": "Greenhills Operations",
+    "projectId": "58a3666d7f16ee001ddc6950",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73917"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-129",
+    "followUpDocuments": [
+      {
+        "name": "Approving MSX Short Dump",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5822451b6d6ad30017cd550f/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73918"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-12-10T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5822451b6d6ad30017cd550f/fetch",
+    "documentName": "Approving MSX Short Dump",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73919"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-129",
+    "followUpDocuments": [
+      {
+        "name": "Approving Dry Creek Water Management Plan",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582244f96d6ad30017cd536f/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7391a"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-02-20T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582244f96d6ad30017cd536f/fetch",
+    "documentName": "Approving Dry Creek Water Management Plan",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7391b"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-129",
+    "followUpDocuments": [
+      {
+        "name": "Approving BRX Phase I & Dumps, East Access, West Road & Permit Boundary Location",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582292a66d6ad30017cdffbc/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7391c"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-11-13T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582292a66d6ad30017cdffbc/fetch",
+    "documentName": "Approving BRX Phase I & Dumps, East Access, West Road & Permit Boundary Location",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7391d"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-129",
+    "followUpDocuments": [
+      {
+        "name": "Clarifying Mine Plan and Reclamation Plan Update Schedule",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582292ae6d6ad30017ce0017/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7391e"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-02-17T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582292ae6d6ad30017ce0017/fetch",
+    "documentName": "Clarifying Mine Plan and Reclamation Plan Update Schedule",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7391f"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-29",
+    "followUpDocuments": [
+      {
+        "name": "Approving Virginia and Oriole Pit, Waste Rock Storage Area and West Dam Rock Quarry",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58225b236d6ad30017cd7305/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73920"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-07-07T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58225b236d6ad30017cd7305/fetch",
+    "documentName": "Approving Virginia and Oriole Pit, Waste Rock Storage Area and West Dam Rock Quarry",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "copper-mountain",
+    "projectName": "Copper Mountain",
+    "projectId": "58a3666c7f16ee001ddc694a",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73921"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-40",
+    "followUpDocuments": [
+      {
+        "name": "Approving Deadline Ext for Mitigation Plan and Liability Cost Est",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58225b246d6ad30017cd731f/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73922"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-12-29T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58225b246d6ad30017cd731f/fetch",
+    "documentName": "Approving Deadline Ext for Mitigation Plan and Liability Cost Est",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "gibraltar",
+    "projectName": "Gibraltar",
+    "projectId": "58a3666d7f16ee001ddc6954",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73923"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-11",
+    "followUpDocuments": [
+      {
+        "name": "Decom Low Level Outlet at L-L Dam, Rev 2013-04",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582258a36d6ad30017cd6709/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73924"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-05-15T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582258a36d6ad30017cd6709/fetch",
+    "documentName": "Decom Low Level Outlet at L-L Dam, Rev 2013-04",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "highland-valley-copper",
+    "projectName": "Highland Valley Copper",
+    "projectId": "58a3666d7f16ee001ddc694d",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73925"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-200",
+    "followUpDocuments": [
+      {
+        "name": "Approving Time Extension to Submit Contingency Water Management Plan",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582290a56d6ad30017cdf4d1/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73926"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-06-21T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582290a56d6ad30017cdf4d1/fetch",
+    "documentName": "Approving Time Extension to Submit Contingency Water Management Plan",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73927"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-200",
+    "followUpDocuments": [
+      {
+        "name": "Approving Main Embankment Buttress",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582272806d6ad30017cd9f19/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73928"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-10-22T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582272806d6ad30017cd9f19/fetch",
+    "documentName": "Approving Main Embankment Buttress",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73929"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-200",
+    "followUpDocuments": [
+      {
+        "name": "Approving Cariboo Phase 4 Expansion",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582274796d6ad30017cda5b3/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7392a"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-03-17T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582274796d6ad30017cda5b3/fetch",
+    "documentName": "Approving Cariboo Phase 4 Expansion",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7392b"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-229",
+    "followUpDocuments": [
+      {
+        "name": "Approving Mine Plan and Reclamation Program",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58e824bd9d14c3001dc8e196/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7392c"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2017-03-31T08:00:00.000-0700"
+    },
+    "documentStatus": "Issued",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58e824bd9d14c3001dc8e196/fetch",
+    "documentName": "Approving Mine Plan and Reclamation Program",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "new-afton",
+    "projectName": "New Afton",
+    "projectId": "58a3666d7f16ee001ddc694c",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7392d"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-240",
+    "followUpDocuments": [
+      {
+        "name": "Approving Operation of the NSD Tailings Storage Facility",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58225a726d6ad30017cd702d/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7392e"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-06-16T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58225a726d6ad30017cd702d/fetch",
+    "documentName": "Approving Operation of the NSD Tailings Storage Facility",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "red-chris",
+    "projectName": "Red Chris",
+    "projectId": "58a3666d7f16ee001ddc6955",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7392f"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-243",
+    "followUpDocuments": [
+      {
+        "name": "Approval of Groundwater Monitoring Plan on the Brucejack Mine Site",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58225a6e6d6ad30017cd6ff9/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73930"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-08-26T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58225a6e6d6ad30017cd6ff9/fetch",
+    "documentName": "Approval of Groundwater Monitoring Plan on the Brucejack Mine Site",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "brucejack",
+    "projectName": "Brucejack",
+    "projectId": "58a3666d7f16ee001ddc694e",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73931"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-242",
+    "followUpDocuments": [
+      {
+        "name": "Amendment to Permit M-242 Mine Site Area",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58225aca6d6ad30017cd7269/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73932"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-01-26T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58225aca6d6ad30017cd7269/fetch",
+    "documentName": "Amendment to Permit M-242 Mine Site Area",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "silvertip",
+    "projectName": "Silvertip",
+    "projectId": "58a3666d7f16ee001ddc6957",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73933"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M15-01",
+    "followUpDocuments": [
+      {
+        "name": "Environmental Assessment Certificate",
+        "ref": "https://projects.eao.gov.bc.ca/p/brucejack-gold-mine/docs?folder=108",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73934"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-03-26T08:00:00.000-0700"
+    },
+    "documentStatus": "Issued",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/p/brucejack-gold-mine/docs?folder=108",
+    "documentName": "Environmental Assessment Certificate",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "brucejack",
+    "projectName": "Brucejack",
+    "projectId": "58a3666d7f16ee001ddc694e",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73935"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M98-01",
+    "followUpDocuments": [
+      {
+        "name": "Amendment #1 to Environmental Assessment Certificate",
+        "ref": "https://projects.eao.gov.bc.ca/api/document/5888e5a8817b85ae43cf7bb2/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73936"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2009-08-24T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/api/document/5888e5a8817b85ae43cf7bb2/fetch",
+    "documentName": "Amendment #1 to Environmental Assessment Certificate",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "brule",
+    "projectName": "Brule",
+    "projectId": "58a3666d7f16ee001ddc694f",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73937"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M97-03",
+    "followUpDocuments": [
+      {
+        "name": "Amendment #2 to Project Approval Certificate",
+        "ref": "https://projects.eao.gov.bc.ca/api/document/5886c259eed3c0016f856a4c/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73938"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2000-05-17T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/api/document/5886c259eed3c0016f856a4c/fetch",
+    "documentName": "Amendment #2 to Project Approval Certificate",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73939"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M09-01",
+    "followUpDocuments": [
+      {
+        "name": "Amendment Certificate for the Mt. Milligan Copper Gold Project",
+        "ref": "https://projects.eao.gov.bc.ca/p/mt-milligan-copper-gold/docs?folder=146",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7393a"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-03-01T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/p/mt-milligan-copper-gold/docs?folder=146",
+    "documentName": "Amendment Certificate for the Mt. Milligan Copper Gold Project",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "mount-milligan",
+    "projectName": "Mount Milligan",
+    "projectId": "58a3666d7f16ee001ddc6956",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7393b"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M96-07",
+    "followUpDocuments": [
+      {
+        "name": "Amendment #1 to Project Approval Certificate M96-07",
+        "ref": "https://projects.eao.gov.bc.ca/api/document/5886b4e1eed3c0016f8563f2/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7393c"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "1997-09-02T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/api/document/5886b4e1eed3c0016f8563f2/fetch",
+    "documentName": "Amendment #1 to Project Approval Certificate M96-07",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7393d"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M15-02",
+    "followUpDocuments": [
+      {
+        "name": "Environmental Assessment Certificate",
+        "ref": "https://projects.eao.gov.bc.ca/p/fording-river-operations-swift/docs?folder=71",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7393e"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-09-10T08:00:00.000-0700"
+    },
+    "documentStatus": "Issued",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/p/fording-river-operations-swift/docs?folder=71",
+    "documentName": "Environmental Assessment Certificate",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "fording-river-operations",
+    "projectName": "Fording River Operations",
+    "projectId": "58a3666c7f16ee001ddc694b",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7393f"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS424",
+    "followUpDocuments": [
+      {
+        "name": "Effluent Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/589920cb87567d001d187aed/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73940"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-12-06T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/589920cb87567d001d187aed/fetch",
+    "documentName": "Effluent Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "fording-river-operations",
+    "projectName": "Fording River Operations",
+    "projectId": "58a3666c7f16ee001ddc694b",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73941"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS1595",
+    "followUpDocuments": [
+      {
+        "name": "Air Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899217b87567d001d187b53/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73942"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-02-07T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899217b87567d001d187b53/fetch",
+    "documentName": "Air Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "gibraltar",
+    "projectName": "Gibraltar",
+    "projectId": "58a3666d7f16ee001ddc6954",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73943"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS4750",
+    "followUpDocuments": [
+      {
+        "name": "Effluent Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58991ed587567d001d187a09/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73944"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-07-25T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58991ed587567d001d187a09/fetch",
+    "documentName": "Effluent Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "coal-mountain-operations",
+    "projectName": "Coal Mountain Operations",
+    "projectId": "58a3666c7f16ee001ddc6949",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73945"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS5353",
+    "followUpDocuments": [
+      {
+        "name": "Effluent Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899263b87567d001d187c24/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73947"
+        }
+      },
+      {
+        "name": "2015-12-17 Letter Amendment",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899264787567d001d187c31/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73946"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-06-30T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899263b87567d001d187c24/fetch",
+    "documentName": "Effluent Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73948"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS6725",
+    "followUpDocuments": [
+      {
+        "name": "Refuse Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/589924e387567d001d187b8c/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73949"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2012-03-14T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/589924e387567d001d187b8c/fetch",
+    "documentName": "Refuse Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "greenhills-operations",
+    "projectName": "Greenhills Operations",
+    "projectId": "58a3666d7f16ee001ddc6950",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7394a"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS14590",
+    "followUpDocuments": [
+      {
+        "name": "Refuse Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899287387567d001d187cd5/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7394b"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2000-10-03T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899287387567d001d187cd5/fetch",
+    "documentName": "Refuse Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7394c"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS17679",
+    "followUpDocuments": [
+      {
+        "name": "Effluent Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58991e4287567d001d1879e3/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7394d"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-12-12T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58991e4287567d001d1879e3/fetch",
+    "documentName": "Effluent Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "brule",
+    "projectName": "Brule",
+    "projectId": "58a3666d7f16ee001ddc694f",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7394e"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS104778",
+    "followUpDocuments": [
+      {
+        "name": "Refuse Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899281187567d001d187c9c/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7394f"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-06-21T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899281187567d001d187c9c/fetch",
+    "documentName": "Refuse Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "mount-milligan",
+    "projectName": "Mount Milligan",
+    "projectId": "58a3666d7f16ee001ddc6956",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73950"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS107025",
+    "followUpDocuments": [
+      {
+        "name": "Air Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58991daa87567d001d1879bd/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73951"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-07-12T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58991daa87567d001d1879bd/fetch",
+    "documentName": "Air Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "brucejack",
+    "projectName": "Brucejack",
+    "projectId": "58a3666d7f16ee001ddc694e",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73952"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-221",
+    "followUpDocuments": [
+      {
+        "name": "Approving Biochemical Reactor Water Treatment Facility",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58228e706d6ad30017cde853/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73953"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-07-17T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58228e706d6ad30017cde853/fetch",
+    "documentName": "Approving Biochemical Reactor Water Treatment Facility",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "brule",
+    "projectName": "Brule",
+    "projectId": "58a3666d7f16ee001ddc694f",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73954"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-84",
+    "followUpDocuments": [
+      {
+        "name": "Authorizing Calcite Control Pilot Project",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582254686d6ad30017cd5e26/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73955"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-07-07T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582254686d6ad30017cd5e26/fetch",
+    "documentName": "Authorizing Calcite Control Pilot Project",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "coal-mountain-operations",
+    "projectName": "Coal Mountain Operations",
+    "projectId": "58a3666c7f16ee001ddc6949",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73956"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-2",
+    "followUpDocuments": [
+      {
+        "name": "Approving Changes to Calcite Reporting",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58228dfe6d6ad30017cde359/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73957"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-02-16T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58228dfe6d6ad30017cde359/fetch",
+    "documentName": "Approving Changes to Calcite Reporting",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "elkview-operations",
+    "projectName": "Elkview Operations",
+    "projectId": "58a3666d7f16ee001ddc6953",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73958"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-2",
+    "followUpDocuments": [
+      {
+        "name": "Approving Natal Phase 1 Pit Extension",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58228e126d6ad30017cde40f/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73959"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-11-27T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58228e126d6ad30017cde40f/fetch",
+    "documentName": "Approving Natal Phase 1 Pit Extension",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "elkview-operations",
+    "projectName": "Elkview Operations",
+    "projectId": "58a3666d7f16ee001ddc6953",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7395a"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-137",
+    "followUpDocuments": [
+      {
+        "name": "Approving Changes to Cougar Pit Mine Plan and Interim ML-ARD Management Plan",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5822451c6d6ad30017cd5529/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7395b"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-04-17T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5822451c6d6ad30017cd5529/fetch",
+    "documentName": "Approving Changes to Cougar Pit Mine Plan and Interim ML-ARD Management Plan",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "greenhills-operations",
+    "projectName": "Greenhills Operations",
+    "projectId": "58a3666d7f16ee001ddc6950",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7395c"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-129",
+    "followUpDocuments": [
+      {
+        "name": "Approving Rescinding a Permit Condition in December 14, 2001 Permit Amendment",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582244f96d6ad30017cd5362/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7395d"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-10-02T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582244f96d6ad30017cd5362/fetch",
+    "documentName": "Approving Rescinding a Permit Condition in December 14, 2001 Permit Amendment",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7395e"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-129",
+    "followUpDocuments": [
+      {
+        "name": "Approving BRX Pit Phase II",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582244f36d6ad30017cd5314/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7395f"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-12-17T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582244f36d6ad30017cd5314/fetch",
+    "documentName": "Approving BRX Pit Phase II",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73960"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-129",
+    "followUpDocuments": [
+      {
+        "name": "Approving Changes to NLX and MSX Dump Plans",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582292a86d6ad30017cdffd6/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73961"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-10-31T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582292a86d6ad30017cdffd6/fetch",
+    "documentName": "Approving Changes to NLX and MSX Dump Plans",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73962"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-129",
+    "followUpDocuments": [
+      {
+        "name": "Approving Line Creek Phase II Mine Plan and Reclamation Program",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582292b26d6ad30017ce0031/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73963"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-11-01T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582292b26d6ad30017ce0031/fetch",
+    "documentName": "Approving Line Creek Phase II Mine Plan and Reclamation Program",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73964"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-29",
+    "followUpDocuments": [
+      {
+        "name": "Approving Ultimate Dam Design and Construction",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58225b1d6d6ad30017cd72b7/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73965"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-04-16T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58225b1d6d6ad30017cd72b7/fetch",
+    "documentName": "Approving Ultimate Dam Design and Construction",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "copper-mountain",
+    "projectName": "Copper Mountain",
+    "projectId": "58a3666c7f16ee001ddc694a",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73966"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-40",
+    "followUpDocuments": [
+      {
+        "name": "Approving Granite Pit Phase 5 Pushback",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58225b346d6ad30017cd73ef/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73967"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-01-07T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58225b346d6ad30017cd73ef/fetch",
+    "documentName": "Approving Granite Pit Phase 5 Pushback",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "gibraltar",
+    "projectName": "Gibraltar",
+    "projectId": "58a3666d7f16ee001ddc6954",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73968"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-11",
+    "followUpDocuments": [
+      {
+        "name": "Decomissioning Low Level Outlet at L-L Dam",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5822589e6d6ad30017cd66bb/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73969"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-02-22T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5822589e6d6ad30017cd66bb/fetch",
+    "documentName": "Decomissioning Low Level Outlet at L-L Dam",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "highland-valley-copper",
+    "projectName": "Highland Valley Copper",
+    "projectId": "58a3666d7f16ee001ddc694d",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7396a"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-200",
+    "followUpDocuments": [
+      {
+        "name": "Approving Extension to Restricted Restart of Operations and Corner 1 Buttressing",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58227d946d6ad30017cdc83b/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7396b"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-02-25T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58227d946d6ad30017cdc83b/fetch",
+    "documentName": "Approving Extension to Restricted Restart of Operations and Corner 1 Buttressing",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7396c"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-200",
+    "followUpDocuments": [
+      {
+        "name": "Approving Return to Restricted Restart of Operations",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582273e66d6ad30017cda2f5/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7396d"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-07-09T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582273e66d6ad30017cda2f5/fetch",
+    "documentName": "Approving Return to Restricted Restart of Operations",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7396e"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-200",
+    "followUpDocuments": [
+      {
+        "name": "Approving Tailings Storage Facility Stage 9 Construction",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58227e756d6ad30017cdced5/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7396f"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-08-09T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58227e756d6ad30017cdced5/fetch",
+    "documentName": "Approving Tailings Storage Facility Stage 9 Construction",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73970"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-229",
+    "followUpDocuments": [
+      {
+        "name": "Approving Increase in Mill Throughput",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5822597f6d6ad30017cd6dbd/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73971"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-03-25T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5822597f6d6ad30017cd6dbd/fetch",
+    "documentName": "Approving Increase in Mill Throughput",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "new-afton",
+    "projectName": "New Afton",
+    "projectId": "58a3666d7f16ee001ddc694c",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73972"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-240",
+    "followUpDocuments": [
+      {
+        "name": "Interim Approval to Operate TSF",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58225a656d6ad30017cd6f84/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73973"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-02-02T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58225a656d6ad30017cd6f84/fetch",
+    "documentName": "Interim Approval to Operate TSF",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "red-chris",
+    "projectName": "Red Chris",
+    "projectId": "58a3666d7f16ee001ddc6955",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73974"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-243",
+    "followUpDocuments": [
+      {
+        "name": "Permit Approving Mine Plan and Reclamation Program",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58225a876d6ad30017cd7124/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73975"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-07-22T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58225a876d6ad30017cd7124/fetch",
+    "documentName": "Permit Approving Mine Plan and Reclamation Program",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "brucejack",
+    "projectName": "Brucejack",
+    "projectId": "58a3666d7f16ee001ddc694e",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73976"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-242",
+    "followUpDocuments": [
+      {
+        "name": "Permit Approving Mine Plan Reclamation Program",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58225a9a6d6ad30017cd71a6/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73977"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-06-26T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58225a9a6d6ad30017cd71a6/fetch",
+    "documentName": "Permit Approving Mine Plan Reclamation Program",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "silvertip",
+    "projectName": "Silvertip",
+    "projectId": "58a3666d7f16ee001ddc6957",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73978"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M15-01",
+    "followUpDocuments": [
+      {
+        "name": "Amendment #1 to EA Certificate #M15-01 for Brucejack Gold Mine Project",
+        "ref": "https://projects.eao.gov.bc.ca/p/brucejack-gold-mine/docs?folder=129",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73979"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-03-11T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/p/brucejack-gold-mine/docs?folder=129",
+    "documentName": "Amendment #1 to EA Certificate #M15-01 for Brucejack Gold Mine Project",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "brucejack",
+    "projectName": "Brucejack",
+    "projectId": "58a3666d7f16ee001ddc694e",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7397a"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M06-02",
+    "followUpDocuments": [
+      {
+        "name": "Amendment #2 to Environmental Assessment Certificate",
+        "ref": "https://projects.eao.gov.bc.ca/api/document/5886f84fa4acd4014b820c92/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7397b"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2010-02-01T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/api/document/5886f84fa4acd4014b820c92/fetch",
+    "documentName": "Amendment #2 to Environmental Assessment Certificate",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "brule",
+    "projectName": "Brule",
+    "projectId": "58a3666d7f16ee001ddc694f",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7397c"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M97-03",
+    "followUpDocuments": [
+      {
+        "name": "Amendment #3 to Project Approval Certificate",
+        "ref": "https://projects.eao.gov.bc.ca/api/document/5886c25feed3c0016f856a4d/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7397d"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2002-12-04T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/api/document/5886c25feed3c0016f856a4d/fetch",
+    "documentName": "Amendment #3 to Project Approval Certificate",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7397e"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M93-01",
+    "followUpDocuments": [
+      {
+        "name": "Amendment #1 to Project Approval Certificate 93-01",
+        "ref": "https://projects.eao.gov.bc.ca/api/document/5886ab7ceed3c0016f855ef8/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7397f"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "1994-02-16T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/api/document/5886ab7ceed3c0016f855ef8/fetch",
+    "documentName": "Amendment #1 to Project Approval Certificate 93-01",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "mount-milligan",
+    "projectName": "Mount Milligan",
+    "projectId": "58a3666d7f16ee001ddc6956",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73980"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M92-13",
+    "followUpDocuments": [
+      {
+        "name": "Amendment #2  to Project Approval Certificate M96-07",
+        "ref": "https://projects.eao.gov.bc.ca/api/document/5886b4e2eed3c0016f8563f7/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73981"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-05-19T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/api/document/5886b4e2eed3c0016f8563f7/fetch",
+    "documentName": "Amendment #2  to Project Approval Certificate M96-07",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73982"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS261",
+    "followUpDocuments": [
+      {
+        "name": "Effluent Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58991f6487567d001d187a42/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73983"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-05-14T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58991f6487567d001d187a42/fetch",
+    "documentName": "Effluent Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "copper-mountain",
+    "projectName": "Copper Mountain",
+    "projectId": "58a3666c7f16ee001ddc694a",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73984"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS425",
+    "followUpDocuments": [
+      {
+        "name": "Refuse, Effluent Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899203587567d001d187aa1/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73985"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2012-12-09T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899203587567d001d187aa1/fetch",
+    "documentName": "Refuse, Effluent Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "elkview-operations",
+    "projectName": "Elkview Operations",
+    "projectId": "58a3666d7f16ee001ddc6953",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73986"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS1807",
+    "followUpDocuments": [
+      {
+        "name": "Air Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899204787567d001d187aae/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73987"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-06-20T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899204787567d001d187aae/fetch",
+    "documentName": "Air Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "elkview-operations",
+    "projectName": "Elkview Operations",
+    "projectId": "58a3666d7f16ee001ddc6953",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73988"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS4751",
+    "followUpDocuments": [
+      {
+        "name": "Air Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58991ee887567d001d187a16/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73989"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-06-20T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58991ee887567d001d187a16/fetch",
+    "documentName": "Air Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "coal-mountain-operations",
+    "projectName": "Coal Mountain Operations",
+    "projectId": "58a3666c7f16ee001ddc6949",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7398a"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS5385",
+    "followUpDocuments": [
+      {
+        "name": "Refuse Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58991f9687567d001d187a69/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7398b"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-05-14T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58991f9687567d001d187a69/fetch",
+    "documentName": "Refuse Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "copper-mountain",
+    "projectName": "Copper Mountain",
+    "projectId": "58a3666c7f16ee001ddc694a",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7398c"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS6764",
+    "followUpDocuments": [
+      {
+        "name": "Effluent Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/589924f087567d001d187b99/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7398d"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-12-18T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/589924f087567d001d187b99/fetch",
+    "documentName": "Effluent Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "greenhills-operations",
+    "projectName": "Greenhills Operations",
+    "projectId": "58a3666d7f16ee001ddc6950",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7398e"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS15087",
+    "followUpDocuments": [
+      {
+        "name": "Air Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899288087567d001d187ce2/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7398f"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "1997-08-07T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899288087567d001d187ce2/fetch",
+    "documentName": "Air Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73990"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS17680",
+    "followUpDocuments": [
+      {
+        "name": "Air Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58991e5d87567d001d1879f6/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73991"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-12-12T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58991e5d87567d001d1879f6/fetch",
+    "documentName": "Air Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "brule",
+    "projectName": "Brule",
+    "projectId": "58a3666d7f16ee001ddc694f",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73992"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS104779",
+    "followUpDocuments": [
+      {
+        "name": "Air Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899282187567d001d187ca9/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73993"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-06-21T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899282187567d001d187ca9/fetch",
+    "documentName": "Air Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "mount-milligan",
+    "projectName": "Mount Milligan",
+    "projectId": "58a3666d7f16ee001ddc6956",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73994"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS107277",
+    "followUpDocuments": [
+      {
+        "name": "Air Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/589929dd87567d001d187d80/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73995"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-06-22T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/589929dd87567d001d187d80/fetch",
+    "documentName": "Air Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "silvertip",
+    "projectName": "Silvertip",
+    "projectId": "58a3666d7f16ee001ddc6957",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73996"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-221",
+    "followUpDocuments": [
+      {
+        "name": "Approving Coal Reject Backhaul to Northeast Dump",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58228f276d6ad30017cdefe4/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73997"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-09-24T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58228f276d6ad30017cdefe4/fetch",
+    "documentName": "Approving Coal Reject Backhaul to Northeast Dump",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "brule",
+    "projectName": "Brule",
+    "projectId": "58a3666d7f16ee001ddc694f",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73998"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-84",
+    "followUpDocuments": [
+      {
+        "name": "Approving Spoiling Pit Plant Rejects into Flooded 34 and 37 Pits",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5822548b6d6ad30017cd5fed/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73999"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-12-11T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5822548b6d6ad30017cd5fed/fetch",
+    "documentName": "Approving Spoiling Pit Plant Rejects into Flooded 34 and 37 Pits",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "coal-mountain-operations",
+    "projectName": "Coal Mountain Operations",
+    "projectId": "58a3666c7f16ee001ddc6949",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7399a"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-2",
+    "followUpDocuments": [
+      {
+        "name": "Approving Revised Sunshine Spoil Configuration",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58228e006d6ad30017cde373/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7399b"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-11-10T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58228e006d6ad30017cde373/fetch",
+    "documentName": "Approving Revised Sunshine Spoil Configuration",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "elkview-operations",
+    "projectName": "Elkview Operations",
+    "projectId": "58a3666d7f16ee001ddc6953",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7399c"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-137",
+    "followUpDocuments": [
+      {
+        "name": "Approving East Spoil Slide Mitigation and Boundary Expansion",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582246af6d6ad30017cd584f/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7399d"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-12-09T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582246af6d6ad30017cd584f/fetch",
+    "documentName": "Approving East Spoil Slide Mitigation and Boundary Expansion",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "greenhills-operations",
+    "projectName": "Greenhills Operations",
+    "projectId": "58a3666d7f16ee001ddc6950",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd7399e"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-137",
+    "followUpDocuments": [
+      {
+        "name": "Approving Main and West Dam Raises and Boundary Amendment",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582245256d6ad30017cd5584/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd7399f"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-04-07T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582245256d6ad30017cd5584/fetch",
+    "documentName": "Approving Main and West Dam Raises and Boundary Amendment",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "greenhills-operations",
+    "projectName": "Greenhills Operations",
+    "projectId": "58a3666d7f16ee001ddc6950",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739a0"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-129",
+    "followUpDocuments": [
+      {
+        "name": "Approving Deferral of ERX Progressive Reclamation",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582244f46d6ad30017cd5321/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739a1"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-08-24T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582244f46d6ad30017cd5321/fetch",
+    "documentName": "Approving Deferral of ERX Progressive Reclamation",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739a2"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-129",
+    "followUpDocuments": [
+      {
+        "name": "Approval of a Deadline Ext for Bench & Pilot Scale AWTF Residuals TPR",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582244f56d6ad30017cd532e/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739a3"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-12-17T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582244f56d6ad30017cd532e/fetch",
+    "documentName": "Approval of a Deadline Ext for Bench & Pilot Scale AWTF Residuals TPR",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739a4"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-129",
+    "followUpDocuments": [
+      {
+        "name": "Approving Changes to Bench and Pilot Scale AWTF Residuals Testing Program",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582292aa6d6ad30017cdffe3/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739a5"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-09-19T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582292aa6d6ad30017cdffe3/fetch",
+    "documentName": "Approving Changes to Bench and Pilot Scale AWTF Residuals Testing Program",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739a6"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-129",
+    "followUpDocuments": [
+      {
+        "name": "Approving Revised MSX Pit and Spoil Plan",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582292b36d6ad30017ce003e/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739a7"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-10-07T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582292b36d6ad30017ce003e/fetch",
+    "documentName": "Approving Revised MSX Pit and Spoil Plan",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739a8"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-40",
+    "followUpDocuments": [
+      {
+        "name": "Approving Granite Pollyanna Pit Pushback and Dump 7 Expansion",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58e823349d14c3001dc8e170/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739a9"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2017-03-10T07:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58e823349d14c3001dc8e170/fetch",
+    "documentName": "Approving Granite Pollyanna Pit Pushback and Dump 7 Expansion",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "gibraltar",
+    "projectName": "Gibraltar",
+    "projectId": "58a3666d7f16ee001ddc6954",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739aa"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-40",
+    "followUpDocuments": [
+      {
+        "name": "Approving Double Benching in Granite 4 East Pit",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58225b2b6d6ad30017cd737a/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739ab"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-12-12T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58225b2b6d6ad30017cd737a/fetch",
+    "documentName": "Approving Double Benching in Granite 4 East Pit",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "gibraltar",
+    "projectName": "Gibraltar",
+    "projectId": "58a3666d7f16ee001ddc6954",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739ac"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-236",
+    "followUpDocuments": [
+      {
+        "name": "Approval to Operate Tailings Storage Facility",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5822594b6d6ad30017cd6b81/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739ad"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-06-05T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5822594b6d6ad30017cd6b81/fetch",
+    "documentName": "Approval to Operate Tailings Storage Facility",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "mount-milligan",
+    "projectName": "Mount Milligan",
+    "projectId": "58a3666d7f16ee001ddc6956",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739ae"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-200",
+    "followUpDocuments": [
+      {
+        "name": "Approving Springer Pit Lake Elevation Increase",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58227d916d6ad30017cdc821/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739af"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-03-17T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58227d916d6ad30017cdc821/fetch",
+    "documentName": "Approving Springer Pit Lake Elevation Increase",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739b0"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-200",
+    "followUpDocuments": [
+      {
+        "name": "Approving TSF Breach Repair and Perimeter Embankment Buttress Design for 2015 Freshet",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582274366d6ad30017cda43a/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739b1"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-12-17T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582274366d6ad30017cda43a/fetch",
+    "documentName": "Approving TSF Breach Repair and Perimeter Embankment Buttress Design for 2015 Freshet",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739b2"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-200",
+    "followUpDocuments": [
+      {
+        "name": "Approving Northwest PAG Dump Expansion and South Haul Road",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5822749a6d6ad30017cda683/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739b3"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-07-25T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5822749a6d6ad30017cda683/fetch",
+    "documentName": "Approving Northwest PAG Dump Expansion and South Haul Road",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739b4"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-240",
+    "followUpDocuments": [
+      {
+        "name": "Permit Approving Mine Plan and Reclamation Program",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58bdada853dc26001d3b49b8/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739b5"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2017-02-28T08:00:00.000-0800"
+    },
+    "documentStatus": "Issued",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58bdada853dc26001d3b49b8/fetch",
+    "documentName": "Permit Approving Mine Plan and Reclamation Program",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "red-chris",
+    "projectName": "Red Chris",
+    "projectId": "58a3666d7f16ee001ddc6955",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739b6"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-243",
+    "followUpDocuments": [
+      {
+        "name": "Approving Mine Plan and Reclamation Program",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58e826259d14c3001dc8e1a9/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739b7"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2017-04-03T08:00:00.000-0700"
+    },
+    "documentStatus": "Issued",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58e826259d14c3001dc8e1a9/fetch",
+    "documentName": "Approving Mine Plan and Reclamation Program",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "brucejack",
+    "projectName": "Brucejack",
+    "projectId": "58a3666d7f16ee001ddc694e",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739b8"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-242",
+    "followUpDocuments": [
+      {
+        "name": "Approving Winter Operations Mine Plan and Reclamation Program",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5841d7a7906f550019a4dbf3/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739b9"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-11-30T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5841d7a7906f550019a4dbf3/fetch",
+    "documentName": "Approving Winter Operations Mine Plan and Reclamation Program",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "silvertip",
+    "projectName": "Silvertip",
+    "projectId": "58a3666d7f16ee001ddc6957",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739ba"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M15-02",
+    "followUpDocuments": [
+      {
+        "name": "Amendment #2 to EA Certificate #M15-01 for Brucejack Gold Mine Project",
+        "ref": "https://projects.eao.gov.bc.ca/p/brucejack-gold-mine/docs?folder=131",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739bb"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-08-16T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/p/brucejack-gold-mine/docs?folder=131",
+    "documentName": "Amendment #2 to EA Certificate #M15-01 for Brucejack Gold Mine Project",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "brucejack",
+    "projectName": "Brucejack",
+    "projectId": "58a3666d7f16ee001ddc694e",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739bc"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M06-02",
+    "followUpDocuments": [
+      {
+        "name": "Amendment #3 to Environmental Assessment Certificate",
+        "ref": "https://projects.eao.gov.bc.ca/api/document/5886f898a4acd4014b820c95/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739bd"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2012-10-09T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/api/document/5886f898a4acd4014b820c95/fetch",
+    "documentName": "Amendment #3 to Environmental Assessment Certificate",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "brule",
+    "projectName": "Brule",
+    "projectId": "58a3666d7f16ee001ddc694f",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739be"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M13-02",
+    "followUpDocuments": [
+      {
+        "name": "Environmental Assessment Certificate",
+        "ref": "https://projects.eao.gov.bc.ca/api/document/5888e5cf817b85ae43cf7c77/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739bf"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-09-25T08:00:00.000-0700"
+    },
+    "documentStatus": "Issued",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/api/document/5888e5cf817b85ae43cf7c77/fetch",
+    "documentName": "Environmental Assessment Certificate",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739c0"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M96-06",
+    "followUpDocuments": [
+      {
+        "name": "Amendment #2 to Project Approval Certificate M96-06",
+        "ref": "https://projects.eao.gov.bc.ca/api/document/5886ab7feed3c0016f855ef9/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739c1"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "1997-09-02T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/api/document/5886ab7feed3c0016f855ef9/fetch",
+    "documentName": "Amendment #2 to Project Approval Certificate M96-06",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "mount-milligan",
+    "projectName": "Mount Milligan",
+    "projectId": "58a3666d7f16ee001ddc6956",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739c2"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M05-02",
+    "followUpDocuments": [
+      {
+        "name": "Environmental Assessment Certificate",
+        "ref": "https://projects.eao.gov.bc.ca/api/document/5886b391a4acd4014b81fef4/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739c3"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2005-08-24T08:00:00.000-0700"
+    },
+    "documentStatus": "Issued",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/api/document/5886b391a4acd4014b81fef4/fetch",
+    "documentName": "Environmental Assessment Certificate",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "red-chris",
+    "projectName": "Red Chris",
+    "projectId": "58a3666d7f16ee001ddc6955",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739c4"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS369",
+    "followUpDocuments": [
+      {
+        "name": "Effluent Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58991f7487567d001d187a4f/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739c5"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-05-14T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58991f7487567d001d187a4f/fetch",
+    "documentName": "Effluent Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "copper-mountain",
+    "projectName": "Copper Mountain",
+    "projectId": "58a3666c7f16ee001ddc694a",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739c6"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS521",
+    "followUpDocuments": [
+      {
+        "name": "Air, Refuse Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899216a87567d001d187b46/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739c7"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2011-09-12T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899216a87567d001d187b46/fetch",
+    "documentName": "Air, Refuse Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "gibraltar",
+    "projectName": "Gibraltar",
+    "projectId": "58a3666d7f16ee001ddc6954",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739c8"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS2460",
+    "followUpDocuments": [
+      {
+        "name": "Refuse Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899259487567d001d187bd8/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739c9"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-08-23T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899259487567d001d187bd8/fetch",
+    "documentName": "Refuse Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "highland-valley-copper",
+    "projectName": "Highland Valley Copper",
+    "projectId": "58a3666d7f16ee001ddc694d",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739ca"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS5061",
+    "followUpDocuments": [
+      {
+        "name": "Air Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/589920f087567d001d187b07/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739cb"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2010-03-24T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/589920f087567d001d187b07/fetch",
+    "documentName": "Air Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "fording-river-operations",
+    "projectName": "Fording River Operations",
+    "projectId": "58a3666c7f16ee001ddc694b",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739cc"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS5556",
+    "followUpDocuments": [
+      {
+        "name": "Effluent Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/589920ff87567d001d187b14/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739cd"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-09-02T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/589920ff87567d001d187b14/fetch",
+    "documentName": "Effluent Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "fording-river-operations",
+    "projectName": "Fording River Operations",
+    "projectId": "58a3666c7f16ee001ddc694b",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739ce"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS7337",
+    "followUpDocuments": [
+      {
+        "name": "Effluent Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/589929ca87567d001d187d73/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739cf"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-05-07T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/589929ca87567d001d187d73/fetch",
+    "documentName": "Effluent Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "silvertip",
+    "projectName": "Silvertip",
+    "projectId": "58a3666d7f16ee001ddc6957",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739d0"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS15087",
+    "followUpDocuments": [
+      {
+        "name": "Air Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/589928b187567d001d187cfc/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739d1"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2007-06-26T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/589928b187567d001d187cfc/fetch",
+    "documentName": "Air Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739d2"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS100223",
+    "followUpDocuments": [
+      {
+        "name": "Air Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899291587567d001d187d27/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739d3"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-12-22T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899291587567d001d187d27/fetch",
+    "documentName": "Air Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "new-afton",
+    "projectName": "New Afton",
+    "projectId": "58a3666d7f16ee001ddc694c",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739d4"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS105017",
+    "followUpDocuments": [
+      {
+        "name": "Effluent Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899295587567d001d187d4d/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739d5"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-10-26T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899295587567d001d187d4d/fetch",
+    "documentName": "Effluent Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "red-chris",
+    "projectName": "Red Chris",
+    "projectId": "58a3666d7f16ee001ddc6955",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739d6"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS107835",
+    "followUpDocuments": [
+      {
+        "name": "Refuse, Effluent Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58991dc487567d001d1879ca/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739d7"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-07-12T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58991dc487567d001d1879ca/fetch",
+    "documentName": "Refuse, Effluent Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "brucejack",
+    "projectName": "Brucejack",
+    "projectId": "58a3666d7f16ee001ddc694e",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739d8"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-84",
+    "followUpDocuments": [
+      {
+        "name": "Approving Work System and Reclamation Program",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582256826d6ad30017cd65eb/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739d9"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-02-16T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582256826d6ad30017cd65eb/fetch",
+    "documentName": "Approving Work System and Reclamation Program",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "coal-mountain-operations",
+    "projectName": "Coal Mountain Operations",
+    "projectId": "58a3666c7f16ee001ddc6949",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739da"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-84",
+    "followUpDocuments": [
+      {
+        "name": "Authorization for Coal Mountain Operations Calcite Control Pilot Project",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582254636d6ad30017cd5dd8/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739db"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-07-12T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582254636d6ad30017cd5dd8/fetch",
+    "documentName": "Authorization for Coal Mountain Operations Calcite Control Pilot Project",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "coal-mountain-operations",
+    "projectName": "Coal Mountain Operations",
+    "projectId": "58a3666c7f16ee001ddc6949",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739dc"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-2",
+    "followUpDocuments": [
+      {
+        "name": "Approving Water Quality and Calcite Mitigation Strategy",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58228e086d6ad30017cde3c1/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739dd"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-11-27T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58228e086d6ad30017cde3c1/fetch",
+    "documentName": "Approving Water Quality and Calcite Mitigation Strategy",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "elkview-operations",
+    "projectName": "Elkview Operations",
+    "projectId": "58a3666d7f16ee001ddc6953",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739de"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-137",
+    "followUpDocuments": [
+      {
+        "name": "Approving Water Quality and Calcite Mitigation Strategy",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582246ae6d6ad30017cd5842/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739df"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-11-27T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582246ae6d6ad30017cd5842/fetch",
+    "documentName": "Approving Water Quality and Calcite Mitigation Strategy",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "greenhills-operations",
+    "projectName": "Greenhills Operations",
+    "projectId": "58a3666d7f16ee001ddc6950",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739e0"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-137",
+    "followUpDocuments": [
+      {
+        "name": "Approving Phase I West Spoil Expansion Boundary Amendment",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5822451a6d6ad30017cd5502/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739e1"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-11-05T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5822451a6d6ad30017cd5502/fetch",
+    "documentName": "Approving Phase I West Spoil Expansion Boundary Amendment",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "greenhills-operations",
+    "projectName": "Greenhills Operations",
+    "projectId": "58a3666d7f16ee001ddc6950",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739e2"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-129",
+    "followUpDocuments": [
+      {
+        "name": "Approving Buffer Pond for West Line Creek AWTF",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582245156d6ad30017cd54ce/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739e3"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-08-20T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582245156d6ad30017cd54ce/fetch",
+    "documentName": "Approving Buffer Pond for West Line Creek AWTF",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739e4"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-129",
+    "followUpDocuments": [
+      {
+        "name": "Approving Water Quality and Calcite Mitigation Strategy",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582245026d6ad30017cd53e4/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739e5"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-11-27T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582245026d6ad30017cd53e4/fetch",
+    "documentName": "Approving Water Quality and Calcite Mitigation Strategy",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739e6"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-129",
+    "followUpDocuments": [
+      {
+        "name": "Approving West Line Creek Calcite Managment Plan",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582292ab6d6ad30017cdfff0/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739e7"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-08-27T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582292ab6d6ad30017cdfff0/fetch",
+    "documentName": "Approving West Line Creek Calcite Managment Plan",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739e8"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-129",
+    "followUpDocuments": [
+      {
+        "name": "Approving Change to Permit Boundary & Water Treatment Residuals Landfill",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582292b66d6ad30017ce0058/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739e9"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-07-26T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582292b66d6ad30017ce0058/fetch",
+    "documentName": "Approving Change to Permit Boundary & Water Treatment Residuals Landfill",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739ea"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-40",
+    "followUpDocuments": [
+      {
+        "name": "Approving Deadline Extension of Updated Liability Cost Estimate",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58225b216d6ad30017cd72eb/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739eb"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-10-27T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58225b216d6ad30017cd72eb/fetch",
+    "documentName": "Approving Deadline Extension of Updated Liability Cost Estimate",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "gibraltar",
+    "projectName": "Gibraltar",
+    "projectId": "58a3666d7f16ee001ddc6954",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739ec"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-40",
+    "followUpDocuments": [
+      {
+        "name": "Approving Mill Throughput, 7 SDump Exp & TSF Deposition Plan",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58225b456d6ad30017cd74cc/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739ed"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-02-12T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58225b456d6ad30017cd74cc/fetch",
+    "documentName": "Approving Mill Throughput, 7 SDump Exp & TSF Deposition Plan",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "gibraltar",
+    "projectName": "Gibraltar",
+    "projectId": "58a3666d7f16ee001ddc6954",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739ee"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-236",
+    "followUpDocuments": [
+      {
+        "name": "Approving Construction of a Blend and Feed Ore Stockpile",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582259466d6ad30017cd6b40/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739ef"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-04-16T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582259466d6ad30017cd6b40/fetch",
+    "documentName": "Approving Construction of a Blend and Feed Ore Stockpile",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "mount-milligan",
+    "projectName": "Mount Milligan",
+    "projectId": "58a3666d7f16ee001ddc6956",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739f0"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-200",
+    "followUpDocuments": [
+      {
+        "name": "Approving Upstream TSF Construction and 2016 Freshet Water Management",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58db05d5b6bfe2001cbcc604/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739f1"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-02-25T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58db05d5b6bfe2001cbcc604/fetch",
+    "documentName": "Approving Upstream TSF Construction and 2016 Freshet Water Management",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739f2"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-200",
+    "followUpDocuments": [
+      {
+        "name": "Approving Waste Rock and Tailings Comingling Research Project",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582274616d6ad30017cda4d6/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739f3"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-06-24T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582274616d6ad30017cda4d6/fetch",
+    "documentName": "Approving Waste Rock and Tailings Comingling Research Project",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739f4"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-200",
+    "followUpDocuments": [
+      {
+        "name": "Approving Processing of 15,000 Tonnes of Ore from Dome Mountain",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582274c26d6ad30017cda712/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739f5"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-04-22T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582274c26d6ad30017cda712/fetch",
+    "documentName": "Approving Processing of 15,000 Tonnes of Ore from Dome Mountain",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739f6"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-240",
+    "followUpDocuments": [
+      {
+        "name": "Approving South Dam Construction",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5822930e6d6ad30017ce041a/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739f7"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-08-19T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5822930e6d6ad30017ce041a/fetch",
+    "documentName": "Approving South Dam Construction",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "red-chris",
+    "projectName": "Red Chris",
+    "projectId": "58a3666d7f16ee001ddc6955",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739f8"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-243",
+    "followUpDocuments": [
+      {
+        "name": "Approving Changes to the Disturbance Area and the Construction Water Treatment Plant",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5822912f6d6ad30017cdfa33/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739f9"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-08-04T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5822912f6d6ad30017cdfa33/fetch",
+    "documentName": "Approving Changes to the Disturbance Area and the Construction Water Treatment Plant",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "brucejack",
+    "projectName": "Brucejack",
+    "projectId": "58a3666d7f16ee001ddc694e",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739fa"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-242",
+    "followUpDocuments": [
+      {
+        "name": "Approving Construction of Tailings Rock Storage Facility",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5822924b6d6ad30017cdfc3b/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739fb"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-08-09T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5822924b6d6ad30017cdfc3b/fetch",
+    "documentName": "Approving Construction of Tailings Rock Storage Facility",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "silvertip",
+    "projectName": "Silvertip",
+    "projectId": "58a3666d7f16ee001ddc6957",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739fc"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M15-03",
+    "followUpDocuments": [
+      {
+        "name": "Amendment #3 to EA Certificate #M15-01 for Brucejack Gold Mine Project",
+        "ref": "https://projects.eao.gov.bc.ca/p/brucejack-gold-mine/docs?folder=140",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739fd"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-11-23T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/p/brucejack-gold-mine/docs?folder=140",
+    "documentName": "Amendment #3 to EA Certificate #M15-01 for Brucejack Gold Mine Project",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "brucejack",
+    "projectName": "Brucejack",
+    "projectId": "58a3666d7f16ee001ddc694e",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd739fe"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M06-02",
+    "followUpDocuments": [
+      {
+        "name": "Amendment #4 to Environmental Assessment Certificate",
+        "ref": "https://projects.eao.gov.bc.ca/p/brule-mine/docs?folder=129",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd739ff"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-12-13T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/p/brule-mine/docs?folder=129",
+    "documentName": "Amendment #4 to Environmental Assessment Certificate",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "brule",
+    "projectName": "Brule",
+    "projectId": "58a3666d7f16ee001ddc694f",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a00"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M13-02",
+    "followUpDocuments": [
+      {
+        "name": "Amendment #1 to Environmental Assessment Certificate",
+        "ref": "https://projects.eao.gov.bc.ca/api/document/5887e39fad20ac134d9164f5/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a01"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-12-15T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/api/document/5887e39fad20ac134d9164f5/fetch",
+    "documentName": "Amendment #1 to Environmental Assessment Certificate",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a02"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M96-06",
+    "followUpDocuments": [
+      {
+        "name": "Amendment #3 to Project Approval Certificate M96-06",
+        "ref": "https://projects.eao.gov.bc.ca/api/document/5886ab7feed3c0016f855efa/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a03"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "1998-11-02T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/api/document/5886ab7feed3c0016f855efa/fetch",
+    "documentName": "Amendment #3 to Project Approval Certificate M96-06",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "mount-milligan",
+    "projectName": "Mount Milligan",
+    "projectId": "58a3666d7f16ee001ddc6956",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a04"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M05-02",
+    "followUpDocuments": [
+      {
+        "name": "Amendment #1 to Environmental Assessment Certificate",
+        "ref": "https://projects.eao.gov.bc.ca/api/document/5886b3b2a4acd4014b81ff17/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a05"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2012-02-24T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Certificate",
+    "documentURL": "https://projects.eao.gov.bc.ca/api/document/5886b3b2a4acd4014b81ff17/fetch",
+    "documentName": "Amendment #1 to Environmental Assessment Certificate",
+    "actName": "Environmental Assessment Act",
+    "agencyName": "Environmental Assessment Office",
+    "agencyCode": "EAO",
+    "projectCode": "red-chris",
+    "projectName": "Red Chris",
+    "projectId": "58a3666d7f16ee001ddc6955",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a06"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS376",
+    "followUpDocuments": [
+      {
+        "name": "Effluent Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899257687567d001d187bbe/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a07"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-05-10T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899257687567d001d187bbe/fetch",
+    "documentName": "Effluent Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "highland-valley-copper",
+    "projectName": "Highland Valley Copper",
+    "projectId": "58a3666d7f16ee001ddc694d",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a08"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS1501",
+    "followUpDocuments": [
+      {
+        "name": "Air Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/589920db87567d001d187afa/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a09"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-09-28T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/589920db87567d001d187afa/fetch",
+    "documentName": "Air Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "fording-river-operations",
+    "projectName": "Fording River Operations",
+    "projectId": "58a3666c7f16ee001ddc694b",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a0a"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS3821",
+    "followUpDocuments": [
+      {
+        "name": "Refuse Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899205687567d001d187abb/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a0b"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-09-15T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899205687567d001d187abb/fetch",
+    "documentName": "Refuse Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "elkview-operations",
+    "projectName": "Elkview Operations",
+    "projectId": "58a3666d7f16ee001ddc6953",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a0c"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS5346",
+    "followUpDocuments": [
+      {
+        "name": "Refuse Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899260187567d001d187c0a/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a0d"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2012-03-14T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899260187567d001d187c0a/fetch",
+    "documentName": "Refuse Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a0e"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS6248",
+    "followUpDocuments": [
+      {
+        "name": "Effluent Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899242b87567d001d187b72/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a0f"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-05-26T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899242b87567d001d187b72/fetch",
+    "documentName": "Effluent Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "greenhills-operations",
+    "projectName": "Greenhills Operations",
+    "projectId": "58a3666d7f16ee001ddc6950",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a10"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS11678",
+    "followUpDocuments": [
+      {
+        "name": "Effluent Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899285e87567d001d187cc8/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a11"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-09-19T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899285e87567d001d187cc8/fetch",
+    "documentName": "Effluent Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a12"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS15894",
+    "followUpDocuments": [
+      {
+        "name": "Biosolids Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/589925a187567d001d187be5/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a13"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2003-11-04T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/589925a187567d001d187be5/fetch",
+    "documentName": "Biosolids Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "highland-valley-copper",
+    "projectName": "Highland Valley Copper",
+    "projectId": "58a3666d7f16ee001ddc694d",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a14"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS100224",
+    "followUpDocuments": [
+      {
+        "name": "Effluent Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899292387567d001d187d34/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a15"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-12-22T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899292387567d001d187d34/fetch",
+    "documentName": "Effluent Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "new-afton",
+    "projectName": "New Afton",
+    "projectId": "58a3666d7f16ee001ddc694c",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a16"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS105340",
+    "followUpDocuments": [
+      {
+        "name": "Air Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58991fa387567d001d187a76/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a17"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-01-18T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58991fa387567d001d187a76/fetch",
+    "documentName": "Air Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "copper-mountain",
+    "projectName": "Copper Mountain",
+    "projectId": "58a3666c7f16ee001ddc694a",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a18"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "AMS107987",
+    "followUpDocuments": [
+      {
+        "name": "Effluent, Air Discharge",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5899206787567d001d187ac8/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a19"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-09-09T08:00:00.000-0700"
+    },
+    "documentStatus": "Issued",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5899206787567d001d187ac8/fetch",
+    "documentName": "Effluent, Air Discharge",
+    "actName": "Environmental Management Act",
+    "agencyName": "Ministry of Environment",
+    "agencyCode": "ENV",
+    "projectCode": "elkview-operations",
+    "projectName": "Elkview Operations",
+    "projectId": "58a3666d7f16ee001ddc6953",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a1a"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-84",
+    "followUpDocuments": [
+      {
+        "name": "Approval to Permit Boundary Area",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582254766d6ad30017cd5edc/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a1b"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-02-02T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582254766d6ad30017cd5edc/fetch",
+    "documentName": "Approval to Permit Boundary Area",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "coal-mountain-operations",
+    "projectName": "Coal Mountain Operations",
+    "projectId": "58a3666c7f16ee001ddc6949",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a1c"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-84",
+    "followUpDocuments": [
+      {
+        "name": "Process Change Notification, Temporary Water Treatment 37 Pit",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582254696d6ad30017cd5e33/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a1d"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-04-05T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582254696d6ad30017cd5e33/fetch",
+    "documentName": "Process Change Notification, Temporary Water Treatment 37 Pit",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "coal-mountain-operations",
+    "projectName": "Coal Mountain Operations",
+    "projectId": "58a3666c7f16ee001ddc6949",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a1e"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-2",
+    "followUpDocuments": [
+      {
+        "name": "Approving Natal Phase 2 Pushback",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/587684cb45b180001b296b83/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a1f"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-11-13T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/587684cb45b180001b296b83/fetch",
+    "documentName": "Approving Natal Phase 2 Pushback",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "elkview-operations",
+    "projectName": "Elkview Operations",
+    "projectId": "58a3666d7f16ee001ddc6953",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a20"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-137",
+    "followUpDocuments": [
+      {
+        "name": "Approving Change to Permit Boundary",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582246ad6d6ad30017cd5835/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a21"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-09-15T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582246ad6d6ad30017cd5835/fetch",
+    "documentName": "Approving Change to Permit Boundary",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "greenhills-operations",
+    "projectName": "Greenhills Operations",
+    "projectId": "58a3666d7f16ee001ddc6950",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a22"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-137",
+    "followUpDocuments": [
+      {
+        "name": "Approving Soil Salvage for Rosebowl Reclamation",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582245056d6ad30017cd5418/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a23"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-06-03T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582245056d6ad30017cd5418/fetch",
+    "documentName": "Approving Soil Salvage for Rosebowl Reclamation",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "greenhills-operations",
+    "projectName": "Greenhills Operations",
+    "projectId": "58a3666d7f16ee001ddc6950",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a24"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-129",
+    "followUpDocuments": [
+      {
+        "name": "Approving Soil Salvage, Stockpiling and Replacement Plan",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582244fa6d6ad30017cd537c/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a25"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-07-17T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582244fa6d6ad30017cd537c/fetch",
+    "documentName": "Approving Soil Salvage, Stockpiling and Replacement Plan",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a26"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-129",
+    "followUpDocuments": [
+      {
+        "name": "Approving MSX Pit",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5822450b6d6ad30017cd5459/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a27"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-11-13T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5822450b6d6ad30017cd5459/fetch",
+    "documentName": "Approving MSX Pit",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a28"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-129",
+    "followUpDocuments": [
+      {
+        "name": "Approving Dry Creek Water Management System",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582292ad6d6ad30017ce000a/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a29"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-02-19T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582292ad6d6ad30017ce000a/fetch",
+    "documentName": "Approving Dry Creek Water Management System",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a2a"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "C-129",
+    "followUpDocuments": [
+      {
+        "name": "Approving North Line Extension East Pit Development",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582292b86d6ad30017ce0072/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a2b"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-07-19T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582292b86d6ad30017ce0072/fetch",
+    "documentName": "Approving North Line Extension East Pit Development",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "line-creek-operations",
+    "projectName": "Line Creek Operations",
+    "projectId": "58a3666d7f16ee001ddc6951",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a2c"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-40",
+    "followUpDocuments": [
+      {
+        "name": "Approving Deadline Extension for Site Wide Water Quality Model Update",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58225b326d6ad30017cd73c8/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a2d"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-05-14T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58225b326d6ad30017cd73c8/fetch",
+    "documentName": "Approving Deadline Extension for Site Wide Water Quality Model Update",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "gibraltar",
+    "projectName": "Gibraltar",
+    "projectId": "58a3666d7f16ee001ddc6954",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a2e"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-11",
+    "followUpDocuments": [
+      {
+        "name": "Bethlehem Main Tailings Test Fill Program",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582258a46d6ad30017cd6716/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a2f"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-12-23T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582258a46d6ad30017cd6716/fetch",
+    "documentName": "Bethlehem Main Tailings Test Fill Program",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "highland-valley-copper",
+    "projectName": "Highland Valley Copper",
+    "projectId": "58a3666d7f16ee001ddc694d",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a30"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-200",
+    "followUpDocuments": [
+      {
+        "name": "Approving Return to Full Operations and Use of Tailings Storage Facility",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58228fb16d6ad30017cdf442/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a31"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-06-23T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58228fb16d6ad30017cdf442/fetch",
+    "documentName": "Approving Return to Full Operations and Use of Tailings Storage Facility",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a32"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-200",
+    "followUpDocuments": [
+      {
+        "name": "Approving 2016 Freshet TSF Contingency Use",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/5822720c6d6ad30017cd9eb1/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a33"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-12-16T08:00:00.000-0800"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/5822720c6d6ad30017cd9eb1/fetch",
+    "documentName": "Approving 2016 Freshet TSF Contingency Use",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a34"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-200",
+    "followUpDocuments": [
+      {
+        "name": "Approving Change to Reclamation Security Schedule",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582274666d6ad30017cda517/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a35"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2014-03-27T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582274666d6ad30017cda517/fetch",
+    "documentName": "Approving Change to Reclamation Security Schedule",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a36"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-200",
+    "followUpDocuments": [
+      {
+        "name": "Approving Boundary Zone Underground",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58227d4b6d6ad30017cdc7c6/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a37"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2013-03-25T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58227d4b6d6ad30017cdc7c6/fetch",
+    "documentName": "Approving Boundary Zone Underground",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "mount-polley",
+    "projectName": "Mount Polley",
+    "projectId": "58a3666d7f16ee001ddc6952",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a38"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-240",
+    "followUpDocuments": [
+      {
+        "name": "Approving South Reclaim Dam Construction",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/582290a76d6ad30017cdf4eb/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a39"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-07-13T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/582290a76d6ad30017cdf4eb/fetch",
+    "documentName": "Approving South Reclaim Dam Construction",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "red-chris",
+    "projectName": "Red Chris",
+    "projectId": "58a3666d7f16ee001ddc6955",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a3a"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-243",
+    "followUpDocuments": [
+      {
+        "name": "Approval of Updated Brucejack ML-ARD Management Plan",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58225a5e6d6ad30017cd6f0f/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a3b"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2015-09-09T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58225a5e6d6ad30017cd6f0f/fetch",
+    "documentName": "Approval of Updated Brucejack ML-ARD Management Plan",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "brucejack",
+    "projectName": "Brucejack",
+    "projectId": "58a3666d7f16ee001ddc694e",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "58ec0762b0fb69001dd73a3c"
+    },
+    "_schemaName": "Authorization",
+    "authorizationID": "M-242",
+    "followUpDocuments": [
+      {
+        "name": "Approving Temporary Stockpiles, PAG Encapsulation and Change to Mine Permit Boundary",
+        "ref": "https://mines.empr.gov.bc.ca/api/document/58228f2b6d6ad30017cdf00b/fetch",
+        "_id": {
+          "$oid": "58ec0762b0fb69001dd73a3d"
+        }
+      }
+    ],
+    "authorizationSummary": "",
+    "authorizationDate": {
+      "$date": "2016-07-06T08:00:00.000-0700"
+    },
+    "documentStatus": "Amended",
+    "documentType": "Permit",
+    "documentURL": "https://mines.empr.gov.bc.ca/api/document/58228f2b6d6ad30017cdf00b/fetch",
+    "documentName": "Approving Temporary Stockpiles, PAG Encapsulation and Change to Mine Permit Boundary",
+    "actName": "Mines Act",
+    "agencyName": "Ministry of Energy and Mines",
+    "agencyCode": "MEM",
+    "projectCode": "silvertip",
+    "projectName": "Silvertip",
+    "projectId": "58a3666d7f16ee001ddc6957",
+    "__v": 0
+  }
+]
