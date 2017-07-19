@@ -3,7 +3,7 @@
 	<div class="fb-header">
 		<div class="fb-header-path">
 			<div class="fb-path"
-				ng-class="{'root': node.model.name == 'ROOT'}" 
+				ng-class="{'root': node.model.name == 'ROOT'}"
 				ng-repeat="node in documentMgr.currentPath">
 				<span class="fb-path-arrow" ng-if="node.model.name != 'ROOT'">&rsaquo;</span>
 				<button class="btn icon-btn" ng-click="documentMgr.selectNode(node.model.id)">
@@ -84,6 +84,7 @@
 					</li>
 					<li>
 						<a title="Collections"
+							ng-show="project.userCan.listProjectCollections"
 							x-collection-chooser
 							x-project="project"
 							x-docs="documentMgr.checkedFiles"
@@ -387,14 +388,14 @@
 			<!-- FILE DETAILS -->
 			<div class="fb-details-content" ng-if="documentMgr.infoPanel.data && documentMgr.infoPanel.type === 'File'">
 				<div class="title-panel">
-					
+
 					<div class="title-panel-info">
 						<button class="btn btn-default close" type="button" ng-click="documentMgr.infoPanel.close()">
 							<span aria-hidden="true">&times;</span>
 						</button>
 						<h2 title="{{documentMgr.infoPanel.data.displayName | removeExtension}}">{{documentMgr.infoPanel.data.displayName | removeExtension }}</h2>
 					</div>
-			
+
 					<div class="title-panel-btns">
 						<a class="btn btn-default btn-sm" ng-if="documentMgr.infoPanel.data.userCan.read"
 							href="/api/document/{{ documentMgr.infoPanel.data._id }}/fetch"
@@ -458,7 +459,7 @@
 										<span class="glyphicon glyphicon-copy"></span> Copy Link to Clipboard
 									</a>
 								</li>
-								<li ng-if="authentication.user">
+								<li ng-if="project.userCan.listProjectCollections">
 									<a title="Collections"
 										x-collection-chooser
 										x-project="project"
@@ -477,7 +478,7 @@
 							</ul>
 						</div>
 					</div>
-					
+
 				</div>
 				<div class="scroll-container">
 					<div class="fb-details-section">
@@ -520,7 +521,7 @@
                     <li data-ng-repeat="keyword in documentMgr.infoPanel.data.keywords">{{ keyword }}</li>
                   </ul>
 								</li>
-								<li ng-if="authentication.user && documentMgr.infoPanel.data.collections.length > 0">
+								<li ng-if="project.userCan.listProjectCollections && documentMgr.infoPanel.data.collections.length > 0">
 									<span class="name">Collection(s):</span>
 									<ul class="value">
 										<li data-ng-repeat="collection in documentMgr.infoPanel.data.collections">{{ collection.displayName }}</li>

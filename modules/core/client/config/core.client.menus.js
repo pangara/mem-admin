@@ -111,13 +111,13 @@ angular.module('core').run(['Menus', 'ENV', 'ADMIN_FEATURES', 'FEATURES', functi
 	Menus.addMenu('projectMenu', {
 		permissions: [
 			'context.listDocuments',
-			'context.listCollections',
 			'context.listValuedComponents',
 			'context.listProjectRoles',
 			'context.listCompliance',
 			'context.listProjectConditions',
 			'context.listProjectComplaints',
 			'context.listProjectInvitations',
+			'context.listProjectCollections',
 			'context.listProjectUpdates',
 			'context.listProjectGroups'
 		]
@@ -131,7 +131,7 @@ angular.module('core').run(['Menus', 'ENV', 'ADMIN_FEATURES', 'FEATURES', functi
 	Menus.addMenuItem('projectMenu', {
 		title: 'Collections',
 		state: 'p.collection.list',
-		permissions: ['context.listCollections'],
+		permissions: ['context.listProjectCollections'],
 		enable: 'true' === FEATURES.enableCollections
 	});
 	Menus.addMenuItem('projectMenu', {
