@@ -165,10 +165,10 @@ module.exports = DBModel.extend({
 
 							// Add to collection
 							var CollectionDocument = new CollectionDocClass(self.opts);
-							sortOrder = _.toNumber(sortOrder);
+							sortOrder = sortOrder ? _.toNumber(sortOrder) : 0;
 							return CollectionDocument.create({
 								document  : document,
-								sortOrder : _.isNumber(sortOrder) ? sortOrder : 0,
+								sortOrder : _.isFinite(sortOrder) ? sortOrder : 0,
 							}).then(function(collectionDocument) {
 								collection.otherDocuments.push(collectionDocument);
 								collection.save();
@@ -248,10 +248,10 @@ module.exports = DBModel.extend({
 
 						// Add to collection
 						var CollectionDocument = new CollectionDocClass(self.opts);
-						sortOrder = _.toNumber(sortOrder);
+						sortOrder = sortOrder ? _.toNumber(sortOrder) : 0;
 						return CollectionDocument.create({
 							document  : document,
-							sortOrder : _.isNumber(sortOrder) ? sortOrder : 0,
+							sortOrder : _.isFinite(sortOrder) ? sortOrder : 0,
 						}).then(function(collectionDocument) {
 							if (collection.mainDocument) {
 								// Remove current main document
