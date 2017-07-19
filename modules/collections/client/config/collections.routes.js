@@ -7,6 +7,7 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 		abstract: true,
 		url: '/collection',
 		template: '<ui-view></ui-view>',
+		data: { permissions: ['listCollections'] },
 		resolve: {
 			collections: function($stateParams, CollectionModel, project) {
 				return CollectionModel.lookupProject(project.code);
@@ -33,6 +34,7 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 	.state('p.collection.create', {
 		url: '/create',
 		templateUrl: 'modules/collections/client/views/collection-edit.html',
+		data: { permissions: ['createCollection'] },
 		resolve: {
 			collection: function(CollectionModel) {
 				return CollectionModel.getNew();
@@ -285,6 +287,7 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 	.state('p.collection.edit', {
 		url: '/:collectionId/edit',
 		templateUrl: 'modules/collections/client/views/collection-edit.html',
+		data: { permissions: ['createCollection'] },
 		resolve: {
 			collection: function($stateParams, CollectionModel) {
 				return CollectionModel.getModel($stateParams.collectionId);

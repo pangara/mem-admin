@@ -112,13 +112,13 @@ var run = function() {
 		console.log('start');
 		Promise.resolve()
 			.then(function() {
-				console.log('1 - get project default roles and permissions');
+				console.log('1 - get project default permissions');
 				return findOne('_defaults', { context: 'project', resource: 'project', type: 'default-permissions' });
 			})
 			.then(function(data) {
-				console.log('2 - update project defaults');
-				data.defaults.permissions['listCollections']  = ['sysadmin'];
-				data.defaults.permissions['createCollection'] = ['sysadmin'];
+				console.log('2 - update project default permissions');
+				data.defaults.permissions['listProjectCollections']  = ['sysadmin'];
+				data.defaults.permissions['createProjectCollection'] = ['sysadmin'];
 				return update('_defaults', { _id: data._id }, data);
 			})
 			.then(function() {
@@ -129,13 +129,43 @@ var run = function() {
 				console.log('  - found ' + _.size(data) + ' project(s)');
 				console.log('4 - update project permissions');
 				_.each(data, function(project) {
-					project.userCan['listCollections']  = true;
-					project.userCan['createCollection'] = true;
+					project.userCan['listProjectCollections']  = true;
+					project.userCan['createProjectCollection'] = true;
 				});
 				return updateAll('projects', data);
 			})
 			.then(function() {
-				console.log('5 - add collection and collectiondocument to default permissions');
+				console.log('5 - get application default permissions');
+				return findOne('_defaults', { context: 'application', resource: 'application', type: 'default-permissions' });
+			})
+			.then(function(data) {
+				console.log('6 - update application default permissions');
+				data.defaults.permissions['listCollections']  = ['sysadmin'];
+				data.defaults.permissions['createCollection'] = ['sysadmin'];
+				return update('_defaults', { _id: data._id }, data);
+			})
+			.then(function() {
+				console.log('7 - get application role permissions');
+				return findOne('_defaults', { context: 'application', resource: 'application', type: 'rolePermissions' });
+			})
+			.then(function(data) {
+				console.log('8 - update application role permissions');
+				data.defaults['application:sysadmin'].sysadmin.push('listCollections');
+				data.defaults['application:sysadmin'].sysadmin.push('createCollection');
+				return update('_defaults', { _id: data._id }, data);
+			})
+			.then(function() {
+				console.log('9 - get application');
+				return findOne('applications', { _id: 'application'});;
+			})
+			.then(function(data) {
+				console.log('10 - update application permissions');
+				data.userCan['listCollections']  = false;
+				data.userCan['createCollection'] = false;
+				return update('applications', { _id: data._id }, data);
+			})
+			.then(function() {
+				console.log('11 - add collection and collectiondocument to default permissions');
 				var roles = {
 					'sysadmin'     : ['proponent-lead', 'project-lead'],
 					'project-lead' : ['public', 'proponent-lead', 'project-lead']
