@@ -61,12 +61,9 @@
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <div class="form-group" x-show-errors>
+        <div class="form-group">
           <label for="description" class="control-label">Description</label>
-          <textarea id="description" name="description" type="text" class="form-control" ng-model="collection.description" rows=3 required></textarea>
-            <div ng-messages="collectionForm.description.$error" role="alert">
-              <p class="help-block error-text" ng-message="required">Description is required.</p>
-            </div>
+          <textarea id="description" name="description" type="text" class="form-control" ng-model="collection.description" rows=3></textarea>
         </div>
       </div>
     </div>
