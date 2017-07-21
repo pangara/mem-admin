@@ -225,13 +225,6 @@ function controllerProjectsList2($scope, NgTableParams, Authentication, _, ENV, 
 	projectList.phaseArray = [];
 	projectList.openPCPArray = [];
 
-	// Natural sort
-	var collator = new Intl.Collator(undefined, {numeric: true, sensitivity: 'base'});
-	function textSort(d1, d2, direction) {
-		var v = collator.compare(d1, d2);
-		return v * direction;
-	}
-
 	$scope.$watch('projects', function(newValue) {
 		if (newValue) {
 			// add a pos for the map display
@@ -245,63 +238,32 @@ function controllerProjectsList2($scope, NgTableParams, Authentication, _, ENV, 
 			projs.pluck('region').unique().value().map( function(item) {
 				projectList.regionArray.push({id: item, title: $filter('regionName')(item)});
 			});
+			projs.pluck('status').unique().value().map( function(item) {
+				projectList.statusArray.push({id: item, title: item});
+			});
+			projs.pluck('eacDecision').unique().value().map( function (item) {
+				projectList.eacDecisionArray.push({id: item, title: item});
+			});
 			projs.pluck('type').unique().value().map( function(item) {
 				projectList.typeArray.push({id: item, title: item});
 			});
 			projs.pluck('currentPhase.name').unique().value().map( function(item) {
 				projectList.phaseArray.push({id: item, title: item});
 			});
+			projs.pluck('openCommentPeriod').unique().value().map( function(item) {
+				projectList.openPCPArray.push({id: item, title: item ? 'Open' : ''});
+			});
 
-			var tableData;
-			tableData = {
-				total: newValue.length,
-				getData: function ($defer, params) {
-					var direction, predicate;
-					// 1. Copy array to keep the total project set intact.
-					var contents = newValue.slice();
-					// 2. Filter the data
-					contents = params.filter().region ? $filter('filter')(contents, params.filter().region) : contents;
-					contents = params.filter().type ? $filter('filter')(contents, params.filter().type) : contents;
-					contents = params.filter()['currentPhase.name'] ? $filter('filter')(contents, params.filter()['currentPhase.name']) : contents;
-					if (params.filter().name) {
-						predicate = angular.lowercase(params.filter().name);
-						contents = $filter('filter')(contents, function(item) {
-							return (angular.lowercase(item.name).indexOf(predicate) > -1) ? item : undefined;
-						});
-					}
-					if (params.filter().memPermitID) {
-						predicate = angular.lowercase(params.filter().memPermitID);
-						contents = $filter('filter')(contents, function(item) {
-							return (angular.lowercase(item.memPermitID).indexOf(predicate) > -1) ? item : undefined;
-						});
-					}
-					// 3. Sort it
-					var flds = ['name', 'memPermitID', 'type', 'region'];
-					if (params.sorting()['currentPhase.name']) {
-						// 'currentPhase.name' field is nested otherwise it'd be in the flds array.
-						direction = params.sorting()['currentPhase.name'] === 'asc' ? 1 : -1;
-						contents.sort(function (d1, d2) {
-							return textSort(d1.currentPhase.name, d2.currentPhase.name, direction);
-						});
-					} else {
-						flds.forEach(function (fld) {
-							if (params.sorting()[fld]) {
-								direction = params.sorting()[fld] === 'asc' ? 1 : -1;
-								contents.sort(function (d1, d2) {
-									return textSort(d1[fld], d2[fld], direction);
-								});
-							}
-						});
-					}
-					// 4. Return the filtered sorted data set.
-					$defer.resolve(contents.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-				}
-		};
-		var paramDef = { count: 50 };
-		if ($scope.$parent.filterObj) {
-			paramDef.filter = $scope.$parent.filterObj;
-		}
-		projectList.tableParams = new NgTableParams (paramDef, tableData);
+			if ($scope.$parent.filterObj) {
+				projectList.tableParams = new NgTableParams ({
+					count: 10,
+					filter: $scope.$parent.filterObj
+				}, {dataset: newValue});
+			} else {
+				projectList.tableParams = new NgTableParams ({
+					count: 10,
+				}, {dataset: newValue});
+			}
 		}
 	});
 
