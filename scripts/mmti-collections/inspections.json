@@ -246,7 +246,7 @@
     "inspectionNum": "160721",
     "inspectionName": "MEM-160721 (Ministry of Energy and Mines)",
     "orgCode": "",
-    "projectCode": "copper-mountain",
+    "projectCode": "copper-mountain-similco",
     "projectName": "Copper Mountain",
     "projectId": "58a3666c7f16ee001ddc694a",
     "__v": 0
@@ -277,7 +277,7 @@
     "inspectionNum": "65597",
     "inspectionName": "MEM-65597 (Ministry of Energy and Mines)",
     "orgCode": "",
-    "projectCode": "highland-valley-copper",
+    "projectCode": "highland-valley-copper-hvc",
     "projectName": "Highland Valley Copper",
     "projectId": "58a3666d7f16ee001ddc694d",
     "__v": 0
@@ -360,7 +360,7 @@
     "inspectionNum": "68378",
     "inspectionName": "MEM-68378 (Ministry of Energy and Mines)",
     "orgCode": "",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -788,7 +788,7 @@
     "inspectionNum": "31117",
     "inspectionName": "ENV-31117 (Ministry of Environment)",
     "orgCode": "",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -850,7 +850,7 @@
     "inspectionNum": "30349",
     "inspectionName": "ENV-30349 (Ministry of Environment)",
     "orgCode": "",
-    "projectCode": "copper-mountain",
+    "projectCode": "copper-mountain-similco",
     "projectName": "Copper Mountain",
     "projectId": "58a3666c7f16ee001ddc694a",
     "__v": 0
@@ -1036,7 +1036,7 @@
     "inspectionNum": "29707",
     "inspectionName": "ENV-29707 (Ministry of Environment)",
     "orgCode": "",
-    "projectCode": "highland-valley-copper",
+    "projectCode": "highland-valley-copper-hvc",
     "projectName": "Highland Valley Copper",
     "projectId": "58a3666d7f16ee001ddc694d",
     "__v": 0
@@ -1564,7 +1564,7 @@
     "inspectionNum": "67017",
     "inspectionName": "MEM-67017 (Ministry of Energy and Mines)",
     "orgCode": "",
-    "projectCode": "copper-mountain",
+    "projectCode": "copper-mountain-similco",
     "projectName": "Copper Mountain",
     "projectId": "58a3666c7f16ee001ddc694a",
     "__v": 0
@@ -1602,7 +1602,7 @@
     "inspectionNum": "66257",
     "inspectionName": "MEM-66257 (Ministry of Energy and Mines)",
     "orgCode": "",
-    "projectCode": "highland-valley-copper",
+    "projectCode": "highland-valley-copper-hvc",
     "projectName": "Highland Valley Copper",
     "projectId": "58a3666d7f16ee001ddc694d",
     "__v": 0
@@ -1671,7 +1671,7 @@
     "inspectionNum": "68682",
     "inspectionName": "MEM-68682 (Ministry of Energy and Mines)",
     "orgCode": "",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -2085,7 +2085,7 @@
     "inspectionNum": "31131",
     "inspectionName": "ENV-31131 (Ministry of Environment)",
     "orgCode": "",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -2147,7 +2147,7 @@
     "inspectionNum": "25065",
     "inspectionName": "ENV-25065 (Ministry of Environment)",
     "orgCode": "",
-    "projectCode": "copper-mountain",
+    "projectCode": "copper-mountain-similco",
     "projectName": "Copper Mountain",
     "projectId": "58a3666c7f16ee001ddc694a",
     "__v": 0
@@ -2302,7 +2302,7 @@
     "inspectionNum": "28993",
     "inspectionName": "ENV-28993 (Ministry of Environment)",
     "orgCode": "",
-    "projectCode": "highland-valley-copper",
+    "projectCode": "highland-valley-copper-hvc",
     "projectName": "Highland Valley Copper",
     "projectId": "58a3666d7f16ee001ddc694d",
     "__v": 0
@@ -2809,7 +2809,7 @@
     "inspectionNum": "61636",
     "inspectionName": "MEM-61636 (Ministry of Energy and Mines)",
     "orgCode": "",
-    "projectCode": "copper-mountain",
+    "projectCode": "copper-mountain-similco",
     "projectName": "Copper Mountain",
     "projectId": "58a3666c7f16ee001ddc694a",
     "__v": 0
@@ -2847,7 +2847,7 @@
     "inspectionNum": "70798",
     "inspectionName": "MEM-70798 (Ministry of Energy and Mines)",
     "orgCode": "",
-    "projectCode": "copper-mountain",
+    "projectCode": "copper-mountain-similco",
     "projectName": "Copper Mountain",
     "projectId": "58a3666c7f16ee001ddc694a",
     "__v": 0
@@ -2885,7 +2885,7 @@
     "inspectionNum": "71618",
     "inspectionName": "MEM-71618 (Ministry of Energy and Mines)",
     "orgCode": "",
-    "projectCode": "highland-valley-copper",
+    "projectCode": "highland-valley-copper-hvc",
     "projectName": "Highland Valley Copper",
     "projectId": "58a3666d7f16ee001ddc694d",
     "__v": 0
@@ -2954,7 +2954,7 @@
     "inspectionNum": "70476",
     "inspectionName": "MEM-70476 (Ministry of Energy and Mines)",
     "orgCode": "",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -3361,7 +3361,7 @@
     "inspectionNum": "31116",
     "inspectionName": "ENV-31116 (Ministry of Environment)",
     "orgCode": "",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -3423,7 +3423,7 @@
     "inspectionNum": "27027",
     "inspectionName": "ENV-27027 (Ministry of Environment)",
     "orgCode": "",
-    "projectCode": "copper-mountain",
+    "projectCode": "copper-mountain-similco",
     "projectName": "Copper Mountain",
     "projectId": "58a3666c7f16ee001ddc694a",
     "__v": 0
@@ -3578,7 +3578,7 @@
     "inspectionNum": "29667",
     "inspectionName": "ENV-29667 (Ministry of Environment)",
     "orgCode": "",
-    "projectCode": "highland-valley-copper",
+    "projectCode": "highland-valley-copper-hvc",
     "projectName": "Highland Valley Copper",
     "projectId": "58a3666d7f16ee001ddc694d",
     "__v": 0
@@ -3833,7 +3833,7 @@
     "inspectionNum": "",
     "inspectionName": "EAO- (Environmental Assessment Office)",
     "orgCode": "",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -4092,7 +4092,7 @@
     "inspectionNum": "64276",
     "inspectionName": "MEM-64276 (Ministry of Energy and Mines)",
     "orgCode": "",
-    "projectCode": "copper-mountain",
+    "projectCode": "copper-mountain-similco",
     "projectName": "Copper Mountain",
     "projectId": "58a3666c7f16ee001ddc694a",
     "__v": 0
@@ -4130,7 +4130,7 @@
     "inspectionNum": "63580",
     "inspectionName": "MEM-63580 (Ministry of Energy and Mines)",
     "orgCode": "",
-    "projectCode": "highland-valley-copper",
+    "projectCode": "highland-valley-copper-hvc",
     "projectName": "Highland Valley Copper",
     "projectId": "58a3666d7f16ee001ddc694d",
     "__v": 0
@@ -4213,7 +4213,7 @@
     "inspectionNum": "66096",
     "inspectionName": "MEM-66096 (Ministry of Energy and Mines)",
     "orgCode": "",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -4655,7 +4655,7 @@
     "inspectionNum": "25026",
     "inspectionName": "ENV-25026 (Ministry of Environment)",
     "orgCode": "",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -4686,7 +4686,7 @@
     "inspectionNum": "31011",
     "inspectionName": "ENV-31011 (Ministry of Environment)",
     "orgCode": "",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -4903,7 +4903,7 @@
     "inspectionNum": "29676",
     "inspectionName": "ENV-29676 (Ministry of Environment)",
     "orgCode": "",
-    "projectCode": "highland-valley-copper",
+    "projectCode": "highland-valley-copper-hvc",
     "projectName": "Highland Valley Copper",
     "projectId": "58a3666d7f16ee001ddc694d",
     "__v": 0
@@ -5386,7 +5386,7 @@
     "inspectionNum": "63579",
     "inspectionName": "MEM-63579 (Ministry of Energy and Mines)",
     "orgCode": "",
-    "projectCode": "copper-mountain",
+    "projectCode": "copper-mountain-similco",
     "projectName": "Copper Mountain",
     "projectId": "58a3666c7f16ee001ddc694a",
     "__v": 0
@@ -5417,7 +5417,7 @@
     "inspectionNum": "61503",
     "inspectionName": "MEM-61503 (Ministry of Energy and Mines)",
     "orgCode": "",
-    "projectCode": "highland-valley-copper",
+    "projectCode": "highland-valley-copper-hvc",
     "projectName": "Highland Valley Copper",
     "projectId": "58a3666d7f16ee001ddc694d",
     "__v": 0
@@ -5486,7 +5486,7 @@
     "inspectionNum": "61056",
     "inspectionName": "MEM-61056 (Ministry of Energy and Mines)",
     "orgCode": "",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -5517,7 +5517,7 @@
     "inspectionNum": "71337",
     "inspectionName": "MEM-71337 (Ministry of Energy and Mines)",
     "orgCode": "",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -5924,7 +5924,7 @@
     "inspectionNum": "31469",
     "inspectionName": "ENV-31469 (Ministry of Environment)",
     "orgCode": "",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -5986,7 +5986,7 @@
     "inspectionNum": "25425",
     "inspectionName": "ENV-25425 (Ministry of Environment)",
     "orgCode": "",
-    "projectCode": "copper-mountain",
+    "projectCode": "copper-mountain-similco",
     "projectName": "Copper Mountain",
     "projectId": "58a3666c7f16ee001ddc694a",
     "__v": 0
@@ -6141,7 +6141,7 @@
     "inspectionNum": "29687",
     "inspectionName": "ENV-29687 (Ministry of Environment)",
     "orgCode": "",
-    "projectCode": "highland-valley-copper",
+    "projectCode": "highland-valley-copper-hvc",
     "projectName": "Highland Valley Copper",
     "projectId": "58a3666d7f16ee001ddc694d",
     "__v": 0

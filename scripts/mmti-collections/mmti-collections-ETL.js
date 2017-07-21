@@ -8,6 +8,7 @@
 
 var apiHost = 'http://' + (process.argv[2] || 'localhost:4000');
 var cookie  = 'sessionId=' + process.argv[3];
+var test    = process.argv[4] === 'test';
 
 var Promise      = require('es6-promise').Promise;
 var RequestRetry = require('requestretry');
@@ -53,12 +54,12 @@ var addCollection = function(collection, projectCode) {
 	return api('collections/project/' + projectCode + '/add', 'collection', collection.displayName, collection);
 }
 
-var addMainDocument = function(documentId, collectionId, sortOrder) {
-	return api('collections/' + collectionId + '/document/' + documentId + '/main/add/' + sortOrder, 'document', documentId);
+var addMainDocument = function(documentId, collectionId) {
+	return api('collections/' + collectionId + '/document/' + documentId + '/main/add', 'document', documentId);
 }
 
-var addOtherDocument = function(documentId, collectionId, sortOrder) {
-	return api('collections/' + collectionId + '/document/' + documentId + '/add/' + sortOrder, 'document', documentId);
+var addOtherDocument = function(documentId, collectionId) {
+	return api('collections/' + collectionId + '/document/' + documentId + '/add', 'document', documentId);
 }
 
 var add = function(projectCode, collection, followUpDocuments) {
@@ -76,17 +77,17 @@ var add = function(projectCode, collection, followUpDocuments) {
 			var matches = mainDocument.ref.match('api/document/(.+)/fetch$');
 			if (matches) {
 				console.log('Adding main document "' + mainDocument.name + '" to collection "' + collection.displayName + '"');
-				return addMainDocument(matches[1], collectionId, 1);
+				return addMainDocument(matches[1], collectionId);
 			}
 		}
 	}).then(function() {
 		var others = [];
-		_.each(otherDocuments, function(otherDocument, index) {
+		_.each(otherDocuments, function(otherDocument) {
 			// find the actual document ID
 			var matches = otherDocument.ref.match('api/document/(.+)/fetch$');
 			if (matches) {
 				console.log('Adding other document "' + otherDocument.name + '" to collection "' + collection.displayName + '"');
-				others.push(addOtherDocument(matches[1], collectionId, index + 1));
+				others.push(addOtherDocument(matches[1], collectionId));
 			}
 		});
 		return Promise.all(others);
@@ -98,7 +99,7 @@ var add = function(projectCode, collection, followUpDocuments) {
 // --------------
 
 var doAuthorizations = function() {
-	var authorizations = require('./authorizations.json');
+	var authorizations = require(test ? './test_authorizations.json' : './authorizations.json');
 
 	// Ignore EAO documents
 	authorizations = _.filter(authorizations, function(a) { return a.agencyCode !== 'EAO'; });
@@ -126,7 +127,7 @@ var doAuthorizations = function() {
 // -----------
 
 var doInspections = function() {
-	var inspections = require('./inspections.json');
+	var inspections = require(test ? './test_inspections.json' : './inspections.json');
 
 	// Ignore EAO documents
 	inspections = _.filter(inspections, function(i) {
@@ -158,7 +159,7 @@ var doInspections = function() {
 // ---------------
 
 var doOtherDocuments = function() {
-	var otherDocuments = require('./otherdocuments.json');
+	var otherDocuments = require(test ? './test_otherdocuments.json' : './otherdocuments.json');
 	console.log('\nOther documents to load: ', otherDocuments.length, '\n');
 
 	var promises = _.map(otherDocuments, function(otherDocument) {
@@ -176,8 +177,8 @@ var doOtherDocuments = function() {
 			type        : type,
 			status      : 'Issued',
 			date        : otherDocument.date ? otherDocument.date.$date : '',
-			isForENV    : true,
-			isForMEM    : true,
+			isForENV    : false,
+			isForMEM    : false,
 		};
 
 		return add(otherDocument.projectCode, collection, otherDocument.documents);

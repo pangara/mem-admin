@@ -136,24 +136,22 @@ module.exports = DBModel.extend({
 		});
 	},
 
-	addOtherDocument: function(collectionId, documentId, sortOrder) {
+	addOtherDocument: function(collectionId, documentId) {
 		var self = this;
 
 		return this.findById(collectionId).then(function(collection) {
 			if (!collection) return;
 
 			// Is the document already in there?
-			if (!_.find(collection.otherDocuments, function(cd) {
-				return cd.document._id.equals(documentId);
-			})) {
+			if (!_.find(collection.otherDocuments, function(cd) { return cd.document._id.equals(documentId); })) {
 				// Is it the main document?
 				if (collection.mainDocument && collection.mainDocument.document._id.equals(documentId)) {
 					// Add it to other documents and remove it as the main document
-					var document = collection.mainDocument;
-					collection.otherDocuments.push(document);
+					var collectionDocument = collection.mainDocument;
+					collection.otherDocuments.push(collectionDocument);
 					collection.mainDocument = null;
 					collection.save();
-					return document;
+					return collectionDocument;
 				} else {
 					// Add it
 					var Document = new DocumentClass(self.opts);
@@ -165,14 +163,12 @@ module.exports = DBModel.extend({
 
 							// Add to collection
 							var CollectionDocument = new CollectionDocClass(self.opts);
-							sortOrder = sortOrder ? _.toNumber(sortOrder) : 0;
 							return CollectionDocument.create({
-								document  : document,
-								sortOrder : _.isFinite(sortOrder) ? sortOrder : 0,
+								document: document,
 							}).then(function(collectionDocument) {
 								collection.otherDocuments.push(collectionDocument);
 								collection.save();
-								return collectionDocument.document;
+								return collectionDocument;
 							});
 						}
 					});
@@ -213,7 +209,25 @@ module.exports = DBModel.extend({
 		});
 	},
 
-	addMainDocument: function(collectionId, documentId, sortOrder) {
+	updateOtherDocumentSortOrder: function(collectionId, documentId, sortOrder) {
+		var self = this;
+
+		return this.findById(collectionId).then(function(collection) {
+			if (!collection) return;
+
+			// Is the document already in there?
+			var collectionDocument = _.find(collection.otherDocuments, function(cd) {
+				return cd.document._id.equals(documentId);
+			});
+
+			if (collectionDocument) {
+				collectionDocument.sortOrder = sortOrder;
+				return collectionDocument.save();
+			}
+		});
+	},
+
+	addMainDocument: function(collectionId, documentId) {
 		var self = this;
 
 		return this.findById(collectionId).then(function(collection) {
@@ -248,10 +262,8 @@ module.exports = DBModel.extend({
 
 						// Add to collection
 						var CollectionDocument = new CollectionDocClass(self.opts);
-						sortOrder = sortOrder ? _.toNumber(sortOrder) : 0;
 						return CollectionDocument.create({
-							document  : document,
-							sortOrder : _.isFinite(sortOrder) ? sortOrder : 0,
+							document: document,
 						}).then(function(collectionDocument) {
 							if (collection.mainDocument) {
 								// Remove current main document
@@ -259,7 +271,7 @@ module.exports = DBModel.extend({
 							}
 							collection.mainDocument = collectionDocument;
 							collection.save();
-							return collectionDocument.document;
+							return collectionDocument;
 						});
 					});
 				}

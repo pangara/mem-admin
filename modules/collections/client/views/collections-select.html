@@ -23,5 +23,5 @@
 
 <div class="modal-footer">
 	<button class="btn btn-default" ng-click="s.cancel()">Cancel</button>
-	<button class="btn btn-primary" ng-disabled="!(s.selected && s.selected.length > 0)" ng-click="s.ok()">OK</span></button>
+	<button class="btn btn-primary" ng-disabled="s.multiple && !(s.selected && s.selected.length > 0)" ng-click="s.ok()">OK</span></button>
 </div>
