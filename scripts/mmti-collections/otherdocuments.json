@@ -168,7 +168,7 @@
         }
       }
     ],
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "project": {
       "$oid": "58a3666d7f16ee001ddc694f"
@@ -523,7 +523,7 @@
         }
       }
     ],
-    "projectCode": "highland-valley-copper",
+    "projectCode": "highland-valley-copper-hvc",
     "projectName": "Highland Valley Copper",
     "project": {
       "$oid": "58a3666d7f16ee001ddc694d"
@@ -822,7 +822,7 @@
         }
       }
     ],
-    "projectCode": "highland-valley-copper",
+    "projectCode": "highland-valley-copper-hvc",
     "projectName": "Highland Valley Copper",
     "project": {
       "$oid": "58a3666d7f16ee001ddc694d"
@@ -1018,7 +1018,7 @@
         }
       }
     ],
-    "projectCode": "copper-mountain",
+    "projectCode": "copper-mountain-similco",
     "projectName": "Copper Mountain",
     "project": {
       "$oid": "58a3666c7f16ee001ddc694a"

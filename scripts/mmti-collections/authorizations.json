@@ -25,7 +25,7 @@
     "actName": "Environmental Assessment Act",
     "agencyName": "Environmental Assessment Office",
     "agencyCode": "EAO",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -211,7 +211,7 @@
     "actName": "Environmental Management Act",
     "agencyName": "Ministry of Environment",
     "agencyCode": "ENV",
-    "projectCode": "highland-valley-copper",
+    "projectCode": "highland-valley-copper-hvc",
     "projectName": "Highland Valley Copper",
     "projectId": "58a3666d7f16ee001ddc694d",
     "__v": 0
@@ -242,7 +242,7 @@
     "actName": "Environmental Management Act",
     "agencyName": "Ministry of Environment",
     "agencyCode": "ENV",
-    "projectCode": "copper-mountain",
+    "projectCode": "copper-mountain-similco",
     "projectName": "Copper Mountain",
     "projectId": "58a3666c7f16ee001ddc694a",
     "__v": 0
@@ -466,7 +466,7 @@
     "actName": "Mines Act",
     "agencyName": "Ministry of Energy and Mines",
     "agencyCode": "MEM",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -745,7 +745,7 @@
     "actName": "Mines Act",
     "agencyName": "Ministry of Energy and Mines",
     "agencyCode": "MEM",
-    "projectCode": "copper-mountain",
+    "projectCode": "copper-mountain-similco",
     "projectName": "Copper Mountain",
     "projectId": "58a3666c7f16ee001ddc694a",
     "__v": 0
@@ -807,7 +807,7 @@
     "actName": "Mines Act",
     "agencyName": "Ministry of Energy and Mines",
     "agencyCode": "MEM",
-    "projectCode": "highland-valley-copper",
+    "projectCode": "highland-valley-copper-hvc",
     "projectName": "Highland Valley Copper",
     "projectId": "58a3666d7f16ee001ddc694d",
     "__v": 0
@@ -1086,7 +1086,7 @@
     "actName": "Environmental Assessment Act",
     "agencyName": "Environmental Assessment Office",
     "agencyCode": "EAO",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -1434,7 +1434,7 @@
     "actName": "Environmental Management Act",
     "agencyName": "Ministry of Environment",
     "agencyCode": "ENV",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -1527,7 +1527,7 @@
     "actName": "Mines Act",
     "agencyName": "Ministry of Energy and Mines",
     "agencyCode": "MEM",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -1806,7 +1806,7 @@
     "actName": "Mines Act",
     "agencyName": "Ministry of Energy and Mines",
     "agencyCode": "MEM",
-    "projectCode": "copper-mountain",
+    "projectCode": "copper-mountain-similco",
     "projectName": "Copper Mountain",
     "projectId": "58a3666c7f16ee001ddc694a",
     "__v": 0
@@ -1868,7 +1868,7 @@
     "actName": "Mines Act",
     "agencyName": "Ministry of Energy and Mines",
     "agencyCode": "MEM",
-    "projectCode": "highland-valley-copper",
+    "projectCode": "highland-valley-copper-hvc",
     "projectName": "Highland Valley Copper",
     "projectId": "58a3666d7f16ee001ddc694d",
     "__v": 0
@@ -2147,7 +2147,7 @@
     "actName": "Environmental Assessment Act",
     "agencyName": "Environmental Assessment Office",
     "agencyCode": "EAO",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -2271,7 +2271,7 @@
     "actName": "Environmental Management Act",
     "agencyName": "Ministry of Environment",
     "agencyCode": "ENV",
-    "projectCode": "copper-mountain",
+    "projectCode": "copper-mountain-similco",
     "projectName": "Copper Mountain",
     "projectId": "58a3666c7f16ee001ddc694a",
     "__v": 0
@@ -2395,7 +2395,7 @@
     "actName": "Environmental Management Act",
     "agencyName": "Ministry of Environment",
     "agencyCode": "ENV",
-    "projectCode": "copper-mountain",
+    "projectCode": "copper-mountain-similco",
     "projectName": "Copper Mountain",
     "projectId": "58a3666c7f16ee001ddc694a",
     "__v": 0
@@ -2488,7 +2488,7 @@
     "actName": "Environmental Management Act",
     "agencyName": "Ministry of Environment",
     "agencyCode": "ENV",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -2581,7 +2581,7 @@
     "actName": "Mines Act",
     "agencyName": "Ministry of Energy and Mines",
     "agencyCode": "MEM",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -3170,7 +3170,7 @@
     "actName": "Environmental Assessment Act",
     "agencyName": "Environmental Assessment Office",
     "agencyCode": "EAO",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -3294,7 +3294,7 @@
     "actName": "Environmental Management Act",
     "agencyName": "Ministry of Environment",
     "agencyCode": "ENV",
-    "projectCode": "copper-mountain",
+    "projectCode": "copper-mountain-similco",
     "projectName": "Copper Mountain",
     "projectId": "58a3666c7f16ee001ddc694a",
     "__v": 0
@@ -3356,7 +3356,7 @@
     "actName": "Environmental Management Act",
     "agencyName": "Ministry of Environment",
     "agencyCode": "ENV",
-    "projectCode": "highland-valley-copper",
+    "projectCode": "highland-valley-copper-hvc",
     "projectName": "Highland Valley Copper",
     "projectId": "58a3666d7f16ee001ddc694d",
     "__v": 0
@@ -4193,7 +4193,7 @@
     "actName": "Environmental Assessment Act",
     "agencyName": "Environmental Assessment Office",
     "agencyCode": "EAO",
-    "projectCode": "brule",
+    "projectCode": "brule-dillon",
     "projectName": "Brule",
     "projectId": "58a3666d7f16ee001ddc694f",
     "__v": 0
@@ -4317,7 +4317,7 @@
     "actName": "Environmental Management Act",
     "agencyName": "Ministry of Environment",
     "agencyCode": "ENV",
-    "projectCode": "highland-valley-copper",
+    "projectCode": "highland-valley-copper-hvc",
     "projectName": "Highland Valley Copper",
     "projectId": "58a3666d7f16ee001ddc694d",
     "__v": 0
@@ -4503,7 +4503,7 @@
     "actName": "Environmental Management Act",
     "agencyName": "Ministry of Environment",
     "agencyCode": "ENV",
-    "projectCode": "highland-valley-copper",
+    "projectCode": "highland-valley-copper-hvc",
     "projectName": "Highland Valley Copper",
     "projectId": "58a3666d7f16ee001ddc694d",
     "__v": 0
@@ -4565,7 +4565,7 @@
     "actName": "Environmental Management Act",
     "agencyName": "Ministry of Environment",
     "agencyCode": "ENV",
-    "projectCode": "copper-mountain",
+    "projectCode": "copper-mountain-similco",
     "projectName": "Copper Mountain",
     "projectId": "58a3666c7f16ee001ddc694a",
     "__v": 0
@@ -4937,7 +4937,7 @@
     "actName": "Mines Act",
     "agencyName": "Ministry of Energy and Mines",
     "agencyCode": "MEM",
-    "projectCode": "highland-valley-copper",
+    "projectCode": "highland-valley-copper-hvc",
     "projectName": "Highland Valley Copper",
     "projectId": "58a3666d7f16ee001ddc694d",
     "__v": 0

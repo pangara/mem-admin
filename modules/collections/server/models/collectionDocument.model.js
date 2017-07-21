@@ -15,5 +15,5 @@ module.exports = require(path.resolve('./modules/core/server/controllers/core.sc
 	dateAdded : { type: Date, default: Date.now },
 	updatedBy : { type: 'ObjectId', ref:'User', default: null },
 
-	sortOrder : { type: 'Number', default: 0 },
+	sortOrder : { type: 'Number', default: Date.now },
 });
