@@ -178,7 +178,7 @@ var doOtherDocuments = function() {
 			status      : 'Issued',
 			date        : otherDocument.date ? otherDocument.date.$date : '',
 			isForENV    : false,
-			isForMEM    : false,
+			isForMEM    : true,
 		};
 
 		return add(otherDocument.projectCode, collection, otherDocument.documents);
