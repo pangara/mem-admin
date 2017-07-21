@@ -173,6 +173,10 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 				});
 			};
 
+			$scope.otherDocsReordered = function() {
+				reloadDetails();
+			};
+
 			$scope.delete = function() {
 				var modalView = $modal.open({
 					animation: true,
