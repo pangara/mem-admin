@@ -515,11 +515,11 @@
 									<span class="name">ID:</span>
 									<span class="value">{{ documentMgr.infoPanel.data.documentId }}</span>
 								</li>
-                <li class="doc-keywords-list" ng-if="documentMgr.infoPanel.data.keywords.length > 0">
-                  <span class="name">Keyword(s):</span>
-                  <ul>
-                    <li data-ng-repeat="keyword in documentMgr.infoPanel.data.keywords">{{ keyword }}</li>
-                  </ul>
+								<li class="doc-keywords-list" ng-if="documentMgr.infoPanel.data.keywords.length > 0">
+									<span class="name">Keyword(s):</span>
+									<ul class="value">
+										<li data-ng-repeat="keyword in documentMgr.infoPanel.data.keywords">{{ keyword }}</li>
+									</ul>
 								</li>
 								<li ng-if="project.userCan.listProjectCollections && documentMgr.infoPanel.data.collections.length > 0">
 									<span class="name">Collection(s):</span>
