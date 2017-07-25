@@ -83,7 +83,7 @@
 //
 // =========================================================================
 var genSchema = require ('../../../core/server/controllers/core.schema.controller');
-
+var _          = require ('lodash');
 genSchema ('TypesSchema', {
 	projectFolderType           : { type:String, default:'' },
 	projectFolderSubTypeObjects : []
@@ -181,14 +181,19 @@ module.exports = genSchema ('Document', {
 
 function inspectionType() {
 	var categories = this.documentCategories || [];
-	var result = null;
-	for(var i = 0; i < categories.length; i++) {
+	// see copy of this same code on client: doc-categories.js
+	var inspectionReportTypes = ['Inspection Report Response', 'Inspection Report Follow Up', 'Inspection Report'];
+	var iType = null;
+	for(var i = 0; i < categories.length && !iType; i++) {
 		var cat = categories[i];
-		if (cat.indexOf("Inspection ") >= 0) {
-			result = cat;
-			break;
+		for (var k=0; k < inspectionReportTypes.length && !iType; k++) {
+			var type = inspectionReportTypes[k];
+			if (_.startsWith(cat,type)) {
+				iType = type;
+			}
 		}
 	}
-	return result;
+	return iType;
 }
+
 
