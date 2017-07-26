@@ -82,8 +82,11 @@
 // CC: converted to new schema pre-processor
 //
 // =========================================================================
-var genSchema = require ('../../../core/server/controllers/core.schema.controller');
-var _          = require ('lodash');
+var path = require('path');
+var genSchema = require (path.resolve('./modules/core/server/controllers/core.schema.controller'));
+var config 	= require(path.resolve('./config/config'));
+var _  = require ('lodash');
+
 genSchema ('TypesSchema', {
 	projectFolderType           : { type:String, default:'' },
 	projectFolderSubTypeObjects : []
@@ -181,8 +184,9 @@ module.exports = genSchema ('Document', {
 
 function inspectionType() {
 	var categories = this.documentCategories || [];
+	// types with shortest length last
+	var inspectionReportTypes = config.inspectionReportTypes;// ['Inspection Report Response', 'Inspection Report Follow Up', 'Inspection Report'];
 	// see copy of this same code on client: doc-categories.js
-	var inspectionReportTypes = ['Inspection Report Response', 'Inspection Report Follow Up', 'Inspection Report'];
 	var iType = null;
 	for(var i = 0; i < categories.length && !iType; i++) {
 		var cat = categories[i];
