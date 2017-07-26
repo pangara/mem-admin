@@ -284,6 +284,9 @@ angular
 			'redirectHomepageToGeorgeMassey': false
 		}
 	)
+    // types with shortest length last
+	.constant('INSPECTION_TYPES', ['Inspection Report Response', 'Inspection Report Follow Up', 'Inspection Report'] )
+
 	.constant('SALUTATIONS', ['Mr','Mrs','Miss','Ms','Dr','Capt','Prof','Rev','Other'])
 	.factory ('codeFromTitle', function () {
 		return function (title) {

@@ -190,7 +190,10 @@ var initGlobalConfig = function () {
 		getGlobbedPaths: getGlobbedPaths
 	};
 
-	return config;
+    // types with shortest length last
+    config.inspectionReportTypes = ['Inspection Report Response', 'Inspection Report Follow Up', 'Inspection Report'];
+
+    return config;
 };
 
 /**
