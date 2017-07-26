@@ -199,7 +199,6 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 						$scope.showSuccess('"'+ $scope.collection.displayName +'"' + ' was deleted successfully.', goToList, 'Delete Success');
 					})
 					.catch(function(res) {
-						console.log("res:", res);
 						// could have errors from a delete check...
 						var failure = _.has(res, 'message') ? res.message : undefined;
 						$scope.showError('"'+ $scope.collection.displayName +'"' + ' was not deleted.', [], reloadDetails, 'Delete Error');
@@ -220,7 +219,6 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 						movePromise
 						.then(reloadDetails)
 						.catch(function(res) {
-							console.log("res:", res);
 							var failure = _.has(res, 'message') ? res.message : undefined;
 							$scope.showError('Could not update main document for "'+ $scope.collection.displayName +'".', [], reloadDetails, 'Update Main Document Error');
 						});
@@ -261,7 +259,6 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 				CollectionModel.removeMainDocument($scope.collection._id, document._id)
 				.then(reloadDetails)
 				.catch(function(res) {
-					console.log("res:", res);
 					var failure = _.has(res, 'message') ? res.message : undefined;
 					$scope.showError('Could not remove main document from "'+ $scope.collection.displayName +'".', [], reloadDetails, 'Remove Main Document Error');
 				});
@@ -290,7 +287,6 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 					Promise.all(docPromises)
 					.then(reloadDetails)
 					.catch(function(res) {
-						console.log("res:", res);
 						var failure = _.has(res, 'message') ? res.message : undefined;
 						$scope.showError('Could not update other documents for "'+ $scope.collection.displayName +'".', [], reloadDetails, 'Update Other Documents Error');
 					});
@@ -316,7 +312,6 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 				CollectionModel.removeOtherDocument($scope.collection._id, document._id)
 				.then(reloadDetails)
 				.catch(function(res) {
-					console.log("res:", res);
 					var failure = _.has(res, 'message') ? res.message : undefined;
 					$scope.showError('Could not remove other document from "'+ $scope.collection.displayName +'".', [], reloadDetails, 'Remove Other Document Error');
 				});
@@ -329,7 +324,6 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 					$scope.showSuccess('"'+ $scope.collection.displayName +'"' + ' was published successfully.', goToList, 'Publish Success');
 				})
 				.catch(function(res) {
-					console.log("res:", res);
 					var failure = _.has(res, 'message') ? res.message : undefined;
 					$scope.showError('"'+ $scope.collection.displayName +'"' + ' was not published.', [], reloadDetails, 'Publish Error');
 				});
@@ -342,7 +336,6 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 					$scope.showSuccess('"'+ $scope.collection.displayName +'"' + ' was unpublished successfully.', goToList, 'Unpublish Success');
 				})
 				.catch(function(res) {
-					console.log("res:", res);
 					var failure = _.has(res, 'message') ? res.message : undefined;
 					$scope.showError('"'+ $scope.collection.displayName +'"' + ' was not unpublished.', [], reloadDetails, 'Unpublish Error');
 				});
@@ -452,7 +445,6 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 						$scope.showSuccess('"'+ $scope.collection.displayName +'"' + ' was deleted successfully.', goToList, 'Delete Success');
 					})
 					.catch(function(res) {
-						console.log("res:", res);
 						// could have errors from a delete check...
 						var failure = _.has(res, 'message') ? res.message : undefined;
 						$scope.showError('"'+ $scope.collection.displayName +'"' + ' was not deleted.', [], reloadEdit, 'Delete Error');
@@ -467,7 +459,6 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 					$scope.showSuccess('"'+ $scope.collection.displayName +'"' + ' was published successfully.', goToList, 'Publish Success');
 				})
 				.catch(function(res) {
-					console.log("res:", res);
 					var failure = _.has(res, 'message') ? res.message : undefined;
 					$scope.showError('"'+ $scope.collection.displayName +'"' + ' was not published.', [], reloadEdit, 'Publish Error');
 				});
@@ -480,7 +471,6 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 					$scope.showSuccess('"'+ $scope.collection.displayName +'"' + ' was unpublished successfully.', goToList, 'Unpublish Success');
 				})
 				.catch(function(res) {
-					console.log("res:", res);
 					var failure = _.has(res, 'message') ? res.message : undefined;
 					$scope.showError('"'+ $scope.collection.displayName +'"' + ' was not unpublished.', [], reloadEdit, 'Unpublish Error');
 				});
