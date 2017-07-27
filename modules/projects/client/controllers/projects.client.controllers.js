@@ -248,7 +248,7 @@ function controllerProjectsList2($scope, NgTableParams, Authentication, _, ENV, 
 			projs.pluck('type').unique().value().map( function(item) {
 				projectList.typeArray.push({id: item, title: item});
 			});
-			projs.pluck('currentPhase.name').unique().value().map( function(item) {
+			projs.pluck('currentPhaseName').unique().value().map( function(item) {
 				projectList.phaseArray.push({id: item, title: item});
 			});
 
@@ -262,7 +262,7 @@ function controllerProjectsList2($scope, NgTableParams, Authentication, _, ENV, 
 					// 2. Filter the data
 					contents = params.filter().region ? $filter('filter')(contents, params.filter().region) : contents;
 					contents = params.filter().type ? $filter('filter')(contents, params.filter().type) : contents;
-					contents = params.filter()['currentPhase.name'] ? $filter('filter')(contents, params.filter()['currentPhase.name']) : contents;
+					contents = params.filter().currentPhaseName ? $filter('filter')(contents, params.filter().currentPhaseName) : contents;
 					if (params.filter().name) {
 						predicate = angular.lowercase(params.filter().name);
 						contents = $filter('filter')(contents, function(item) {
@@ -276,23 +276,15 @@ function controllerProjectsList2($scope, NgTableParams, Authentication, _, ENV, 
 						});
 					}
 					// 3. Sort it
-					var flds = ['name', 'memPermitID', 'type', 'region'];
-					if (params.sorting()['currentPhase.name']) {
-						// 'currentPhase.name' field is nested otherwise it'd be in the flds array.
-						direction = params.sorting()['currentPhase.name'] === 'asc' ? 1 : -1;
-						contents.sort(function (d1, d2) {
-							return textSort(d1.currentPhase.name, d2.currentPhase.name, direction);
-						});
-					} else {
-						flds.forEach(function (fld) {
-							if (params.sorting()[fld]) {
+					var flds = ['name', 'memPermitID', 'type', 'region', 'currentPhaseName'];
+					flds.forEach(function (fld) {
+						if (params.sorting()[fld]) {
 								direction = params.sorting()[fld] === 'asc' ? 1 : -1;
 								contents.sort(function (d1, d2) {
 									return textSort(d1[fld], d2[fld], direction);
 								});
-							}
-						});
-					}
+						}
+					});
 					// 4. Return the filtered sorted data set.
 					$defer.resolve(contents.slice((params.page() - 1) * params.count(), params.page() * params.count()));
 				}

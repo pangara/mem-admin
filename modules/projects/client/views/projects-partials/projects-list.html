@@ -2,32 +2,32 @@
 <div class="table-container">
 	<table class="project-table table table-hover" x-show-filter="true" ng-table="projectList.tableParams">
 		<tr ng-repeat="o in $data" ui-sref="p.detail({projectid: o.code})">
-			<td header-class="'name-col'" 
-				data-title="'Name'" 
-				filter="{'name':'text'}" 
+			<td header-class="'name-col'"
+				data-title="'Name'"
+				filter="{'name':'text'}"
 				sortable="'name'"><a ui-sref="p.detail({projectid: o.code})">{{o.name}}</a>
 			</td>
-			<td data-title="'Permit'" 
-				filter="{'memPermitID':'text'}" 
+			<td data-title="'Permit'"
+				filter="{'memPermitID':'text'}"
 				sortable="'memPermitID'">{{o.memPermitID}}
 			</td>
-			<td header-class="'type-col'" 
-				data-title="'Type'" 
-				filter="{type:'select'}" 
-				filter-data="projectList.typeArray" 
+			<td header-class="'type-col'"
+				data-title="'Type'"
+				filter="{type:'select'}"
+				filter-data="projectList.typeArray"
 				sortable="'type'">{{o.type}}
 			</td>
-			<td header-class="'region-col'" 
-				data-title="'Region'" 
-				filter="{region:'select'}" 
-				filter-data="projectList.regionArray" 
+			<td header-class="'region-col'"
+				data-title="'Region'"
+				filter="{region:'select'}"
+				filter-data="projectList.regionArray"
 				sortable="'region'">{{o.region | regionName}}
 			</td>
 			<td header-class="'phase-col'"
-				data-title="'Phase'"
-				filter="{'currentPhase.name':'select'}"
+				data-title="'Status'"
+				filter="{'currentPhaseName':'select'}"
 				filter-data="projectList.phaseArray"
-				sortable="'currentPhase.name'">{{o.currentPhase.name}}
+				sortable="'currentPhaseName'">{{o.currentPhaseName}}
 			</td>
 		</tr>
 		<tr class="no-records" ng-show="!$data || !$data.length">
