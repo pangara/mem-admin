@@ -119,16 +119,6 @@ function collectionsSortingController($scope, $document, $timeout) {
 
 	function onDragstart(event, idPrefix) {
 		vm.dragging = true;
-		var selected = vm.list.filter(function(item) {
-			return item.selected;
-		});
-		$timeout(function() {
-			selected.forEach(function (item) {
-				var dom = $document[0].getElementById(idPrefix+item.document._id);
-				var element = angular.element(dom);
-				element.addClass("dndDraggingSource");
-			});
-		}, 0);
 	}
 
 	function onDragend() {
