@@ -417,8 +417,12 @@ module.exports = DBModel.extend ({
 		var self = this;
 		var date = new Date(); // date we want to find open PCPs for... TODAY.
 
+		/* 2017-07-27 Adding in currentPhaseName to display this on the main project page (list).
+		* currentPhaseName is the field used on the project details and edit pages.
+		* We might be able to get rid of currentPhase.
+		*/
 		var publishedProjects = new Promise(function(resolve, reject) {
-			self.model.find ({ isPublished: true }, {_id: 1, code: 1, name: 1, region: 1, status: 1, eacDecision: 1, currentPhase: 1, lat: 1, lon: 1, type: 1, description: 1, memPermitID: 1})
+			self.model.find ({ isPublished: true }, {_id: 1, code: 1, name: 1, region: 1, status: 1, eacDecision: 1, currentPhaseName: 1, currentPhase: 1, lat: 1, lon: 1, type: 1, description: 1, memPermitID: 1})
 				.sort ({ name: 1 })
 				.populate ( 'currentPhase', 'name' )
 				.exec(function(err, recs) {
