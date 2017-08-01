@@ -54,6 +54,13 @@ module.exports = function(app) {
 			return model.unpublish(req.params.collectionId);
 		}));
 
+	// Sort other documents
+	app.route('/api/collections/:collectionId/sort')
+	.all(policy('user'))
+	.put(routes.setAndRun(CollectionClass, function(model, req) {
+		return model.sortOtherDocuments(req.params.collectionId, req.body);
+	}));
+
 	// Add a document to a collection
 	app.route('/api/collections/:collectionId/document/:documentId/add')
 		.all(policy('user'))
