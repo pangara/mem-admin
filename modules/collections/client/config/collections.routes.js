@@ -51,6 +51,28 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 					$scope.$broadcast('show-errors-check-validity', 'collectionForm');
 					return false;
 				}
+				// Update parent and status
+				$scope.collection.status = 'Issued';
+				switch($scope.collection.type) {
+					case 'Permit Amendment':
+						$scope.collection.parentType = 'Authorizations';
+						$scope.collection.status = 'Amended';
+						break;
+
+					case 'Permit':
+						$scope.collection.parentType = 'Authorizations';
+						break;
+
+					case 'Inspection Report':
+						$scope.collection.parentType = 'Compliance and Enforcement';
+						break;
+
+					case 'Annual Report':
+					case 'Management Plan':
+					case 'Dam Safety Inspection':
+						$scope.collection.parentType = 'Other';
+						break;
+				}
 				CollectionModel.add($scope.collection)
 				.then(function(model) {
 					$state.transitionTo('p.collection.detail', { projectid: project.code, collectionId: collection._id }, {
@@ -542,6 +564,28 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 				if (!isValid) {
 					$scope.$broadcast('show-errors-check-validity', 'collectionForm');
 					return false;
+				}
+				// Update parent and status
+				$scope.collection.status = 'Issued';
+				switch($scope.collection.type) {
+					case 'Permit Amendment':
+						$scope.collection.parentType = 'Authorizations';
+						$scope.collection.status = 'Amended';
+						break;
+
+					case 'Permit':
+						$scope.collection.parentType = 'Authorizations';
+						break;
+
+					case 'Inspection Report':
+						$scope.collection.parentType = 'Compliance and Enforcement';
+						break;
+
+					case 'Annual Report':
+					case 'Management Plan':
+					case 'Dam Safety Inspection':
+						$scope.collection.parentType = 'Other';
+						break;
 				}
 				CollectionModel.save($scope.collection)
 				.then (function (model) {
