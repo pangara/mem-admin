@@ -321,10 +321,37 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 				});
 			};
 
+			$scope.confirmPublishView = function(isPublishing) {
+				return $modal.open({
+					animation: true,
+					templateUrl: 'modules/utils/client/views/partials/modal-confirm-generic.html',
+					controller: function($scope, $state, $modalInstance, _) {
+						var self = this;
+						self.title = isPublishing ? 'Publish Collection?' : 'Unpublish Collection?';
+						self.question = 'Are you sure you want to ' + (isPublishing ? 'publish "' : 'unpublish "') + $scope.collection.displayName + '"?';
+						self.actionOK = isPublishing ? 'Publish' : 'Unpublish';
+						self.actionCancel = 'Cancel';
+						self.ok = function() {
+							$modalInstance.close($scope.project);
+						};
+						self.cancel = function() {
+							$modalInstance.dismiss('cancel');
+						};
+					},
+					controllerAs: 'self',
+					scope: $scope,
+					size: 'md',
+					windowClass: 'modal-alert',
+					backdropClass: 'modal-alert-backdrop'
+				});
+			};
+
 			$scope.publish = function() {
-				CollectionModel.publishCollection($scope.collection._id)
-				.then(function(res) {
-					// deleted show the message, and go to list...
+				$scope.confirmPublishView(true).result.then(function() {
+					return CollectionModel.publishCollection($scope.collection._id);
+				})
+				.then(function() {
+					// published, show the message, and go to list...
 					$scope.showSuccess('"'+ $scope.collection.displayName +'"' + ' was published successfully.', goToList, 'Publish Success');
 				})
 				.catch(function(res) {
@@ -334,9 +361,11 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 			};
 
 			$scope.unpublish = function() {
-				CollectionModel.unpublishCollection($scope.collection._id)
-				.then(function(res) {
-					// deleted show the message, and go to list...
+				$scope.confirmPublishView(false).result.then(function() {
+					return CollectionModel.unpublishCollection($scope.collection._id);
+				})
+				.then(function() {
+					// unpublished, show the message, and go to list...
 					$scope.showSuccess('"'+ $scope.collection.displayName +'"' + ' was unpublished successfully.', goToList, 'Unpublish Success');
 				})
 				.catch(function(res) {
@@ -456,10 +485,37 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 				});
 			};
 
+			$scope.confirmPublishView = function(isPublishing) {
+				return $modal.open({
+					animation: true,
+					templateUrl: 'modules/utils/client/views/partials/modal-confirm-generic.html',
+					controller: function($scope, $state, $modalInstance, _) {
+						var self = this;
+						self.title = isPublishing ? 'Publish Collection?' : 'Unpublish Collection?';
+						self.question = 'Are you sure you want to ' + (isPublishing ? 'publish "' : 'unpublish "') + $scope.collection.displayName + '"?';
+						self.actionOK = isPublishing ? 'Publish' : 'Unpublish';
+						self.actionCancel = 'Cancel';
+						self.ok = function() {
+							$modalInstance.close($scope.project);
+						};
+						self.cancel = function() {
+							$modalInstance.dismiss('cancel');
+						};
+					},
+					controllerAs: 'self',
+					scope: $scope,
+					size: 'md',
+					windowClass: 'modal-alert',
+					backdropClass: 'modal-alert-backdrop'
+				});
+			};
+
 			$scope.publish = function() {
-				CollectionModel.publishCollection($scope.collection._id)
-				.then(function(res) {
-					// deleted show the message, and go to list...
+				$scope.confirmPublishView(true).result.then(function() {
+					return CollectionModel.publishCollection($scope.collection._id);
+				})
+				.then(function() {
+					// published, show the message, and go to list...
 					$scope.showSuccess('"'+ $scope.collection.displayName +'"' + ' was published successfully.', goToList, 'Publish Success');
 				})
 				.catch(function(res) {
@@ -469,9 +525,11 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 			};
 
 			$scope.unpublish = function() {
-				CollectionModel.unpublishCollection($scope.collection._id)
-				.then(function(res) {
-					// deleted show the message, and go to list...
+				$scope.confirmPublishView(false).result.then(function() {
+					return CollectionModel.unpublishCollection($scope.collection._id);
+				})
+				.then(function() {
+					// unpublished, show the message, and go to list...
 					$scope.showSuccess('"'+ $scope.collection.displayName +'"' + ' was unpublished successfully.', goToList, 'Unpublish Success');
 				})
 				.catch(function(res) {
