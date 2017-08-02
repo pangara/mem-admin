@@ -51,6 +51,28 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 					$scope.$broadcast('show-errors-check-validity', 'collectionForm');
 					return false;
 				}
+				// Update parent and status
+				$scope.collection.status = 'Issued';
+				switch($scope.collection.type) {
+					case 'Permit Amendment':
+						$scope.collection.parentType = 'Authorizations';
+						$scope.collection.status = 'Amended';
+						break;
+
+					case 'Permit':
+						$scope.collection.parentType = 'Authorizations';
+						break;
+
+					case 'Inspection Report':
+						$scope.collection.parentType = 'Compliance and Enforcement';
+						break;
+
+					case 'Annual Report':
+					case 'Management Plan':
+					case 'Dam Safety Inspection':
+						$scope.collection.parentType = 'Other';
+						break;
+				}
 				CollectionModel.add($scope.collection)
 				.then(function(model) {
 					$state.transitionTo('p.collection.detail', { projectid: project.code, collectionId: collection._id }, {
@@ -321,10 +343,37 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 				});
 			};
 
+			$scope.confirmPublishView = function(isPublishing) {
+				return $modal.open({
+					animation: true,
+					templateUrl: 'modules/utils/client/views/partials/modal-confirm-generic.html',
+					controller: function($scope, $state, $modalInstance, _) {
+						var self = this;
+						self.title = isPublishing ? 'Publish Collection?' : 'Unpublish Collection?';
+						self.question = 'Are you sure you want to ' + (isPublishing ? 'publish "' : 'unpublish "') + $scope.collection.displayName + '"?';
+						self.actionOK = isPublishing ? 'Publish' : 'Unpublish';
+						self.actionCancel = 'Cancel';
+						self.ok = function() {
+							$modalInstance.close($scope.project);
+						};
+						self.cancel = function() {
+							$modalInstance.dismiss('cancel');
+						};
+					},
+					controllerAs: 'self',
+					scope: $scope,
+					size: 'md',
+					windowClass: 'modal-alert',
+					backdropClass: 'modal-alert-backdrop'
+				});
+			};
+
 			$scope.publish = function() {
-				CollectionModel.publishCollection($scope.collection._id)
-				.then(function(res) {
-					// deleted show the message, and go to list...
+				$scope.confirmPublishView(true).result.then(function() {
+					return CollectionModel.publishCollection($scope.collection._id);
+				})
+				.then(function() {
+					// published, show the message, and go to list...
 					$scope.showSuccess('"'+ $scope.collection.displayName +'"' + ' was published successfully.', goToList, 'Publish Success');
 				})
 				.catch(function(res) {
@@ -334,9 +383,11 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 			};
 
 			$scope.unpublish = function() {
-				CollectionModel.unpublishCollection($scope.collection._id)
-				.then(function(res) {
-					// deleted show the message, and go to list...
+				$scope.confirmPublishView(false).result.then(function() {
+					return CollectionModel.unpublishCollection($scope.collection._id);
+				})
+				.then(function() {
+					// unpublished, show the message, and go to list...
 					$scope.showSuccess('"'+ $scope.collection.displayName +'"' + ' was unpublished successfully.', goToList, 'Unpublish Success');
 				})
 				.catch(function(res) {
@@ -456,10 +507,37 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 				});
 			};
 
+			$scope.confirmPublishView = function(isPublishing) {
+				return $modal.open({
+					animation: true,
+					templateUrl: 'modules/utils/client/views/partials/modal-confirm-generic.html',
+					controller: function($scope, $state, $modalInstance, _) {
+						var self = this;
+						self.title = isPublishing ? 'Publish Collection?' : 'Unpublish Collection?';
+						self.question = 'Are you sure you want to ' + (isPublishing ? 'publish "' : 'unpublish "') + $scope.collection.displayName + '"?';
+						self.actionOK = isPublishing ? 'Publish' : 'Unpublish';
+						self.actionCancel = 'Cancel';
+						self.ok = function() {
+							$modalInstance.close($scope.project);
+						};
+						self.cancel = function() {
+							$modalInstance.dismiss('cancel');
+						};
+					},
+					controllerAs: 'self',
+					scope: $scope,
+					size: 'md',
+					windowClass: 'modal-alert',
+					backdropClass: 'modal-alert-backdrop'
+				});
+			};
+
 			$scope.publish = function() {
-				CollectionModel.publishCollection($scope.collection._id)
-				.then(function(res) {
-					// deleted show the message, and go to list...
+				$scope.confirmPublishView(true).result.then(function() {
+					return CollectionModel.publishCollection($scope.collection._id);
+				})
+				.then(function() {
+					// published, show the message, and go to list...
 					$scope.showSuccess('"'+ $scope.collection.displayName +'"' + ' was published successfully.', goToList, 'Publish Success');
 				})
 				.catch(function(res) {
@@ -469,9 +547,11 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 			};
 
 			$scope.unpublish = function() {
-				CollectionModel.unpublishCollection($scope.collection._id)
-				.then(function(res) {
-					// deleted show the message, and go to list...
+				$scope.confirmPublishView(false).result.then(function() {
+					return CollectionModel.unpublishCollection($scope.collection._id);
+				})
+				.then(function() {
+					// unpublished, show the message, and go to list...
 					$scope.showSuccess('"'+ $scope.collection.displayName +'"' + ' was unpublished successfully.', goToList, 'Unpublish Success');
 				})
 				.catch(function(res) {
@@ -484,6 +564,28 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 				if (!isValid) {
 					$scope.$broadcast('show-errors-check-validity', 'collectionForm');
 					return false;
+				}
+				// Update parent and status
+				$scope.collection.status = 'Issued';
+				switch($scope.collection.type) {
+					case 'Permit Amendment':
+						$scope.collection.parentType = 'Authorizations';
+						$scope.collection.status = 'Amended';
+						break;
+
+					case 'Permit':
+						$scope.collection.parentType = 'Authorizations';
+						break;
+
+					case 'Inspection Report':
+						$scope.collection.parentType = 'Compliance and Enforcement';
+						break;
+
+					case 'Annual Report':
+					case 'Management Plan':
+					case 'Dam Safety Inspection':
+						$scope.collection.parentType = 'Other';
+						break;
 				}
 				CollectionModel.save($scope.collection)
 				.then (function (model) {
