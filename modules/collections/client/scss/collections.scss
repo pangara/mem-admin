@@ -15,6 +15,22 @@
     }
 }
 
+.collections-edit {
+    section {
+        margin-bottom: 3rem;
+
+        h2 {
+            font-size: 2rem;
+        }
+    }
+
+    .main-doc-section {
+        .ng-table-pager {
+            display: none;
+        }
+    }
+}
+
 /**
  * An element with .dndPlaceholder class will be
  * added to the dnd-list while the user is dragging
@@ -175,7 +191,7 @@ $dnd-drag-target-height: 2.5rem;
 
         &.selected {
             color: $dnd-selected-color;
-            border-bottom: $dnd-selected-border; 
+            border-bottom: $dnd-selected-border;
             background-color: $dnd-selected-bg;
 
             &:hover {
