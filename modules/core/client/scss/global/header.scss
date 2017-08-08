@@ -21,13 +21,12 @@ $header-height-sm: 5.2rem;
 	
 	.navbar-brand {
 		padding: 0;
-		width: 116px;
 		overflow: hidden;
 
 		a {		
 			display: block;
-			width: 145px;
-			height: 5rem;
+			width: 129px;
+			height: 50px;
 			overflow: hidden;
 			border: 1px solid transparent;
 			background-image: url('/modules/core/client/img/brand/mem-logo-inverted-sm.png');
@@ -80,9 +79,9 @@ $header-height-sm: 5.2rem;
 
 		.navbar-brand {
 			a {		
-				width: 190px;
-				height: 6rem;
-				background-image: url('/modules/core/client/img/brand/mem-logo-inverted.png');
+				width: 155px;
+				height: 60px;
+				background-image: url('/modules/core/client/img/brand/mem-logo-inverted-lg.png');
 				background-position: center;
 			}
 		}
