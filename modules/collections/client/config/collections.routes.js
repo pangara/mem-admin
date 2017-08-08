@@ -40,7 +40,7 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 				return CollectionModel.getNew();
 			}
 		},
-		controller: function($scope, $state, project, collection, types, CollectionModel) {
+		controller: function($scope, $state, project, NgTableParams, collection, types, CollectionModel) {
 			$scope.collection = collection;
 			$scope.collection.project = project._id;
 			$scope.project = project;
@@ -181,7 +181,6 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 					moveFunc();
 				});
 			};
-
 
 			var goToList = function() {
 				$state.transitionTo('p.collection.list', { projectid: project.code }, {
@@ -407,10 +406,16 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 				return CollectionModel.getModel($stateParams.collectionId);
 			}
 		},
-		controller: function($scope, $state, $modal, collection, project, types, CollectionModel, _) {
+		controller: function($scope, $state, $modal, $location, NgTableParams, collection, project, types, CollectionModel, _) {
 			$scope.collection = collection;
 			$scope.project = project;
 			$scope.types = types;
+
+			$scope.mainTableParams = new NgTableParams({ count: 1   }, { dataset: collection.mainDocument ? [ collection.mainDocument ] : [], counts: [] });
+			$scope.otherTableParams = new NgTableParams({ sorting: { sortOrder: 'asc' }, count: 10 }, { dataset: collection.otherDocuments });
+
+			$scope.linkedMainDocument = collection.mainDocument ? [ collection.mainDocument.document ] : [];
+			$scope.linkedOtherDocuments = _.map(collection.otherDocuments, function(cd) { return cd.document; });
 
 			$scope.showSuccess = function(msg, transitionCallback, title) {
 				var modalDocView = $modal.open({
@@ -462,8 +467,42 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 				modalDocView.result.then(function (res) {transitionCallback(); }, function (err) { transitionCallback(); });
 			};
 
+			$scope.confirmMove = function(title, msg, moveFunc) {
+				var modalDocView = $modal.open({
+					animation: true,
+					templateUrl: 'modules/utils/client/views/partials/modal-confirm-generic.html',
+					controller: function($scope, $state, $modalInstance, _) {
+						var self = this;
+						self.title = title || 'Move document?';
+						self.question = msg || 'Are you sure?';
+						self.actionOK = 'Move';
+						self.actionCancel = 'Cancel';
+						self.ok = function() {
+							$modalInstance.close($scope.project);
+						};
+						self.cancel = function() {
+							$modalInstance.dismiss('cancel');
+						};
+					},
+					controllerAs: 'self',
+					scope: $scope,
+					size: 'md',
+					windowClass: 'modal-alert',
+					backdropClass: 'modal-alert-backdrop'
+				});
+				modalDocView.result.then(function(res) {
+					moveFunc();
+				});
+			};
+
 			var goToList = function() {
 				$state.transitionTo('p.collection.list', { projectid: project.code }, {
+					reload: true, inherit: false, notify: true
+				});
+			};
+
+			var goToDetail = function() {
+				$state.transitionTo('p.collection.detail', { projectid: project.code, collectionId: collection._id }, {
 					reload: true, inherit: false, notify: true
 				});
 			};
@@ -472,6 +511,121 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 				// want to reload this screen, do not catch unsaved changes (we are probably in the middle of saving).
 				$scope.allowTransition = true;
 				$state.reload();
+			};
+
+			$scope.otherDocsReordered = function() {
+				reloadEdit();
+			};
+
+			$scope.goToDocument = function(doc) {
+				// Open document in doc manager.
+				$location.url('/p/' + $scope.project.code + '/docs?folder=' + doc.directoryID);
+			};
+
+			$scope.updateMainDocument = function(updatedDocuments) {
+				var docPromise = null;
+
+				var moveFunc = function(movePromise) {
+					if (movePromise) {
+						movePromise
+						.then(reloadEdit)
+						.catch(function(res) {
+							var failure = _.has(res, 'message') ? res.message : undefined;
+							$scope.showError('Could not update main document for "'+ $scope.collection.displayName +'".', [], reloadEdit, 'Update Main Document Error');
+						});
+					}
+				};
+
+				// Check for updates
+				if (collection.mainDocument && (!updatedDocuments || updatedDocuments.length === 0)) {
+					// Removed main document
+					docPromise = CollectionModel.removeMainDocument(collection._id, collection.mainDocument.document._id);
+				} else if (updatedDocuments && updatedDocuments.length > 0) {
+					// Only use the first document
+					var newMainDocument = updatedDocuments[0];
+					if (!collection.mainDocument || collection.mainDocument.document._id !== newMainDocument._id) {
+						// Is the document in the other documents?
+						var collectionDocument = _.find(collection.otherDocuments, function(cd) {
+							return cd.document._id === newMainDocument._id;
+						});
+
+						if (collectionDocument) {
+							$scope.confirmMove(
+								'Move Other Document?',
+								'Are you sure you want to move "' + newMainDocument.displayName + '" from Other Documents to the Main Document?',
+								function() {
+									moveFunc(CollectionModel.addMainDocument(collection._id, newMainDocument._id));
+								}
+							);
+						} else {
+							docPromise = CollectionModel.addMainDocument(collection._id, newMainDocument._id);
+						}
+					}
+				}
+
+				moveFunc(docPromise);
+			};
+
+			$scope.removeMainDocument = function(document) {
+				CollectionModel.removeMainDocument($scope.collection._id, document._id)
+				.then(reloadEdit)
+				.catch(function(res) {
+					var failure = _.has(res, 'message') ? res.message : undefined;
+					$scope.showError('Could not remove main document from "'+ $scope.collection.displayName +'".', [], reloadEdit, 'Remove Main Document Error');
+				});
+			};
+
+			$scope.updateOtherDocuments = function(updatedDocuments) {
+				var originalDocuments = _.map(collection.otherDocuments, function(cd) { return cd.document; });
+
+				// Find documents added to the collection
+				var addedDocuments = _.filter(updatedDocuments, function(updatedDoc) {
+					return !_.find(originalDocuments, function(originalDoc) { return originalDoc._id === updatedDoc._id; });
+				});
+
+				// Find documents removed from the collection
+				var removedDocuments = _.filter(originalDocuments, function(originalDoc) {
+					return !_.find(updatedDocuments, function(updatedDoc) { return updatedDoc._id === originalDoc._id; });
+				});
+
+				var docPromises = _.union(_.map(addedDocuments, function(doc) {
+					return CollectionModel.addOtherDocument(collection._id, doc._id);
+				}), _.map(removedDocuments, function(doc) {
+					return CollectionModel.removeOtherDocument(collection._id, doc._id);
+				}));
+
+				var moveFunc = function() {
+					Promise.all(docPromises)
+					.then(reloadEdit)
+					.catch(function(res) {
+						var failure = _.has(res, 'message') ? res.message : undefined;
+						$scope.showError('Could not update other documents for "'+ $scope.collection.displayName +'".', [], reloadEdit, 'Update Other Documents Error');
+					});
+				};
+
+				// Check if the main document has been moved
+				var mainDocument = collection.mainDocument && _.find(addedDocuments, function(d) {
+					return d._id === collection.mainDocument.document._id;
+				});
+
+				if (mainDocument) {
+					$scope.confirmMove(
+						'Move Main Document?',
+						'Are you sure you want to move "' + collection.mainDocument.document.displayName + '" from the Main Document to Other Documents?',
+						moveFunc
+					);
+				} else {
+					moveFunc();
+				}
+			};
+
+			$scope.removeOtherDocument = function(document) {
+				CollectionModel.removeOtherDocument($scope.collection._id, document._id)
+				.then(reloadEdit)
+				.catch(function(res) {
+					var failure = _.has(res, 'message') ? res.message : undefined;
+					$scope.showError('Could not remove other document from "'+ $scope.collection.displayName +'".', [], reloadEdit, 'Remove Other Document Error');
+				});
 			};
 
 			$scope.delete = function() {
@@ -538,7 +692,7 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 				})
 				.then(function() {
 					// published, show the message, and go to list...
-					$scope.showSuccess('"'+ $scope.collection.displayName +'"' + ' was published successfully.', goToList, 'Publish Success');
+					$scope.showSuccess('"'+ $scope.collection.displayName +'"' + ' was published successfully.', goToDetail, 'Publish Success');
 				})
 				.catch(function(res) {
 					var failure = _.has(res, 'message') ? res.message : undefined;
@@ -552,7 +706,7 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 				})
 				.then(function() {
 					// unpublished, show the message, and go to list...
-					$scope.showSuccess('"'+ $scope.collection.displayName +'"' + ' was unpublished successfully.', goToList, 'Unpublish Success');
+					$scope.showSuccess('"'+ $scope.collection.displayName +'"' + ' was unpublished successfully.', goToDetail, 'Unpublish Success');
 				})
 				.catch(function(res) {
 					var failure = _.has(res, 'message') ? res.message : undefined;
@@ -588,10 +742,8 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 						break;
 				}
 				CollectionModel.save($scope.collection)
-				.then (function (model) {
-					$state.transitionTo('p.collection.detail', { projectid: project.code, collectionId: collection._id }, {
-							reload: true, inherit: false, notify: true
-					});
+				.then(function (model) {
+					goToDetail();
 				})
 				.catch(function(err) {
 					console.error(err);
