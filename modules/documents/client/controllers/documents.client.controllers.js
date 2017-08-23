@@ -410,33 +410,25 @@ function controllerDocumentBrowser($scope, Document, $rootScope, Authentication,
 	docBrowser.refresh = function() {
 		Document.getProjectDocuments(docBrowser.project._id, $scope.approvals)
 		.then( function(res) {
-			if (ENV === 'MEM') {
-				// Apply slightly different sort criteria on the client side.
-				// Do a substring date search on the internalOriginalName field.
-				var docs = [];
-				var re =/[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])/;
-				angular.forEach( res, function(item) {
-					var sortDate = re.exec(item.internalOriginalName);
-					if (sortDate)
-						item.sortDate = sortDate[0];
-					docs.push(item);
-				});
-				docBrowser.documentFiles = _.sortByOrder(docs, "sortDate", "desc");
-			} else {
-				docBrowser.documentFiles = res;
-			}
+			// Apply slightly different sort criteria on the client side.
+			// Do a substring date search on the internalOriginalName field.
+			var docs = [];
+			var re =/[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])/;
+			angular.forEach( res, function(item) {
+				var sortDate = re.exec(item.internalOriginalName);
+				if (sortDate)
+					item.sortDate = sortDate[0];
+				docs.push(item);
+			});
+			docBrowser.documentFiles = _.sortByOrder(docs, "sortDate", "desc");
 			$scope.$apply();
 		});
 		Document.getProjectDocumentTypes(docBrowser.project._id, $scope.approvals)
 		.then( function(res) {
 			var dts = [];
-			if (ENV === 'MEM') {
-				// console.log("list:",res.data)
-				var sorted = _.sortBy(res, "order");
-				dts	= sorted;
-			} else {
-				dts	= res;
-			}
+			// console.log("list:",res.data)
+			var sorted = _.sortBy(res, "order");
+			dts	= sorted;
 			angular.forEach(dts, function(item) {
 				item.state = 'close';
 				item.render = item.depth === 1;

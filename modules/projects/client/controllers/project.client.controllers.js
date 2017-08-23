@@ -99,11 +99,7 @@ function controllerModalProjectImport(Upload, $modalInstance, $timeout, $scope, 
 	$scope.environment = ENV;
 
 	// Setup default endpoint for import option
-	if (ENV === 'MEM') {
-		$scope.defaultOption = '/api/projects/import/mem';
-	} else {
-		$scope.defaultOption = '/api/projects/import/eao';
-	}
+	$scope.defaultOption = '/api/projects/import/mem';
 
 	projectImport.fileList = [];
 
