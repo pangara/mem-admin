@@ -12,6 +12,8 @@ angular.module('documents')
 				element.on('click', function () {
 					$modal.open({
 						animation: true,
+						backdrop: 'static',
+						keyboard: false,
 						templateUrl: 'modules/documents/client/views/document-manager-edit.html',
 						resolve: {
 							obj: function(Document, FolderModel) {
