@@ -61,10 +61,10 @@ def notifyBuild(String buildStatus = 'STARTED') {
     <p>Check console output at "<a href="${env.BUILD_URL}">${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>"</p>"""
 
   // Override default values based on build status
-  if (buildStatus == 'STARTED') {
+  if (buildStatus == 'STARTED' || buildStatus.startsWith("DEPLOYMENT")) {
     color = 'YELLOW'
     colorCode = '#FFFF00'
-  } else if (buildStatus == 'SUCCESSFUL') {
+  } else if (buildStatus == 'SUCCESSFUL' || buildStatus.startsWith("DEPLOYED")) {
     color = 'GREEN'
     colorCode = '#00FF00'
   } else {
