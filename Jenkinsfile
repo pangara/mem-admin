@@ -9,8 +9,8 @@ def BUILD_CONFIG = APP_NAME + '-build'
 def IMAGESTREAM_NAME = APP_NAME
 
 node {
-  notifyStarted()
   try {
+    notifyBuild('STARTED')
     stage('build ' + BUILD_CONFIG) {
       echo "Building: " + BUILD_CONFIG
       openshiftBuild bldCfg: BUILD_CONFIG, showBuildLogs: 'true'
@@ -23,24 +23,44 @@ node {
       input "Deploy to " + TAG_NAMES[1] + "?"
       openshiftTag destStream: IMAGESTREAM_NAME, verbose: 'true', destTag: TAG_NAMES[1], srcStream: IMAGESTREAM_NAME, srcTag: '$BUILD_ID'
     }
-  //  stage('deploy-'  + TAG_NAMES[2]) {
-  //    input "Deploy to " + TAG_NAMES[2] + "?"
-  //    openshiftTag destStream: IMAGESTREAM_NAME, verbose: 'true', destTag: TAG_NAMES[2], srcStream: IMAGESTREAM_NAME, srcTag: '$BUILD_ID'
-  //  }
-    notifySuccessful()
+    stage('deploy-'  + TAG_NAMES[2]) {
+      input "Deploy to " + TAG_NAMES[2] + "?"
+      openshiftTag destStream: IMAGESTREAM_NAME, verbose: 'true', destTag: TAG_NAMES[2], srcStream: IMAGESTREAM_NAME, srcTag: '$BUILD_ID'
+    }
   } catch (e) {
+    // If there was an exception thrown, the build failed
     currentBuild.result = "FAILED"
-    notifyFailed()
     throw e
+  } finally {
+    // Success or failure, always send notifications
+    notifyBuild(currentBuild.result)
   }
 }
 
-def notifyStarted() {
-  slackSend (color: '#FFFF00', message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
-}
-def notifySuccessful() {
-  slackSend (color: '#00FF00', message: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
-}
-def notifyFailed() {
-  slackSend (color: '#FF0000', message: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+def notifyBuild(String buildStatus = 'STARTED') {
+  // build status of null means successful
+  buildStatus =  buildStatus ?: 'SUCCESSFUL'
+
+  // Default values
+  def colorName = 'RED'
+  def colorCode = '#FF0000'
+  def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
+  def summary = "${subject} (${env.BUILD_URL})"
+  def details = """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+    <p>Check console output at "<a href="${env.BUILD_URL}">${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>"</p>"""
+
+  // Override default values based on build status
+  if (buildStatus == 'STARTED') {
+    color = 'YELLOW'
+    colorCode = '#FFFF00'
+  } else if (buildStatus == 'SUCCESSFUL') {
+    color = 'GREEN'
+    colorCode = '#00FF00'
+  } else {
+    color = 'RED'
+    colorCode = '#FF0000'
+  }
+
+  // Send notifications
+  slackSend (color: colorCode, message: summary)
 }
