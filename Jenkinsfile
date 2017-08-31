@@ -25,7 +25,7 @@ node {
         input "Deploy to " + TAG_NAMES[1] + "?"
         openshiftTag destStream: IMAGESTREAM_NAME, verbose: 'true', destTag: TAG_NAMES[1], srcStream: IMAGESTREAM_NAME, srcTag: '$BUILD_ID'
         notifyBuild('DEPLOYED:TEST')
-      } catch {
+      } catch (e) {
         notifyBuild('DEPLOYMENT:TEST ABORTED')
       }
     }
@@ -34,7 +34,7 @@ node {
         input "Deploy to " + TAG_NAMES[2] + "?"
         openshiftTag destStream: IMAGESTREAM_NAME, verbose: 'true', destTag: TAG_NAMES[2], srcStream: IMAGESTREAM_NAME, srcTag: '$BUILD_ID'
         notifyBuild('DEPLOYED:PROD')
-      } catch {
+      } catch (e) {
         notifyBuild('DEPLOYMENT:PROD ABORTED')
       }
     }
