@@ -18,14 +18,25 @@ node {
     }
     stage('deploy-' + TAG_NAMES[0]) {
       openshiftTag destStream: IMAGESTREAM_NAME, verbose: 'true', destTag: TAG_NAMES[0], srcStream: IMAGESTREAM_NAME, srcTag: '$BUILD_ID'
+      notifyBuild('DEPLOYED:DEV')
     }
     stage('deploy-' + TAG_NAMES[1]) {
-      input "Deploy to " + TAG_NAMES[1] + "?"
-      openshiftTag destStream: IMAGESTREAM_NAME, verbose: 'true', destTag: TAG_NAMES[1], srcStream: IMAGESTREAM_NAME, srcTag: '$BUILD_ID'
+      try {
+        input "Deploy to " + TAG_NAMES[1] + "?"
+        openshiftTag destStream: IMAGESTREAM_NAME, verbose: 'true', destTag: TAG_NAMES[1], srcStream: IMAGESTREAM_NAME, srcTag: '$BUILD_ID'
+        notifyBuild('DEPLOYED:TEST')
+      } catch {
+        notifyBuild('DEPLOYMENT:TEST ABORTED')
+      }
     }
     stage('deploy-'  + TAG_NAMES[2]) {
-      input "Deploy to " + TAG_NAMES[2] + "?"
-      openshiftTag destStream: IMAGESTREAM_NAME, verbose: 'true', destTag: TAG_NAMES[2], srcStream: IMAGESTREAM_NAME, srcTag: '$BUILD_ID'
+      try {
+        input "Deploy to " + TAG_NAMES[2] + "?"
+        openshiftTag destStream: IMAGESTREAM_NAME, verbose: 'true', destTag: TAG_NAMES[2], srcStream: IMAGESTREAM_NAME, srcTag: '$BUILD_ID'
+        notifyBuild('DEPLOYED:PROD')
+      } catch {
+        notifyBuild('DEPLOYMENT:PROD ABORTED')
+      }
     }
   } catch (e) {
     // If there was an exception thrown, the build failed
