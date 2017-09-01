@@ -220,7 +220,7 @@ angular.module('documents')
 						return;
 					}
 					if(doc.internalMime === 'application/pdf') {
-						openPDF(doc);
+						downLoadFile(doc);
 						return;
 					}
 					// $filter bytes is filterBytes in documents.client.controllers.js
@@ -242,7 +242,7 @@ angular.module('documents')
 
 					function downLoadFile(doc) {
 						var pdfURL = window.location.protocol + "//" + window.location.host + "/api/document/" + doc._id + "/fetch";
-						window.open(pdfURL, "_self");
+						window.open(pdfURL, "_blank");
 						return Promise.resolve(true);
 					}
 					function cancelDownload() {
