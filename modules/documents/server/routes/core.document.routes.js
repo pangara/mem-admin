@@ -6,10 +6,49 @@
 // Does not use the normal crud routes, mostly special sauce
 //
 // =========================================================================
-var DocumentClass  = require ('../controllers/core.document.controller');
-var routes = require ('../../../core/server/controllers/core.routes.controller');
-var policy = require ('../../../core/server/controllers/core.policy.controller');
+var DocumentClass	= require ('../controllers/core.document.controller');
+var routes 			= require ('../../../core/server/controllers/core.routes.controller');
+var policy 			= require ('../../../core/server/controllers/core.policy.controller');
+var fs 				= require('fs');
 
+var renderNotFound = function (url, res) {
+	res.status(404).format({
+		'text/html': function () {
+			res.render('modules/core/server/views/404', {
+				url: url
+			});
+		},
+		'application/json': function () {
+			res.json({
+				error: 'Path not found'
+			});
+		},
+		'default': function () {
+			res.send('Path not found');
+		}
+	});
+};
+var documentDownloadName = function documentDownloadName(req) {
+	// ETL fixing - if the name was brought in without a filename, and we have their document
+	// file format, affix the type as an extension to the original name so they have a better
+	// chance and opening up the file on double-click.
+	String.prototype.endsWith = String.prototype.endsWith || function (str){
+		return new RegExp(str + "$").test(str);
+	};
+
+	var doc = req.Document;
+	var format = req.Document.documentFileFormat;
+	var name = doc.documentFileName || doc.displayName || doc.internalOriginalName;
+	if (format && !name.endsWith(format)) {
+		console.log("Add extension to download name ",name, format);
+		name += "." + format;
+	}
+	// keep the console log statments until after we run an ETL that resets the filename extensions.
+	// these will help verify the ETL once it is done
+	// They may help in the future if those file extensions disappear again.
+	console.log("Download filename: ",name);
+	return name;
+};
 module.exports = function (app) {
 	//
 	// get put new delete
@@ -93,21 +132,51 @@ module.exports = function (app) {
 	//
 	// fetch a document (download multipart stream)
 	//
-	app.route ('/api/document/:document/fetch')
-		.all (policy ('guest'))
-		.get (function (req, res) {
-			if (req.Document.internalURL.match (/^(http|ftp)/)) {
-				res.redirect (req.Document.internalURL);
-			} else {
-				var name = req.Document.documentFileName;
+	app.route ('/api/document/:document/download')
+	.all (policy ('guest'))
+	.get (function (req, res) {
+		if (req.Document.internalURL.match (/^(http|ftp)/)) {
+			res.redirect (req.Document.internalURL);
+		} else {
+			var name = documentDownloadName(req);
 
+			if (fs.existsSync(req.Document.internalURL)) {
 				routes.streamFile (res, {
 					file : req.Document.internalURL,
 					name : name,
 					mime : req.Document.internalMime
 				});
+			} else {
+				console.log("User asked for a file that doesn't exist:", req.Document.internalURL);
+				renderNotFound(req.originalUrl, res);
 			}
-		});
+		}
+	});
+	//
+	// fetch a document
+	//
+	app.route ('/api/document/:document/fetch')
+	.all (policy ('guest'))
+	.get (function (req, res) {
+		if (req.Document.internalURL.match (/^(http|ftp)/)) {
+			res.redirect (req.Document.internalURL);
+		} else {
+
+			var name = documentDownloadName(req);
+
+			if (fs.existsSync(req.Document.internalURL)) {
+				var stream 	= fs.createReadStream(req.Document.internalURL);
+				var stat 	= fs.statSync(req.Document.internalURL);
+				res.setHeader('Content-Length', stat.size);
+				res.setHeader('Content-Type', req.Document.internalMime);
+				res.setHeader('Content-Disposition', 'inline;filename="' + name + '"');
+				stream.pipe(res);
+			} else {
+				console.log("User asked for a file that doesn't exist:", req.Document.internalURL);
+				renderNotFound(req.originalUrl, res);
+			}
+		}
+	});
 	//
 	// upload comment document:  We do this to force the model as opposed to trusting the
 	// 'headers' from an untrustworthy client.
