@@ -251,6 +251,9 @@ _.extend (DBModel.prototype, {
 			})
 			query.keywords = { $in: list};
 		}
+		if (query.displayName) {
+			query.displayName = {$regex : escape(query.displayName), '$options' : 'i'};
+		}
 		return query;
 	},
 	// -------------------------------------------------------------------------
