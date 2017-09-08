@@ -239,6 +239,20 @@ _.extend (DBModel.prototype, {
 	hasPermission : function (userRoles, targetRoles) {
 		return (this.isAdmin || (_.intersection (userRoles, targetRoles).length > 0));
 	},
+	//
+	// Change up the query so that the keywords split by ,'s are logical $or search
+	//
+	_fixKeywordsQueryString : function (query) {
+		if (query.keywords) {
+			let list = [];
+			let k = query.keywords.split(',');
+			_.each(k, function (keyword) {
+				list.push(escape(keyword));
+			})
+			query.keywords = { $in: list};
+		}
+		return query;
+	},
 	// -------------------------------------------------------------------------
 	//
 	// this function returns a promise using the find by Id method. It has an
@@ -269,7 +283,7 @@ _.extend (DBModel.prototype, {
 			if (self.err) return reject (self.err);
 			var q = _.extend ({}, self.baseQ, query);
 			//console.log ('q = ',q);
-			self.model.findOne (q)
+			self.model.findOne (self._fixKeywordsQueryString(q))
 			.populate (self.populate)
 			.select (fields)
 			.exec ()
@@ -285,7 +299,7 @@ _.extend (DBModel.prototype, {
 		query = query || {};
 		var q = _.extend ({}, this.baseQ, query);
 		return new Promise (function (resolve, reject) {
-			self.model.findOne (q, function (err, m) {
+			self.model.findOne (self._fixKeywordsQueryString(q), function (err, m) {
 				if (!_.isEmpty(m)) resolve (true);
 				else resolve (false);
 			});
@@ -304,6 +318,7 @@ _.extend (DBModel.prototype, {
 		return new Promise (function (resolve, reject) {
 			if (self.err) return reject (self.err);
 			var q = _.extend ({}, self.baseQ, query);
+			q = self._fixKeywordsQueryString(q);
 			//console.log ('findMany.query = ' + JSON.stringify(query, null, 4));
 			//console.log ('findMany.q = ' + JSON.stringify(q, null, 4));
 			self.model.find (q)
