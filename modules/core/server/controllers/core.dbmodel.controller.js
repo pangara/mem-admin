@@ -248,7 +248,7 @@ _.extend (DBModel.prototype, {
 			let k = query.keywords.split(',');
 			_.each(k, function (keyword) {
 				list.push(escape(keyword));
-			})
+			});
 			query.keywords = { $in: list};
 		}
 		if (query.displayName) {
