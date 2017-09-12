@@ -247,12 +247,12 @@ _.extend (DBModel.prototype, {
 			let list = [];
 			let k = query.keywords.split(',');
 			_.each(k, function (keyword) {
-				list.push(escape(keyword));
+				list.push(keyword);
 			});
 			query.keywords = { $in: list};
 		}
 		if (query.displayName) {
-			query.displayName = {$regex : escape(query.displayName), '$options' : 'i'};
+			query.displayName = {$regex : query.displayName, '$options' : 'i'};
 		}
 		return query;
 	},
