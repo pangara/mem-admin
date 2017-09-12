@@ -6,7 +6,7 @@
 // =========================================================================
 module.exports = require ('../../../core/server/controllers/core.schema.controller')
 ('Project', {
-	__audit               : true,
+	__audit: true,
 	__access: [
 		'addUsersToContext',
 		'createRole',
@@ -46,35 +46,35 @@ module.exports = require ('../../../core/server/controllers/core.schema.controll
 		'manageFolders',
 		'manageDocumentPermissions'
 	],
-	__tracking            : true,
-	__status              : ['Initiated', 'Submitted', 'In Progress', 'Certified', 'Not Certified', 'Decommissioned'],
-	__codename            : 'unique',
-	duration              : { type:Number, default: 90 },
-	epicProjectID		  : { type:Number, default: 0, index:true},  // Used to relate ePIC imports
-	shortName             : { type:String, default: '' },
-	eacDecision		  	  : { type:String, default: '' },
-	CEAALink		  	  : { type:String, default: '' },
-	type                  : { type:String, default:'', index:true },
-	sector                : { type:String, default:'' },  // This is actually sub-type now.
-	region                : { type:String, default:'' },     // object id
-	locSpatial            : { type:String, default:'' }, // incoming ePIC
-	location              : { type:String, default:'' },
-	provElecDist 		  : { type:String, default:'' },
-	fedElecDist 		  : { type:String, default:'' },
+	__tracking    : true,
+	__status      : ['Initiated', 'Submitted', 'In Progress', 'Certified', 'Not Certified', 'Decommissioned'],
+	__codename    : 'unique',
+	duration      : { type:Number, default: 90 },
+	epicProjectID : { type:Number, default: 0, index:true},  // Used to relate ePIC imports
+	shortName     : { type:String, default: '' },
+	eacDecision   : { type:String, default: '' },
+	CEAALink      : { type:String, default: '' },
+	type          : { type:String, default:'', index:true },
+	sector        : { type:String, default:'' }, // This is actually sub-type now.
+	region        : { type:String, default:'' }, // object id
+	locSpatial    : { type:String, default:'' }, // incoming ePIC
+	location      : { type:String, default:'' },
+	provElecDist  : { type:String, default:'' },
+	fedElecDist   : { type:String, default:'' },
 	//
 	// all the phases that make this project up, in order
 	//
-	phases                : [ { type:'ObjectId', ref:'Phase'} ],
+	phases: [ { type:'ObjectId', ref:'Phase'} ],
 	//
 	// ancestry
 	//
-	stream                : { type:'ObjectId', ref:'Stream', index:true, default:null },
+	stream: { type:'ObjectId', ref:'Stream', index:true, default:null },
 	//
 	// the proponent and their orgCode, plus the primary contact for same
 	//
-	proponent             : { type:'ObjectId', ref:'Organization', index:true, default:null },
-	orgCode               : { type:String, default: '' },
-	primaryContact        : { type:'ObjectId', ref:'User', default:null },
+	proponent      : { type:'ObjectId', ref:'Organization', index:true, default:null },
+	orgCode        : { type:String, default: '' },
+	primaryContact : { type:'ObjectId', ref:'User', default:null },
 	//
 	// these are here as helpers for assigning things throughout the system
 	//
@@ -101,7 +101,7 @@ module.exports = require ('../../../core/server/controllers/core.schema.controll
 		operatingjobsNotes    : { type:String, default:'' },
 		section7optin         : { type:String, default:'' }
 	},
-	isTermsAgreed : {type:Boolean, default:false},
+	isTermsAgreed : { type:Boolean, default:false },
 	build         : { type:String, default:'' },
 	//
 	// location is a free form string entry
@@ -120,18 +120,18 @@ module.exports = require ('../../../core/server/controllers/core.schema.controll
 
 	// OLD DATA
 	responsibleEPD          : { type: String, default: '' },
-	responsibleEPDPhone		: { type: String, default: '' },
+	responsibleEPDPhone     : { type: String, default: '' },
 	responsibleEPDEmail     : { type: String, default: '' },
-	projectLead          	: { type: String, default: '' },
+	projectLead             : { type: String, default: '' },
 	projectLeadPhone        : { type: String, default: '' },
 	projectLeadEmail        : { type: String, default: '' },
 	projectAnalyst          : { type: String, default: '' },
 	projectAssistant        : { type: String, default: '' },
 	administrativeAssistant : { type: String, default: '' },
-	CELead           		: { type: String, default: '' },
-	CELeadPhone           	: { type: String, default: '' },
-	CELeadEmail           	: { type: String, default: '' },
-	teamNotes           	: { type: String, default: '' },
+	CELead                  : { type: String, default: '' },
+	CELeadPhone             : { type: String, default: '' },
+	CELeadEmail             : { type: String, default: '' },
+	teamNotes               : { type: String, default: '' },
 
 	// Migrated epic data wanting to be made available
 	eaActive        : { type: String, default: '' },
@@ -140,11 +140,46 @@ module.exports = require ('../../../core/server/controllers/core.schema.controll
 	CEAAInvolvement : { type: String, default: '' },
 	projectNotes    : { type: String, default: '' }, // Formal notes about the project
 
+	// MMTI hook-up data
+	isMajorMine      : { type: Boolean, default: false },
+	epicProjectCodes : [ { type: String } ],
+
+	morePermitsLinkYear     : { type: String, default: null },
+	morePermitsLink         : { type: String, default: null },
+	moreInspectionsLink     : { type: String, default: null },
+	moreInspectionsLinkYear : { type: String, default: null },
+
+	activities: [{
+		_id    : false,
+		name   : { type: String, default: '' },
+		status : { type: String, default: '', enum: ['Active', 'Inactive', 'Pending', 'Complete', 'Suspended', 'N/A', ''] },
+		order  : { type: Number } // display order, not any business rules order
+	}],
+
+	externalLinks: [{
+		_id    : false,
+		source : { type: String, default: '' }, // ex. IMPORT, MEM, EPIC
+		type   : { type: String, default: '' }, // ex. EXTERNAL_LINK ?
+		page   : { type: String, default: '' }, // ex. Compliance, Authorization, Mine, further grouping for different areas of concern
+		title  : { type: String, default: '' }, // title for hyperlink...
+		link   : { type: String, default: '' }  // hyperlink...
+	}],
+
+	content: [{
+		_id    : false,
+		source : { type: String, default: '' }, // ex. IMPORT, MEM, EPIC
+		type   : { type: String, default: '' }, // ex. SUBTITLE, INTRO_TEXT, OVERVIEW_INTRO_TEXT
+		page   : { type: String, default: '' }, // ex. Compliance, Authorization, Mine, further grouping for different areas of concern
+		title  : { type: String, default: '' }, // ex Project Details, Inspections / Compliance Oversight ?
+		text   : { type: String, default: '' },
+		html   : { type: String, default: '' }  // should be the same text as text, but with html markup as needed
+	}],
+
 	// MEM data
 	ownership            : { type: String, default: '' },
-	memPermitID          : { type:String, default: '', index:true},  // Used to relate mem permitID on import
+	memPermitID          : { type: String, default: '', index: true },  // Used to relate mem permitID on import
 	commodity            : { type: String, default: '' },
 	tailingsImpoundments : { type: String, default: '' },
-	epicStream 			 : { type: String, default: '' },
+	epicStream           : { type: String, default: '' },
 	directoryStructure   : { type: Object, default: null }
 });
