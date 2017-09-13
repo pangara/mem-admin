@@ -128,6 +128,11 @@
 						<input class="form-control" id="longitude" name="longitude" type="number" step="any"
 							ng-model="project.lon" required />
 					</div>
+					<!-- temporary display for major mines -->
+					<div class="col-md-2 form-group">
+						<label class="control-label" for="isMajorMine">Show on mines.nrs</label>
+						<input style="font-size:16px; margin-top: 10px" type="checkbox" ng-model="project.isMajorMine" id="isMajorMine" name="isMajorMine" disabled/>
+					</div>
 				</div>
 			</fieldset>
 			<!-- PROJECT INFORMATION -->
