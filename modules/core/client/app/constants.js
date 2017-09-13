@@ -161,6 +161,18 @@ angular
 				'Other'
 			]
 		})
+	.constant('COLLECTION_TYPES',
+		[
+			'Inspection Report',
+			'Permit',
+			'Permit Amendment',
+			'Annual Report',
+			'Management Plan',
+			'Dam Safety Inspection',
+			'Order',
+			'Letter of Assurance'
+		]
+	)
 	.constant('CEAA_TYPES',
 		[
 			'None',
