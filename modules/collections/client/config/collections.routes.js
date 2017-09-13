@@ -12,8 +12,8 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 			collections: function($stateParams, CollectionModel, project) {
 				return CollectionModel.lookupProject(project.code);
 			},
-			types: function() {
-				var types = ['Inspection Report', 'Permit', 'Permit Amendment', 'Annual Report', 'Management Plan', 'Dam Safety Inspection'];
+			types: function(COLLECTION_TYPES) {
+				var types = COLLECTION_TYPES;
 				return types.map(function(t) {
 					return { id: t, title: t };
 				});
@@ -64,12 +64,14 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 						break;
 
 					case 'Inspection Report':
+					case 'Order':
 						$scope.collection.parentType = 'Compliance and Enforcement';
 						break;
 
 					case 'Annual Report':
 					case 'Management Plan':
 					case 'Dam Safety Inspection':
+					case 'Letter of Assurance':
 						$scope.collection.parentType = 'Other';
 						break;
 				}
@@ -732,12 +734,14 @@ angular.module('collections').config(['$stateProvider', function($stateProvider)
 						break;
 
 					case 'Inspection Report':
+					case 'Order':
 						$scope.collection.parentType = 'Compliance and Enforcement';
 						break;
 
 					case 'Annual Report':
 					case 'Management Plan':
 					case 'Dam Safety Inspection':
+					case 'Letter of Assurance':
 						$scope.collection.parentType = 'Other';
 						break;
 				}
