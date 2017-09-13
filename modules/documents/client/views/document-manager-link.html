@@ -5,7 +5,7 @@
         <div class="fb-header">
             <div class="fb-header-path">
 				<div class="fb-path"
-					ng-class="{'root': node.model.name == 'ROOT'}" 
+					ng-class="{'root': node.model.name == 'ROOT'}"
 					ng-repeat="node in documentMgr.currentPath">
 					<span class="fb-path-arrow" ng-if="node.model.name != 'ROOT'">&rsaquo;</span>
 					<button class="btn icon-btn" title="{{ node.model.name }}" ng-click="documentMgr.selectNode(node.model.id)">
@@ -25,7 +25,7 @@
                 <div class="spinner-container" ng-show="documentMgr.busy">
 			        <div class="spinner-new rotating"></div>
                 </div>
-                
+
                 <!-- Column Header -->
                 <div class="column-header">
                     <span class="col checkbox-col sortable" ng-if="authentication.user">
@@ -40,9 +40,9 @@
                             <span>Name</span>
                             <span class="sort-icon" ng-show="documentMgr.sorting.column === 'name'"></span>
                         </div>
-                        <div class="col type-col sortable" ng-class="{'descending': !documentMgr.sorting.ascending}" ng-click="documentMgr.sortBy('type')">
-                            <span>Type</span>
-                            <span class="sort-icon" ng-show="documentMgr.sorting.column === 'type'"></span>
+                        <div class="col date-col sortable" ng-class="{'descending': !documentMgr.sorting.ascending}" ng-click="documentMgr.sortBy('docDate')">
+                            <span>Date</span>
+                            <span class="sort-icon" ng-show="documentMgr.sorting.column === 'docDate'"></span>
                         </div>
                         <div class="col size-col sortable" ng-class="{'descending': !documentMgr.sorting.ascending}" ng-click="documentMgr.sortBy('size')">
                             <span>Size</span>
@@ -60,7 +60,7 @@
                     <div class="scroll-container-inner">
                         <div class="empty-directory-msg" ng-if="documentMgr.currentDirs.length == 0 && documentMgr.currentFiles.length == 0">This folder is empty.</div>
                         <ul>
-                            <li class="fb-list-item" ng-class="{'selected': doc.selected}" 
+                            <li class="fb-list-item" ng-class="{'selected': doc.selected}"
                                 ng-repeat="doc in documentMgr.currentDirs"
                                 ng-click="$event.originalEvent.dropdown || documentMgr.selectDir(doc)">
                                 <span class="col checkbox-col" ng-if="authentication.user">
@@ -102,10 +102,11 @@
                                             {{ doc.displayName | removeExtension }}
                                         </span>
                                     </span>
-                                    <span class="col type-col">{{ doc.internalExt}}</span>
+                                    <span class="col date-col">{{ doc.documentDate | date }}</span>
                                     <span class="col size-col">{{ doc.internalSize | bytes:2 }}</span>
                                     <span class="col status-col last-col" ng-if="authentication.user && publishedOnly !== 'true'">
-                                        <span ng-if="doc.isPublished" title="Published"><span class="glyphicon glyphicon-ok-circle"></span></span>
+                                        <span class="label label-success" ng-if="doc.isPublished == true">PUBLISHED</span>
+                                        <span class="label label-unpublished" ng-if="doc.isPublished == false">UNPUBLISHED</span>
                                     </span>
                                 </span>
                             </li>
