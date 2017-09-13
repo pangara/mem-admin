@@ -82,6 +82,9 @@ angular.module('documents')
 						} else if (self.sorting.column === 'date') {
 							//date uploaded
 							return _.isEmpty(f.dateUploaded) ? 0 : f.dateUploaded;
+						} else if (self.sorting.column === 'docDate') {
+							// document date
+							return _.isEmpty(f.documentDate) ? 0 : f.documentDate;
 						} else if (self.sorting.column === 'pub') {
 							//is published...
 							return !f.isPublished;
