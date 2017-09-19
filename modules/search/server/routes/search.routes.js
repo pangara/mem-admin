@@ -59,7 +59,7 @@ module.exports = function (app) {
                                 console.log("found the project, binding to document object:", found.code);
                                 r.project = found;
                             }
-                        })
+                        });
 
                         return res.json(results);
                     });
