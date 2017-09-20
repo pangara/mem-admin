@@ -57,7 +57,7 @@ function directiveCollectionsChooser(CollectionModel, $modal, _) {
 						s.ok = function() {
 							$modalInstance.close(s.selected);
 						};
-						
+
 						// if current, then we need to select
 						if (scope.current) {
 							_.forEach(scope.current, function(o) {
