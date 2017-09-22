@@ -347,7 +347,9 @@ a.icon-btn {
         }
 
         &.disabled {
-            opacity: 0.5;
+            &:hover {
+                background: #fff;
+            }
         }
     }
 
@@ -653,22 +655,21 @@ span.avatar {
         opacity: 0;
         z-index: 2;
 
-        &:hover,
-        &:focus {
+        &:hover {
             + label {
                 span {
-                    opacity: 0.2rem;
+                    opacity: 0.5;
                     visibility: visible;
                 }
             }
         }
-    }
 
-    input[type='checkbox']:checked {
-        + label {
-            span {
-                opacity: 1;
-                visibility: visible;
+        &:checked {
+            + label {
+                span {
+                    opacity: 1;
+                    visibility: visible;
+                }
             }
         }
     }
