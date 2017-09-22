@@ -19,28 +19,53 @@ node {
     stage('deploy-' + TAG_NAMES[0]) {
       openshiftTag destStream: IMAGESTREAM_NAME, verbose: 'true', destTag: TAG_NAMES[0], srcStream: IMAGESTREAM_NAME, srcTag: '$BUILD_ID'
       notifyBuild('DEPLOYED:DEV')
+      didDeployDev = true
     }
     stage('deploy-' + TAG_NAMES[1]) {
       try {
-        input "Deploy to " + TAG_NAMES[1] + "?"
-        openshiftTag destStream: IMAGESTREAM_NAME, verbose: 'true', destTag: TAG_NAMES[1], srcStream: IMAGESTREAM_NAME, srcTag: '$BUILD_ID'
-        notifyBuild('DEPLOYED:TEST')
+        timeout(time: 2, unit: 'MINUTES') {
+          input "Deploy to " + TAG_NAMES[1] + "?"
+          openshiftTag destStream: IMAGESTREAM_NAME, verbose: 'true', destTag: TAG_NAMES[1], srcStream: IMAGESTREAM_NAME, srcTag: '$BUILD_ID'
+          notifyBuild('DEPLOYED:TEST')
+        }
       } catch (e) {
-        notifyBuild('DEPLOYMENT:TEST ABORTED')
+        def user = err.getCauses()[0].getUser()
+        if('SYSTEM' == user.toString()) { // SYSTEM means timeout.
+            didTimeout = true
+            notifyBuild('DEPLOYMENT:TEST TIMEOUT')
+        } else {
+            userInput = false
+            echo "Aborted by: [${user}]"
+            notifyBuild('DEPLOYMENT:TEST ABORTED')
+        }
       }
     }
     stage('deploy-'  + TAG_NAMES[2]) {
       try {
-        input "Deploy to " + TAG_NAMES[2] + "?"
-        openshiftTag destStream: IMAGESTREAM_NAME, verbose: 'true', destTag: TAG_NAMES[2], srcStream: IMAGESTREAM_NAME, srcTag: '$BUILD_ID'
-        notifyBuild('DEPLOYED:PROD')
+        timeout(time: 2, unit: 'MINUTES') {
+          input "Deploy to " + TAG_NAMES[2] + "?"
+          openshiftTag destStream: IMAGESTREAM_NAME, verbose: 'true', destTag: TAG_NAMES[2], srcStream: IMAGESTREAM_NAME, srcTag: '$BUILD_ID'
+          notifyBuild('DEPLOYED:PROD')
+        }
       } catch (e) {
-        notifyBuild('DEPLOYMENT:PROD ABORTED')
+        def user = err.getCauses()[0].getUser()
+        if('SYSTEM' == user.toString()) { // SYSTEM means timeout.
+            didTimeout = true
+            notifyBuild('DEPLOYMENT:PROD TIMEOUT')
+        } else {
+            userInput = false
+            echo "Aborted by: [${user}]"
+            notifyBuild('DEPLOYMENT:PROD ABORTED')
+        }
       }
     }
   } catch (e) {
     // If there was an exception thrown, the build failed
-    currentBuild.result = "FAILED"
+    if (didDeployDev) {
+      currentBuild.result = "SUCCESS"
+    } else {
+      currentBuild.result = "FAILED"
+    }
     throw e
   } finally {
     // Success or failure, always send notifications
