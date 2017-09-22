@@ -62,7 +62,7 @@ node {
   } catch (e) {
     // If there was an exception thrown, the build failed
     if (didDeployDev) {
-      currentBuild.result = "SUCCESSFUL"
+      currentBuild.result = "SUCCESS"
     } else {
       currentBuild.result = "FAILED"
       throw e
