@@ -323,7 +323,7 @@ _.extend (DBModel.prototype, {
 	// returns a promise, takes keywords, optional sort and populate
 	//
 	// -------------------------------------------------------------------------
-	searchMany : function (keywords, dateRangeStart, dateRangeEnd, project, fields, sortby) {
+	searchMany : function (keywords, dateRangeStart, dateRangeEnd, project, proponent, ownership, fields, sortby) {
 		// console.log ('dbmodel.findMany:', keywords, fields);
 		var sort = sortby || this.sort;
 		var self = this;
@@ -344,6 +344,14 @@ _.extend (DBModel.prototype, {
 				if (projects.length > 0) {
 					q = _.extend(q, { "project": {$in : projects}});
 				}
+			}
+			if (proponent) {
+				var orgs = proponent.split(',');
+				q = _.extend (q, { "proponent": {$in : orgs}});
+			}
+			if (ownership) {
+				var owns = ownership.split(',');
+				q = _.extend (q, { "ownership": { $text: { $search: ownership }}});
 			}
 			console.log("q:", q);
 

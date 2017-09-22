@@ -14,32 +14,51 @@ module.exports = function (app) {
         .get (function (req, res) {
             routes.setSessionContext(req)
             .then( function (opts) {
-                console.log("req:", JSON.stringify(req.query));
+                // console.log("req:", JSON.stringify(req.query));
                 if (req.query.types === 'document') {
-                    var o = new DocumentController(opts);
+                    var docController = new DocumentController(opts);
                     var results = [];
                     var projects = null;
                     var p = new ProjectController(opts);
                     var projectQuery = {};
-                    // TODO: Make sure this is a valid objectID, wrap with try/catches.
+                    // Project Filtering (objectID's are coming in).
                     if (req.query.project) {
                         projects = req.query.project.split(',');
                         projectQuery = _.extend (projectQuery, { "_id": {$in : projects}});
                         console.log("project query:", projectQuery);
                     }
-                    // TBD
-                    // if (req.query.oweneroperator) {
-                    //     projectQuery = { _id: req.query.project };
-                    // }
+                    if (req.query.projectcode) {
+                        var codes = req.query.projectcode.split(',');
+                        projectQuery = _.extend (projectQuery, { "code": {$in : codes}});
+                        console.log("project query:", projectQuery);
+                    }
+                    // operator filtering (objectID's are coming in)
+                    if (req.query.proponent) {
+                        var ops = req.query.proponent.split(',');
+                        projectQuery = _.extend (projectQuery, { "proponent": {$in : ops}});
+                        console.log("organization query:", projectQuery);
+                    }
+                    // owner filtering (strings are coming in)
+                    if (req.query.ownership) {
+                        projectQuery = _.extend (projectQuery, { $text: { $search: req.query.ownership }});
+                        console.log("ownership query:", projectQuery);
+                    }
+                    // We're filtering our searches on project and orgs
                     return p.findMany(projectQuery,"_id type name code ownership proponent")
                     .then(function (pdata) {
-                        console.log("pdata:", pdata.length);
+                        console.log("projects:", pdata.length);
                         projects = pdata;
-                        return o.searchMany(req.query.search,
-                                            req.query.datestart,
-                                            req.query.dateend,
-                                            req.query.project,
-                                            req.query.fields);
+                        if (projects && projects.length > 0) {
+                            return docController.searchMany(req.query.search,
+                                                req.query.datestart,
+                                                req.query.dateend,
+                                                req.query.project,
+                                                null, // not on this one - we already filtered on the org
+                                                null, // not on this one - we already filtered on the ownership
+                                                req.query.fields);
+                        } else {
+                            return [];
+                        }
                     })
                     .then(function (docs) {
                         _.each(docs, function (doc) {
@@ -48,11 +67,7 @@ module.exports = function (app) {
                         console.log("docs", docs.length);
                         return results;
                     })
-                    // .then(function (res) {
-                    //     var p = new ProjectController(opts);
-                    //     return p.findMany({},"_id type name code ownership proponent");
-                    // })
-                    .then(function (prjs) {
+                    .then(function () {
                         console.log("prjs:", projects.length);
 
                         _.each(results, function (r) {
