@@ -57,16 +57,28 @@ module.exports = function (app) {
                         // console.log("projects:", pdata.length);
                         projects = pdata;
                         if (projects && projects.length > 0) {
+                            // This ensures we don't find docs that are in other projects not part
+                            // of the codes lookup if no objectID's are specified.
+                            var prjArray = [];
+                            _.each(projects, function (pp) {
+                                prjArray += pp._id + ",";
+                            });
+                            if (prjArray) {
+                                prjArray = prjArray.replace(/,*$/, "");
+                            }
+                            var pjs = req.query.project || prjArray;
+
                             return docController.searchMany(req.query.search,
                                                 req.query.datestart,
                                                 req.query.dateend,
-                                                req.query.project,
+                                                pjs,
                                                 null, // not on this one - we already filtered on the org
                                                 null, // not on this one - we already filtered on the ownership
                                                 req.query.fields,
                                                 null, // sort by
                                                 page,
                                                 limit);
+
                         } else {
                             return [];
                         }
