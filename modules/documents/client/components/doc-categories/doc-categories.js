@@ -277,70 +277,71 @@ function CategoriesFactory(TreeModel, _) {
 		var mainCategories = {
 			id: createId(),
 			name: 'ROOT',
-			children: [
-				{
+			children: [{
+				id: createId(),
+				name: 'Annual Report',
+				children: [{
 					id: createId(),
-					name: 'Annual Report',
-					children: [{
-						id: createId(),
-						name: 'Annual Reclamation Report'
-					}]
-				}, {
-					id: createId(),
-					name: 'Inspection Report',
-					children: level3()
-				}, {
-					id: createId(),
-					name: 'Inspection Report Response',
-					children: level3()
-				}, {
-					id: createId(),
-					name: 'Inspection Report Follow Up',
-					children: level3()
-				}, {
-					id: createId(),
-					name: 'Geotechnical',
-					children: [{
-						id: createId(),
-						name: 'Dam Safety Inspection Report'
-					}, {
-						id: createId(),
-						name: 'Dam Safety Review'
-					}]
-				}, {
-					id: createId(),
-					name: 'Authorization'
-				}, {
-					id: createId(),
-					name: 'Management Plan'
-				},  {
-					id: createId(),
-					name: 'Monitoring Report'
-				}, {
-					id: createId(),
-					name: 'Application Document'
-				}, {
-					id: createId(),
-					name: 'Correspondence'
-				},
-				{
-					id: createId(),
-					name: 'Order',
-					children: [{
-						id: createId(),
-						name: 'Order issued under the Mines Act'
-					}, {
-						id: createId(),
-						name: 'Order issued under the Environmental Management Act'
-					},	{
-						id: createId(),
-						name: 'Order issued under the Environmental Assessment Act'
-						}]
-				}, {
-					id: createId(),
-					name: 'Other'
+					name: 'Annual Reclamation Report'
 				}]
-			};
+			}, {
+				id: createId(),
+				name: 'Inspection Report',
+				children: level3()
+			}, {
+				id: createId(),
+				name: 'Inspection Report Response',
+				children: level3()
+			}, {
+				id: createId(),
+				name: 'Inspection Report Follow Up',
+				children: level3()
+			}, {
+				id: createId(),
+				name: 'Geotechnical',
+				children: [{
+					id: createId(),
+					name: 'Dam Safety Inspection Report'
+				}, {
+					id: createId(),
+					name: 'Dam Safety Review'
+				}]
+			}, {
+				id: createId(),
+				name: 'Authorization'
+			}, {
+				id: createId(),
+				name: 'Management Plan'
+			}, {
+				id: createId(),
+				name: 'Monitoring Report'
+			}, {
+				id: createId(),
+				name: 'Application Document'
+			}, {
+				id: createId(),
+				name: 'Correspondence'
+			}, {
+				id: createId(),
+				name: 'Order',
+				children: [{
+					id: createId(),
+					name: 'Order issued under the Mines Act'
+				}, {
+					id: createId(),
+					name: 'Order issued under the Environmental Management Act'
+				}, {
+					id: createId(),
+					name: 'Order issued under the Environmental Assessment Act'
+				}]
+			}, {
+				id: createId(),
+				name: 'Other'
+			}, {
+				id: createId(),
+				name: 'Dangerous Occurrences'
+			}]
+		};
 		return {categories: mainCategories};
 	}
 }
