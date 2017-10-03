@@ -142,8 +142,8 @@ angular.module('documents')
 						var CANNOT_DELETE      = "Cannot Delete File(s) and/or Folder(s)";
 						var INFO_DELETE        = "Files and folders must be unpublished before they can be deleted. <br/> Folders with content cannot be deleted.";
 						self.allBlocked        = false;
-						self.hasBlockedContent = false;		
-						
+						self.hasBlockedContent = false;
+
 						if (deletableFolderCnt > 0 || deletableFileCnt > 0) {
 							self.title           = CONFIRM_DELETE;
 							self.confirmText     = "Are you sure you want to permanently delete the following file(s) and/or folder(s)? This action CANNOT be undone.";
