@@ -41,21 +41,6 @@ var getInspections = function(db) {
 	});
 };
 
-var updateInspectionName = function(db, inspection, name) {
-	return new Promise(function(resolve, reject) {
-		db.collection('collections').updateOne({ _id: inspection._id }, { $set: { displayName: name } } , {}, function(err, obj) {
-			if (err) {
-				console.log('x failed to update inspection ' + inspection.displayName + ' to ' + name);
-			} else if (obj.result.n === 0) {
-				console.log('x failed to find inspection ' + inspection.displayName);
-			} else {
-				console.log(': ' + inspection.displayName + ' -> ' + name);
-			}
-			resolve();
-		});
-	});
-};
-
 var scanInspection = function(db, inspection) {
 	return new Promise(function(resolve, reject) {
 		// Find the collection document for the main document
@@ -86,23 +71,38 @@ var scanInspection = function(db, inspection) {
 							} else {
 								var name = '';
 								if (inspection.isForMEM) {
-									// Find the last document category
+									// Find the last document sub-category
 									var category = _.last(document.documentCategories);
 									if (category) {
 										category = _.last(_.split(category, ' > '));
 									}
-									name = category + ' Inspection ' + match[0];
+									if (category === 'Inspection Report') {
+										// Ignore if there's no sub-category
+										name = 'Inspection ' + match[0];
+									} else {
+										name = category + ' Inspection ' + match[0];
+									}
 								} else if (inspection.isForENV) {
-									var name = 'Inspection ' + match[0];
+									// No sub-categories
+									name = 'Inspection ' + match[0];
 								}
 								if (name) {
 									if (noUpdate) {
 										console.log(': ' + inspection.displayName + ' -> ' + name);
+										resolve();
 									} else {
-										updateInspectionName(db, inspection, name);
+										db.collection('collections').updateOne({ _id: inspection._id }, { $set: { displayName: name } } , {}, function(err, obj) {
+											if (err) {
+												console.log('x failed to update inspection ' + inspection.displayName + ' to ' + name);
+											} else if (obj.result.n === 0) {
+												console.log('x failed to find inspection ' + inspection.displayName);
+											} else {
+												console.log(': ' + inspection.displayName + ' -> ' + name);
+											}
+											resolve();
+										});
 									}
 								}
-								resolve();
 							}
 						}
 					});
@@ -116,6 +116,9 @@ var run = function () {
 	var database = null;
 	return new Promise(function (resolve, reject) {
 		console.log('start');
+		if (noUpdate) {
+			console.log(': NO UPDATE');
+		}
 		MongoClient.connect(url)
 			.then(function(db) {
 				console.log(': db connected');
