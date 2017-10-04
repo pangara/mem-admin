@@ -328,6 +328,12 @@ a.icon-btn {
             }
         }
 
+        &.disabled {
+            &:hover {
+                background: #fff;
+            }
+        }
+
         &.selected {
             color: $list-selected-color;
             background: $list-selected-bg;
@@ -1089,5 +1095,13 @@ $fb-upload-target-border: 2px dashed #BBB;
 
     .datepicker {
         width: 20rem;
+    }
+}
+
+fb-move-confirm {
+    .fb-list-item {
+        &:hover {
+            background: transparent;
+        }
     }
 }

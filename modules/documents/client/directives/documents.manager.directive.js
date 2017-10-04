@@ -688,6 +688,7 @@ angular.module('documents')
 												}
 											});
 										});
+										promise = promise.catch(reject); //finish promise chain with an error handler
 									}
 									else {
 										resolve(null); //if no folders 
@@ -709,7 +710,7 @@ angular.module('documents')
 									//$log.debug('select and refresh destination directory...');
 									self.selectNode(destination.model.id);
 									AlertService.success('The selected items were moved.');
-								}, function (err) {
+								}).catch(function (err) {
 									self.busy = false;
 									AlertService.error("The selected items could not be moved.");
 								});
@@ -818,7 +819,6 @@ angular.module('documents')
 				};
 
 				$scope.$on('documentMgrRefreshNode', function (event, args) {
-					console.log('documentMgrRefreshNode...', args.directoryStructure);
 					if (args.nodeId) {
 						// Refresh the node
 						self.selectNode(args.nodeId);
