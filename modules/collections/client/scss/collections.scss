@@ -36,6 +36,11 @@
 .collection-document-table {
     td {
         vertical-align: top !important;
+        cursor: pointer;
+    }
+
+    .no-results td {
+        cursor: auto;
     }
 
     .date-col {
@@ -73,13 +78,13 @@
     .date {
         flex: 0 1 10%;
     }
-    
+
     .name {
         flex: 1 1 20%;
     }
 
     .status {
-        flex: 0 1 8%; 
+        flex: 0 1 8%;
     }
 }
 
@@ -88,9 +93,9 @@
         .date {
             flex: 0 1 15rem;
         }
-        
+
         .name {
-            flex: 1 1 20rem;  
+            flex: 1 1 20rem;
         }
 
         .status {
