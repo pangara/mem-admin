@@ -69,6 +69,12 @@ angular.module('documents')
 							});
 							updateText();
 							self.busy = false;
+							$scope.$apply();
+						}).catch(function (err) {
+							self.busy = false;
+							self.errMsg = err.message;
+							$scope.$apply();
+							return reject(err);
 						});
 					}
 
