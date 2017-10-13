@@ -105,7 +105,6 @@ angular.module('documents')
 
 					function checkFoldersForContent() {
 						var promises = [];
-
 						//We check all folders (instead of just deletable folders) since a folder can be published and can have children
 						//In that case, we need to display two warnings
 						_.forEach(self.folders, function(fldr) {
@@ -113,23 +112,20 @@ angular.module('documents')
 							var node = self.currentNode.first(function (child) {
 								return (child.model.id === fldr.model.id);
 							});
-							fldr.hasChildren = node.hasChildren();
-							fldr.canBeDeleted = !fldr.hasChildren;
-							if (fldr.canBeDeleted) {
-								// Does the folder have document content?....
-								promises.push(new Promise (function (resolve, reject) {
-									DocumentMgrService.getDirectoryDocuments(self.project, fldr.model.id)
-									.then(function (result) {
-										fldr.hasChildren = result.data.length > 0;
-										fldr.canBeDeleted = !fldr.hasChildren;
-										return resolve(fldr);
-									})
-									.catch(function (err) {
-										console.log("Error", err);
-										return reject(err);
-									});
-								}));
-							}
+							//Does the folder have document content?....
+							promises.push(new Promise (function (resolve, reject) {
+								DocumentMgrService.getDirectoryDocuments(self.project, fldr.model.id)
+								.then(function (result) {
+									//A folder could have child folders (nodes) or could have files (end nodes)
+									fldr.hasChildren = node.hasChildren() || result.data.length > 0 ;
+									// If a folder has children or has been published, it cannot be deleted.
+									fldr.canBeDeleted = !(fldr.hasChildren || fldr.isPublished);
+									return resolve(fldr);
+								})
+								.catch(function (err) {
+									return reject(err);
+								});
+							}));
 						});
 						if (promises.length === 0) {
 							// Folders have no content or content is only folders
