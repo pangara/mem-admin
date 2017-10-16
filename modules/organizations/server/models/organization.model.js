@@ -7,6 +7,7 @@
 module.exports = require ('../../../core/server/controllers/core.schema.controller')('Organization', {
 	__audit       : true,
 	__codename    : 'unique',
+	alsoKnownAs   : { type: String, default:'' },
 	company       : { type: String, default:'' },
 	website       : { type: String, default:'' },
 	companyLegal  : { type: String, default:'' },
