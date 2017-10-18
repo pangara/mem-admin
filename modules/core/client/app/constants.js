@@ -272,7 +272,8 @@ angular
 			'Resolved',
 			'Recinded'
 		]
-	)	.constant('PROJECT_DECISION',
+	)	
+	.constant('PROJECT_DECISION',
 		{
 			'pre-ea-act-approval' : 'Pre-EA Act Approval',
 			'in-progress' : 'In Progress',
