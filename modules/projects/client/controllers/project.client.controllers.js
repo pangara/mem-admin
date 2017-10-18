@@ -238,7 +238,7 @@ function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, 
 		if (ProjectModel.modelIsNew) {
 			ProjectModel.add ($scope.project)
 			.then( function(data) {
-				$state.go('p.detail', {projectid: data.code});
+				$state.go('p.detail', {projectid: data.code}, {reload: true});
 			})
 			.catch (function (err) {
 				console.error ('error = ', err);
@@ -246,7 +246,7 @@ function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, 
 		} else {
 			ProjectModel.saveModel($scope.project)
 			.then( function(data) {
-				$state.go('p.detail', {projectid: data.code});
+				$state.go('p.detail', {projectid: data.code}, {reload: true});
 			})
 			.catch (function (err) {
 				console.error ('error = ', err);
@@ -335,7 +335,7 @@ function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, 
 			})
 			.then( function (p) {
 				$scope.project = p;
-				$state.go('p.detail', {projectid: p.code});
+				$state.go('p.detail', {projectid: p.code}, {reload: true});
 			})
 			.catch (function (err) {
 				console.error ('error = ', err);
