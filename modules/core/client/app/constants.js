@@ -100,6 +100,17 @@ angular
 			'Sand & Gravel'
 		]
 	)
+	.constant('PROJECT_ACTIVITY_STATUS',
+		[
+			' ',
+			'Active',
+			'Complete',
+			'Inactive',
+			'Pending',
+			'Suspended',
+			'N/A'
+		]
+	)
 	.constant('PROJECT_SUB_TYPES',
 		{
 			'Mining': [

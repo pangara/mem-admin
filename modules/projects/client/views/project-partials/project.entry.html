@@ -1,4 +1,4 @@
-<form class="view-form" name="projectForm" novalidate>
+<form class="edit-project-details view-form" name="projectForm" novalidate>
 	<div class="view-title-container flex-row">
 		<h1>Edit Project &nbsp;&rsaquo;&nbsp; {{project.name}}
 			<span class="placeholder-value" ng-if="!project.name">Untitled Project</span>
@@ -48,7 +48,7 @@
 				x-show-errors>
 				<a ng-click="form.curTab = 'Proponent Info'" title="Edit Project Details" name="proponentForm">
 					<span class="glyphicon glyphicon-exclamation-sign"></span>
-					Proponent Info
+					Operator Info
 				</a>
 			</li>
 			<li class="form-group" role="presentation" 
@@ -60,12 +60,36 @@
 					Ownership Info
 				</a>
 			</li>
+			<li class="form-group" role="presentation"
+				ng-class="{'active':form.curTab === 'Site Activities'}">
+				<a title="Edit Site Activites" 
+					ng-click="form.curTab = 'Site Activities'">
+					Edit Site Activities
+				</a>
+			</li>
 		</ul>
+
+		<!-- PROJECT SITE ACTIVITIES -->
+		<div class="tab-pane"
+			ng-show="form.curTab === 'Site Activities'">
+			<ul class="edit-project-activity">
+				<li class="edit-project-activity__item" ng-repeat="activity in project.activities">
+					<label class="control-label" 
+						for="siteActivity{{activity.name}}">
+						{{activity.name}}
+					</label>		
+					<select class="form-control" id="activityStatus" name="activityStatus"
+						id="siteActivity{{activity.name}}"
+						ng-options="statusItem for statusItem in activityStatusItems track by statusItem"
+						ng-model="activity.status">
+					</select>
+				</li>
+			</ul>
+		</div>
 
 		<!-- PROJECT OWNERSHIP TAB -->
 		<div class="edit-project-form tab-pane" ng-show="form.curTab === 'Ownership Info'">
 			<fieldset>
-		        <legend>Project Ownership</legend>
 		        <div class="button-bar">
 		            <button class="btn btn-default btn-sm ng-isolate-scope"
 						type="button"
@@ -187,10 +211,17 @@
 						<input class="form-control" id="longitude" name="longitude" type="number" step="any"
 							ng-model="project.lon" required />
 					</div>
-					<!-- temporary display for major mines -->
-					<div class="col-md-2 form-group">
-						<label class="control-label" for="isMajorMine">Show on mines.nrs</label>
-						<input style="font-size:16px; margin-top: 10px" type="checkbox" ng-model="project.isMajorMine" id="isMajorMine" name="isMajorMine" disabled/>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="checkbox">
+							<label class="control-label" for="isMajorMine">
+								<input type="checkbox" id="isMajorMine" name="isMajorMine"
+									ng-model="project.isMajorMine" 
+									disabled /> 
+									Show on mines.nrs
+							</label>
+						</div>
 					</div>
 				</div>
 			</fieldset>
