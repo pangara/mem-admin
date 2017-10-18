@@ -255,7 +255,7 @@ function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, 
 			var found = _.find($scope.project.ownershipData, function (org, idx) {
 			    if (org.organization._id === data.organization._id) {
 			    	index = idx; return true;
-			    };
+			    }
 			});
 			if (!found) {
 				// We already added this to the list, error.
@@ -290,7 +290,7 @@ function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, 
 			percentTotal += o.sharePercent;
 		});
 
-		if (percentTotal != 100) {
+		if (percentTotal !== 100) {
 			AlertService.error("Can't save project until ownership on project amounts to 100%.");
 			return false;
 		}
