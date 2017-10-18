@@ -7,7 +7,8 @@ angular.module('organizations')
 			scope: {
 				project: '=',
 				destination: '=',
-				title: '='
+				title: '=',
+				callback: '&'
 			},
 			link: function (scope, element, attrs) {
 				element.on('click', function () {
@@ -55,6 +56,10 @@ angular.module('organizations')
 						}
 					}).result.then(function (data) {
 						scope.destination = data;
+						// Event this back to the caller
+						if (scope.callback) {
+							scope.callback({org: data});
+						}
 					}).catch(function (err) {
 						console.log("err:", err);
 					});

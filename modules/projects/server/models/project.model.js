@@ -176,6 +176,13 @@ module.exports = require ('../../../core/server/controllers/core.schema.controll
 	}],
 
 	// MEM data
+	ownershipData :[
+		{
+			_id    			: false,
+			sharePercent	: { type: Number, default: 0 },
+			organization 	: { type:'ObjectId', ref:'Organization', index:true, default:null
+		}
+	}],
 	ownership            : { type: String, default: '' },
 	memPermitID          : { type: String, default: '', index: true },  // Used to relate mem permitID on import
 	commodity            : { type: String, default: '' },

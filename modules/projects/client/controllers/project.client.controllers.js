@@ -173,9 +173,9 @@ function controllerModalProjectImport(Upload, $modalInstance, $timeout, $scope, 
 // Used.
 //
 // -----------------------------------------------------------------------------------
-controllerProjectEntry.$inject = ['$scope', '$state', '$stateParams', '$modal', 'project', 'REGIONS', 'PROJECT_TYPES', 'PROJECT_SUB_TYPES', 'CEAA_TYPES', '_', 'UserModel', 'ProjectModel', 'OrganizationModel', 'Authentication', 'codeFromTitle', 'PhaseBaseModel'];
+controllerProjectEntry.$inject = ['$scope', '$state', '$stateParams', '$modal', 'project', 'REGIONS', 'PROJECT_TYPES', 'PROJECT_SUB_TYPES', 'CEAA_TYPES', '_', 'UserModel', 'ProjectModel', 'OrganizationModel', 'Authentication', 'codeFromTitle', 'PhaseBaseModel', 'AlertService'];
 /* @ngInject */
-function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, REGIONS, PROJECT_TYPES, PROJECT_SUB_TYPES, CEAA_TYPES, _, UserModel, ProjectModel, OrganizationModel, Authentication, codeFromTitle, PhaseBaseModel) {
+function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, REGIONS, PROJECT_TYPES, PROJECT_SUB_TYPES, CEAA_TYPES, _, UserModel, ProjectModel, OrganizationModel, Authentication, codeFromTitle, PhaseBaseModel, AlertService) {
 
 	ProjectModel.setModel ($scope.project);
 
@@ -213,6 +213,61 @@ function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, 
 		$scope.$apply();
 	});
 
+	$scope.addOwnershipOrganization = function (data) {
+		// Add this to the list if it's not already added.
+		var found = _.find($scope.project.ownershipData, function (org) {
+		       return org.organization === data._id;
+		});
+		if (found) {
+			// We already added this to the list, error.
+			AlertService.error('The selected organization has been added already.');
+		} else {
+			$scope.project.ownershipData.push({organization: data, sharePercent: 1});
+		}
+	};
+
+	$scope.deleteOwnership = function (data) {
+		// Make sure they really want to do this
+		var modalDocView = $modal.open({
+			animation: true,
+			templateUrl: 'modules/utils/client/views/partials/modal-confirm-generic.html',
+			controller: function($scope, $state, $modalInstance, _) {
+				var self = this;
+				self.title = 'Remove '+ data.organization.name;
+				self.question = 'Are you want to remove the ownership from this project?';
+				self.actionOK = 'Ok';
+				self.actionCancel = 'Cancel';
+				self.ok = function() {
+					$modalInstance.close();
+				};
+				self.cancel = function() {
+					$modalInstance.dismiss('cancel');
+				};
+			},
+			controllerAs: 'self',
+			scope: $scope,
+			size: 'md',
+			windowClass: 'modal-alert',
+			backdropClass: 'modal-alert-backdrop'
+		});
+		modalDocView.result.then(function (res) {
+			var index = null;
+			var found = _.find($scope.project.ownershipData, function (org, idx) {
+			    if (org.organization._id === data.organization._id) {
+			    	index = idx; return true;
+			    };
+			});
+			if (!found) {
+				// We already added this to the list, error.
+				AlertService.error('Could not delete the organization.');
+			} else {
+				_.remove($scope.project.ownershipData, {
+				    organization: data.organization
+				});
+			}
+		});
+	};
+
 	$scope.onChangePhase = function () {
 		// The user decided to change the current phase.  Until we have a specific tiemline
 		// graphic, lets just set the phase code/name appropriately. Do not attempt to start/stop/complete
@@ -229,6 +284,17 @@ function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, 
 	};
 
 	$scope.saveProject = function(isValid) {
+		// Make sure the math works on ownership properties.
+		var percentTotal = 0;
+		_.each($scope.project.ownershipData, function (o) {
+			percentTotal += o.sharePercent;
+		});
+
+		if (percentTotal != 100) {
+			AlertService.error("Can't save project until ownership on project amounts to 100%.");
+			return false;
+		}
+
 		if (!isValid) {
 			$scope.$broadcast('show-errors-check-validity', 'projectForm');
 			$scope.$broadcast('show-errors-check-validity', 'detailsForm');
@@ -238,7 +304,7 @@ function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, 
 		if (ProjectModel.modelIsNew) {
 			ProjectModel.add ($scope.project)
 			.then( function(data) {
-				$state.go('p.detail', {projectid: data.code});
+				$state.go('p.detail', {projectid: data.code}, {reload: true});
 			})
 			.catch (function (err) {
 				console.error ('error = ', err);
@@ -246,7 +312,7 @@ function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, 
 		} else {
 			ProjectModel.saveModel($scope.project)
 			.then( function(data) {
-				$state.go('p.detail', {projectid: data.code});
+				$state.go('p.detail', {projectid: data.code}, {reload: true});
 			})
 			.catch (function (err) {
 				console.error ('error = ', err);
@@ -335,7 +401,7 @@ function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, 
 			})
 			.then( function (p) {
 				$scope.project = p;
-				$state.go('p.detail', {projectid: p.code});
+				$state.go('p.detail', {projectid: p.code}, {reload: true});
 			})
 			.catch (function (err) {
 				console.error ('error = ', err);

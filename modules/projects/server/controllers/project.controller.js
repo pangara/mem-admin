@@ -33,7 +33,7 @@ module.exports = DBModel.extend ({
 	name : 'Project',
 	plural : 'projects',
 	sort: {name:1},
-	populate: 'currentPhase phases phases.milestones phases.milestones.activities proponent primaryContact',
+	populate: 'currentPhase phases phases.milestones phases.milestones.activities proponent primaryContact ownershipData.organization',
 	// bind: ['addPrimaryUser','addProponent'],
 	init: function () {
 		this.recent = new RecentActivityClass (this.opts);

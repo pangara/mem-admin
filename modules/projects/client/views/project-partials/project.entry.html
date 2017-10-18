@@ -29,11 +29,54 @@
 				<a ng-click="form.curTab = 'Proponent Info'" title="Edit Project Details" name="proponentForm">
 					<span class="glyphicon glyphicon-exclamation-sign"></span>Proponent Info</a>
 			</li>
-			<!-- <li role="presentation" ng-class="{'active':form.curTab === 'Project Contacts'}" class="form-group" x-show-errors>
-				<a ng-click="form.curTab = 'Project Contacts'" title="Edit Project Contacts" name="contactsForm">
-					<span class="glyphicon glyphicon-exclamation-sign"></span>Contacts</a>
-			</li> -->
+			<li role="presentation" ng-class="{'active':form.curTab === 'Ownership Info'}" class="form-group" x-show-errors>
+				<a ng-click="form.curTab = 'Ownership Info'" title="Edit Project Ownership" name="ownershipForm">
+					<span class="glyphicon glyphicon-exclamation-sign"></span>Ownership Info</a>
+			</li>
 		</ul>
+
+
+		<div class="edit-project-form tab-pane" ng-show="form.curTab === 'Ownership Info'">
+			<!-- Project Ownership UI -->
+			<fieldset>
+		        <legend>Project Ownership</legend>
+		        <div class="button-bar">
+		            <button class="btn btn-default btn-sm ng-isolate-scope"
+								type="button"
+								x-org-search-chooser=""
+								x-title="'Add Organization'"
+								x-project="project"
+								x-callback="addOwnershipOrganization(org)"
+								x-destination="project.ownershipAdded">Add Organization</button>
+		        </div>
+		        <ul class="edit-project-ownership-list">
+		            <!-- REPEAT ROWS HERE -->
+		            <li ng-repeat="org in project.ownershipData" class="edit-project-ownership-list__item">
+		                <span class="edit-project-ownership-list__item--details">
+		                    <span class="edit-project-ownership-list__item--details-org-name">{{org.organization.name}}</span>
+		                    <span class="edit-project-ownership-list__item--details-dba-name">Doing Business As:  {{org.organization.company}}</span>
+		                </span>
+		                <span class="edit-project-ownership-list__item--input form-inline">
+		                    <label>Ownership Percent</label>
+		                    <span class="input-group">
+		                        <input class="form-control" type="number" min="1" max="100" 
+		                            title="Enter an Ownership Percentage"
+		                            aria-label="Ownership Percentage (Maximum of 100 Percent)"
+		                            ng-model="org.sharePercent"/>
+		                        <span class="input-group-addon">%</span>
+		                    </span>
+		                </span>
+		                <span class="edit-project-ownership-list__item--remove-btn">
+		                    <button class="btn icon-btn"
+		                    		title="Remove this Organization from Project Ownership"
+		                    		ng-click="deleteOwnership(org)">
+		                        <span class="glyphicon glyphicon-trash"></span>
+		                    </button>
+		                </span>
+		            </li>
+		        </ul>
+		    </fieldset>
+		</div>
 
 		<div class="edit-project-form tab-pane active" ng-show="form.curTab === 'Project Details'" ng-form="detailsForm">
 			<!-- PROJECT INFORMATION -->
