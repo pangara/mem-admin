@@ -1,0 +1,19 @@
+.badge {
+    padding-bottom: 0.4rem;
+    border-radius: 0.4rem;
+    text-transform: uppercase;
+	padding: 0.5rem 1rem 0.4rem 1rem;
+	font-size: 1.2rem;
+    font-weight: normal;
+    
+    &.success {
+        background: green;
+    }
+}
+
+.label {
+	display: inline-block;
+	padding-top: 0.5rem;
+	font-size: 1.2rem;
+	font-weight: normal;
+}

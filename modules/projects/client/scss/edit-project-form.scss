@@ -1,4 +1,6 @@
 .edit-project-form {
+    max-width: 1280px;
+
     .form-footer {
         margin-top: 2.5rem;
     }
@@ -9,4 +11,11 @@
             font-weight: bold;
         }
     }
+
+    .lat-input {
+		padding-right: 0.4rem;
+	}
+	.long-input {
+		padding-left: 0.4rem;
+	}
 }

@@ -1,6 +1,10 @@
-
 $header-height: 6.2rem;
 $header-height-sm: 5.2rem;
+
+tmpl-header {
+	display: block;
+	flex: 0 0 auto;
+}
 
 .app-header {
 	position: relative;
@@ -150,6 +154,7 @@ $header-height-sm: 5.2rem;
 			text-decoration: none;
 			border: 1px solid transparent;
 			border-radius: 0.4rem;
+			cursor: pointer;
 
 			&:focus {
 				border: 1px solid $header-focus-border-color;

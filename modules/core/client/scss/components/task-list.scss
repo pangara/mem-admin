@@ -1,0 +1,23 @@
+.task-list {
+	margin-bottom: 0;
+}
+
+.task-list li {
+	padding-top: 5px;
+	position: relative;
+}
+
+.task-list li:first-child {
+	padding-top: 0;
+	position: relative;
+}
+
+.task-list li .task-current-status {
+	font-weight: 700;
+}
+
+.task-list li button {
+	white-space: normal;
+	position: relative;
+	text-align: left;
+}

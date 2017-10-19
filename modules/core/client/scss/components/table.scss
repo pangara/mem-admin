@@ -1,10 +1,167 @@
+.table {
+	.action-x1 {
+		width: 4.5rem;
+	}
+	
+	.action-x2 {
+		width: 8.5rem;
+	}
 
-$table-bg: #fff;
-$table-header-bg: #f7f8fa;
-$table-row-border: 1px solid #EEE;
-$table-row-hover-bg: #f7f8fa;
-$table-pagination-bg: #fff;
+	.action-x3 {
+		width: 11.5rem;
+	}
 
+	.select-col {
+		position: relative;
+		padding-left: 3.5rem;
+
+		input[type="checkbox"] {
+			position: absolute;
+			top: 1rem;
+			left: 1rem;
+		}	
+	}
+
+	.checkbox-col {
+		width: 3.25rem;
+		padding: 0;
+		padding-right: 0.5rem;
+		text-align: right;
+		vertical-align: middle;
+	}
+}
+
+.ng-table-page-btn {
+	font-size: $ng-table-page-btn-font-size;
+	font-weight: $ng-table-page-btn-font-weight;
+	color: $app-base-color;
+	border: 1px solid $ng-table-page-btn-border-color;
+}
+
+.ng-table-page-btn-active {
+	color: $ng-table-page-btn-active-color;
+	background: $btn-primary-bg;
+	border-color: $btn-primary-bg;
+}
+
+.ng-table-pager {
+	padding-top: 1rem;
+	padding-right: 1.5rem;
+	padding-bottom: 0;
+	padding-left: 1.5rem;
+	border-top: 1px solid #DDD;
+	overflow: auto;
+}
+
+.ng-table-pagination,
+.ng-table-counts {
+	margin-bottom: 1rem;
+}
+
+.ng-table-pagination {
+	display: block;
+	float: left;
+}
+
+.ng-table-counts {
+	.btn-default {
+		&.active,
+		&.active:hover {
+			@extend .ng-table-page-btn-active;
+		}
+	}
+}
+
+.pagination {
+	> li > a {
+		@extend .ng-table-page-btn;
+	}
+
+	> li > a:hover {
+		color: $app-base-color;
+		border: 1px solid $ng-table-page-btn-hover-border-color;
+	}
+
+	> .active > a,
+	> .active > a:hover {
+		@extend .ng-table-page-btn-active;
+	}
+}
+
+.table-scroll {
+	table-layout: fixed;
+
+	tr {
+		display: table;
+		table-layout: fixed;
+	}
+
+	thead {
+		tr {
+			width: 100%;
+		}
+	}
+
+	tbody {
+		width: 100%;
+		display: block;
+		overflow-y: scroll;
+		overflow-x: hidden;
+
+		tr {
+			width: calc(100% + 17px)
+		}
+	}
+}
+
+.flex-table-container {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.flex-table {
+	display: -webkit-flex;
+	display: flex;
+	height: calc(100% - 52px);
+	flex-flow: column nowrap;
+	table-layout: fixed;
+
+	tr {
+		display: table;
+		table-layout: fixed;
+	}
+
+	thead {
+		tr {
+			width: 100%;
+		}
+	}
+
+	tbody {
+		width: 100%;
+		display: block;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		flex: 1 1 auto;
+
+		tr {
+			width: 100%;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.flex-table {
+		tbody {
+			tr {
+				width: calc(100% + 17px);
+			}
+		}
+	}
+}
 
 .table-container {
     position: relative;

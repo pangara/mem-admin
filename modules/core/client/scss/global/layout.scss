@@ -1,13 +1,188 @@
-$view-panel-bg: #FFF;
-$view-panel-border: 1px solid #EEE;
-
-tmpl-header,
-tmpl-footer {
-	display: block;
-	flex: 0 0 auto;
+html, body {
+	height: 100%;
+	overflow-y: hidden;
 }
 
-// Application
+html {
+	min-height: 100%;
+}
+
+body {
+	padding: 0;
+	min-height: 100%;
+	color: $app-base-color;
+	background-color: $app-bg;
+	font-family: $font-family-sans-serif;
+	font-size: 1.4rem;
+	-ms-overflow-style: scrollbar;
+}
+
+section {
+	h2 {
+		margin-top: 0;
+		margin-bottom: 1rem;
+		font-size: 1.6rem;
+		font-weight: bold;
+	}
+
+	+ section {
+		margin-top: 3rem;
+	}
+}
+
+// SIDENAV
+.sidenav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 22rem;
+
+	.nav-pills {
+		a {
+			padding: 0.8rem 1.5rem;
+			font-size: 1.3rem;
+			font-weight: normal;
+			color: $link-color;
+			text-shadow: $sidenav-text-shadow;
+			border: 1px solid transparent;
+			border-radius: 0;
+
+			.glyphicon {
+				top: 0.3rem;
+				display: table-cell;
+				font-size: 1.6rem;
+
+				+ span {
+					display: table-cell;
+					padding-left: 0.7rem;
+				}
+			}
+		}
+	}
+
+	h4 {
+		margin-left: 1.5rem;
+		margin-right: 1.5rem;
+		padding-top: 1rem;
+		font-size: 1.3rem;
+		font-weight: bold;
+		color: $link-color;
+		text-transform: uppercase;
+	}
+
+	hr {
+		margin: 0.7rem 1.5rem;
+	}
+
+	.project-home-link {
+		display: block;
+		width: 22rem;
+		min-height: 6.2rem;
+		padding-top: 2.2rem;
+		padding-right: 1.5rem;
+		padding-left: 4.25rem;
+		padding-bottom: 2.2rem;
+		font-weight: bold;
+		color: #1a5a96;
+		text-decoration: none;
+		line-height: 1.5rem;
+		background: #EEE;
+
+		.glyphicon {
+			position: absolute;
+			top: 1.8rem;
+			left: 1rem;
+			font-size: 2.4rem;
+		}
+	}
+}
+
+// VIEW CONTAINERS
+.view-body-container,
+.view-body-insert,
+.view-footer-container {
+	padding: 2rem;
+}
+
+.view-title-container {
+	height: 6.2rem;
+	padding: 1.5rem 2rem;
+	border-bottom: 1px solid #EEE;
+	background: #FFF;
+	min-width: 0;
+
+    h1 {
+        margin: 0;
+        padding-top: 0.4rem;
+		font-size: 2.4rem;
+		font-weight: bold;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+    }
+
+	&.flex-row {
+		h1 {
+			-webkit-flex: 1 1 auto;
+			-ms-flex: 1 1 auto;
+			flex: 1 1 auto;
+		}
+
+		.actions {
+			-webkit-flex: 0 0 auto;
+			-ms-flex: 0 0 auto;
+			flex: 0 0 auto;
+
+			.btn {
+				min-width: 8rem;
+			}
+		}
+
+		.actions-group {
+			display: inline-block;
+		}
+	}
+
+	.actions {
+		padding-left: 2rem;
+
+		.permission-btn {
+			.btn {
+				min-width: 3rem;
+			}
+		}
+	}
+}
+
+.view-body-container {
+	overflow-y: auto;
+}
+
+.view-content {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    flex-flow: row nowrap;
+	
+	section:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.view-fix,
+.view-form {
+    @include flexbox();
+    @include flexflow(column nowrap);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: -webkit-flex; /* Safari */
+    display: flex;
+	flex-flow: column nowrap;
+}
+
+// APPLICATION
 .app-container {
     @include flexbox();
     @include flexflow(column nowrap);
@@ -112,7 +287,6 @@ tmpl-footer {
     }
 }
 
-
 // Main Panel Layout
 ui-view {
     @include flexbox();
@@ -176,15 +350,4 @@ ui-view {
             }
         }
     }
-}
-
-// View Form
-.view-form {
-    @include flexbox();
-    @include flexdirection(column);
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
 }
