@@ -1,0 +1,49 @@
+.edit-project-activity {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    &__item {
+        @include flexbox();
+        @include flexflow(column nowrap);
+
+        label {
+            @include flex(1 1 auto);
+        }
+        select {
+            @include flex(0 0 auto);
+        }
+
+        + .edit-project-activity__item {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddd;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .edit-project-activity {
+        &__item {
+            @include flexflow(row nowrap);
+
+            label {
+                margin-top: 0.75rem;
+            }
+
+            select {
+                width: 30rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .edit-project-activity {
+        &__item {
+            label {
+                max-width: 40rem;
+            }
+        }
+    }
+}

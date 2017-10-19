@@ -1,56 +1,105 @@
-<form class="view-form" name="projectForm" novalidate>
-
+<form class="edit-project-details view-form" name="projectForm" novalidate>
 	<div class="view-title-container flex-row">
-		<h1>Edit Project &nbsp;&rsaquo;&nbsp; {{project.name}}<span class="placeholder-value" ng-if="!project.name">Untitled Project</span></h1>
+		<h1>Edit Project &nbsp;&rsaquo;&nbsp; {{project.name}}
+			<span class="placeholder-value" ng-if="!project.name">Untitled Project</span>
+		</h1>
 		<div class="actions">
-			<button class="btn btn-default btn-sm" ng-if="!isNew" ng-click="cancelChanges('Cancel Changes', 'Are you sure you would like to exit and discard all changes', 'Cancel Changes', 'Go Back')">Cancel</button>
-			<button class="btn btn-default btn-sm" ng-if="isNew" ui-sref="projects">Cancel</button>
-			<button class="btn btn-primary btn-sm"
-					ng-click="saveProject(projectForm.$valid)"
-					ng-if="project.status !== 'Initiated'"
-					type="submit">Save</button>
-			<button class="btn btn-danger btn-sm"
-              	ng-click="deleteProject()"
-              	ng-if="!isNew && !project.isPublished && project.userCan.delete">
-				<span class="glyphicon glyphicon-trash"></span><span>Delete Project</span></button>
-			<button class="btn btn-success btn-sm"
-					ng-click="submitProject(projectForm.$valid, 'Submit Project', 'Are you sure you would like to submit this project. Clicking OK will make this project and its content publicly available.', 'Submit Project', 'Cancel')"
-					ng-if="project.status === 'Initiated'">Submit Project</button>
+			<button class="btn btn-default btn-sm" 
+				ng-if="!isNew" 
+				ng-click="cancelChanges('Cancel Changes', 'Are you sure you would like to exit and discard all changes', 'Cancel Changes', 'Go Back')">
+				Cancel
+			</button>
+			<button class="btn btn-default btn-sm" 
+				ng-if="isNew" 
+				ui-sref="projects">
+				Cancel
+			</button>
+			<button class="btn btn-primary btn-sm" type="submit"
+				ng-click="saveProject(projectForm.$valid)" 
+				ng-if="project.status !== 'Initiated'">
+				Save
+			</button>
+			<button class="btn btn-danger btn-sm" 
+				ng-click="deleteProject()" 
+				ng-if="!isNew && !project.isPublished && project.userCan.delete">
+				<span class="glyphicon glyphicon-trash"></span>
+				<span>Delete Project</span>
+			</button>
+			<button class="btn btn-success btn-sm" 
+				ng-click="submitProject(projectForm.$valid, 'Submit Project', 'Are you sure you would like to submit this project. Clicking OK will make this project and its content publicly available.', 'Submit Project', 'Cancel')"
+				ng-if="project.status === 'Initiated'">
+					Submit Project
+			</button>
 		</div>
 	</div>
-
 	<div class="view-body-container">
 		<ul class="nav nav-tabs" ng-init="form.curTab = 'Project Details'">
-			<li role="presentation" ng-class="{'active':form.curTab === 'Project Details'}" class="form-group" x-show-errors>
-				<a ng-click="form.curTab = 'Project Details'" title="Edit Project Details" name="detailsForm">
-					<span class="glyphicon glyphicon-exclamation-sign"></span>Project Details</a>
+			<li class="form-group" role="presentation"
+				ng-class="{'active':form.curTab === 'Project Details'}" 
+				x-show-errors>
+				<a title="Edit Project Details" name="detailsForm" 
+					ng-click="form.curTab = 'Project Details'">
+					<span class="glyphicon glyphicon-exclamation-sign"></span>
+					Project Details
+				</a>
 			</li>
-			<li role="presentation" ng-class="{'active':form.curTab === 'Proponent Info'}" class="form-group" x-show-errors>
+			<li class="form-group" role="presentation" 
+				ng-class="{'active':form.curTab === 'Proponent Info'}"
+				x-show-errors>
 				<a ng-click="form.curTab = 'Proponent Info'" title="Edit Project Details" name="proponentForm">
-					<span class="glyphicon glyphicon-exclamation-sign"></span>Proponent Info</a>
+					<span class="glyphicon glyphicon-exclamation-sign"></span>
+					Operator Info
+				</a>
 			</li>
-			<li role="presentation" ng-class="{'active':form.curTab === 'Ownership Info'}" class="form-group" x-show-errors>
-				<a ng-click="form.curTab = 'Ownership Info'" title="Edit Project Ownership" name="ownershipForm">
-					<span class="glyphicon glyphicon-exclamation-sign"></span>Ownership Info</a>
+			<li class="form-group" role="presentation" 
+				ng-class="{'active':form.curTab === 'Ownership Info'}" 
+				x-show-errors>
+				<a title="Edit Project Ownership" name="ownershipForm"
+					ng-click="form.curTab = 'Ownership Info'">
+					<span class="glyphicon glyphicon-exclamation-sign"></span>
+					Ownership Info
+				</a>
+			</li>
+			<li class="form-group" role="presentation"
+				ng-class="{'active':form.curTab === 'Site Activities'}">
+				<a title="Edit Site Activites" 
+					ng-click="form.curTab = 'Site Activities'">
+					Edit Site Activities
+				</a>
 			</li>
 		</ul>
 
+		<!-- PROJECT SITE ACTIVITIES -->
+		<div class="tab-pane"
+			ng-show="form.curTab === 'Site Activities'">
+			<ul class="edit-project-activity">
+				<li class="edit-project-activity__item" ng-repeat="activity in project.activities">
+					<label class="control-label" 
+						for="siteActivity{{activity.name}}">
+						{{activity.name}}
+					</label>		
+					<select class="form-control" id="activityStatus" name="activityStatus"
+						id="siteActivity{{activity.name}}"
+						ng-options="statusItem for statusItem in activityStatusItems track by statusItem"
+						ng-model="activity.status">
+					</select>
+				</li>
+			</ul>
+		</div>
 
+		<!-- PROJECT OWNERSHIP TAB -->
 		<div class="edit-project-form tab-pane" ng-show="form.curTab === 'Ownership Info'">
-			<!-- Project Ownership UI -->
 			<fieldset>
-		        <legend>Project Ownership</legend>
 		        <div class="button-bar">
 		            <button class="btn btn-default btn-sm ng-isolate-scope"
-								type="button"
-								x-org-search-chooser=""
-								x-title="'Add Organization'"
-								x-project="project"
-								x-callback="addOwnershipOrganization(org)"
-								x-destination="project.ownershipAdded">Add Organization</button>
+						type="button"
+						x-org-search-chooser=""
+						x-title="'Add Organization'"
+						x-project="project"
+						x-callback="addOwnershipOrganization(org)"
+						x-destination="project.ownershipAdded">Add Organization</button>
 		        </div>
 		        <ul class="edit-project-ownership-list">
-		            <!-- REPEAT ROWS HERE -->
 		            <li ng-repeat="org in project.ownershipData" class="edit-project-ownership-list__item">
 		                <span class="edit-project-ownership-list__item--details">
 		                    <span class="edit-project-ownership-list__item--details-org-name">{{org.organization.name}}</span>
@@ -78,73 +127,73 @@
 		    </fieldset>
 		</div>
 
+		<!-- PROJECT INFORMATION TAB -->
 		<div class="edit-project-form tab-pane active" ng-show="form.curTab === 'Project Details'" ng-form="detailsForm">
-			<!-- PROJECT INFORMATION -->
 			<fieldset>
 				<legend>General Info</legend>
 				<div class="form-group" x-show-errors>
 					<label class="control-label" for="name">Project Name<em class="required">(Required)</em></label>
 					<input class="form-control" title="Project Name" id="name" name="projectname"
-						ng-model="project.name" ng-change="onChangeProjectName()" required />
+						ng-model="project.name" 
+						ng-change="onChangeProjectName()" 
+						required />
 				</div>
 				<div class="form-group" x-show-errors>
 					<label class="control-label" for="shortDesc">Project Description<em class="required">(Required)</em></label>
-					<textarea title="Project Description"
-								class="form-control"
-								rows="5"
-								id="shortDesc"
-								name="projectdesc"
-								ng-model="project.description" required></textarea>
+					<textarea class="form-control" title="Project Description" id="shortDesc" name="projectdesc" rows="5"
+						ng-model="project.description" 
+						required>
+					</textarea>
 				</div>
-			<!-- MEM ONLY INFORORMATION -->
-			<div class="row">
-				<div class="col-md-4">
-					<div class="form-group" x-show-errors>
-						<label class="control-label" for="type">Type<em class="required">(Required)</em></label>
-						<select class="form-control" title="Project Type" id="type" name="type"
-							ng-model="project.type"
-							ng-change="project.sector = undefined"
-							ng-options="type for type in types" required></select>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group" x-show-errors>
+							<label class="control-label" for="type">Type<em class="required">(Required)</em></label>
+							<select class="form-control" title="Project Type" id="type" name="type"
+								ng-model="project.type"
+								ng-change="project.sector = undefined"
+								ng-options="type for type in types" 
+								required></select>
+						</div>
 					</div>
-				</div>
-				<div class="col-md-4 form-group" x-show-errors>
-					<label class="control-label" for="phase">Status<em class="required">(Required)</em></label>
-					<select class="form-control" if="phase" id="phase" name="phase"
-									ng-model='project.currentPhaseCode'
-									ng-change='onChangePhase()'
-									ng-options="key as value for (key, value) in allPhases" required></select>
-				</div>
-				<div class="col-md-4">
-					<div class="form-group" x-show-errors>
-						<label for="permitid" class="control-label">Permit Number</label>
-						<input id="permitid" name="permitid" type="text" class="form-control input-sm" ng-model="project.memPermitID">
-						<div ng-messages="projectForm.permitid.$error" role="alert">
-							<p class="help-block error-text" ng-message="required">Permit Number is required.</p>
+					<div class="col-md-4 form-group" x-show-errors>
+						<label class="control-label" for="phase">Status<em class="required">(Required)</em></label>
+						<select class="form-control" if="phase" id="phase" name="phase"
+							ng-model='project.currentPhaseCode'
+							ng-change='onChangePhase()'
+							ng-options="key as value for (key, value) in allPhases" 
+							required></select>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group" x-show-errors>
+							<label for="permitid" class="control-label">Permit Number</label>
+							<input id="permitid" name="permitid" type="text" class="form-control input-sm" ng-model="project.memPermitID">
+							<div ng-messages="projectForm.permitid.$error" role="alert">
+								<p class="help-block error-text" ng-message="required">Permit Number is required.</p>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 				<div class="row">
-				<div class="col-md-4">
-					<div class="form-group" x-show-errors>
-						<label for="commodity" class="control-label">Commodity/ies</label>
-						<input id="commodity" name="commodity" type="text" class="form-control input-sm" ng-model="project.commodity">
+					<div class="col-md-4">
+						<div class="form-group" x-show-errors>
+							<label for="commodity" class="control-label">Commodity/ies</label>
+							<input id="commodity" name="commodity" type="text" class="form-control input-sm" ng-model="project.commodity">
 							<div ng-messages="projectForm.commodity.$error" role="alert">
 								<p class="help-block error-text" ng-message="required">Commodity is required.</p>
 							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group" x-show-errors>
+							<label for="tailingsImpoundments" class="control-label">Tailings Impoundments</label>
+							<input id="tailingsImpoundments" name="tailingsImpoundments" type="text" class="form-control input-sm" ng-model="project.tailingsImpoundments">
+								<div ng-messages="projectForm.tailingsImpoundments.$error" role="alert">
+									<p class="help-block error-text" ng-message="required">Tailings Impoundments is required.</p>
+								</div>
+						</div>
 					</div>
 				</div>
-				<div class="col-md-4">
-					<div class="form-group" x-show-errors>
-						<label for="tailingsImpoundments" class="control-label">Tailings Impoundments</label>
-						<input id="tailingsImpoundments" name="tailingsImpoundments" type="text" class="form-control input-sm" ng-model="project.tailingsImpoundments">
-							<div ng-messages="projectForm.tailingsImpoundments.$error" role="alert">
-								<p class="help-block error-text" ng-message="required">Tailings Impoundments is required.</p>
-							</div>
-					</div>
-				</div>
-			</div>
-			<!-- / MEM ONLY INFORMATION -->
 				<div class="row">
 					<div class="col-md-4 form-group" x-show-errors>
 						<label class="control-label" for="region">Region<em class="required">(Required)</em></label>
@@ -162,16 +211,20 @@
 						<input class="form-control" id="longitude" name="longitude" type="number" step="any"
 							ng-model="project.lon" required />
 					</div>
-					<!-- temporary display for major mines -->
-					<div class="col-md-2 form-group">
-						<label class="control-label" for="isMajorMine">Show on mines.nrs</label>
-						<input style="font-size:16px; margin-top: 10px" type="checkbox" ng-model="project.isMajorMine" id="isMajorMine" name="isMajorMine" disabled/>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="checkbox">
+							<label class="control-label" for="isMajorMine">
+								<input type="checkbox" id="isMajorMine" name="isMajorMine"
+									ng-model="project.isMajorMine" 
+									disabled /> 
+									Show on mines.nrs
+							</label>
+						</div>
 					</div>
 				</div>
 			</fieldset>
-			<!-- PROJECT INFORMATION -->
-
-
 		</div>
 
 		<div class="edit-project-form tab-pane" ng-show="form.curTab === 'Project Contacts'" ng-form="contactsForm">
@@ -308,7 +361,6 @@
 		</div>
 
 		<div class="edit-project-form tab-pane" ng-show="form.curTab === 'Proponent Info'">
-
 			<fieldset>
 				<legend>Organization</legend>
 				<div class="row">
@@ -334,9 +386,7 @@
 					<button class="btn btn-default btn-sm" type="button" ng-click="clearOrganization()">Clear Organization</button>
 				</div>
 			</fieldset>
-
 			<hr/>
-
 			<fieldset>
 				<legend>Primary Contact</legend>
 				<div class="row">
@@ -389,38 +439,28 @@
 				</div>
 			</div>
 		</div>
-
 		<div class="form-footer clearfix">
 			<div class="pull-right">
-				<button class="btn btn-default btn-sm" ng-if="!isNew" ng-click="cancelChanges('Cancel Changes', 'Are you sure you would like to exit and discard all changes', 'Cancel Changes', 'Go Back')">Cancel</button>
-				<button class="btn btn-default btn-sm" ng-if="isNew" ui-sref="projects">Cancel</button>
-				<button class="btn btn-primary btn-sm"
-						ng-click="saveProject(projectForm.$valid)"
-						ng-if="project.status !== 'Initiated'"
-						type="submit">Save</button>
-				<button class="btn btn-success btn-sm"
-						ng-click="submitProject(projectForm.$valid, 'Submit Project', 'Are you sure you would like to submit this project. Clicking OK will make this project and its content publicly available.', 'Submit Project', 'Cancel')"
-						ng-if="project.status === 'Initiated'">Submit Project</button>
+				<button class="btn btn-default btn-sm" 
+					ng-if="!isNew" 
+					ng-click="cancelChanges('Cancel Changes', 'Are you sure you would like to exit and discard all changes', 'Cancel Changes', 'Go Back')">
+					Cancel
+				</button>
+				<button class="btn btn-default btn-sm" 
+					ng-if="isNew" ui-sref="projects">
+					Cancel
+				</button>
+				<button class="btn btn-primary btn-sm" type="submit" 
+					ng-if="project.status !== 'Initiated'"
+					ng-click="saveProject(projectForm.$valid)">
+					Save
+				</button>
+				<button class="btn btn-success btn-sm" 
+					ng-click="submitProject(projectForm.$valid, 'Submit Project', 'Are you sure you would like to submit this project. Clicking OK will make this project and its content publicly available.', 'Submit Project', 'Cancel')"
+					ng-if="project.status === 'Initiated'">
+						Submit Project
+				</button>
 			</div>
 		</div>
-
 	</div>
-
-<div class="edit-project-details-view hidden">
-
-		<!-- VIEW BODY CONTAINER -->
-		<div class="view-body-container">
-
-			<div ng-if="form.curTab === 'Accepted'">
-				<h3>Project Submission Accepted</h3>
-				<p>Thank you.</p>
-				<p>Your project submission has been sent to EAO and is waiting to be received.</p>
-				<p>You will be contacted shortly regarding the next steps.</p>
-			</div>
-
-		</div><!-- / VIEW BODY CONTAINER -->
-
-</div>
-
 </form>
-
