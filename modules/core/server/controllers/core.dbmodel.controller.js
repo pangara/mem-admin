@@ -354,10 +354,10 @@ _.extend (DBModel.prototype, {
 				var orgs = proponent.split(',');
 				q = _.extend (q, { "proponent": {$in : orgs}});
 			}
-			if (ownership) {
-				var owns = ownership.split(',');
-				q = _.extend (q, { "ownership": { $text: { $search: ownership }}});
-			}
+			// if (ownership) {
+			// 	var owns = ownership.split(',');
+			// 	q = _.extend (q, { "ownershipData": { $elemMatch: { organization: ownership }}});
+			// }
 			// console.log("q:", q);
 			// console.log("limit:", limit);
 			// console.log("limit:", Number(limit));

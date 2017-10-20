@@ -40,9 +40,10 @@ module.exports = function (app) {
                         projectQuery = _.extend (projectQuery, { "proponent": {$in : ops}});
                         // console.log("organization query:", projectQuery);
                     }
-                    // owner filtering (strings are coming in)
+                    // owner filtering (objectID's are coming in)
                     if (req.query.ownership) {
-                        projectQuery = _.extend (projectQuery, { $text: { $search: req.query.ownership }});
+                        var ownershipArray = req.query.ownership.split(',');
+                        projectQuery = _.extend (projectQuery, { "ownershipData": { $elemMatch: { organization: { $in: ownershipArray }} }});
                         // console.log("ownership query:", projectQuery);
                     }
                     if (req.query.page) {
