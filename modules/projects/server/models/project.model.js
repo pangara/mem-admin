@@ -157,12 +157,10 @@ module.exports = require ('../../../core/server/controllers/core.schema.controll
 	}],
 
 	externalLinks: [{
-		_id    : false,
-		source : { type: String, default: '' }, // ex. IMPORT, MEM, EPIC
-		type   : { type: String, default: '' }, // ex. EXTERNAL_LINK ?
-		page   : { type: String, default: '' }, // ex. Compliance, Authorization, Mine, further grouping for different areas of concern
-		title  : { type: String, default: '' }, // title for hyperlink...
-		link   : { type: String, default: '' }  // hyperlink...
+		_id           : false,
+		title         : { type: String, default: '' }, // title for hyperlink...
+		link          : { type: String, default: '' }, // hyperlink...
+		order         : { type: Number } // display order
 	}],
 
 	content: [{
