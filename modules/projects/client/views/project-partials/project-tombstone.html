@@ -39,7 +39,7 @@
 					</div>
 					<div class="detail-row">
 						<label>Ownership</label>
-						<span ng-repeat="org in project.ownershipData" class="value">{{ org.sharePercent}}% - {{ org.organization.name}}</span>
+						<span ng-repeat="org in project.ownershipData | orderBy : '-sharePercent'" class="value">{{ org.sharePercent}}% - {{ org.organization.name}}</span>
 					</div>
 					<div class="detail-row">
 						<label>Commodity(ies)</label>
