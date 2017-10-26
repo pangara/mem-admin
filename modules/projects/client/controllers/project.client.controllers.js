@@ -548,9 +548,9 @@ function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, 
   };
 }
 
-controllerProjectPublicContent.$inject = ['$scope', '$state', '$stateParams', '$modal', 'project', 'ProjectModel'];
+controllerProjectPublicContent.$inject = ['$scope', '$state', '$stateParams', '$modal', 'project', 'ProjectModel', 'AlertService', '_'];
 /* @ngInject */
-function controllerProjectPublicContent ($scope, $state, $stateParams, $modal, project, ProjectModel) {
+function controllerProjectPublicContent ($scope, $state, $stateParams, $modal, project, ProjectModel, AlertService, _) {
   ProjectModel.setModel($scope.project);
 
   $scope.project = project;
@@ -619,6 +619,111 @@ function controllerProjectPublicContent ($scope, $state, $stateParams, $modal, p
     modalDocView.result.then(function (res) {
       $state.go('p.detail', {}, {reload: true});
     });
+  };
+
+  // Reload public content page
+  $scope.goToPublicContent = function () {
+    $state.go('p.publiccontent', {}, { reload: true });
+  };
+
+  $scope.addLink = function () {
+    // New
+    $scope.openLinkDialog().then(function (link) {
+      // Add this to the list if it's not already added.
+      var found = _.find($scope.project.externalLinks, function (l) { return l.link === link.link; });
+      if (found) {
+        // We already added this to the list, error.
+        AlertService.error('The external link has been added already.');
+      } else {
+        link.order = $scope.project.externalLinks.length + 1;
+        $scope.project.externalLinks.push(link);
+      }
+    });
+  };
+
+  $scope.editLink = function (link) {
+    $scope.openLinkDialog(link).then(function (newValue) {
+      var i = _.findIndex($scope.project.externalLinks, function (l) { return l.link === link.link; });
+      if (i < 0) {
+        // Error
+        AlertService.error('Could not update the external link.');
+      } else {
+        $scope.project.externalLinks[i] = newValue;
+      }
+    });
+  };
+
+  // Prompt for confirmation before deleting an external link
+  $scope.deleteLink = function (link) {
+    $scope.confirmDeleteLink(link).then(function () {
+      var found = _.find($scope.project.externalLinks, function (l) { return l.link === link.link; });
+      if (!found) {
+        // Error
+        AlertService.error('Could not delete the external link.');
+      } else {
+        _.remove($scope.project.externalLinks, found);
+        _.each($scope.project.externalLinks, function (value, i) { value.order = i + 1; });
+      }
+    });
+  };
+
+  // Delete External Link Confirmation Modal
+  $scope.confirmDeleteLink = function (link) {
+    var modalView = $modal.open({
+      animation: true,
+      templateUrl: 'modules/utils/client/views/partials/modal-confirm-delete.html',
+      controller: function ($scope, $modalInstance) {
+        var self = this;
+        self.dialogTitle = "Delete Link";
+        self.name = link.link;
+        self.ok = function () {
+          $modalInstance.close(link);
+        };
+        self.cancel = function () {
+          $modalInstance.dismiss('cancel');
+        };
+      },
+      controllerAs: 'self',
+      scope: $scope,
+      size: 'md'
+    });
+    return modalView.result;
+  };
+
+  // Manage External Link Modal
+  $scope.openLinkDialog = function (link) {
+    var modalView = $modal.open({
+      animation: true,
+      controllerAs: 'self',
+      scope: $scope,
+      size: 'md',
+      backdropClass: 'modal-alert-backdrop',
+      templateUrl: 'modules/projects/client/views/project-partials/edit-external-links-modal.html',
+      controller: function ($scope, $modalInstance, _) {
+        var self = this;
+        var isNew = !link;
+        self.title = isNew ? "Add External Link" : "Edit External Link";
+        self.link = isNew ? { title: "", link: "", order: 0 } : _.clone(link);
+
+        // Validate before saving
+        self.save = function (isValid) {
+          if (!isValid) {
+            $scope.$broadcast('show-errors-check-validity', 'linkForm');
+            return false;
+          }
+          self.onSave(self.link);
+        };
+
+        self.onSave = function (newValue) {
+          $modalInstance.close(newValue);
+        };
+
+        self.onClose = function () {
+          $modalInstance.dismiss('cancel');
+        };
+      }
+    });
+    return modalView.result;
   };
 }
 

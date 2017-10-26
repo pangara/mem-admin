@@ -4,11 +4,11 @@ form {
 		padding-bottom: 1rem;
 		border-bottom: 1px solid #DDD;
 	}
-	
+
 	.help-block {
 		margin-top: 0.5rem;
 		margin-bottom: 0;
-		font-size: 1.2rem;
+		font-size: 1.4rem;
 	}
 }
 
@@ -22,7 +22,7 @@ legend {
 	border-bottom: none;
 	font-size: 1.8rem;
 	font-weight: bold;
-	
+
 	em {
 		@extend .form-validation-msg;
 	}
@@ -103,7 +103,7 @@ textarea {
 .checkbox,
 .checkbox-inline {
 	margin-right: 2rem;
-	
+
 	input {
 		margin-top: 2px;
 	}
@@ -140,7 +140,7 @@ textarea {
 
 .radio-group {
 	padding-top: 0.7rem;
-	
+
 	input[type="radio"] {
 		margin-top: 2px;
 	}
