@@ -177,7 +177,7 @@ module.exports = require ('../../../core/server/controllers/core.schema.controll
 	ownershipData :[
 		{
 			_id    			: false,
-			sharePercent	: { type: Number, default: 0 },
+			sharePercent	: { type: Number, default: 100 },
 			organization 	: { type:'ObjectId', ref:'Organization', index:true, default:null
 		}
 	}],

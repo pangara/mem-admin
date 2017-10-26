@@ -223,7 +223,7 @@ function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, 
 			// We already added this to the list, error.
 			AlertService.error('The selected organization has been added already.');
 		} else {
-			$scope.project.ownershipData.push({organization: data, sharePercent: 1});
+			$scope.project.ownershipData.push({organization: data, sharePercent: 100});
 		}
 	};
 
