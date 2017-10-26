@@ -1,75 +1,49 @@
-// Edit your app's name below
-def APP_NAME = 'mem-mmt'
-
-// Edit your environment TAG names below
-def TAG_NAMES = ['dev', 'test', 'prod']
-
-// You shouldn't have to edit these if you're following the conventions
-def BUILD_CONFIG = APP_NAME + '-build'
-def IMAGESTREAM_NAME = APP_NAME
-
-node {
-  try {
-    notifyBuild('STARTED')
-    stage('build ' + BUILD_CONFIG) {
-      echo "Building: " + BUILD_CONFIG
-      openshiftBuild bldCfg: BUILD_CONFIG, showBuildLogs: 'true'
-      openshiftTag destStream: IMAGESTREAM_NAME, verbose: 'true', destTag: '$BUILD_ID', srcStream: IMAGESTREAM_NAME, srcTag: 'latest'
+pipeline {
+  agent any
+  stages {
+    stage('build mem-mmt-build') {
+      steps {
+        echo "Building: mem-mmt-build"
+        openshiftBuild bldCfg: 'mem-mmt-build', showBuildLogs: 'true'
+        openshiftTag destStream: 'mem-mmt', verbose: 'true', destTag: '$BUILD_ID', srcStream: 'mem-mmt', srcTag: 'latest'
+      }
     }
-    stage('deploy-' + TAG_NAMES[0]) {
-      openshiftTag destStream: IMAGESTREAM_NAME, verbose: 'true', destTag: TAG_NAMES[0], srcStream: IMAGESTREAM_NAME, srcTag: '$BUILD_ID'
-      notifyBuild('DEPLOYED:DEV')
-      didDeployDev = true
+    stage('deploy to DEV') {
+      steps {
+        openshiftTag destStream: 'mem-mmt', verbose: 'true', destTag: 'dev', srcStream: 'mem-mmt', srcTag: '$BUILD_ID'
+        notifyBuild('DEPLOYED:DEV')
+      }
     }
-    stage('deploy-' + TAG_NAMES[1]) {
-      try {
-        timeout(time: 2, unit: 'MINUTES') {
-          input "Deploy to " + TAG_NAMES[1] + "?"
-          openshiftTag destStream: IMAGESTREAM_NAME, verbose: 'true', destTag: TAG_NAMES[1], srcStream: IMAGESTREAM_NAME, srcTag: '$BUILD_ID'
-          notifyBuild('DEPLOYED:TEST')
-        }
-      } catch (e) {
-        def user = err.getCauses()[0].getUser()
-        if('SYSTEM' == user.toString()) { // SYSTEM means timeout.
-            didTimeout = true
-            notifyBuild('DEPLOYMENT:TEST TIMEOUT')
-        } else {
-            userInput = false
-            echo "Aborted by: [${user}]"
+    stage('deploy to TEST') {
+      steps {
+        script {
+          try {
+            timeout(time: 2, unit: 'MINUTES') {
+              input "Deploy to TEST?"
+              openshiftTag destStream: 'mem-mmt', verbose: 'true', destTag: 'test', srcStream: 'mem-mmt', srcTag: '$BUILD_ID'
+              notifyBuild('DEPLOYED:TEST')
+            }
+          } catch (e) {
             notifyBuild('DEPLOYMENT:TEST ABORTED')
+          }
         }
       }
     }
-    stage('deploy-'  + TAG_NAMES[2]) {
-      try {
-        timeout(time: 2, unit: 'MINUTES') {
-          input "Deploy to " + TAG_NAMES[2] + "?"
-          openshiftTag destStream: IMAGESTREAM_NAME, verbose: 'true', destTag: TAG_NAMES[2], srcStream: IMAGESTREAM_NAME, srcTag: '$BUILD_ID'
-          notifyBuild('DEPLOYED:PROD')
-        }
-      } catch (e) {
-        def user = err.getCauses()[0].getUser()
-        if('SYSTEM' == user.toString()) { // SYSTEM means timeout.
-            didTimeout = true
-            notifyBuild('DEPLOYMENT:PROD TIMEOUT')
-        } else {
-            userInput = false
-            echo "Aborted by: [${user}]"
+    stage('deploy to PROD') {
+      steps {
+        script {
+          try {
+            timeout(time: 2, unit: 'MINUTES') {
+              input "Deploy to PROD?"
+              openshiftTag destStream: 'mem-mmt', verbose: 'true', destTag: 'prod', srcStream: 'mem-mmt', srcTag: '$BUILD_ID'
+              notifyBuild('DEPLOYED:PROD')
+            }
+          } catch (e) {
             notifyBuild('DEPLOYMENT:PROD ABORTED')
+          }
         }
       }
     }
-  } catch (e) {
-    // If there was an exception thrown, the build failed
-    if (didDeployDev) {
-      currentBuild.result = null
-    } else {
-      currentBuild.result = "FAILED"
-      throw e
-    }
-  } finally {
-    // Success or failure, always send notifications
-    notifyBuild(currentBuild.result)
   }
 }
 
