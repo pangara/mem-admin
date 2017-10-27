@@ -54,9 +54,6 @@ $radio-btn-border-color: 	#ccc;
 $radio-btn-active-color: 	#fff;
 $radio-btn-active-bg: 		#5091cd;
 
-// HEADER
-$header-focus-border-color: #5475a7;
-
 // LEFT PANEL
 $left-panel-width: 			19rem;
 $left-panel-bg:				#FFF;
@@ -82,11 +79,12 @@ $view-panel-bg:             #FFF;
 $view-panel-border:         1px solid #EEE;
 
 // SIDE NAVIGATION
-$sidenav-bg: 				                #FFF;
-$sidenav-color: 			                $link-color;
-$sidenav-width:				                18rem;
-$sidenav-shadow:                            0 0 0.4rem #CCC;
-$sidenav-text-shadow:                       0 0 2px #FFF;
+$sidenav-bg: 				#FFF;
+$sidenav-color: 			$link-color;
+$sidenav-width:				18rem;
+$sidenav-shadow:            0 0 0.4rem #CCC;
+$sidenav-text-shadow:       0 0 2px #FFF;
+$sidenav-hover-bg:			#F7F8FA;
 
 // TABLES
 $table-bg: 					#FFF;
