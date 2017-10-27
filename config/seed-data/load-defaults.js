@@ -39,6 +39,7 @@ module.exports = function () {
 				'listProjectConditions' : ['sysadmin', 'team', 'exec', 'project-lead'],
 				'listProjectComplaints' : ['sysadmin'],
 				'listProjectCollections' : ['sysadmin'],
+				'editProjectPublicContent' : ['sysadmin'],
 				'listProjectInvitations' : ['sysadmin', 'team', 'project-lead'],
 				'listDocuments' : ['public', 'sysadmin'],
 				'listCommentPeriods' : ['public', 'sysadmin'],
@@ -388,6 +389,7 @@ module.exports = function () {
 				'createValuedComponent': ['sysadmin'],
 				'createContact': ['sysadmin', 'team'],
 				'editContact': ['sysadmin', 'team'],
+				'editPublicContent': ['sysadmin'],
 				'deleteContact': ['sysadmin'],
 				'manageRoles': ['sysadmin'],
 				'managePermissions': ['sysadmin'],
@@ -418,6 +420,7 @@ module.exports = function () {
 		'createCollection',
 		'manageRoles',
 		'managePermissions',
+		'editPublicContent',
 		'addUsersToContext'
 	];
 	var readApplicationPermissions = [
