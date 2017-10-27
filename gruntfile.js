@@ -41,6 +41,7 @@ module.exports = function (grunt) {
 						enableTimeline: 'true',
 						enableDocuments: 'true',
 						enableCollections: 'true',
+						enablePublicContent: 'false',
 						enableInvitations: 'true',
 						enableGroups: 'true',
 						enableUpdates: 'true',
