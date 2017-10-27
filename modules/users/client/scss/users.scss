@@ -37,7 +37,10 @@
 }
 
 .permissions-modal {
-	.form-group.manage-permission {
+	.manage-permission {
+		.control-label {
+			display: block;
+		}
 		.btn {
 			margin-bottom: 1rem;
 		}

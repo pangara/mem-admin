@@ -34,10 +34,11 @@
 	<!-- PROJECT MENU - AUTHENTICATED -->
 	<div ng-if="(menu.context === 'project' || menu.context === 'activity')">
 
-		<a class="project-home-link" ui-sref="p.detail({projectid: menu.project.code})" title="Project Details">
-			<span class="glyphicon glyphicon-map-marker"></span>
-			<span>{{project.name}}</span>
-			<span ng-if="!project.name">Untitled Project</span>
+		<a class="project-home-link" ui-sref="p.detail({projectid: menu.project.code})" onclick="toggleSideNav();" title="Project Details">
+			<span class="project-home-link__inner-container">
+				<span class="project-home-link__project-name">{{project.name}}</span>
+				<span class="project-home-link__project-name" ng-if="!project.name">Untitled Project</span>
+			</span>
 		</a>
 
 		<!-- PROJECT CLIENT MENUS (project.client.menus.js) -->
