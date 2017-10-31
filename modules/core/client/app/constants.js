@@ -102,13 +102,40 @@ angular
   )
   .constant('PROJECT_ACTIVITY_STATUS',
     [
-      ' ',
+      '',
       'Active',
       'Complete',
       'Inactive',
       'Pending',
       'Suspended',
       'N/A'
+    ]
+  )
+  .constant('PROJECT_ACTIVITIES_DEFAULTS',
+    [
+      { name: 'Design',                 status : '', order: 0 },
+      { name: 'Construction',           status : '', order: 1 },
+      { name: 'Operation',              status : '', order: 2 },
+      { name: 'Closure',                status : '', order: 3 },
+      { name: 'Reclamation',            status : '', order: 4 },
+      { name: 'Monitoring & Reporting', status : '', order: 5 }
+    ]
+  )
+  .constant('PROJECT_CONTENT_DEFAULTS',
+    [
+      {
+        page: 'Auth',
+        type: 'Intro',
+        html: 'Environmental assessment certificates and permits issued under the Mines Act and the Environmental Management Act (EMA) are the primary provincial authorizations for major mine projects in British Columbia. Below you will find a list of authorizations associated with each of these three acts (as applicable).'
+      } , {
+        page: 'Comp',
+        type: 'Intro',
+        html: 'Compliance and enforcement (C&amp;E) activities begin after a claim is staked and continue through exploration and the life of a mine. The Ministry of Energy, Mines and Petroleum Resources (EMPR), Ministry of Environment and Climate Change Strategy (ENV) and Environmental Assessment Office (EAO) work together to provide integrated oversight of British Columbia&#39;s mining sector. Records of inspections conducted during the 2016 calendar year can be found below.'
+      } , {
+        page: 'Other',
+        type: 'Intro',
+        html: 'Below you will find recent annual reports (including annual reclamation reports, annual dam safety inspection reports and related documents) as well as other select documents of interest. More documents will be added here on an ongoing basis.'
+      }
     ]
   )
   .constant('PROJECT_SUB_TYPES',

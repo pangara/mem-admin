@@ -141,7 +141,7 @@ module.exports = function (app) {
 
 	// Only return what's needed in public API calls
 	var majorMineFields = {
-		_id: 1, code: 1, commodityType: 1, commodity: 1, memPermitID: 1,
+		_id: 1, code: 1, commodityType: 1, commodity: 1, memPermitID: 1, description: 1, subtitle: 1,
 		name: 1, type: 1, currentPhaseName: 1, tailingsImpoundments: 1, lon: 1, lat: 1,
 		morePermitsLinkYear: 1, morePermitsLink: 1, moreInspectionsLink: 1, moreInspectionsLinkYear: 1,
 		epicProjectCodes: 1, content: 1, externalLinks: 1, collections: 1, ownershipData: 1, proponent: 1, activities: 1
