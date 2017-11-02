@@ -147,11 +147,33 @@ textarea {
 	}
 }
 
+// TINY MCE OVERRIDES
+.mce-tinymce {
+	border: 1px solid #ddd;
+}
+
+.mce-content-body {
+	height: auto;
+	min-height: auto;
+	background-color: transparent;
+	font-family: $font-family-sans-serif;
+	font-size: 14px;
+
+	p { 
+		line-height: 20px;
+	}
+}
+
+// VALIDATION
 .has-error {
 	.control-label {
 		em.required {
 			display: inline;
 			color: $danger-text;
 		}
+	}
+
+	.mce-tinymce {
+		border-color: $danger-text;
 	}
 }

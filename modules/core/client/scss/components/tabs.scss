@@ -13,6 +13,7 @@
 			color: $nav-tab-inactive-color;
 			border: none;
 			border-bottom: 4px solid $nav-tab-inactive-border-color;
+			cursor: pointer;
 
 			&:hover {
 				background: transparent;
@@ -20,7 +21,7 @@
 
 			.glyphicon {
 				position: absolute;
-				top: 0.9rem;
+				top: 1rem;
 				left: 1rem;
 				display: none;
 				font-size: 1.6rem;
@@ -30,6 +31,8 @@
 		&.has-error {
 			> a {
 				padding-left: 3.5rem;
+				color: $danger-text;
+				//border-bottom-color: $danger-border;
 			}
 
 			.glyphicon {
