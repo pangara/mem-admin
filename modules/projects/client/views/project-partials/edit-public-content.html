@@ -1,5 +1,9 @@
 <form class="edit-public-content-form view-form" name="publicContentForm" novalidate>
 
+  <div class="alert alert-danger" ng-if="publicContentForm == !valid">
+    Some Shit Here
+  </div>
+
   <div class="view-title-container">
     <h1>Edit Public Content</h1>
     <div class="actions">
@@ -15,32 +19,51 @@
   </div>
 
   <div class="view-body-container">
+    <div class="form-group">
+      <label class="control-label" for="subtitle">
+        Page Subtitle<em class="required">(Required)</em>
+      </label>
+      <input class="form-control" title="A brief page subtitle that appears above the below content" id="subtitle" name="subtitle" ng-model="project.subtitle" required />
+    </div>
+
     <ul class="nav nav-tabs" ng-init="form.curTab = 'mine-summary-tab'">
-      <li class="form-group" role="presentation"
+      <li class="form-group" role="presentation" 
+        x-show-errors
         ng-class="{'active':form.curTab === 'mine-summary-tab'}" >
-        <a title="Edit Project Details"
+        <a title="Edit Project Details" 
+          name="mineIntro"
           ng-click="form.curTab = 'mine-summary-tab'">
+          <span class="glyphicon glyphicon-exclamation-sign"></span>
           Mine Summary
         </a>
       </li>
       <li class="form-group" role="presentation"
+        x-show-errors
         ng-class="{'active':form.curTab === 'authorizations-tab'}">
-        <a title="Edit Authorizations Content"
+        <a title="Edit Authorizations Content" 
+          name="authIntro"
           ng-click="form.curTab = 'authorizations-tab'">
+          <span class="glyphicon glyphicon-exclamation-sign"></span>
           Authorizations
         </a>
       </li>
       <li class="form-group" role="presentation"
+        x-show-errors
         ng-class="{'active':form.curTab === 'compliance-oversight-tab'}" >
         <a title="Edit Compliance Oversight Content"
+          name="compIntro"
           ng-click="form.curTab = 'compliance-oversight-tab'">
+          <span class="glyphicon glyphicon-exclamation-sign"></span>
           Compliance Oversight
         </a>
       </li>
       <li class="form-group" role="presentation"
+        x-show-errors
         ng-class="{'active':form.curTab === 'other-documents-tab'}" >
         <a title="Edit Other Documents Content"
+          name="otherIntro"
           ng-click="form.curTab = 'other-documents-tab'">
+          <span class="glyphicon glyphicon-exclamation-sign"></span>
           Other Documents
         </a>
       </li>
@@ -50,16 +73,7 @@
     <div class="tab-pane"
       ng-show="form.curTab === 'mine-summary-tab'">
       <div class="form-group" x-show-errors>
-        <label class="control-label" for="subtitle">Subtitle<em class="required">(Required)</em></label>
-        <div class="m-b-1">A brief subtitle displayed above the content tabs.</div>
-        <input class="form-control" title="Mine Subtitle" id="subtitle" name="subtitle" ng-model="project.subtitle" required />
-        <div ng-messages="projectForm.subtitle.$error" role="alert">
-          <p class="help-block error-text" ng-message="required">Subtitle is required.</p>
-        </div>
-      </div>
-      <div class="form-group" x-show-errors>
-        <label class="control-label m-b-0" for="mineIntro">Introduction<em class="required">(Required)</em></label>
-        <div class="m-b-1">A full description of the mine.</div>
+        <label class="control-label m-b-1" for="mineIntro">Full Description of the Project<em class="required">(Required)</em></label>
         <textarea class="form-control" title="Mine Introduction" id="mineIntro" name="mineIntro"
           ng-model="mineIntro"
           ui-tinymce="tinymceOptions"
@@ -70,14 +84,13 @@
         </div>
       </div>
     </div>
-
     <!-- AUTHORIZATIONS -->
     <div class="tab-pane"
       ng-show="form.curTab === 'authorizations-tab'">
       <div class="form-group" x-show-errors>
-        <label class="control-label m-b-0" for="authIntro">Introduction<em class="required">(Required)</em></label>
-        <div class="m-b-1">An introduction to the Authorizations tab.</div>
-        <textarea class="form-control" title="Authorizations Introduction" id="authIntro" name="authIntro"
+        <label class="control-label m-b-0" for="authIntro">Content Summary<em class="required">(Required)</em></label>
+        <div class="placeholder-value m-b-1">A brief summary describing the content that appears in this section.</div>
+        <textarea title="Enter a summary describing content that appears in the Authorizations section" id="authIntro" name="authIntro"
           ng-model="authIntro"
           ui-tinymce="tinymceOptions"
           required>
@@ -86,29 +99,26 @@
           <p class="help-block error-text" ng-message="required">Introduction is required.</p>
         </div>
       </div>
+      <div class="form-group">
+        <label class="control-label" for="morePermitsLink">Additional Authorizations</label>
+        <input class="form-control" title="The full URL or link to additional authorizations" id="morePermitsLink" name="morePermitsLink" ng-model="project.morePermitsLink" />
+      </div>
       <div class="row">
-        <div class="col-md-8">
-          <div class="form-group">
-            <label class="control-label" for="morePermitsLink">More Permits Link</label>
-            <input class="form-control" title="More Permits Link" id="morePermitsLink" name="morePermitsLink" ng-model="project.morePermitsLink" />
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
+        <div class="col-md-2">
+          <div class="form-group m-b-0">
             <label class="control-label" for="morePermitsYear">Prior To Year</label>
-            <input class="form-control" title="More Permits Year" type="number" id="morePermitsYear" name="morePermitsYear" ng-model="project.morePermitsLinkYear" />
+            <input class="form-control" title="More Permits Year" type="number" min="1900" id="morePermitsYear" name="morePermitsYear" ng-model="project.morePermitsLinkYear" />
           </div>
         </div>
       </div>
     </div>
-
     <!-- COMPLIANCE OVERSIGHT -->
     <div class="tab-pane"
       ng-show="form.curTab === 'compliance-oversight-tab'">
       <div class="form-group" x-show-errors>
-        <label class="control-label m-b-0" for="compIntro">Introduction<em class="required">(Required)</em></label>
-        <div class="m-b-1">An introduction to the Compliance Oversight tab.</div>
-        <textarea class="form-control" title="Compliance Introduction" id="compIntro" name="compIntro"
+        <label class="control-label m-b-0" for="compIntro">Content Summary<em class="required">(Required)</em></label>
+        <div class="placeholder-value m-b-1">A brief summary describing the content that appears in this section.</div>
+        <textarea title="Enter a summary describing content that appears in the Compliance Oversight section" id="compIntro" name="compIntro"
           ng-model="compIntro"
           ui-tinymce="tinymceOptions"
           required>
@@ -117,29 +127,29 @@
           <p class="help-block error-text" ng-message="required">Introduction is required.</p>
         </div>
       </div>
+      <div class="form-group">
+        <label class="control-label" for="moreInspectionsLink">Additional Inspections & Orders</label>
+        <div class="placeholder-value m-b-1">The full URL of additional Inspections & Orders</div>
+        <input class="form-control" 
+          title="The full URL or link to additional Compliance Oversight documents"
+          placeholder="eg: http://www.somewebsite.com" id="moreInspectionsLink" name="moreInspectionsLink" ng-model="project.moreInspectionsLink" />
+      </div>
       <div class="row">
-        <div class="col-md-8">
-          <div class="form-group">
-            <label class="control-label" for="moreInspectionsLink">More Inspections Link</label>
-            <input class="form-control" title="More Inspections Link" id="moreInspectionsLink" name="moreInspectionsLink" ng-model="project.moreInspectionsLink" />
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label class="control-label" for="moreInspectionsYear">Prior To Year</label>
-            <input class="form-control" title="More Inspections Year" type="number" id="moreInspectionsYear" name="moreInspectionsYear" ng-model="project.moreInspectionsLinkYear" />
-          </div>
+          <div class="col-md-2">
+            <div class="form-group m-b-0">
+              <label class="control-label" for="moreInspectionsYear">Prior To Year</label>
+              <input class="form-control" title="More Inspections Year" type="number" min="1900" id="moreInspectionsYear" name="moreInspectionsYear" ng-model="project.moreInspectionsLinkYear" />
+            </div>
         </div>
       </div>
     </div>
-
     <!-- OTHER -->
     <div class="tab-pane"
       ng-show="form.curTab === 'other-documents-tab'">
       <div class="form-group" x-show-errors>
-        <label class="control-label m-b-0" for="otherIntro">Introduction</label>
-        <div class="m-b-1">An introduction to the Other Documents tab.</div>
-        <textarea class="form-control" title="Other Introduction" id="otherIntro" name="otherIntro"
+        <label class="control-label m-b-0" for="otherIntro">Content Summary<em class="required">(Required)</em></label>
+        <div class="placeholder-value m-b-1">A brief summary describing the content that appears in this section.</div>
+        <textarea title="Enter a summary describing content that appears in the Other Documents section" id="otherIntro" name="otherIntro"
           ng-model="otherIntro"
           ui-tinymce="tinymceOptions"
           required>
