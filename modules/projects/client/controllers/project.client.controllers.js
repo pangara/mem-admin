@@ -237,16 +237,12 @@ function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, 
   // PROJECT DESCRIPTION FIELD
   $scope.tinymceOptions = {
     inline: false,
-    plugins: 'autoresize autolink link',
+    plugins: 'autolink link',
     menubar: false,
     toolbar: 'undo redo | bold italic | link',
     statusbar: false,
-    resize: true,
-    autoresize_bottom_margin: 20,
-    autoresize_min_height: 100,
-    autoresize_max_height: 100,
-    elementpath: false,
-    content_css : '/modules/core/client/css/core.css'
+    height: 100,
+    content_css: '/modules/core/client/css/core.css'
   };
 
   if (ProjectModel.modelIsNew) {
@@ -562,16 +558,12 @@ function controllerProjectPublicContent ($scope, $state, $stateParams, $modal, p
   // PROJECT PUBLIC CONTENT DESCRIPTIONS
   $scope.tinymceOptions = {
     inline: false,
-    plugins: 'autoresize autolink link',
+    plugins: 'autolink link',
     menubar: false,
     toolbar: 'undo redo | bold italic | link',
-    statusbar: false, // set to true to expose resize drag handle
-    resize: true,
-    autoresize_bottom_margin: 20,
-    autoresize_min_height: 200,
-    autoresize_max_height: 200,
-    elementpath: false,
-    content_css : '/modules/core/client/css/core.css'
+    statusbar: false,
+    height: 200,
+    content_css: '/modules/core/client/css/core.css'
   };
 
   $scope.mineIntro  = getContentHtml($scope.project.content, 'Mines', 'Intro');

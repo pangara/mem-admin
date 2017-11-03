@@ -27,10 +27,10 @@
     </div>
 
     <ul class="nav nav-tabs" ng-init="form.curTab = 'mine-summary-tab'">
-      <li class="form-group" role="presentation" 
+      <li class="form-group" role="presentation"
         x-show-errors
         ng-class="{'active':form.curTab === 'mine-summary-tab'}" >
-        <a title="Edit Project Details" 
+        <a title="Edit Project Details"
           name="mineIntro"
           ng-click="form.curTab = 'mine-summary-tab'">
           <span class="glyphicon glyphicon-exclamation-sign"></span>
@@ -40,7 +40,7 @@
       <li class="form-group" role="presentation"
         x-show-errors
         ng-class="{'active':form.curTab === 'authorizations-tab'}">
-        <a title="Edit Authorizations Content" 
+        <a title="Edit Authorizations Content"
           name="authIntro"
           ng-click="form.curTab = 'authorizations-tab'">
           <span class="glyphicon glyphicon-exclamation-sign"></span>
@@ -129,9 +129,9 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label" for="moreInspectionsLink">Additional Inspections & Orders</label>
-        <div class="placeholder-value m-b-1">The full URL of additional Inspections & Orders</div>
-        <input class="form-control" 
+        <label class="control-label" for="moreInspectionsLink">Additional Inspections &amp; Orders</label>
+        <div class="placeholder-value m-b-1">The full URL of additional Inspections &amp; Orders</div>
+        <input class="form-control"
           title="The full URL or link to additional Compliance Oversight documents"
           placeholder="eg: http://www.somewebsite.com" id="moreInspectionsLink" name="moreInspectionsLink" ng-model="project.moreInspectionsLink" />
       </div>
