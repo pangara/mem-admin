@@ -1,26 +1,4 @@
 .edit-project-form {
-  max-width: 1280px;
-
-  .form-footer {
-    margin-top: 2.5rem;
-  }
-
-  .checkbox {
-    label {
-      padding-left: 2rem;
-      font-weight: bold;
-    }
-  }
-
-  .lat-input {
-    padding-right: 0.4rem;
-  }
-  .long-input {
-    padding-left: 0.4rem;
-  }
-}
-
-.edit-public-content-form {
   .view-title-container {
     .btn {
       min-width: 8rem;
@@ -40,6 +18,17 @@
       .btn {
         min-width: 8rem;
       }
+    }
+  }
+
+  .tab-pane {
+    max-width: 1280px;
+  }
+
+  .checkbox {
+    label {
+      padding-left: 2rem;
+      font-weight: bold;
     }
   }
 }

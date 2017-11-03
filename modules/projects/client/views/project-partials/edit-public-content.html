@@ -1,4 +1,4 @@
-<form class="edit-public-content-form view-form" name="publicContentForm" novalidate>
+<form class="edit-project-form view-form" name="publicContentForm" novalidate>
 
   <div class="alert alert-danger" ng-if="publicContentForm == !valid">
     Some Shit Here
@@ -70,7 +70,7 @@
     </ul>
 
     <!-- MINE SUMMARY -->
-    <div class="tab-pane"
+    <div class="edit-project-form tab-pane"
       ng-show="form.curTab === 'mine-summary-tab'">
       <div class="form-group" x-show-errors>
         <label class="control-label m-b-1" for="mineIntro">Full Description of the Project<em class="required">(Required)</em></label>
@@ -101,6 +101,7 @@
       </div>
       <div class="form-group">
         <label class="control-label" for="morePermitsLink">Additional Authorizations</label>
+        <div class="placeholder-value m-b-1">The full URL of additional Authorizations</div>
         <input class="form-control" title="The full URL or link to additional authorizations" id="morePermitsLink" name="morePermitsLink" ng-model="project.morePermitsLink" />
       </div>
       <div class="row">

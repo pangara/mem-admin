@@ -36,8 +36,7 @@
 
     <a class="project-home-link" ui-sref="p.detail({projectid: menu.project.code})" onclick="toggleSideNav();" title="Project Details">
       <span class="project-home-link__inner-container">
-        <span class="project-home-link__project-name">{{project.name}}</span>
-        <span class="project-home-link__project-name" ng-if="!project.name">Untitled Project</span>
+        <span class="project-home-link__project-name">{{project.name? project.name : 'Untitled Project'}}</span>
       </span>
     </a>
 

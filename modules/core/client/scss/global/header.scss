@@ -111,6 +111,7 @@ header {
 							padding: 1rem 1.25rem;
 							color: $mn-color;
 							white-space: normal;
+							line-height: calc(#{$mn-font-size} * 1.5);
 	
 							strong {
 								display: block;
