@@ -14,20 +14,12 @@ angular.module('core').run(['Menus', 'ENV', 'ADMIN_FEATURES', 'FEATURES', functi
   // -------------------------------------------------------------------------
   Menus.addMenu('systemMenu', {
     permissions: [
-    //'application.listConditions',
-    'application.listEmailTemplates',
     'application.listOrganizations',
     'application.listNews',
     'application.listTemplates',
     'application.listValuedComponents',
     'application.listContacts'
     ]
-  });
-  Menus.addMenuItem('systemMenu', {
-    title: 'Email Templates',
-    state: 'admin.emailtemplate.list',
-    permissions: ['application.listEmailTemplates'],
-    enable: 'true' === ADMIN_FEATURES.enableEmailTemplates
   });
   Menus.addMenuItem('systemMenu', {
     title: 'Organizations',
@@ -40,18 +32,6 @@ angular.module('core').run(['Menus', 'ENV', 'ADMIN_FEATURES', 'FEATURES', functi
     state: 'admin.recentactivity.list',
     permissions: ['application.listNews'],
     enable: 'true' === ADMIN_FEATURES.enableNews
-  });
-  Menus.addMenuItem('systemMenu', {
-    title: 'Templates',
-    state: 'admin.template.list',
-    permissions: ['application.listTemplates'],
-    enable: 'true' === ADMIN_FEATURES.enableTemplates
-  });
-  Menus.addMenuItem('systemMenu', {
-    title: 'Valued Components',
-    state: 'admin.topic.list',
-    permissions: ['application.listValuedComponents'],
-    enable: 'true' === ADMIN_FEATURES.enableVcs
   });
   Menus.addMenuItem('systemMenu', {
     title: 'Contacts',
@@ -114,9 +94,6 @@ angular.module('core').run(['Menus', 'ENV', 'ADMIN_FEATURES', 'FEATURES', functi
       'context.listValuedComponents',
       'context.listProjectRoles',
       'context.listCompliance',
-      'context.listProjectConditions',
-      'context.listProjectComplaints',
-      'context.listProjectInvitations',
       'context.listProjectCollections',
       'context.listProjectUpdates',
       'context.editProjectPublicContent',
@@ -136,12 +113,6 @@ angular.module('core').run(['Menus', 'ENV', 'ADMIN_FEATURES', 'FEATURES', functi
     enable: 'true' === FEATURES.enableCollections
   });
   Menus.addMenuItem('projectMenu', {
-    title: 'Invitations',
-    state: 'p.invitation.list',
-    permissions: ['context.listProjectInvitations'],
-    enable: 'true' === FEATURES.enableInvitations
-  });
-  Menus.addMenuItem('projectMenu', {
     title: 'Groups',
     state: 'p.group.list',
     permissions: ['context.listProjectGroups'],
@@ -152,18 +123,6 @@ angular.module('core').run(['Menus', 'ENV', 'ADMIN_FEATURES', 'FEATURES', functi
     state: 'p.communication.list',
     permissions: ['context.listProjectUpdates'],
     enable: 'true' === FEATURES.enableUpdates
-  });
-   Menus.addMenuItem('projectMenu', {
-    title: 'Complaints',
-    state: 'p.complaint.list',
-    permissions: ['context.listProjectComplaints'],
-    enable: 'true' === FEATURES.enableComplaints
-  });
-  Menus.addMenuItem('projectMenu', {
-    title: 'Conditions',
-    state: 'p.projectcondition.list',
-    permissions: ['context.listProjectConditions'],
-    enable: 'true' === FEATURES.enableConditions
   });
   Menus.addMenuItem('projectMenu', {
     title: 'Compliance Oversight',
@@ -183,7 +142,5 @@ angular.module('core').run(['Menus', 'ENV', 'ADMIN_FEATURES', 'FEATURES', functi
     permissions: ['context.editProjectPublicContent'],
     enable: 'true' === FEATURES.enablePublicContent
   });
-
-
 }]);
 
