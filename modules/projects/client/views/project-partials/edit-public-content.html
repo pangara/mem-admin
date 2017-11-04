@@ -45,7 +45,7 @@
       </li>
       <li class="form-group" role="presentation"
         x-show-errors
-        ng-class="{'active':form.curTab === 'compliance-oversight-tab'}" >
+        ng-class="{'active':form.curTab === 'compliance-oversight-tab'}">
         <a title="Edit Compliance Oversight Content"
           name="compIntro"
           ng-click="form.curTab = 'compliance-oversight-tab'">
@@ -55,12 +55,19 @@
       </li>
       <li class="form-group" role="presentation"
         x-show-errors
-        ng-class="{'active':form.curTab === 'other-documents-tab'}" >
+        ng-class="{'active':form.curTab === 'other-documents-tab'}">
         <a title="Edit Other Documents Content"
           name="otherIntro"
           ng-click="form.curTab = 'other-documents-tab'">
           <span class="glyphicon glyphicon-exclamation-sign"></span>
           Other Documents
+        </a>
+      </li>
+      <li class="form-group" role="presentation"
+        ng-class="{'active':form.curTab === 'external-links'}">
+        <a title="Add or edit External Links for this project"
+          ng-click="form.curTab = 'external-links'">
+          External Links
         </a>
       </li>
     </ul>
@@ -155,6 +162,45 @@
           <p class="help-block error-text" ng-message="required">Introduction is required.</p>
         </div>
       </div>
+    </div>
+
+    <!-- EXTERNAL LINKS & RESOURCES -->
+    <div class="tab-pane"
+      ng-show="form.curTab === 'external-links'">
+      <div class="edit-external-links">
+        <div class="form-group">
+          <div class="button-bar">
+            <button class="btn btn-default btn-sm" title="Add an external link to this project"
+              ng-click="addLink()">
+              <span class="glyphicon glyphicon-plus"></span>
+              <span>Add Link</span>
+            </button>
+          </div>
+          <ul class="list-group">
+            <li class="edit-external-links__item list-group-item" ng-repeat="link in project.externalLinks">
+              <span class="details">
+                <a class="details--title" href="{{link.link}}"
+                  title="Open this link in a new browser window"
+                  target="_blank">
+                  {{link.title}}
+                </a>
+                <span class="details--url">{{link.link}}</span>
+              </span>
+              <span class="actions">
+                <button class="btn icon-btn" title="Edit this item"
+                  ng-click="editLink(link)">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                </button>
+                <button class="btn icon-btn" title="Delete this item"
+                  ng-click="deleteLink(link)">
+                  <span class="glyphicon glyphicon-trash"></span>
+                </button>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- End External Links Module -->
     </div>
 
     <!-- FOOTER -->

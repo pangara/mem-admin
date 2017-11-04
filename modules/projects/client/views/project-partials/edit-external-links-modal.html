@@ -1,0 +1,35 @@
+<div class="modal-header">
+  <button type="button" class="btn btn-default close"
+    ng-click="self.onClose()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h3 class="modal-title">{{self.title}}</h3>
+</div>
+
+<div class="modal-body">
+
+  <!-- TO DO -->
+  <!-- Required <em> elements should show ONLY when the form has been validated -->
+  <form name="linkForm" novalidate>
+    <div class="form-group" x-show-errors>
+      <label class="control-label" for="title">Link Title <em>(Required)</em></label>
+      <input class="form-control" id="title" name="title" type="text" placeholder="eg: A website name, document title, etc." ng-model='self.link.title' required />
+      <div ng-messages="linkForm.title.$error" role="alert">
+        <p class="help-block error-text" ng-message="required">Title is required.</p>
+      </div>
+    </div>
+    <div class="form-group m-b-0" x-show-errors>
+      <label class="control-label" for="url">Link Address (URL) <em>(Required)</em></label>
+      <input class="form-control" id="url" name="url" type="url" placeholder="eg: http://www.example-website.com" ng-model='self.link.link' required />
+      <div ng-messages="linkForm.url.$error" role="alert">
+        <p class="help-block error-text" ng-message="required">URL is required.</p>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+<div class="modal-footer">
+  <button class="btn btn-default" type="button" ng-click="self.onClose()">Cancel</button>
+  <button class="btn btn-primary" type="submit" ng-click="self.save(linkForm.$valid)">OK</button>
+</div>
