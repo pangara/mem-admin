@@ -183,7 +183,7 @@ module.exports = function (app) {
                         true); // include count
 
             } else {
-              return [];
+              return { count: 0, results: [] };
             }
           })
           .then(function(data) {
