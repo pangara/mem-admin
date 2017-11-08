@@ -328,7 +328,7 @@ _.extend (DBModel.prototype, {
   // returns a promise, takes keywords, optional sort and populate
   //
   // -------------------------------------------------------------------------
-  searchMany : function (keywords, dateRangeStart, dateRangeEnd, project, proponent, ownership, fields, sortby, page, limit, count) {
+  searchMany : function (keywords, dateRangeStart, dateRangeEnd, project, proponent, ownership, fields, sortby, page, limit, getCount) {
     // console.log ('dbmodel.findMany:', keywords, fields);
     var sort = sortby || this.sort;
     var self = this;
@@ -375,7 +375,7 @@ _.extend (DBModel.prototype, {
           .exec();
       };
 
-      if (count) {
+      if (getCount) {
         self.model.find(q).count(function(e, count) {
           doFind()
           .then(function(results) {
