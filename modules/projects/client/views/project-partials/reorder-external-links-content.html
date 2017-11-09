@@ -1,0 +1,32 @@
+<div class="dnd-drag-target-top" dnd-scroll-area dnd-region="top" dnd-scroll-container="collectionList"></div>
+<ul id="collectionList"
+  class="list-group"
+  dnd-list
+  dnd-drop="vm.onDrop(item, index)">
+  <li class="edit-external-links__item list-group-item dnd-row"
+    ng-repeat="item in vm.list"
+    dnd-draggable="vm.getSelectedItemsIncluding(item)"
+    dnd-dragstart="vm.onDragStart(event)"
+    dnd-moved="vm.onMoved()"
+    dnd-dragend="vm.onDragEnd(event)"
+    dnd-selected="item.selected = !item.selected"
+    ng-class="{'selected': item.selected}"
+    ng-hide="vm.dragging && item.selected">
+
+    <div class="dnd-row-inner">
+      <span class="dnd-handle">
+        <span class="glyphicon glyphicon-sort"></span>
+      </span>
+      <span class="dnd-content">
+        <span class="col name">
+          <a class="details--title" href="{{item.link}}" title="Open this link in a new browser window" target="_blank">
+            {{item.title}}
+          </a>
+          <span class="details--url">{{item.link}}</span>
+        </span>
+      </span>
+    </div>
+  </li>
+  <li class="dndPlaceholder"><span class="glyphicon glyphicon-arrow-right"></span> Move here<li>
+</ul>
+<div class="dnd-drag-target-bottom" dnd-scroll-area dnd-region="bottom" dnd-scroll-container="collectionList"></div>

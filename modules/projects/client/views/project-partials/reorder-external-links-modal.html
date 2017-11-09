@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <button class="btn btn-default close" ng-click="vmm.cancel()"><span aria-hidden="true">×</span></button>
+  <h3 class="modal-title">Set Link Order</h3>
+</div>
+
+<div class="modal-body">
+  <div class="doc-sort-scroll-container">
+    <x-reorder-external-links-content class="dnd-sort-list" x-list="vmm.list"></x-reorder-external-links-content>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button class="btn btn-default" ng-click="vmm.cancel()">Cancel</button>
+  <button class="btn btn-primary" ng-click="vmm.ok()">Save</button>
+</div>
