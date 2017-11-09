@@ -626,6 +626,11 @@ function controllerProjectPublicContent ($scope, $state, $stateParams, $modal, p
     $state.go('p.publiccontent', {}, { reload: true });
   };
 
+  // Update project model when external links are reordered
+  $scope.onLinksReordered = function (sortedList) {
+    $scope.project.externalLinks = sortedList;
+  };
+
   $scope.addLink = function () {
     // New
     $scope.openLinkDialog().then(function (link) {
@@ -635,8 +640,8 @@ function controllerProjectPublicContent ($scope, $state, $stateParams, $modal, p
         // We already added this to the list, error.
         AlertService.error('The external link has been added already.');
       } else {
-        link.order = $scope.project.externalLinks.length + 1;
         $scope.project.externalLinks.push(link);
+        _.each($scope.project.externalLinks, function (item, i) { item.order = i + 1; });
       }
     });
   };
@@ -662,7 +667,7 @@ function controllerProjectPublicContent ($scope, $state, $stateParams, $modal, p
         AlertService.error('Could not delete the external link.');
       } else {
         _.remove($scope.project.externalLinks, found);
-        _.each($scope.project.externalLinks, function (value, i) { value.order = i + 1; });
+        _.each($scope.project.externalLinks, function (item, i) { item.order = i + 1; });
       }
     });
   };

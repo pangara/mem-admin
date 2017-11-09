@@ -175,6 +175,13 @@
               <span class="glyphicon glyphicon-plus"></span>
               <span>Add Link</span>
             </button>
+            <button class="btn btn-default btn-sm" title="Set the default order links will be displayed"
+              x-reorder-external-links-modal
+              x-list="project.externalLinks"
+              x-on-save="onLinksReordered">
+              <span class="glyphicon glyphicon-sort"></span>
+              <span>Reorder Links</span>
+            </button>
           </div>
           <ul class="list-group">
             <li class="edit-external-links__item list-group-item" ng-repeat="link in project.externalLinks">
