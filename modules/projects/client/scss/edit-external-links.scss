@@ -5,6 +5,10 @@
 
         .details {
             @include flex(1 1 auto);
+
+            &--title {
+                font-weight: bold;
+            }
             
             &--url {
                 display: block;
@@ -24,5 +28,23 @@
 
     .btn {
         min-width: 8rem;
+    }
+}
+
+.reorder-external-links {
+    .dnd-handle {
+        .glyphicon {
+            padding-top: 1rem;
+        }
+    }
+
+    .edit-external-links {
+        &__item {
+            &.dnd-content {
+                .details {
+                    padding: 1rem;
+                }
+            }
+        }
     }
 }

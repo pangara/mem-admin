@@ -1,9 +1,8 @@
 <div class="dnd-drag-target-top" dnd-scroll-area dnd-region="top" dnd-scroll-container="collectionList"></div>
 <ul id="collectionList"
-  class="list-group"
   dnd-list
   dnd-drop="vm.onDrop(item, index)">
-  <li class="edit-external-links__item list-group-item dnd-row"
+  <li class="dnd-row external-links"
     ng-repeat="item in vm.list"
     dnd-draggable="vm.getSelectedItemsIncluding(item)"
     dnd-dragstart="vm.onDragStart(event)"
@@ -17,11 +16,13 @@
       <span class="dnd-handle">
         <span class="glyphicon glyphicon-sort"></span>
       </span>
-      <span class="dnd-content">
-        <span class="col name">
-          <a class="details--title" href="{{item.link}}" title="Open this link in a new browser window" target="_blank">
+      <span class="edit-external-links__item dnd-content ">
+        <span class="details">
+          <span class="details--title" href="{{link.link}}"
+            title="Open this link in a new browser window"
+            target="_blank" disabled>
             {{item.title}}
-          </a>
+          </span>
           <span class="details--url">{{item.link}}</span>
         </span>
       </span>
