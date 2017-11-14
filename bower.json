@@ -12,6 +12,7 @@
     "angular-ui-utils": "bower",
     "angular-ui-router": "0.4.2",
     "angular-ui-tinymce": "latest",
+    "angular-ui-select": "latest",
     "angular-file-upload": "^2.4.0",
     "angular-messages": "~1.5",
     "angular-moment": "latest",
@@ -29,13 +30,14 @@
     "angular-resizable": "latest",
     "pdfjs-dist": "latest",
     "ng-pdfviewer": "^0.2.1",
-    "tree-model-bower" : "git://github.com/BCDevOps/tree-model-bower",
+    "tree-model-bower": "git://github.com/BCDevOps/tree-model-bower",
     "ngclipboard": "^1.1.1",
     "clipboard": "^1.7.1",
-    "angular-drag-and-drop-lists": "^2.1.0"
+    "angular-drag-and-drop-lists": "^2.1.0",
+    "angular-sanitize": "^1.5.11"
   },
   "resolutions": {
-    "angular": "^1.5.9",
+    "angular": "^1.5.11",
     "lodash": "4.5.1",
     "clipboard": "^1.7.1"
   }

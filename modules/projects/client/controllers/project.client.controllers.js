@@ -193,11 +193,12 @@ var setContentHtml = function(contentArray, page, type, html) {
 // Used.
 //
 // -----------------------------------------------------------------------------------
-controllerProjectEntry.$inject = ['$scope', '$state', '$stateParams', '$modal', 'project', 'REGIONS', 'PROJECT_TYPES', 'PROJECT_SUB_TYPES', 'PROJECT_ACTIVITIES_DEFAULTS', 'PROJECT_ACTIVITY_STATUS', 'PROJECT_CONTENT_DEFAULTS', 'CEAA_TYPES', '_', 'UserModel', 'ProjectModel', 'OrganizationModel', 'Authentication', 'codeFromTitle', 'PhaseBaseModel', 'AlertService'];
+controllerProjectEntry.$inject = ['$scope', '$state', '$stateParams', '$modal', 'project', 'REGIONS', 'PROJECT_TYPES', 'PROJECT_SUB_TYPES', 'PROJECT_ACTIVITIES_DEFAULTS', 'PROJECT_ACTIVITY_STATUS', 'PROJECT_CONTENT_DEFAULTS', 'CEAA_TYPES', '_', 'UserModel', 'ProjectModel', 'OrganizationModel', 'Authentication', 'codeFromTitle', 'PhaseBaseModel', 'AlertService', 'Utils'];
 /* @ngInject */
-function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, REGIONS, PROJECT_TYPES, PROJECT_SUB_TYPES, PROJECT_ACTIVITIES_DEFAULTS, PROJECT_ACTIVITY_STATUS, PROJECT_CONTENT_DEFAULTS, CEAA_TYPES, _, UserModel, ProjectModel, OrganizationModel, Authentication, codeFromTitle, PhaseBaseModel, AlertService) {
+function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, REGIONS, PROJECT_TYPES, PROJECT_SUB_TYPES, PROJECT_ACTIVITIES_DEFAULTS, PROJECT_ACTIVITY_STATUS, PROJECT_CONTENT_DEFAULTS, CEAA_TYPES, _, UserModel, ProjectModel, OrganizationModel, Authentication, codeFromTitle, PhaseBaseModel, AlertService, Utils) {
+  $scope.project = project;
 
-  ProjectModel.setModel ($scope.project);
+  ProjectModel.setModel($scope.project);
 
   if ($scope.project.proponent && !_.isObject ($scope.project.proponent)) {
     OrganizationModel.getModel ($scope.project.proponent).then (function (org) {
@@ -217,7 +218,12 @@ function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, 
   if ($stateParams.projectid === 'new') {
     ProjectModel.modelIsNew = true;
   }
-  $scope.project = project;
+
+  // Get EPIC projects
+  Utils.getEpicProjects().then(function(res) {
+    $scope.epicProjectsList = res.data;
+  });
+
   $scope.questions = ProjectModel.getProjectIntakeQuestions();
   $scope.regions = REGIONS;
   $scope.types = PROJECT_TYPES;
@@ -551,9 +557,9 @@ function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, 
 controllerProjectPublicContent.$inject = ['$scope', '$state', '$stateParams', '$modal', 'project', 'ProjectModel', 'AlertService', '_'];
 /* @ngInject */
 function controllerProjectPublicContent ($scope, $state, $stateParams, $modal, project, ProjectModel, AlertService, _) {
-  ProjectModel.setModel($scope.project);
-
   $scope.project = project;
+
+  ProjectModel.setModel($scope.project);
 
   // PROJECT PUBLIC CONTENT DESCRIPTIONS
   $scope.tinymceOptions = {
@@ -571,6 +577,10 @@ function controllerProjectPublicContent ($scope, $state, $stateParams, $modal, p
   $scope.compIntro  = getContentHtml($scope.project.content, 'Comp',  'Intro');
   $scope.otherIntro = getContentHtml($scope.project.content, 'Other', 'Intro');
 
+  // Convert years to numbers
+  $scope.morePermitsLinkYear     = parseInt($scope.project.morePermitsLinkYear, 10)     || null;
+  $scope.moreInspectionsLinkYear = parseInt($scope.project.moreInspectionsLinkYear, 10) || null;
+
   $scope.saveProject = function(isValid) {
     if (!isValid) {
       $scope.$broadcast('show-errors-check-validity', 'publicContentForm');
@@ -581,6 +591,9 @@ function controllerProjectPublicContent ($scope, $state, $stateParams, $modal, p
     setContentHtml($scope.project.content, 'Auth',  'Intro', $scope.authIntro);
     setContentHtml($scope.project.content, 'Comp',  'Intro', $scope.compIntro);
     setContentHtml($scope.project.content, 'Other', 'Intro', $scope.otherIntro);
+
+    $scope.project.morePermitsLinkYear     = $scope.morePermitsLinkYear;
+    $scope.project.moreInspectionsLinkYear = $scope.moreInspectionsLinkYear;
 
     ProjectModel.saveModel($scope.project)
     .then(function(data) {

@@ -2890,7 +2890,7 @@ libqp@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/libqp/-/libqp-1.1.0.tgz#f5e6e06ad74b794fb5b5b66988bf728ef1dedbe8"
 
-load-grunt-tasks@^3.5.2:
+load-grunt-tasks@^3.2.0:
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/load-grunt-tasks/-/load-grunt-tasks-3.5.2.tgz#0728561180fd20ff8a6927505852fc58aaea0c88"
   dependencies:
@@ -3347,6 +3347,10 @@ mocha@~1.20.0:
     growl "1.7.x"
     jade "0.26.3"
     mkdirp "0.3.5"
+
+moment@^2.18.1:
+  version "2.19.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.19.1.tgz#56da1a2d1cbf01d38b7e1afc31c10bcfa1929167"
 
 mongodb-core@1.2.31:
   version "1.2.31"

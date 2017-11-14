@@ -20,13 +20,13 @@ var ApplicationConfiguration = (function () {
     'mwl.confirm',
     'ngFileUpload',
     'duScroll',
+    'ui.select',
+    'ngSanitize',
     'ngPDFViewer',
     'ngCookies',
     'ngclipboard',
     'dndLists'
   ];
-
-
 
   // Add a new vertical module
   var registerModule = function (moduleName, dependencies) {

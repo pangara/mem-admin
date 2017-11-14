@@ -8,10 +8,11 @@ module.exports = {
         'public/lib/angular-toastr/dist/angular-toastr.css',
         'public/lib/angular-bootstrap/ui-bootstrap-csp.css',
         'public/lib/angular-bootstrap-datetimepicker/src/css/datetimepicker.css',
+        'public/lib/angular-ui-select/dist/select.css',
         'public/assimilated/ng-table/dist/ng-table.min.css'
       ],
       js: [
-   	'public/lib/es6-shim/es6-shim.min.js',
+        'public/lib/es6-shim/es6-shim.min.js',
         'public/lib/angular/angular.js',
         'public/lib/angular-resource/angular-resource.js',
         'public/lib/angular-animate/angular-animate.js',
@@ -20,6 +21,7 @@ module.exports = {
         'public/lib/angular-ui-utils/ui-utils.js',
         'public/lib/tinymce/tinymce.js',
         'public/lib/angular-ui-tinymce/src/tinymce.js',
+        'public/lib/angular-ui-select/dist/select.js',
         'public/lib/jquery/dist/jquery.min.js',
         'public/lib/bootstrap/dist/js/bootstrap.min.js',
         'public/lib/angular-bootstrap/ui-bootstrap.js',
@@ -40,14 +42,14 @@ module.exports = {
         'public/lib/moment-timezone/moment-timezone.js',
         'public/lib/angular-moment/angular-moment.js',
         'public/lib/angular-bootstrap-datetimepicker/src/js/datetimepicker.js',
-	'public/lib/angular-scroll/angular-scroll.min.js',
-	'public/lib/angular-cookies/angular-cookies.min.js',
-	'public/moment-timezone-data.js',
+        'public/lib/angular-scroll/angular-scroll.min.js',
+        'public/lib/angular-cookies/angular-cookies.min.js',
+        'public/moment-timezone-data.js',
         'public/lib/pdfjs-dist/build/pdf.combined.js',
         'public/lib/ng-pdfviewer/ng-pdfviewer.js',
         'public/lib/ng-pdfviewer/pdf.js',
         'public/lib/ng-pdfviewer/compatibility.js',
-	'public/readable-range.js',
+        'public/readable-range.js',
         'public/lib/tree-model-bower/dist/TreeModel-min.js',
         'public/lib/clipboard/dist/clipboard.min.js',
         'public/lib/ngclipboard/dist/ngclipboard.min.js',
@@ -75,9 +77,9 @@ module.exports = {
       'modules/*/controls/*/client/**/*.js'
     ],
     views: [
-    	'modules/*/client/views/**/*.html',
-    	'modules/*/processes/*/client/views/**/*.html',
-    	'modules/*/controls/*/client/views/**/*.html'
+      'modules/*/client/views/**/*.html',
+      'modules/*/processes/*/client/views/**/*.html',
+      'modules/*/controls/*/client/views/**/*.html'
     ],
     templates: ['build/templates.js']
   },
