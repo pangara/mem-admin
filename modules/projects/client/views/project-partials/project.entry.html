@@ -5,6 +5,14 @@
     </h1>
     <div class="actions">
       <button class="btn btn-default btn-sm"
+        ng-if="!project.isMajorMine" ng-click="" type="button">
+        <span class="glyphicon glyphicon-ok-circle"></span><span>Publish (mines.nrs)</span>
+      </button>
+      <button class="btn btn-default btn-sm"
+        ng-if="project.isMajorMine" ng-click="" type="button">
+        <span class="glyphicon glyphicon-ban-circle"></span><span>Unpublish (mines.nrs)</span>
+      </button>
+      <button class="btn btn-default btn-sm"
         ng-if="!isNew"
         ng-click="cancelChanges('Cancel Changes', 'Are you sure you would like to exit and discard all changes', 'Cancel Changes', 'Go Back')">
         Cancel
@@ -46,7 +54,7 @@
       <li class="form-group" role="presentation"
         ng-class="{'active':form.curTab === 'Proponent Info'}"
         x-show-errors>
-        <a ng-click="form.curTab = 'Proponent Info'" title="Edit Project Details" name="proponentForm">
+        <a ng-click="form.curTab = 'Proponent Info'" title="Edit Project Operator" name="proponentForm">
           <span class="glyphicon glyphicon-exclamation-sign"></span>
           Operator Info
         </a>
@@ -62,9 +70,9 @@
       </li>
       <li class="form-group" role="presentation"
         ng-class="{'active':form.curTab === 'Site Activities'}">
-        <a title="Edit Site Activites"
+        <a title="Site Activities"
           ng-click="form.curTab = 'Site Activities'">
-          Edit Site Activities
+          Site Activities
         </a>
       </li>
     </ul>
@@ -212,15 +220,16 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12">
-            <div class="checkbox">
-              <label class="control-label" for="isMajorMine">
-                <input type="checkbox" id="isMajorMine" name="isMajorMine"
-                  ng-model="project.isMajorMine"
-                  disabled />
-                  Show on mines.nrs
-              </label>
-            </div>
+          <div class="col-md-12 form-group" x-show-errors>
+            <label class="control-label" for="epicProjects">Related EPIC Projects</label>
+            <ui-select multiple class="form-control" id="epicProjects" name="epicProjects"
+              ng-model="project.epicProjectCodes"
+              close-on-select="false">
+              <ui-select-match placeholder="Select projects">{{$item.name}}</ui-select-match>
+              <ui-select-choices repeat="p.code as p in epicProjectsList | filter: {name: $select.search}">
+                <div ng-bind-html="p.name | highlight: $select.search"></div>
+              </ui-select-choices>
+            </ui-select>
           </div>
         </div>
     </div>
