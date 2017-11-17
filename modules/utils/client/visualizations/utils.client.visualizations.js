@@ -46,19 +46,7 @@ function directiveProgressCircle(d3, $window, _) {
 		},
 		template: '<svg class="d3-progress-circle"></svg>',
 		link: function (scope, element, attrs) {
-
-			scope.$watch('percentage', function(newValue) {
-				if(newValue !== undefined) {
-					drawProgressPie (angular.element(element), 'arcs', {}, [
-							[newValue, "#5cb85c"],
-							[(100 - newValue), "#c0c0c0"]
-						]
-					);
-					resize();
-				}
-			});
-
-
+			
 			// -----------------------------------------------------------------------------------
 			//
 			// D3: PIE Code
@@ -143,15 +131,28 @@ function directiveProgressCircle(d3, $window, _) {
 			// -----------------------------------------------------------------------------------
 
 			var bw; 
-
 			var resize =  function() {
-                    bw = angular.element(element)[0].parentNode.clientWidth-30;
+				bw = angular.element(element)[0].parentNode.clientWidth-30;
 
-                    var chart = angular.element(element)[0];
+				var chart = angular.element(element)[0];
 
-                    chart.setAttribute("width", bw);
-                    chart.setAttribute("height", bw);
-                };
+				chart.setAttribute("width", bw);
+				chart.setAttribute("height", bw);
+			};
+
+			scope.$watch('percentage', function(newValue) {
+				if(newValue !== undefined) {
+					drawProgressPie (angular.element(element), 'arcs', {}, [
+							[newValue, "#5cb85c"],
+							[(100 - newValue), "#c0c0c0"]
+						]
+					);
+					resize();
+				}
+			});
+
+
+
 
 	          d3.select(window).on('resize', resize);
 
