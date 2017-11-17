@@ -163,6 +163,61 @@ textarea {
 	}
 }
 
+// UI SELECT MODULE
+.ui-select-multiple {
+	&.ui-select-bootstrap {
+		@include flexbox();
+		padding: 0;
+
+		input {
+			&.ui-select-search {
+				@include flex(1 1 auto);
+				margin-bottom: 0;
+				padding: 6px 12px;
+				width: auto !important;
+				height: 34px;
+			}
+		}
+
+		.ui-select-match {
+			&-item {
+				margin-top: 2px;
+				margin-right: 0;
+				margin-bottom: 0;
+				margin-left: 2px;
+				padding: 0.35rem 1rem;
+				color: $select-tag-color;
+				border-color: $select-tag-bg;
+				background-color: $select-tag-bg;
+				font-weight: normal;
+				font-size: 1.4rem;
+
+				&.btn-primary {
+					border-color: $select-tag-bg-active;
+					background-color: $select-tag-bg-active;
+				}
+			}
+			
+			&-close {
+				margin-top: 0.1rem;
+				margin-left: 0.5rem;
+				color: $select-tag-color;
+				text-shadow: none;
+				font-weight: normal;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.ui-select-container {
+	> div {
+		@include flexbox();
+		@include flexdirection(row);
+		width: 100%;
+	}
+}
+
 // VALIDATION
 .has-error {
 	.control-label {

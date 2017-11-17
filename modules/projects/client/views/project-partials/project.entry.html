@@ -174,7 +174,7 @@
           <div class="col-md-4">
             <div class="form-group" x-show-errors>
               <label for="permitid" class="control-label">Permit Number</label>
-              <input id="permitid" name="permitid" type="text" class="form-control input-sm" ng-model="project.memPermitID">
+              <input id="permitid" name="permitid" type="text" class="form-control" ng-model="project.memPermitID">
               <div ng-messages="projectForm.permitid.$error" role="alert">
                 <p class="help-block error-text" ng-message="required">Permit Number is required.</p>
               </div>
@@ -185,7 +185,7 @@
           <div class="col-md-4">
             <div class="form-group" x-show-errors>
               <label for="commodity" class="control-label">Commodity/ies</label>
-              <input id="commodity" name="commodity" type="text" class="form-control input-sm" ng-model="project.commodity">
+              <input id="commodity" name="commodity" type="text" class="form-control" ng-model="project.commodity">
               <div ng-messages="projectForm.commodity.$error" role="alert">
                 <p class="help-block error-text" ng-message="required">Commodity is required.</p>
               </div>
@@ -194,7 +194,7 @@
           <div class="col-md-4">
             <div class="form-group" x-show-errors>
               <label for="tailingsImpoundments" class="control-label">Tailings Impoundments</label>
-              <input id="tailingsImpoundments" name="tailingsImpoundments" type="text" class="form-control input-sm" ng-model="project.tailingsImpoundments">
+              <input id="tailingsImpoundments" name="tailingsImpoundments" type="text" class="form-control" ng-model="project.tailingsImpoundments">
                 <div ng-messages="projectForm.tailingsImpoundments.$error" role="alert">
                   <p class="help-block error-text" ng-message="required">Tailings Impoundments is required.</p>
                 </div>
@@ -222,10 +222,10 @@
         <div class="row">
           <div class="col-md-12 form-group" x-show-errors>
             <label class="control-label" for="epicProjects">Related EPIC Projects</label>
-            <ui-select multiple class="form-control" id="epicProjects" name="epicProjects"
+            <ui-select class="form-control" multiple id="epicProjects" name="epicProjects"
               ng-model="project.epicProjectCodes"
               close-on-select="false">
-              <ui-select-match placeholder="Select projects">{{$item.name}}</ui-select-match>
+              <ui-select-match placeholder="Enter a project name">{{$item.name}}</ui-select-match>
               <ui-select-choices repeat="p.code as p in epicProjectsList | filter: {name: $select.search}">
                 <div ng-bind-html="p.name | highlight: $select.search"></div>
               </ui-select-choices>
