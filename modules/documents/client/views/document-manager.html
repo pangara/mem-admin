@@ -47,7 +47,7 @@
 				ng-click="documentMgr.infoPanel.toggle()"><span class="glyphicon glyphicon-info-sign"></span>
 			</button>
 
-			<a class="btn icon-btn" href="{{documentMgr.folderURL}}" title="Sharable Link to this folder"><span class="glyphicon glyphicon-link"></span></a>
+			<a class="btn icon-btn" href="{{documentMgr.folderURL}}" title="Sharable Link to this folder" ngclipboard data-clipboard-text="{{documentMgr.folderURL}}"><span class="glyphicon glyphicon-link"></span></a>
 
 			<div class="fb-menu btn-group">
 				<button type="button" class="btn icon-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-disabled="!documentMgr.batchMenuEnabled">
