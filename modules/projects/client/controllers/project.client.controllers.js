@@ -554,12 +554,14 @@ function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, 
   };
 }
 
-controllerProjectPublicContent.$inject = ['$scope', '$state', '$stateParams', '$modal', 'project', 'ProjectModel', 'AlertService', '_'];
+controllerProjectPublicContent.$inject = ['$scope', '$state', '$stateParams', '$modal', 'project', 'ProjectModel', 'AlertService', 'ConfirmService', '_'];
 /* @ngInject */
-function controllerProjectPublicContent ($scope, $state, $stateParams, $modal, project, ProjectModel, AlertService, _) {
+function controllerProjectPublicContent ($scope, $state, $stateParams, $modal, project, ProjectModel, AlertService, ConfirmService, _) {
   $scope.project = project;
 
   ProjectModel.setModel($scope.project);
+
+  $scope.currTab = $stateParams.currTab;
 
   // PROJECT PUBLIC CONTENT DESCRIPTIONS
   $scope.tinymceOptions = {
@@ -581,12 +583,8 @@ function controllerProjectPublicContent ($scope, $state, $stateParams, $modal, p
   $scope.morePermitsLinkYear     = parseInt($scope.project.morePermitsLinkYear, 10)     || null;
   $scope.moreInspectionsLinkYear = parseInt($scope.project.moreInspectionsLinkYear, 10) || null;
 
-  $scope.saveProject = function(isValid) {
-    if (!isValid) {
-      $scope.$broadcast('show-errors-check-validity', 'publicContentForm');
-      return false;
-    }
-
+  $scope.saveProject = function(currTab) {
+    // No validation required here
     setContentHtml($scope.project.content, 'Mines', 'Intro', $scope.mineIntro);
     setContentHtml($scope.project.content, 'Auth',  'Intro', $scope.authIntro);
     setContentHtml($scope.project.content, 'Comp',  'Intro', $scope.compIntro);
@@ -596,47 +594,84 @@ function controllerProjectPublicContent ($scope, $state, $stateParams, $modal, p
     $scope.project.moreInspectionsLinkYear = $scope.moreInspectionsLinkYear;
 
     ProjectModel.saveModel($scope.project)
-    .then(function(data) {
-      $state.go('p.detail', { projectid: data.code }, { reload: true });
+    .then(function() {
+      AlertService.success('Public content was saved.');
+      $scope.goToPublicContent(currTab);
     })
     .catch (function (err) {
+      AlertService.error('Public content could not be saved.');
       console.error ('error = ', err);
     });
   };
 
-  $scope.cancelChanges = function (title, msg, okTitle, cancel) {
-    //Are you sure you would like to exit and discard all changes
-    var modalDocView = $modal.open({
-      animation: true,
-      templateUrl: 'modules/utils/client/views/partials/modal-confirm-generic.html',
-      controller: function($scope, $state, $modalInstance) {
-        var self = this;
-        self.title = title || "thetitle";
-        self.question = msg || "the message?";
-        self.actionOK = okTitle || "theOK title";
-        self.actionCancel = cancel || "cancel title";
-        self.ok = function() {
-          $modalInstance.close($scope.project);
-        };
-        self.cancel = function() {
-          $modalInstance.dismiss('cancel');
-        };
-      },
-      controllerAs: 'self',
-      scope: $scope,
-      size: 'md',
-      windowClass: 'modal-alert',
-      backdropClass: 'modal-alert-backdrop'
-    });
-    // do not care how this modal is closed, just go to the desired location...
-    modalDocView.result.then(function (res) {
-      $state.go('p.detail', {}, {reload: true});
+  $scope.cancelChanges = function(currTab) {
+    // Are you sure you would like to exit and discard all changes?
+    ConfirmService.confirmDialog({
+      titleText    : 'Cancel Changes',
+      confirmText  : 'Are you sure you would like to exit and discard all changes?',
+      okText       : 'Cancel Changes',
+      cancelText   : 'Go Back',
+      onOk         : $scope.goToPublicContent,
+      okArgs       : currTab
     });
   };
 
+  $scope.promote = function(isValid) {
+    // Validate before promoting public content.
+    if (!isValid) {
+      $scope.$broadcast('show-errors-check-validity', 'publicContentForm');
+      return false;
+    }
+
+    var promote = function() {
+      return ProjectModel.promote($scope.project)
+        .then(function() {
+          AlertService.success('Public content was displayed on mines.nrs.');
+          $scope.goToPublicContent();
+        })
+        .catch(function(res) {
+          AlertService.error('Public content could not be displayed on mines.nrs.');
+          console.error("res:", res);
+        });
+    };
+
+    // Are you sure you would like to promote public content?
+    ConfirmService.confirmDialog({
+      titleText    : 'Promote Public Content',
+      confirmText  : 'Are you sure you would like to display public content on mines.nrs?',
+      okText       : 'Yes',
+      cancelText   : 'No',
+      onOk         : promote,
+    });
+  };
+
+  $scope.demote = function() {
+    var demote = function() {
+      return ProjectModel.demote($scope.project)
+        .then(function() {
+          AlertService.success('Public content was removed from mines.nrs.');
+          $scope.goToPublicContent();
+        })
+        .catch(function(res) {
+          AlertService.error('Public content could not be removed from mines.nrs.');
+          console.error("res:", res);
+        });
+    };
+
+    // Are you sure you would like to demote public content?
+    ConfirmService.confirmDialog({
+      titleText    : 'Remove Public Content',
+      confirmText  : 'Are you sure you would like to remove public content from mines.nrs?',
+      okText       : 'Yes',
+      cancelText   : 'No',
+      onOk         : demote,
+    });
+ };
+
   // Reload public content page
-  $scope.goToPublicContent = function () {
-    $state.go('p.publiccontent', {}, { reload: true });
+  $scope.goToPublicContent = function(currTab) {
+    $state.go('p.publiccontent', { currTab: currTab }, { reload: true });
+    return Promise.resolve();
   };
 
   // Update project model when external links are reordered
