@@ -1,7 +1,7 @@
 {
-  "name": "ESM",
+  "name": "mem",
   "version": "0.4.1",
-  "description": "EAO Project Space",
+  "description": "MEM Project Space",
   "dependencies": {
     "bootstrap": "~3",
     "angular": "latest",
