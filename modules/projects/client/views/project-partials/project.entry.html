@@ -5,14 +5,6 @@
     </h1>
     <div class="actions">
       <button class="btn btn-default btn-sm"
-        ng-if="!project.isMajorMine" ng-click="" type="button">
-        <span class="glyphicon glyphicon-ok-circle"></span><span>Publish (mines.nrs)</span>
-      </button>
-      <button class="btn btn-default btn-sm"
-        ng-if="project.isMajorMine" ng-click="" type="button">
-        <span class="glyphicon glyphicon-ban-circle"></span><span>Unpublish (mines.nrs)</span>
-      </button>
-      <button class="btn btn-default btn-sm"
         ng-if="!isNew"
         ng-click="cancelChanges('Cancel Changes', 'Are you sure you would like to exit and discard all changes', 'Cancel Changes', 'Go Back')">
         Cancel

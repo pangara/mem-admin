@@ -4,11 +4,21 @@
     <h1>Edit Public Content</h1>
     <div class="actions">
       <button class="btn btn-default btn-sm"
-        ng-click="cancelChanges('Cancel Changes', 'Are you sure you would like to exit and discard all changes', 'Cancel Changes', 'Go Back')">
+        ng-if="project.status !== 'Initiated' && !project.isMajorMine"
+        ng-click="promote(publicContentForm.$valid)" type="button">
+        <span class="glyphicon glyphicon-ok-circle"></span><span>Display on mines.nrs</span>
+      </button>
+      <button class="btn btn-default btn-sm"
+        ng-if="project.status !== 'Initiated' && project.isMajorMine"
+        ng-click="demote()" type="button">
+        <span class="glyphicon glyphicon-ban-circle"></span><span>Remove from mines.nrs</span>
+      </button>
+      <button class="btn btn-default btn-sm"
+        ng-click="cancelChanges(form.curTab)">
         Cancel
       </button>
       <button class="btn btn-primary btn-sm" type="submit"
-        ng-click="saveProject(publicContentForm.$valid)">
+        ng-click="saveProject(form.curTab)">
         Save
       </button>
     </div>
@@ -22,7 +32,7 @@
       <input class="form-control" title="A brief page subtitle that appears above the below content" id="subtitle" name="subtitle" ng-model="project.subtitle" required />
     </div>
 
-    <ul class="nav nav-tabs" ng-init="form.curTab = 'mine-summary-tab'">
+    <ul class="nav nav-tabs" ng-init="form.curTab = currTab || 'mine-summary-tab'">
       <li class="form-group" role="presentation"
         x-show-errors
         ng-class="{'active':form.curTab === 'mine-summary-tab'}" >
@@ -214,11 +224,11 @@
     <div class="form-footer">
       <div class="form-footer__buttons">
         <button class="btn btn-default btn-sm"
-          ng-click="cancelChanges('Cancel Changes', 'Are you sure you would like to exit and discard all changes', 'Cancel Changes', 'Go Back')">
+          ng-click="cancelChanges(form.curTab)">
           Cancel
         </button>
         <button class="btn btn-primary btn-sm" type="submit"
-          ng-click="saveProject(publicContentForm.$valid)">
+          ng-click="saveProject(form.curTab)">
           Save
         </button>
       </div>
