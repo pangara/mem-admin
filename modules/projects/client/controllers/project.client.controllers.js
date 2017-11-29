@@ -243,7 +243,7 @@ function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, 
   // PROJECT DESCRIPTION FIELD
   $scope.tinymceOptions = {
     inline: false,
-    plugins: 'autolink link',
+    plugins: 'autolink link paste',
     menubar: false,
     toolbar: 'undo redo | bold italic | link',
     statusbar: false,
@@ -568,7 +568,7 @@ function controllerProjectPublicContent ($scope, $state, $stateParams, $modal, p
   // PROJECT PUBLIC CONTENT DESCRIPTIONS
   $scope.tinymceOptions = {
     inline: false,
-    plugins: 'autolink link',
+    plugins: 'autolink link paste',
     menubar: false,
     toolbar: 'undo redo | bold italic | link',
     statusbar: false,
