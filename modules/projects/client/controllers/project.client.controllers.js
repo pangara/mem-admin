@@ -256,6 +256,8 @@ function controllerProjectEntry ($scope, $state, $stateParams, $modal, project, 
   }
 
   $scope.addOwnershipOrganization = function (data) {
+    if (!data) return;
+
     // Add this to the list if it's not already added.
     var found = _.find($scope.project.ownershipData, function (org) {
       return org.organization === data._id;
