@@ -142,7 +142,7 @@ module.exports = require ('../../../core/server/controllers/core.schema.controll
   projectNotes    : { type: String, default: '' }, // Formal notes about the project
 
   // MMTI hook-up data
-  isMajorMine      : { type: Boolean, default: false },
+  isMajorMine      : { type: Boolean, default: false, index: true },
   epicProjectCodes : [ { type: String } ],
 
   morePermitsLinkYear     : { type: String, default: null },

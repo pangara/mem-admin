@@ -126,6 +126,8 @@ angular.module('project').config (
     url: '/publiccontent',
     templateUrl: 'modules/projects/client/views/project-partials/edit-public-content.html',
     controller: 'controllerProjectPublicContent',
+    data: { permissions: ['editPublicContent'] },
+    params: { currTab: null }
   })
 
   // -------------------------------------------------------------------------

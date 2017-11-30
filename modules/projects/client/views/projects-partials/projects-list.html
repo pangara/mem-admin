@@ -1,37 +1,42 @@
-
 <div class="table-container">
-	<table class="project-table table table-hover" x-show-filter="true" ng-table="projectList.tableParams">
-		<tr ng-repeat="o in $data" ui-sref="p.detail({projectid: o.code})">
-			<td header-class="'name-col'"
-				data-title="'Name'"
-				filter="{'name':'text'}"
-				sortable="'name'"><a ui-sref="p.detail({projectid: o.code})">{{o.name}}</a>
-			</td>
-			<td data-title="'Permit'"
-				filter="{'memPermitID':'text'}"
-				sortable="'memPermitID'">{{o.memPermitID}}
-			</td>
-			<td header-class="'type-col'"
-				data-title="'Type'"
-				filter="{type:'select'}"
-				filter-data="projectList.typeArray"
-				sortable="'type'">{{o.type}}
-			</td>
-			<td header-class="'region-col'"
-				data-title="'Region'"
-				filter="{region:'select'}"
-				filter-data="projectList.regionArray"
-				sortable="'region'">{{o.region | regionName}}
-			</td>
-			<td header-class="'phase-col'"
-				data-title="'Status'"
-				filter="{'currentPhaseName':'select'}"
-				filter-data="projectList.phaseArray"
-				sortable="'currentPhaseName'">{{o.currentPhaseName}}
-			</td>
-		</tr>
-		<tr class="no-records" ng-show="!$data || !$data.length">
-			<td colspan="5">No Projects found</td>
-		</tr>
-	</table>
+  <table class="project-table table table-hover" x-show-filter="true" ng-table="projectList.tableParams">
+    <tr ng-repeat="o in $data" ui-sref="p.detail({projectid: o.code})">
+      <td header-class="'name-col'"
+        data-title="'Name'"
+        filter="{'name':'text'}"
+        sortable="'name'"><a ui-sref="p.detail({projectid: o.code})">{{o.name}}</a>
+      </td>
+      <td data-title="'Permit'"
+        filter="{'memPermitID':'text'}"
+        sortable="'memPermitID'">{{o.memPermitID}}
+      </td>
+      <td header-class="'type-col'"
+        data-title="'Type'"
+        filter="{type:'select'}"
+        filter-data="projectList.typeArray"
+        sortable="'type'">{{o.type}}
+      </td>
+      <td header-class="'region-col'"
+        data-title="'Region'"
+        filter="{region:'select'}"
+        filter-data="projectList.regionArray"
+        sortable="'region'">{{o.region | regionName}}
+      </td>
+      <td header-class="'phase-col'"
+        data-title="'Status'"
+        filter="{'currentPhaseName':'select'}"
+        filter-data="projectList.phaseArray"
+        sortable="'currentPhaseName'">{{o.currentPhaseName}}
+      </td>
+      <td header-class="'majormine-col'"
+        data-title="'Displayed on mines.nrs'"
+        filter="{'isMajorMine':'select'}"
+        filter-data="projectList.majorMineArray"
+        sortable="'isMajorMine'">{{o.isMajorMine ? 'Yes' : 'No'}}
+      </td>
+    </tr>
+    <tr class="no-records" ng-show="!$data || !$data.length">
+      <td colspan="5">No Projects found</td>
+    </tr>
+  </table>
 </div>
