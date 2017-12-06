@@ -93,7 +93,7 @@ function serviceUtils($http, $modal) {
 
       case 'mem-mmt-test.pathfinder.gov.bc.ca':
         // Test
-        hostnameEPIC = 'https://esm-test.pathfinder.gov.bc.ca';
+        hostnameEPIC = 'https://test.projects.eao.gov.bc.ca';
         break;
 
       default:
