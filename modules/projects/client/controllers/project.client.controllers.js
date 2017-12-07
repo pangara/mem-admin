@@ -585,8 +585,13 @@ function controllerProjectPublicContent ($scope, $state, $stateParams, $modal, p
   $scope.morePermitsLinkYear     = parseInt($scope.project.morePermitsLinkYear, 10)     || null;
   $scope.moreInspectionsLinkYear = parseInt($scope.project.moreInspectionsLinkYear, 10) || null;
 
-  $scope.saveProject = function(currTab) {
-    // No validation required here
+  $scope.saveProject = function(isValid, currTab) {
+    // Validate if public content has been promoted.
+    if ($scope.project.isMajorMine && !isValid) {
+      $scope.$broadcast('show-errors-check-validity', 'publicContentForm');
+      return false;
+    }
+
     setContentHtml($scope.project.content, 'Mines', 'Intro', $scope.mineIntro);
     setContentHtml($scope.project.content, 'Auth',  'Intro', $scope.authIntro);
     setContentHtml($scope.project.content, 'Comp',  'Intro', $scope.compIntro);
