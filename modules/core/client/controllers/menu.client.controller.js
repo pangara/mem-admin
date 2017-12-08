@@ -18,9 +18,9 @@ function controllerSystemMenu($scope, $state, Authentication, Menus, $rootScope,
 	menu.$state = $state;
    	menu.authentication = Authentication;
 
-   	menu.isAdmin = (Authentication.user && Authentication.user.roles.indexOf ('admin') !== -1);
+   	menu.isAdmin = (Authentication.user.roles && Authentication.user.roles.indexOf ('admin') !== -1);
    	if ($scope.project) {
-   		menu.isEAO = (Authentication.user && (!!~Authentication.user.roles.indexOf ($scope.project.code+':eao:member') || !!~Authentication.user.roles.indexOf ('admin')));
+   		menu.isEAO = (Authentication.user.roles && (!!~Authentication.user.roles.indexOf ($scope.project.code+':eao:member') || !!~Authentication.user.roles.indexOf ('admin')));
    	}
    	menu.isProjectAdmin = false;
    	menu.isProponentAdmin = false;
@@ -40,11 +40,10 @@ function controllerSystemMenu($scope, $state, Authentication, Menus, $rootScope,
    		if (newValue) {
 			//console.log ('controllerSystemMenu.project = >' + newValue.code + '<');
 			menu.project = newValue;
-		   	menu.isProjectAdmin = (Authentication.user && Authentication.user.roles.indexOf (menu.project.adminRole) !== -1);
-		   	menu.isProponentAdmin = (Authentication.user && Authentication.user.roles.indexOf (menu.project.proponentAdminRole) !== -1);
+		   	menu.isProjectAdmin = (Authentication.user.roles && Authentication.user.roles.indexOf (menu.project.adminRole) !== -1);
+		   	menu.isProponentAdmin = (Authentication.user.roles && Authentication.user.roles.indexOf (menu.project.proponentAdminRole) !== -1);
    		}
    	});
-
 
 	menu.pageAnchors = function(id) {
 		// get all links in the container.

@@ -86,7 +86,7 @@ function directiveProjectTombstone(Authentication) {
         controller: function($scope, ENV, Authentication) {
             var c = this;
             $scope.environment = ENV;
-            c.isEao = (Authentication.user && Authentication.user.roles.indexOf('eao') > -1);
+			c.isEao = (Authentication.user.roles && Authentication.user.roles.indexOf('eao') > -1);
 			c.isUser = (Authentication.user);
         },
 		
